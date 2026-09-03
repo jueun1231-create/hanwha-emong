@@ -17,9 +17,7 @@
     --radius:20px; --radius-sm:12px; --radius-pill:999px;
     --shadow:0 1px 2px rgba(20,20,25,.04),0 8px 24px rgba(20,20,25,.055);
     --shadow-lift:0 2px 8px rgba(20,20,25,.06),0 22px 50px rgba(20,20,25,.11);
-    --f:"Hanwha Gothic","한화고딕","HanwhaGothic","HanwhaGothicR","HanwhaB","Hanwha",
-        "Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",
-        -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --f:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Segoe UI",sans-serif;
   }
   :root[data-theme="dark"]{
     --bg:#0E0E11; --surface:#17171B; --raise:#1C1C21; --raise-2:#24242A;
@@ -50,7 +48,8 @@
        letter-spacing:-.006em;font-variant-numeric:tabular-nums;
        -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   [hidden]{display:none!important}
-  h1,h2,h3,h4{font-weight:650;letter-spacing:-.018em}
+  h1,h2,h3,h4{font-family:var(--f);font-weight:700;letter-spacing:-.018em}
+  button,input,select,textarea,svg text{font-family:var(--f)}
   .wrap{max-width:860px;margin:0 auto;padding:0 32px}
   @media(max-width:640px){.wrap{padding:0 18px}}
   .lite{text-transform:none;letter-spacing:0;color:var(--ink-3);font-weight:500}
@@ -65,9 +64,11 @@
   .hrow{display:flex;align-items:center;gap:20px;padding:15px 0 11px}
   .brand{display:flex;align-items:center;gap:10px;background:0;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
   .hw-symbol{height:23px;width:auto;flex:none}
-  .brand-1{font-size:13px;font-weight:650}
+  .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13px;font-weight:700}
+  .brand-1 .brand-word{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-weight:700}
+  .brand-1 .brand-strategy{font-family:"Hanwha Gothic","한화고딕",var(--f);font-weight:700;color:var(--ink-2)}
   .brand-1 .k{color:var(--ink-3);font-weight:500;margin-left:3px}
-  .brand-2{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:2px}
+  .brand-2{font-family:"Hanwha Gothic","한화고딕",var(--f);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-top:2px}
   .hright{margin-left:auto;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .hdate{font-size:11px;color:var(--ink-3);font-weight:500}
   .icon-btn{background:0;border:0;color:var(--ink-3);cursor:pointer;font-size:15px;padding:2px;line-height:1}
@@ -491,8 +492,8 @@
 
   #hdr{background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid var(--hair)}
   .hrow{padding:16px 0 12px}
-  .brand-1{font-size:13.5px;font-weight:700;letter-spacing:-.01em}
-  .brand-2{color:var(--accent);font-weight:700}
+  .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13.5px;font-weight:700;letter-spacing:-.01em}
+  .brand-2{font-family:"Hanwha Gothic","한화고딕",var(--f);color:var(--accent);font-weight:700}
   .hw-symbol{height:24px}
   .hdate{font-size:11px;font-weight:600}
   .icon-btn{width:34px;height:34px;border-radius:12px;border:1px solid var(--hair-2);background:var(--raise);display:inline-flex;align-items:center;justify-content:center;font-size:14px;transition:background .18s,color .18s}
@@ -590,7 +591,7 @@
           <path class="cls-3" d="M59.38,4.88c12.2-4.57,24.25,.05,26.93,10.33,2.69,10.27-5.03,22.3-17.22,26.87-12.2,4.57-24.25-.06-26.93-10.32-2.68-10.27,5.03-22.3,17.22-26.87m-11.32,3.93c-12.65,10.02-15.87,24.53-7.2,32.41,8.68,7.88,25.97,6.16,38.62-3.86,12.65-10.01,15.88-24.53,7.19-32.41-8.68-7.89-25.97-6.16-38.61,3.86"/>
         </svg>
         <span class="brand-txt">
-          <span class="brand-1">Hanwha · 미래전략실</span>
+          <span class="brand-1"><span class="brand-word">Hanwha</span> · <span class="brand-strategy">미래전략실</span></span>
           <span class="brand-2">MarketView</span>
         </span>
       </button>
@@ -678,7 +679,10 @@
     <div class="phead"><h1>증시 캘린더</h1><p>2026년 6~10월 · 거시지표 + 한국·미국 기업 실적 · 예상 / 실제 / 이전값 분리 · KST</p></div>
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>고용(4일)·CPI(11일)·FOMC(15~16일) 3주가 9월 금리 경로 점검<br>발표 전 예상치·이전값, 발표 후 실제치·서프라이즈 분리 기록<br>기업 실적은 EPS 예상 대비 서프라이즈 우선 확인, 미공개는 ‘—’<br>단일 이벤트보다 3개월 추세·revision 병행</p>
+      <p><b>9월 1주(9/1~4):</b> JOLTS·ADP·생산성에 이어 9/4 미국 고용보고서가 발표됩니다. 고용이 예상보다 약하면 미 국채금리 하락·성장주 반등, 강하면 금리 인하 기대 후퇴와 달러 강세를 우선 시나리오로 봅니다.</p>
+      <p><b>9월 2주(9/9~11):</b> Oracle·Adobe 실적과 PPI·CPI가 겹칩니다. 근원 서비스물가가 높고 실적 가이던스가 약하면 밸류에이션 부담이 커지고, 물가 둔화와 실적 상회가 동시에 나오면 기술주·반도체의 상승 여력이 커질 수 있습니다.</p>
+      <p><b>9월 3주(9/15~18):</b> FOMC 성명·점도표·기자회견이 월중 방향을 결정합니다. 25bp 인하 자체보다 2026년 점도표와 장기금리 경로, 기자회견의 매파·비둘기파 표현이 지수와 환율의 변동성을 좌우할 가능성이 높습니다.</p>
+      <p><b>업무 참고:</b> 발표 전 예상치·이전값, 발표 후 실제치·서프라이즈·발표 직후 금리·환율·지수 반응을 한 줄로 기록하세요. 9월 말 JOLTS와 기업 실적은 월초 고용·물가 결과와 방향이 일치하는지 확인해 다음 분기 전망에 반영합니다.</p>
     </div>
     <div class="cal-layout">
       <aside class="cal-side" aria-label="월간 달력">
@@ -736,12 +740,12 @@
     <div class="p3-view" id="v-ipo" hidden>
       <div class="insight">
         <div class="insight-tag">미래전략실 인사이트</div>
-        <p>프라이빗 상위 5개사 3조 달러가 공모시장으로 이동<br>신규 공급이 AI 대형주 수급 분산, 지수 상승에도 내부 순환매<br>OpenAI 상장가 = AI 밸류체인 멀티플 기준점<br>SpaceX 상장 → 국내 우주·방산 리레이팅(한화에어로 1개월 +15%)</p>
+        <p>프라이빗 상위 5개사 3조 달러가 공모시장으로 이동<br>신규 공급이 AI 대형주 수급 분산, 지수 상승에도 내부 순환매<br>OpenAI·Anthropic 상장 추진이 AI 밸류체인 멀티플의 기준점<br>해외 우주·방산 수주 확대 → 국내 우주·방산 리레이팅을 별도 관찰</p>
       </div>
       <div class="slabel">해외 IPO 파이프라인 <span class="lite">·한국 공모주 제외 · 미국 등 선진국 대형 딜</span></div>
       <div class="ipo-filters" id="ipo-filters"></div>
       <div class="tscroll"><table class="ipo-table"><thead><tr><th>기업</th><th>섹터</th><th>상태</th><th>예상 시기</th><th>밸류에이션</th><th>조달 규모</th><th>핵심 이슈</th></tr></thead><tbody id="ipo"></tbody></table></div>
-      <div class="disc"><b>데이터</b> SpaceX·OpenAI·Anthropic·Databricks 일정·밸류에이션·제출일은 2026년 8~9월 공개 보도 기준. 시장 영향 분석은 미래전략실 자체 해석이며 투자 권유가 아님.</div>
+      <div class="disc"><b>데이터</b> OpenAI·Anthropic·Databricks 일정·밸류에이션·제출일은 2026년 8~9월 공개 보도 기준. 시장 영향 분석은 미래전략실 자체 해석이며 투자 권유가 아님.</div>
     </div>
   </section>
 
@@ -798,7 +802,7 @@
 
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>미 장기금리 4.8%대 고착 → 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 이동, 리그테이블 상위가 채권 주관사 중심으로 재편<br>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인<br>OpenAI·SpaceX 등 글로벌 IPO 러시는 국내 ECM 파이프라인 회복의 선행 신호<br>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</p>
+      <p>미 장기금리 4.8%대 고착 → 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 이동, 리그테이블 상위가 채권 주관사 중심으로 재편<br>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인<br>OpenAI·Anthropic 등 글로벌 IPO 파이프라인은 국내 ECM 회복의 선행 신호<br>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</p>
     </div>
 
     <div class="lt-toolbar">
@@ -834,7 +838,7 @@
       <thead><tr><th>부문</th><th>1위</th><th>2위</th><th>3위</th><th>흐름</th></tr></thead>
       <tbody>
         <tr><td class="cell-strong">DCM (글로벌 채권)</td><td>JPMorgan</td><td>BofA Securities</td><td>Citi</td><td style="white-space:normal;color:var(--ink-3)">미국계 3사가 글로벌 발행의 30%+ 점유. 금리 고착으로 발행량 사상 최대권</td></tr>
-        <tr><td class="cell-strong">ECM (글로벌 주식)</td><td>Goldman Sachs</td><td>Morgan Stanley</td><td>JPMorgan</td><td style="white-space:normal;color:var(--ink-3)">2024 IPO 회복 → 2026 OpenAI·Anthropic·SpaceX 대형 딜 대기</td></tr>
+        <tr><td class="cell-strong">ECM (글로벌 주식)</td><td>Goldman Sachs</td><td>Morgan Stanley</td><td>JPMorgan</td><td style="white-space:normal;color:var(--ink-3)">2024 IPO 회복 → 2026 OpenAI·Anthropic 대형 딜 대기</td></tr>
         <tr><td class="cell-strong">M&amp;A (재무자문)</td><td>Goldman Sachs</td><td>Morgan Stanley</td><td>JPMorgan</td><td style="white-space:normal;color:var(--ink-3)">Centerview·Evercore 등 부티크 약진, AI·전력 인프라 딜 증가</td></tr>
       </tbody>
     </table></div>
@@ -1285,7 +1289,7 @@
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Palo Alto Networks (PANW) 실적',k:'earnings',l:'실적',e:'EPS 0.9763',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Dell (DELL) · Medtronic (MDT) 실적',k:'earnings',l:'실적',e:'EPS 4.87 / 1.39',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Credo Technology (CRDO) · NIO 실적',k:'earnings',l:'실적',e:'EPS 1.16 / -0.4101',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
-   {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 (382840) 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Broadcom (AVGO) 실적',k:'earnings',l:'실적',e:'EPS 3.24 · 매출 $29.44B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
    {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Snowflake (SNOW) · HPE 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
    {m:9,d:2,w:'수',c:'KR',f:'🇰🇷',n:'8월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'발표 전',p:'—',src:S.kostat,sn:'국가통계처'},
@@ -1545,7 +1549,6 @@
 
   /* --- 해외 IPO 테이블 --- */
   var IPO=[
-   {name:'SpaceX',sector:'우주 · 미국',status:'LISTED',date:'2026.06.12',val:'$1.77T',size:'$75B',key:'Starship 상업화 · Starlink 흑자 · 위성 D2C'},
    {name:'OpenAI',sector:'AI · 미국',status:'UPCOMING',date:'2026.09 목표',val:'~$1T',size:'~$85B',key:'추론모델 경쟁 · 자체 칩·데이터센터 투자'},
    {name:'Anthropic',sector:'AI · 미국',status:'UPCOMING',date:'2026.10 목표',val:'$965B',size:'—',key:'클로드 엔터프라이즈 매출 급증 · 안전성 차별화'},
    {name:'Databricks',sector:'데이터·AI · 미국',status:'FILED',date:'H2 2026',val:'—',size:'—',key:'FCF 흑자 · NRR 140%+ · 파이프라인 내 유일 흑자'},
@@ -1581,12 +1584,13 @@
   var nav=document.createElement('div');nav.className='p1-category-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','지수·지표 카테고리');
   defs.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.label;b.dataset.category=d.key;b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');if(i===0)b.className='active';nav.appendChild(b);});
   headline.parentNode.insertBefore(nav,headline.nextElementSibling);
-  var sections=defs.slice(1).map(function(d){return {key:d.key,el:document.getElementById(d.key)?document.getElementById(d.key).closest('.slabel')||document.getElementById(d.key):null};});
+  var sections=defs.map(function(d){return {key:d.key,el:null};});
   function sectionFor(grid){var prev=grid&&grid.previousElementSibling;return prev&&prev.classList&&prev.classList.contains('slabel')?prev:null;}
   sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
-  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
+  var headlineSection={key:'g-feat',grid:headline,label:sectionFor(headline)};
+  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});var allSections=sections.concat([headlineSection]);allSections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
   nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
-  show('all');
+  show('g-idx');
 })();
 </script>
 </body>
