@@ -16,6 +16,9 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -23,9 +26,34 @@ jobs:
         with:
           node-version: 20
 
+      # 1) 수치 데이터 (Yahoo Finance, 무키)
       - name: 시장데이터 갱신 (Yahoo Finance)
         run: node scripts/update-market-data.mjs
 
+      - name: 데이터 갱신본 백업
+        run: cp index.html /tmp/index.data.html
+
+      # 2) 서술 콘텐츠 (인사이트·캘린더·수급·이슈·IPO·리그테이블) — 토큰 있을 때만
+      - name: 서술 콘텐츠 갱신 (Claude)
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
+        continue-on-error: true
+        run: |
+          echo "BASE_BYTES=$(wc -c < index.html)" >> "$GITHUB_ENV"
+          npm install -g @anthropic-ai/claude-code@latest
+          timeout 900 claude -p "$(cat scripts/daily-narrative-prompt.md)" \
+            --dangerously-skip-permissions \
+            --output-format text
+
+      # 3) 무결성 검사 — 깨졌으면 수치 갱신본으로 되돌림
+      - name: 무결성 검사
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
+        run: |
+          if ! node scripts/validate-html.mjs "${BASE_BYTES:-0}"; then
+            echo "::warning::서술 갱신본 검사 실패 — 수치 갱신분만 유지"
+            cp /tmp/index.data.html index.html
+          fi
+
+      # 4) 커밋 & 푸시 → Pages 자동 재배포
       - name: 변경분 커밋 & 푸시
         run: |
           git config user.name  "hanwha-emong-bot"
@@ -34,6 +62,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
-            git commit -m "chore: 시장데이터 $(TZ=Asia/Seoul date +%Y-%m-%d)"
+            git commit -m "chore: 시장데이터·서술 갱신 $(TZ=Asia/Seoul date +%Y-%m-%d)"
             git push
           fi
