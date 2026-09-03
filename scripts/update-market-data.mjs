@@ -41,17 +41,31 @@ const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const grp = (n, d) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 const plain = (n, d) => Number(n).toFixed(d);
 
+// 실행일(KST) 기준 직전 영업일 (YYYY-MM-DD). 공휴일은 무시(근사).
+function prevBusinessDayKST() {
+  const kst = new Date(Date.now() + 9 * 3600 * 1000);
+  const d = new Date(Date.UTC(kst.getUTCFullYear(), kst.getUTCMonth(), kst.getUTCDate()));
+  d.setUTCDate(d.getUTCDate() - 1);
+  while (d.getUTCDay() === 0 || d.getUTCDay() === 6) d.setUTCDate(d.getUTCDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+const PREV_BDAY = prevBusinessDayKST();
+
+// 타임스탬프와 종가를 짝지어 null 제거 + 날짜 오름차순. [{d:'YYYY-MM-DD', v:number}, ...]
 async function chart(sym, range) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=${range}&interval=${range === '1y' ? '1mo' : '1d'}`;
   const r = await fetch(url, UA);
   if (!r.ok) throw new Error(`${sym} HTTP ${r.status}`);
   const j = await r.json();
   const res = j?.chart?.result?.[0];
-  const closes = (res?.indicators?.quote?.[0]?.close || []).filter((x) => x != null);
-  if (closes.length < 3) throw new Error(`${sym} no data`);
-  // 마지막 값이 직전 값과 완전히 동일하면 휴장 placeholder 로 보고 제거
-  if (closes.length > 4 && closes.at(-1) === closes.at(-2)) closes.pop();
-  return closes;
+  const ts = res?.timestamp || [];
+  const cl = res?.indicators?.quote?.[0]?.close || [];
+  const bars = ts
+    .map((t, i) => ({ d: new Date(t * 1000).toISOString().slice(0, 10), v: cl[i] }))
+    .filter((b) => b.v != null && Number.isFinite(b.v))
+    .sort((a, b) => (a.d < b.d ? -1 : a.d > b.d ? 1 : 0));
+  if (bars.length < 3) throw new Error(`${sym} no data`);
+  return bars;
 }
 
 /** tk:'X' 를 포함하는 한 줄짜리 mcard 객체 리터럴(중첩 {} 없음) 안의 필드만 치환 */
@@ -69,21 +83,32 @@ function patchCloses(html, sym, arrStr) {
 
 async function run() {
   let html = await readFile(FILE, 'utf8');
-  let ok = 0, fail = 0;
+  let ok = 0, fail = 0, skip = 0;
 
-  const doQuote = async (list, range) => {
+  const doQuote = async (list, range, kind) => {
     for (const [tk, sym, vd, sd] of list) {
       try {
-        const c = await chart(sym, range);
-        const last = c.at(-1), prev = c.at(-2);
+        const bars = await chart(sym, range);
+        const lastBar = bars[bars.length - 1];
+        const last = lastBar.v, prev = bars[bars.length - 2].v;
         const isRate = /^\^(TYX|TNX|FVX)$/.test(sym);
         const chgNum = last - prev;
         const pct = isRate ? Math.sign(chgNum) : +(chgNum / prev * 100).toFixed(2);
+
+        // 가드 1: Yahoo 최신 봉이 직전 영업일보다 오래됨 = 데이터 지연 → 기존 값 유지
+        if (lastBar.d < PREV_BDAY) {
+          console.warn(`  skip 지연 ${tk} (Yahoo 최신 ${lastBar.d} < ${PREV_BDAY})`); skip++; continue;
+        }
+        // 가드 2: 지수 일간 변동 7% 이상 = 이상봉 의심 → 기존 값 유지
+        if (kind === 'idx' && Math.abs(pct) >= 7) {
+          console.warn(`  skip 이상치 ${tk} (${pct}%)`); skip++; continue;
+        }
+
         const valStr = isRate ? plain(last, 3)
           : (vd >= 3 ? plain(last, vd) : grp(last, vd));
         const chgStr = isRate ? Math.abs(chgNum * 100).toFixed(1)
           : (vd >= 3 ? plain(Math.abs(chgNum), vd) : grp(Math.abs(chgNum), vd));
-        const spk = c.map((x) => isRate ? plain(x, 2) : (sd === 0 ? Math.round(x) : plain(x, sd))).join(',');
+        const spk = bars.map((b) => isRate ? plain(b.v, 2) : (sd === 0 ? Math.round(b.v) : plain(b.v, sd))).join(',');
         const next = patchTk(html, tk, (m) => m
           .replace(/val:'[^']*'/, `val:'${valStr}'`)
           .replace(/chg:'[^']*'/, `chg:'${chgStr}'`)
@@ -95,16 +120,16 @@ async function run() {
     }
   };
 
-  console.log('· 지수'); await doQuote(IDX, '1mo');
-  console.log('· 원자재'); await doQuote(COM, '1mo');
-  console.log('· 환율'); await doQuote(FX, '1mo');
-  console.log('· 금리'); await doQuote(RATE, '1mo');
+  console.log('· 지수'); await doQuote(IDX, '1mo', 'idx');
+  console.log('· 원자재'); await doQuote(COM, '1mo', 'com');
+  console.log('· 환율'); await doQuote(FX, '1mo', 'fx');
+  console.log('· 금리'); await doQuote(RATE, '1mo', 'rate');
 
   console.log('· P5 월별 종가');
   for (const [sy, sym, cur] of STOCKS) {
     try {
-      const c = await chart(sym, '1y');
-      const arr = c.slice(-13).map((x) => cur === 'USD' ? +x.toFixed(2) : Math.round(x));
+      const bars = await chart(sym, '1y');
+      const arr = bars.slice(-13).map((b) => cur === 'USD' ? +b.v.toFixed(2) : Math.round(b.v));
       const next = patchCloses(html, sy, arr.join(','));
       if (next == null) { console.warn('  항목 못 찾음', sy); fail++; }
       else { html = next; ok++; }
@@ -126,7 +151,7 @@ async function run() {
   if (so !== sc) throw new Error(`script 태그 불균형 ${so}/${sc} — 커밋 취소`);
 
   await writeFile(FILE, html);
-  console.log(`\n갱신 완료: ${asofDot} · 성공 ${ok} / 실패 ${fail}`);
+  console.log(`\n갱신 완료: ${asofDot} · 성공 ${ok} / 실패 ${fail} / 건너뜀(지연·이상치) ${skip}`);
 }
 
 run().catch((e) => { console.error('FATAL', e); process.exit(1); });
