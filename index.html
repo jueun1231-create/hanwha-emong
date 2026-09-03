@@ -1284,7 +1284,7 @@
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Palo Alto Networks (PANW) 실적',k:'earnings',l:'실적',e:'EPS 0.9763',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Dell (DELL) · Medtronic (MDT) 실적',k:'earnings',l:'실적',e:'EPS 4.87 / 1.39',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Credo Technology (CRDO) · NIO 실적',k:'earnings',l:'실적',e:'EPS 1.16 / -0.4101',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
-   {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 (382840) 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Broadcom (AVGO) 실적',k:'earnings',l:'실적',e:'EPS 3.24 · 매출 $29.44B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
    {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Snowflake (SNOW) · HPE 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
    {m:9,d:2,w:'수',c:'KR',f:'🇰🇷',n:'8월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'발표 전',p:'—',src:S.kostat,sn:'국가통계처'},
@@ -1580,10 +1580,11 @@
   var nav=document.createElement('div');nav.className='p1-category-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','지수·지표 카테고리');
   defs.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.label;b.dataset.category=d.key;b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');if(i===0)b.className='active';nav.appendChild(b);});
   headline.parentNode.insertBefore(nav,headline.nextElementSibling);
-  var sections=defs.slice(1).map(function(d){return {key:d.key,el:document.getElementById(d.key)?document.getElementById(d.key).closest('.slabel')||document.getElementById(d.key):null};});
+  var sections=defs.map(function(d){return {key:d.key,el:null};});
   function sectionFor(grid){var prev=grid&&grid.previousElementSibling;return prev&&prev.classList&&prev.classList.contains('slabel')?prev:null;}
   sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
-  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
+  var headlineSection={key:'g-feat',grid:headline,label:sectionFor(headline)};
+  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});var allSections=sections.concat([headlineSection]);allSections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
   nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
   show('g-idx');
 })();
