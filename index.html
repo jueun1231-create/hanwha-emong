@@ -1586,7 +1586,7 @@
   sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
   function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
   nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
-  show('all');
+  show('g-idx');
 })();
 </script>
 </body>
