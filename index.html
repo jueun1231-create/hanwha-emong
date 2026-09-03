@@ -568,6 +568,15 @@
   footer{border-top:1px solid var(--hair);margin-top:80px;background:var(--raise)}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
+<style>
+/* P1 category navigator: presentation-only; existing metric grids and IDs are preserved. */
+#p1 .p1-category-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:4px;background:var(--raise);border:1px solid var(--hair);border-radius:10px;width:max-content;max-width:100%;margin:2px 0 18px}
+#p1 .p1-category-nav button{appearance:none;border:0;background:transparent;color:var(--ink-3);font:inherit;font-size:11.5px;font-weight:700;padding:7px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+#p1 .p1-category-nav button:hover{color:var(--accent)}
+#p1 .p1-category-nav button.active{background:var(--bg);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
+#p1 .p1-section.is-filtered-out{display:none}
+@media(max-width:560px){#p1 .p1-category-nav{width:100%;overflow:auto;flex-wrap:nowrap}#p1 .p1-category-nav button{flex:0 0 auto}}
+</style>
 </head>
 <body>
 
@@ -1556,6 +1565,29 @@
   }
   ff.querySelectorAll('.ipo-filter').forEach(function(b){b.addEventListener('click',function(){ff.querySelectorAll('.ipo-filter').forEach(function(x){x.classList.toggle('active',x===b);});renderIpo(b.dataset.f);});});
   renderIpo('ALL');
+})();
+</script>
+<script>
+/* P1 category filter. The existing grids are shown/hidden without changing their data or handlers. */
+(function(){
+  var p1=document.getElementById('p1');if(!p1||p1.querySelector('.p1-category-nav'))return;
+  var headline=p1.querySelector('#g-feat');if(!headline)return;
+  var defs=[
+    {key:'all',label:'전체'},
+    {key:'g-idx',label:'주요 지수'},
+    {key:'g-com',label:'원자재'},
+    {key:'g-fx',label:'환율'},
+    {key:'g-rate',label:'채권 금리'}
+  ];
+  var nav=document.createElement('div');nav.className='p1-category-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','지수·지표 카테고리');
+  defs.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.label;b.dataset.category=d.key;b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');if(i===0)b.className='active';nav.appendChild(b);});
+  headline.parentNode.insertBefore(nav,headline);
+  var sections=defs.slice(1).map(function(d){return {key:d.key,el:document.getElementById(d.key)?document.getElementById(d.key).closest('.slabel')||document.getElementById(d.key):null};});
+  function sectionFor(grid){var el=grid,prev=null;while(el&&el!==p1){if(el.classList&&el.classList.contains('slabel'))prev=el;el=el.previousElementSibling;}return prev;}
+  sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
+  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
+  nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
+  show('all');
 })();
 </script>
 </body>
