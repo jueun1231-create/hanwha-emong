@@ -64,9 +64,11 @@
   .hrow{display:flex;align-items:center;gap:20px;padding:15px 0 11px}
   .brand{display:flex;align-items:center;gap:10px;background:0;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
   .hw-symbol{height:23px;width:auto;flex:none}
-  .brand-1{font-size:13px;font-weight:650}
+  .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13px;font-weight:700}
+  .brand-1 .brand-word{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-weight:700}
+  .brand-1 .brand-strategy{font-family:"Hanwha Gothic","한화고딕",var(--f);font-weight:700;color:var(--ink-2)}
   .brand-1 .k{color:var(--ink-3);font-weight:500;margin-left:3px}
-  .brand-2{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:2px}
+  .brand-2{font-family:"Hanwha Gothic","한화고딕",var(--f);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-top:2px}
   .hright{margin-left:auto;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .hdate{font-size:11px;color:var(--ink-3);font-weight:500}
   .icon-btn{background:0;border:0;color:var(--ink-3);cursor:pointer;font-size:15px;padding:2px;line-height:1}
@@ -490,8 +492,8 @@
 
   #hdr{background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid var(--hair)}
   .hrow{padding:16px 0 12px}
-  .brand-1{font-size:13.5px;font-weight:700;letter-spacing:-.01em}
-  .brand-2{color:var(--accent);font-weight:700}
+  .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13.5px;font-weight:700;letter-spacing:-.01em}
+  .brand-2{font-family:"Hanwha Gothic","한화고딕",var(--f);color:var(--accent);font-weight:700}
   .hw-symbol{height:24px}
   .hdate{font-size:11px;font-weight:600}
   .icon-btn{width:34px;height:34px;border-radius:12px;border:1px solid var(--hair-2);background:var(--raise);display:inline-flex;align-items:center;justify-content:center;font-size:14px;transition:background .18s,color .18s}
@@ -589,7 +591,7 @@
           <path class="cls-3" d="M59.38,4.88c12.2-4.57,24.25,.05,26.93,10.33,2.69,10.27-5.03,22.3-17.22,26.87-12.2,4.57-24.25-.06-26.93-10.32-2.68-10.27,5.03-22.3,17.22-26.87m-11.32,3.93c-12.65,10.02-15.87,24.53-7.2,32.41,8.68,7.88,25.97,6.16,38.62-3.86,12.65-10.01,15.88-24.53,7.19-32.41-8.68-7.89-25.97-6.16-38.61,3.86"/>
         </svg>
         <span class="brand-txt">
-          <span class="brand-1">Hanwha · 미래전략실</span>
+          <span class="brand-1"><span class="brand-word">Hanwha</span> · <span class="brand-strategy">미래전략실</span></span>
           <span class="brand-2">MarketView</span>
         </span>
       </button>
