@@ -63,7 +63,7 @@
   .hwrap{max-width:860px;margin:0 auto;padding:0 32px}
   .hrow{display:flex;align-items:center;gap:20px;padding:15px 0 11px}
   .brand{display:flex;align-items:center;gap:10px;background:0;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
-  .hw-symbol{height:23px;width:auto;flex:none}
+  .hw-symbol{height:28px;width:auto;flex:none;overflow:visible}
   .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13px;font-weight:700}
   .brand-1 .brand-word{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-weight:700}
   .brand-1 .brand-strategy{font-family:"Hanwha Gothic","한화고딕",var(--f);font-weight:700;color:var(--ink-2)}
@@ -452,7 +452,8 @@
 
   /* ---------- Home ---------- */
   .hero{padding:52px 0 8px}
-  .hero-mark{height:30px;width:auto;display:block;margin-bottom:22px}
+  /* 홈의 한화 심벌은 원본 비율을 유지하면서 충분한 여백을 둬 잘리지 않게 표시 */
+  .hero-mark{height:40px;width:auto;max-width:100%;display:block;margin-bottom:22px;overflow:visible}
   .hero h1{margin:0;font-size:32px;line-height:1.15;font-weight:660;letter-spacing:-.03em}
   .hero h1 .en{color:var(--accent)}
   .hero-sub{margin:13px 0 0;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
@@ -494,7 +495,7 @@
   .hrow{padding:16px 0 12px}
   .brand-1{font-family:"Hanwha Sans","Hanwha Gothic","한화고딕",var(--f);font-size:13.5px;font-weight:700;letter-spacing:-.01em}
   .brand-2{font-family:"Hanwha Gothic","한화고딕",var(--f);color:var(--accent);font-weight:700}
-  .hw-symbol{height:24px}
+  .hw-symbol{height:28px;overflow:visible}
   .hdate{font-size:11px;font-weight:600}
   .icon-btn{width:34px;height:34px;border-radius:12px;border:1px solid var(--hair-2);background:var(--raise);display:inline-flex;align-items:center;justify-content:center;font-size:14px;transition:background .18s,color .18s}
   .icon-btn:hover{background:var(--raise-2);color:var(--ink)}
@@ -577,6 +578,26 @@
 #p1 .p1-category-nav button.active{background:var(--bg);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
 #p1 .p1-section.is-filtered-out,#p1 .is-filtered-out{display:none!important}
 @media(max-width:560px){#p1 .p1-category-nav{width:100%;overflow:auto;flex-wrap:nowrap}#p1 .p1-category-nav button{flex:0 0 auto}}
+/* P5 산업군 탐색: 평면 종목 탭 대신 산업군 → 대표기업 순서로 탐색 */
+#p5 .lt-stock-tabs{display:none!important}
+#p5 .industry-nav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
+#p5 .industry-nav button{appearance:none;border:1px solid var(--hair-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:11.5px;font-weight:700;padding:8px 13px;border-radius:var(--radius-pill);cursor:pointer;transition:.18s}
+#p5 .industry-nav button:hover{border-color:var(--accent);color:var(--accent)}
+#p5 .industry-nav button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+#p5 .industry-directory{border:1px solid var(--hair);background:var(--surface);border-radius:var(--radius);padding:15px 16px;margin:0 0 14px;box-shadow:var(--shadow)}
+#p5 .industry-directory-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+#p5 .industry-directory-head strong{font-size:13px}
+#p5 .industry-directory-head span{font-size:10.5px;color:var(--ink-3)}
+#p5 .industry-companies{display:flex;gap:7px;flex-wrap:wrap}
+#p5 .industry-company{appearance:none;border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-2);font:inherit;font-size:11px;font-weight:650;padding:7px 10px;border-radius:9px;cursor:pointer}
+#p5 .industry-company:hover{border-color:var(--accent);color:var(--accent)}
+#p5 .industry-company.is-linked{background:rgba(233,100,10,.08);border-color:rgba(233,100,10,.45);color:var(--accent)}
+#p5 .industry-company.is-selected{background:var(--accent);border-color:var(--accent);color:#fff}
+#p5 .industry-company small{font-size:9px;font-weight:600;opacity:.72;margin-left:3px}
+#p5 .industry-status{font-size:11px;color:var(--ink-3);margin-top:10px;line-height:1.55}
+.macro-src{margin-top:10px;padding-top:8px;border-top:1px solid var(--hair);font-size:10px;color:var(--ink-3)}
+.macro-src a{color:var(--ink-3);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:560px){#p5 .industry-nav{overflow:auto;flex-wrap:nowrap;padding-bottom:2px}#p5 .industry-nav button{flex:0 0 auto}}
 </style>
 </head>
 <body>
@@ -1132,21 +1153,29 @@
       +'<p class="why"><b>변동 사유.</b> '+c.why+'</p></div>';
   }).join('');
 
+  /* 글로벌·국내 매크로: 2026-09-03 현재 공식 발표값과 확정 일정만 표기.
+     전망(예측)은 발표기관의 기준 시나리오로 구분하고, 시장 추정치를 사실처럼 쓰지 않는다. */
   var MACRO=[
-   {name:'통화정책',val:'인하 진입',note:'연준 9/16 −25bp 유력(시장 90%+)',
-    body:'한은 연내 1회 추가 인하(2.25%) 기대. 원화는 달러 반등에 소폭 약세(1,373).'},
-   {name:'채권',val:'커브 스티프닝',note:'미 10년 4.76% 상단 테스트',
-    body:'인하 사이클 반영으로 단기물 강세 우위. 국내 국고채는 인하 기대로 3% 초반 안착 전망.'},
-   {name:'반도체',val:'업사이클 지속',note:'HBM 2026H2~2027',
-    body:'HBM·DDR5 수요 견조, 3사 과점 가격 협상력. 파운드리 가동률 회복이 다음 관전 포인트.'},
-   {name:'방산·우주',val:'구조적 성장',note:'수주잔고 사상 최대',
-    body:'유럽 수출 파이프라인 확대 + 우주 정책 모멘텀. 반도체와 무관한 동력이라 분산 효과.'}
+   {name:'미국 통화정책',val:'9/15~16 FOMC',note:'다음 회의 공식 일정 · SEP 동반',
+    body:'연준의 다음 FOMC는 9월 15~16일이며 경제전망(SEP)이 함께 발표된다. 금리 방향은 회의 당일 성명·점도표·기자회견에서 확인해야 하므로 사전 인하폭을 단정하지 않는다.',
+    src:'Federal Reserve FOMC calendar · 2026.08.19 업데이트',url:'https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm'},
+   {name:'한국 기준금리',val:'3.00%',note:'8/27 +25bp · 직전 2.75%',
+    body:'한국은행 금융통화위원회는 8월 27일 기준금리를 2.75%에서 3.00%로 25bp 인상했다. 물가가 목표를 웃돌 수 있고 금융안정 리스크를 계속 보겠다는 설명이 함께 제시됐다.',
+    src:'한국은행 통화정책방향 · 2026.08.27',url:'https://www.bok.or.kr/portal/bbs/P0000559/view.do?depth=200690&menuNo=200690&nttId=11064191&programType=newsData&relate=Y'},
+   {name:'한국 성장',val:'Q2 +0.6%',note:'전기비 · 전년비 +3.7%',
+    body:'한국은행 속보치 기준 2026년 2분기 실질 GDP는 전기비 0.6%, 전년동기비 3.7% 성장했다. 8월 경제전망의 2026년·2027년 성장률 기준 시나리오는 각각 3.3%, 2.9%다.',
+    src:'한국은행 GDP 속보·경제전망 · 2026.07~08',url:'https://www.bok.or.kr/eng/bbs/E0000634/view.do?depth=400423&menuNo=400423&nttId=11063106&programType=newsDataEng&relate=Y'},
+   {name:'물가·시장금리',val:'CPI 2.8%',note:'한국 7월 전년비 · 근원 2.6%',
+    body:'한국 7월 소비자물가는 전년동월비 2.8%, 식료품·에너지 제외 근원물가는 2.6% 상승했다. 미국 10년 국채금리는 8월 28일 4.68%로, 이후 금리 민감 성장주의 밸류에이션을 함께 점검할 필요가 있다.',
+    src:'국가데이터처 CPI · FRED DGS10 · 2026.08.04/08.28',url:'https://mods.go.kr/board.es?act=view&bid=11751&list_no=446339&mainXml=Y&mid=a20101000000'}
   ];
   document.getElementById('macro').innerHTML=MACRO.map(function(m){
     return '<div class="mcard feat"><div class="mc-head"><span class="mc-name">'+m.name+'</span></div>'
       +'<div class="mc-val" style="font-size:17px">'+m.val+'</div>'
       +'<div class="mc-note">'+m.note+'</div>'
-      +'<p style="margin:9px 0 0;font-size:11.5px;color:var(--ink-2);line-height:1.6">'+m.body+'</p></div>';
+      +'<p style="margin:9px 0 0;font-size:11.5px;color:var(--ink-2);line-height:1.6">'+m.body+'</p>'
+      +(m.src?'<div class="macro-src">출처 · <a href="'+m.url+'" target="_blank" rel="noopener">'+m.src+'</a></div>':'')
+      +'</div>';
   }).join('');
 
   /* ---------- P6 league table (더벨 누적 공개자료 · 사용자 제공 파일) ---------- */
@@ -1568,6 +1597,46 @@
   }
   ff.querySelectorAll('.ipo-filter').forEach(function(b){b.addEventListener('click',function(){ff.querySelectorAll('.ipo-filter').forEach(function(x){x.classList.toggle('active',x===b);});renderIpo(b.dataset.f);});});
   renderIpo('ALL');
+})();
+</script>
+<script>
+/* P5 industry navigator: existing target-price charts remain the source of truth. */
+(function(){
+  var p5=document.getElementById('p5'),tabs=document.getElementById('lt-stock-tabs');
+  if(!p5||!tabs||typeof STOCKS==='undefined')return;
+  var groups=[
+    {id:'semis',label:'반도체·AI',companies:['삼성전자','SK하이닉스','엔비디아','TSMC','브로드컴']},
+    {id:'software',label:'플랫폼·소프트웨어',companies:['마이크로소프트','알파벳','아마존','메타','오라클']},
+    {id:'power',label:'전력·인프라',companies:['두산에너빌리티','HD현대일렉트릭','효성중공업','슈나이더 일렉트릭']},
+    {id:'defense',label:'방산·우주',companies:['한화에어로스페이스','LIG넥스원','록히드마틴','RTX','노스럽 그러먼']},
+    {id:'ship',label:'조선·산업재',companies:['HD한국조선해양','한화오션','HD현대중공업','캐터필러']},
+    {id:'battery',label:'2차전지·소재',companies:['LG에너지솔루션','삼성SDI','포스코퓨처엠','에코프로비엠','CATL']},
+    {id:'mobility',label:'자동차·모빌리티',companies:['현대차','기아','테슬라','토요타']},
+    {id:'finance',label:'금융·지주',companies:['KB금융','신한지주','JPMorgan','골드만삭스']}
+  ];
+  var nav=document.createElement('div');nav.className='industry-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','중장기 전망 산업군');
+  var directory=document.createElement('div');directory.className='industry-directory';
+  var anchor=tabs.parentNode;anchor.insertBefore(nav,tabs);anchor.insertBefore(directory,tabs);tabs.style.display='none';
+  function idxFor(name){
+    var aliases={'마이크로소프트':'Microsoft','알파벳':'Alphabet','아마존':'Amazon','메타':'Meta','슈나이더 일렉트릭':'Schneider','록히드마틴':'Lockheed','노스럽 그러먼':'Northrop','HD한국조선해양':'HD현대중공업','한화오션':'한화오션','캐터필러':'Caterpillar','LG에너지솔루션':'LG에너지솔루션','삼성SDI':'삼성SDI','포스코퓨처엠':'포스코퓨처엠','에코프로비엠':'에코프로비엠','CATL':'CATL','현대차':'현대차','기아':'기아','테슬라':'Tesla','토요타':'Toyota','KB금융':'KB금융','신한지주':'신한지주','JPMorgan':'JPMorgan','골드만삭스':'Goldman'};
+    var needle=aliases[name]||name;
+    for(var i=0;i<STOCKS.length;i++){if(STOCKS[i].name===needle||STOCKS[i].name.indexOf(needle)>=0||needle.indexOf(STOCKS[i].name)>=0)return i;}
+    return -1;
+  }
+  function selectActual(idx,btn){
+    if(idx<0){directory.querySelector('.industry-status').textContent='공개 목표주가·월별 종가 데이터가 연결되면 차트와 컨센서스가 자동으로 제공됩니다. 현재 화면의 수치는 연결된 종목만 표시합니다.';return;}
+    var target=tabs.querySelector('[data-stock="'+idx+'"]');if(target)target.click();
+    directory.querySelectorAll('.industry-company').forEach(function(b){b.classList.toggle('is-selected',b===btn);});
+    directory.querySelector('.industry-status').textContent='연결된 목표주가·월별 종가 데이터: '+STOCKS[idx].name+' · 아래 차트와 컨센서스에서 확인';
+  }
+  function renderGroup(g){
+    nav.querySelectorAll('button').forEach(function(b){var on=b.dataset.industry===g.id;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});
+    directory.innerHTML='<div class="industry-directory-head"><strong>'+g.label+'</strong><span>대표기업 '+g.companies.length+'개</span></div><div class="industry-companies">'+g.companies.map(function(n){var idx=idxFor(n);return '<button type="button" class="industry-company'+(idx>=0?' is-linked':'')+'" data-company="'+n.replace(/"/g,'&quot;')+'">'+n+(idx>=0?'<small>데이터 연결</small>':'');}).join('')+'</div><div class="industry-status">주황색 표시는 현재 목표주가·종가 데이터가 연결된 기업입니다.</div>';
+    directory.querySelectorAll('.industry-company').forEach(function(b){b.addEventListener('click',function(){selectActual(idxFor(b.dataset.company),b);});});
+    var first=directory.querySelector('.industry-company.is-linked');if(first)selectActual(idxFor(first.dataset.company),first);
+  }
+  groups.forEach(function(g){var b=document.createElement('button');b.type='button';b.textContent=g.label;b.dataset.industry=g.id;b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.addEventListener('click',function(){renderGroup(g);});nav.appendChild(b);});
+  renderGroup(groups[0]);
 })();
 </script>
 <script>
