@@ -1,9 +1,10 @@
 name: daily-market-update
 
-# 매일 08:05 KST(전일 미국장 마감 반영) + 수동 실행
+# 매일 07:00 KST 시작(전일 미국장 마감 반영) → 08:00 KST 이전 완료 목표 + 수동 실행
+# GitHub 예약 실행은 10~20분 지연될 수 있어 시작을 앞당김. 소요 ~16분.
 on:
   schedule:
-    - cron: "5 23 * * *"   # 23:05 UTC = 08:05 KST
+    - cron: "0 22 * * *"   # 22:00 UTC = 07:00 KST
   workflow_dispatch:
 
 permissions:
