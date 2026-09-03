@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한화 미래전략실 · MarketView</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#FBFBFA; --surface:#FFFFFF; --raise:#F3F3F1; --raise-2:#EAEAE7;
+    --ink:#1A1A1E; --ink-2:#5B5B63; --ink-3:#94949C;
+    --hair:#E8E8E5; --hair-2:#DBDBD7;
+    --accent:#E9640A;
+    --up:#C4302B; --down:#2457C5; --flat:#8B8E95; --pos:#188A4B;
+    --glass:rgba(251,251,250,.82);
+    --radius:20px; --radius-sm:12px; --radius-pill:999px;
+    --shadow:0 1px 2px rgba(20,20,25,.04),0 8px 24px rgba(20,20,25,.055);
+    --shadow-lift:0 2px 8px rgba(20,20,25,.06),0 22px 50px rgba(20,20,25,.11);
+    --f:"Hanwha Gothic","한화고딕","HanwhaGothic","HanwhaGothicR","HanwhaB","Hanwha",
+        "Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",
+        -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E0E11; --surface:#17171B; --raise:#1C1C21; --raise-2:#24242A;
+    --ink:#F4F4F5; --ink-2:#A6A6AE; --ink-3:#6E6E77;
+    --hair:#262629; --hair-2:#323238;
+    --accent:#FF7A32;
+    --up:#FF6A5E; --down:#5E9BFF; --flat:#6E6E77; --pos:#4ECB7E;
+    --glass:rgba(14,14,17,.82);
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 32px rgba(0,0,0,.5);
+    --shadow-lift:0 2px 8px rgba(0,0,0,.5),0 24px 56px rgba(0,0,0,.6);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E0E11; --surface:#17171B; --raise:#1C1C21; --raise-2:#24242A;
+      --ink:#F4F4F5; --ink-2:#A6A6AE; --ink-3:#6E6E77;
+      --hair:#262629; --hair-2:#323238;
+      --accent:#FF7A32;
+      --up:#FF6A5E; --down:#5E9BFF; --flat:#6E6E77; --pos:#4ECB7E;
+      --glass:rgba(14,14,17,.82);
+      --shadow:0 1px 2px rgba(0,0,0,.45),0 12px 32px rgba(0,0,0,.5);
+      --shadow-lift:0 2px 8px rgba(0,0,0,.5),0 24px 56px rgba(0,0,0,.6);
+    }
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.6;
+       letter-spacing:-.006em;font-variant-numeric:tabular-nums;
+       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  [hidden]{display:none!important}
+  h1,h2,h3,h4{font-weight:650;letter-spacing:-.018em}
+  .wrap{max-width:860px;margin:0 auto;padding:0 32px}
+  @media(max-width:640px){.wrap{padding:0 18px}}
+  .lite{text-transform:none;letter-spacing:0;color:var(--ink-3);font-weight:500}
+  .kc{color:var(--accent);font-weight:750;font-size:10px;letter-spacing:.1em}
+
+  .hwmark .cls-1{fill:#F4A051} .hwmark .cls-2{fill:#F7BB82}
+  .hwmark .cls-3{fill:#ED7100} .hwmark .cls-4{fill:var(--ink)}
+
+  /* ---------- Header ---------- */
+  #hdr{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--hair)}
+  .hwrap{max-width:860px;margin:0 auto;padding:0 32px}
+  .hrow{display:flex;align-items:center;gap:20px;padding:15px 0 11px}
+  .brand{display:flex;align-items:center;gap:10px;background:0;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
+  .hw-symbol{height:23px;width:auto;flex:none}
+  .brand-1{font-size:13px;font-weight:650}
+  .brand-1 .k{color:var(--ink-3);font-weight:500;margin-left:3px}
+  .brand-2{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-top:2px}
+  .hright{margin-left:auto;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .hdate{font-size:11px;color:var(--ink-3);font-weight:500}
+  .icon-btn{background:0;border:0;color:var(--ink-3);cursor:pointer;font-size:15px;padding:2px;line-height:1}
+  .icon-btn:hover{color:var(--ink)}
+  .segs{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
+  .segs::-webkit-scrollbar{display:none}
+  .seg{position:relative;background:0;border:0;padding:11px 0;cursor:pointer;font:inherit;font-size:12.5px;
+       font-weight:600;color:var(--ink-3);white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .seg:hover{color:var(--ink-2)}
+  .seg[aria-selected="true"]{color:var(--ink)}
+  .seg[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
+  .seg-ico{width:15px;height:15px;display:block}
+  @media(max-width:640px){.hwrap{padding:0 18px}.brand-2{display:none}.hdate{display:none}}
+
+  main{padding:34px 0 90px}
+  .panel{animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+
+  .phead{margin-bottom:6px}
+  .phead h1{margin:0;font-size:27px}
+  .phead p{margin:8px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.6}
+  .slabel{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase;margin:46px 0 14px}
+
+  /* ---------- Insight ---------- */
+  .insight{margin:24px 0 6px;padding-top:15px;border-top:1.5px solid var(--ink)}
+  .insight-tag{font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--ink-3);margin-bottom:9px}
+  .insight-tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:1px;background:var(--accent);margin-right:8px;vertical-align:1px}
+  .insight p{margin:0;font-size:13.5px;line-height:1.78;color:var(--ink-2)}
+  .insight p + p{margin-top:9px}
+  .insight b{color:var(--ink);font-weight:650}
+
+  /* ---------- Metric rows ---------- */
+  .grid{border-top:1px solid var(--hair)}
+  .grid .mcard{display:flex;align-items:center;gap:18px;padding:14px 4px;border-bottom:1px solid var(--hair)}
+  .grid .mcard:hover{background:var(--raise)}
+  .mc-head{flex:1 1 auto;min-width:0;display:flex;align-items:baseline;gap:8px}
+  .mc-name{font-weight:550;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mc-tk{color:var(--ink-3);font-size:10.5px;font-weight:500;flex:none}
+  .mc-val{flex:none;width:112px;text-align:right;font-size:15px;font-weight:600}
+  .mc-unit{font-size:10px;color:var(--ink-3);margin-left:3px;font-weight:500}
+  .mc-chg{flex:none;width:120px;text-align:right;font-size:12.5px;font-weight:600}
+  .mc-note{display:none}
+  .grid .mc{flex:none;width:128px}
+  .grid .mc svg{display:block;width:100%;height:30px}
+  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)} .pos{color:var(--pos)}
+  .mc-lbl{fill:var(--ink-3);font-size:8px;font-weight:600;font-family:var(--f)}
+  .chartkey{font-size:10px;color:var(--ink-3);margin:8px 2px 0;display:flex;flex-wrap:wrap;gap:14px}
+
+  /* headline / grouped panels */
+  .grid.feat{display:grid;grid-template-columns:repeat(4,1fr);background:var(--raise);border-radius:16px}
+  .grid.feat .mcard{display:block;padding:16px 18px;border:0}
+  .grid.feat .mcard:hover{background:transparent}
+  .grid.feat .mc-head{gap:6px}
+  .grid.feat .mc-name{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600;white-space:normal;overflow:visible}
+  .grid.feat .mc-tk{display:none}
+  .grid.feat .mc-val{width:auto;text-align:left;font-size:23px;font-weight:640;margin:9px 0 2px}
+  .grid.feat .mc-chg{width:auto;text-align:left;font-size:12px}
+  .grid.feat .mc-note{display:block;font-size:10.5px;color:var(--ink-3);margin-top:3px}
+  .grid.feat .mc{width:100%;margin-top:12px}
+  .grid.feat .mc svg{height:40px}
+  #issues,#macro{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.grid.feat{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid.feat,#issues,#macro{grid-template-columns:1fr}
+    .grid .mcard{flex-wrap:wrap;gap:6px 12px}.mc-head{flex:1 1 100%}.mc-val{flex:1;width:auto;text-align:left}.grid .mc{width:100%}}
+
+  /* ---------- P1 지수·지표: 카드 그리드 구성 + 카드별 추이 시각화 (사용자 제공 파일 기준) ---------- */
+  #p1 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:0}
+  #p1 .grid.feat{grid-template-columns:repeat(2,1fr);background:transparent;border-radius:0;gap:10px}
+  #p1 .mcard{display:block;background:var(--bg);border:1px solid var(--hair);border-radius:12px;padding:13px 14px}
+  #p1 .mcard:hover{background:transparent;border-color:var(--hair-2)}
+  #p1 .grid.feat .mcard{background:var(--raise);border-color:transparent;padding:16px 17px}
+  #p1 .grid.feat .mcard:hover{background:var(--raise);border-color:transparent}
+  #p1 .mc-head{display:flex;align-items:center;gap:6px}
+  #p1 .mc-name{flex:0 1 auto;font-weight:650;font-size:12.5px;white-space:normal;overflow:visible;text-transform:none;letter-spacing:-.01em;color:var(--ink)}
+  #p1 .grid.feat .mc-name{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
+  #p1 .mc-tk{display:inline;margin-left:auto;color:var(--ink-3);font-size:10px;font-weight:500}
+  #p1 .grid.feat .mc-tk{display:none}
+  #p1 .mc-val{flex:none;width:auto;text-align:left;font-size:21px;font-weight:640;margin:7px 0 1px;letter-spacing:-.02em}
+  #p1 .grid.feat .mc-val{font-size:27px;margin:9px 0 2px}
+  #p1 .mc-unit{font-size:11px;color:var(--ink-3);margin-left:4px;font-weight:500}
+  #p1 .mc-chg{flex:none;width:auto;text-align:left;font-size:12px;font-weight:600}
+  #p1 .mc-note{display:block;font-size:10.5px;color:var(--ink-3);margin-top:3px;font-weight:500}
+  #p1 .mc{flex:none;width:100%;margin-top:9px}
+  #p1 .mc svg{display:block;width:100%;height:auto}
+  #p1 .mc-lbl.hi{fill:var(--up)}
+  #p1 .mc-lbl.lo{fill:var(--down)}
+  #p1 .mc-lbl.st{fill:var(--ink-3)}
+  @media(max-width:820px){#p1 .grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){#p1 .grid,#p1 .grid.feat{grid-template-columns:1fr}}
+
+  .tag-mock{font-size:9px;font-weight:700;letter-spacing:.03em;color:var(--ink-3);border:1px solid var(--hair-2);padding:0 4px;border-radius:4px;flex:none}
+
+  /* ---------- Tables ---------- */
+  .tscroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:460px;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--hair);white-space:nowrap}
+  thead th{font-size:10px;letter-spacing:.06em;color:var(--ink-3);font-weight:700;text-transform:uppercase;border-bottom:1px solid var(--hair-2)}
+  tbody tr:hover td{background:var(--raise)}
+  td.r,th.r{text-align:right}
+  .cell-strong{font-weight:650}
+
+  /* ---------- Calendar ---------- */
+  .cal{border-top:1px solid var(--hair)}
+  .cev{display:grid;grid-template-columns:78px 1fr;gap:18px;padding:15px 2px;border-bottom:1px solid var(--hair)}
+  .cev.key{box-shadow:inset 2px 0 0 var(--accent);padding-left:14px}
+  .cev.key .cev-date{color:var(--accent)}
+  .cev-date{font-size:12px;font-weight:650;color:var(--ink-2);line-height:1.4}
+  .cev-date span{display:block;font-size:10px;color:var(--ink-3);font-weight:500;margin-top:1px}
+  .cev-body h4{margin:0 0 4px;font-size:13.5px;font-weight:600}
+  .cev-body h4 .flag{margin-right:6px;font-size:12px}
+  .cev-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:var(--ink-3)}
+  .cev-why{margin:6px 0 0;font-size:12px;color:var(--ink-2);line-height:1.65}
+  .cev-why b{color:var(--ink)}
+  .tg{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .tg.price{color:var(--down)} .tg.rate{color:var(--accent)} .tg.job{color:var(--pos)}
+  .tg.data{color:var(--ink-3)} .tg.ipo{color:var(--up)}
+
+  /* ---------- Value chain ---------- */
+  .vc{display:flex;gap:8px;overflow-x:auto;padding:2px 0}
+  .vc-step{flex:1;min-width:170px;background:var(--raise);border-radius:14px;padding:14px;position:relative}
+  .vc-step + .vc-step::before{content:"";position:absolute;left:-9px;top:50%;width:7px;height:7px;
+    border-top:1.5px solid var(--ink-3);border-right:1.5px solid var(--ink-3);transform:translateY(-50%) rotate(45deg)}
+  .vc-stage{font-size:10.5px;font-weight:700;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:9px}
+  .vc-chips{display:flex;flex-wrap:wrap;gap:5px}
+  .vc-chip{font-size:11px;font-weight:500;background:var(--bg);border:1px solid var(--hair-2);border-radius:6px;padding:3px 7px;color:var(--ink-2)}
+  .vc-chip.ext{border-style:dashed;color:var(--ink-3)}
+
+  /* ---------- Calendar (P2) ---------- */
+  .cal-layout{display:grid;grid-template-columns:206px 1fr;gap:24px;align-items:start;margin-top:6px}
+  @media(max-width:760px){.cal-layout{grid-template-columns:1fr;gap:18px}.cal-side{position:static!important}}
+  .cal-side{position:sticky;top:78px}
+  .cal-side-head{display:flex;align-items:center;justify-content:space-between;font-weight:650;font-size:13px;margin-bottom:12px}
+  .cal-month-btn{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-2);width:26px;height:26px;border-radius:8px;cursor:pointer;font-size:13px;line-height:1}
+  .cal-month-btn[disabled]{opacity:.35;cursor:not-allowed}
+  .month-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+  .month-grid .dow{font-size:9px;color:var(--ink-3);text-align:center;padding:2px 0;font-weight:600}
+  .month-grid .day{border:0;background:0;color:var(--ink-2);font-size:11px;height:25px;border-radius:7px;cursor:pointer;font-family:inherit;position:relative}
+  .month-grid .day:hover{background:var(--raise)}
+  .month-grid .day.muted{color:var(--ink-3);opacity:.35;cursor:default}
+  .month-grid .day.has-event::after{content:"";position:absolute;left:50%;bottom:3px;transform:translateX(-50%);width:3px;height:3px;border-radius:50%;background:var(--accent)}
+  .month-grid .day.selected{background:var(--accent);color:#fff;font-weight:700}
+  .month-grid .day.selected.has-event::after{background:#fff}
+  .cal-main{min-width:0}
+  .cal-toolbar{display:flex;flex-wrap:wrap;gap:8px 12px;margin-bottom:16px}
+  .filter-set{display:flex;gap:3px;background:var(--raise);border-radius:9px;padding:3px}
+  .filter-btn{border:0;background:0;color:var(--ink-3);font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;cursor:pointer;font-family:inherit}
+  .filter-btn.active{background:var(--bg);color:var(--ink)}
+  :root[data-theme="dark"] .filter-btn.active{background:var(--raise-2)}
+  .cal-week{margin-bottom:22px}
+  .cal-week-title{font-size:11px;font-weight:700;color:var(--ink-3);margin:0 0 6px;text-transform:uppercase;letter-spacing:.04em}
+  .cal-table{overflow-x:auto;border-top:1px solid var(--hair)}
+  .cal-table-head,.cal-row{display:grid;grid-template-columns:62px minmax(180px,1fr) 90px 90px 90px 82px;align-items:center;gap:10px;padding:10px 2px;min-width:560px}
+  .cal-table-head{font-size:9px;color:var(--ink-3);font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--hair-2)}
+  .cal-row{border-bottom:1px solid var(--hair);font-size:12px}
+  .cal-row:hover{background:var(--raise)}
+  .cal-date{font-size:11px;color:var(--ink-3);font-weight:600}
+  .cal-event{display:flex;align-items:center;gap:7px;min-width:0}
+  .cal-event .flag{font-size:12px;flex:none}
+  .cal-event-name{font-weight:550;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cal-kind{font-size:9px;color:var(--ink-3);border:1px solid var(--hair-2);border-radius:4px;padding:1px 5px;flex:none}
+  .cal-num{font-size:11px;color:var(--ink-2);text-align:right}
+  .cal-source{font-size:10px;color:var(--accent);text-decoration:none;text-align:right;white-space:nowrap}
+  .cal-source:hover{text-decoration:underline}
+  .cal .empty{font-size:12px;color:var(--ink-3);padding:18px 2px}
+
+  /* ---------- P3 global ---------- */
+  .p3-nav{display:flex;gap:3px;background:var(--raise);border-radius:10px;padding:3px;margin:16px 0 4px;width:fit-content}
+  .p3-nav-btn{border:0;background:0;color:var(--ink-3);font:inherit;font-size:12.5px;font-weight:600;padding:7px 16px;border-radius:7px;cursor:pointer}
+  .p3-nav-btn.active{background:var(--bg);color:var(--ink)}
+  :root[data-theme="dark"] .p3-nav-btn.active{background:var(--raise-2)}
+  .p3-view{animation:fade .2s ease}
+  .issue-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:720px){.issue-grid{grid-template-columns:1fr}}
+  .issue-card{background:var(--raise);border-radius:14px;padding:16px 17px}
+  .issue-card .ic-top{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+  .issue-card .ic-top .pri{color:var(--accent)}
+  .issue-card h3{margin:0 0 6px;font-size:14.5px}
+  .issue-card .ic-sum{margin:0;font-size:12px;color:var(--ink-2);line-height:1.6}
+  .issue-card .ic-stat{font-size:17px;font-weight:650;margin:10px 0 8px;letter-spacing:-.02em}
+  .issue-card .ic-meta{font-size:11px;color:var(--ink-3);line-height:1.7}
+  .issue-card .ic-meta b{color:var(--ink-2);font-weight:600;margin-right:5px}
+  .issue-card .ic-impact{margin-top:9px;padding-top:9px;border-top:1px solid var(--hair-2);font-size:11.5px;color:var(--ink-2);line-height:1.6}
+  .issue-card .ic-impact strong{color:var(--ink);font-weight:650}
+  .chain-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .chain-tab{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);font:inherit;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer}
+  .chain-tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .chain-context{font-size:12px;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
+  .chain-kicker{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:8px}
+  .vc-global .vc-chip{font-size:10.5px}
+  .exposure-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:720px){.exposure-list{grid-template-columns:1fr}}
+  .exposure-item{background:var(--raise);border-radius:12px;padding:13px 14px}
+  .exposure-item strong{font-size:13px;font-weight:650}
+  .exposure-item p{margin:5px 0 7px;font-size:11.5px;color:var(--ink-2);line-height:1.6}
+  .exposure-item a{font-size:10.5px;color:var(--accent);text-decoration:none}
+  .exposure-item a:hover{text-decoration:underline}
+  .ipo-filters{display:flex;flex-wrap:wrap;gap:3px;background:var(--raise);border-radius:9px;padding:3px;width:fit-content;margin-bottom:14px}
+  .ipo-filter{border:0;background:0;color:var(--ink-3);font:inherit;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:5px 11px;border-radius:6px;cursor:pointer}
+  .ipo-filter.active{background:var(--bg);color:var(--ink)}
+  :root[data-theme="dark"] .ipo-filter.active{background:var(--raise-2)}
+  .ipo-table{min-width:660px}
+  .ipo-table .company{font-weight:650}
+  .ipo-table td{white-space:nowrap}
+  .ipo-table td.keyissue{white-space:normal;color:var(--ink-3);font-size:11.5px}
+  .ipo-badge{font-size:9px;font-weight:700;letter-spacing:.04em;padding:2px 6px;border-radius:4px}
+  .ipo-badge.listed{background:#E7F6EC;color:var(--pos)}
+  .ipo-badge.upcoming{background:var(--raise-2);color:var(--accent)}
+  .ipo-badge.filed{background:var(--raise-2);color:var(--ink-3)}
+  :root[data-theme="dark"] .ipo-badge.listed{background:#16301F;color:var(--pos)}
+  .chart-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+  .chart-trigger{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);border-radius:6px;padding:3px 8px;font:inherit;font-size:10px;font-weight:600;cursor:pointer}
+  .chart-trigger.active,.chart-trigger:hover{border-color:var(--accent);color:var(--accent)}
+  .trend-viewer{background:var(--raise);border-radius:14px;padding:16px;margin:16px 0 4px}
+  .tv-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+  .tv-head strong{font-size:14px}
+  .tv-head span{font-size:11px;color:var(--ink-3)}
+  .tv-close{margin-left:auto;border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);font:inherit;font-size:10px;font-weight:700;padding:4px 9px;border-radius:6px;cursor:pointer}
+  .period-tabs{display:flex;gap:4px;margin-bottom:10px}
+  .period-tab{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);font:inherit;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;cursor:pointer}
+  .period-tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .tv-stats{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:var(--ink-2);margin-bottom:8px}
+  .tv-stats b{color:var(--ink-3);margin-right:3px}
+  .tv-stats .pos{color:var(--up);font-weight:700} .tv-stats .neg{color:var(--down);font-weight:700}
+  .trend-chart{width:100%;height:148px;display:block}
+  .trend-chart text{font-family:var(--f);font-size:10px;fill:var(--ink-3)}
+  .trend-chart .gl{stroke:var(--hair);stroke-width:1}
+  .trend-chart .avg{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 4;opacity:.7}
+  .trend-chart .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .trend-chart .ar{fill:var(--accent);opacity:.1}
+  .trend-chart .bu{fill:var(--up);opacity:.75} .trend-chart .bd{fill:var(--down);opacity:.75}
+  .trend-chart .dt{fill:var(--accent)}
+  .tv-src{font-size:10px;color:var(--ink-3);margin-top:5px}
+
+  /* ---------- P5 중장기 (목표주가 차트 + 컨센서스) ---------- */
+  .lt-stock-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px}
+  .lt-stock-tab{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);border-radius:8px;padding:6px 12px;font:inherit;font-size:11.5px;font-weight:600;cursor:pointer}
+  .lt-stock-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .lt-chartbox{background:var(--raise);border-radius:14px;padding:16px;margin-top:12px}
+  .lt-chartbox.is-hidden{display:none}
+  .lt-chart-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .lt-chart-head h3{margin:0;font-size:13.5px;font-weight:650}
+  .lt-chart-head p{margin:0;color:var(--ink-3);font-size:10.5px}
+  .lt-chart{margin-top:10px;overflow-x:auto}
+  .lt-chart svg{display:block;width:100%;height:auto;min-height:200px}
+  .lt-chart text{font-family:var(--f)}
+  .lt-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:10.5px;color:var(--ink-2)}
+  .lt-key{display:inline-flex;align-items:center;gap:5px}
+  .lt-key i{display:inline-block;width:16px;height:0;border-top:2px solid var(--flat)}
+  .lt-key i.actual{border-top-style:solid;border-color:var(--flat)}
+  .lt-key i.m1{border-top:2px dotted var(--down)} .lt-key i.m3{border-top:2px dotted #16A36A} .lt-key i.m12{border-top:2px dotted var(--up)}
+  .lt-targets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  @media(max-width:560px){.lt-targets{grid-template-columns:1fr}}
+  .lt-target{border-radius:8px;padding:7px 9px;font-size:10.5px;font-weight:650}
+  .lt-target b{display:block;font-size:12px;margin-top:1px}
+  .lt-target.m1{background:var(--down-wash,rgba(36,87,197,.1));color:var(--down)}
+  .lt-target.m3{background:rgba(22,163,106,.12);color:#16884f}
+  .lt-target.m12{background:var(--up-wash,rgba(196,48,43,.1));color:var(--up)}
+  #p5 .consrow{padding:0;overflow:hidden;background:var(--raise);border:0;border-radius:14px}
+  #p5 .cons{display:grid;gap:12px;border:0}
+  .cons-visual{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;padding:15px 16px}
+  @media(max-width:760px){.cons-visual{grid-template-columns:1fr}}
+  .cons-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .cons-title h4{margin:0;font-size:14.5px}
+  .cons-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+  @media(max-width:760px){.cons-metrics{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:480px){.cons-metrics{grid-template-columns:1fr 1fr}}
+  .cons-metric{background:var(--bg);border:1px solid var(--hair);border-radius:8px;padding:7px 8px}
+  .cons-metric span{display:block;font-size:9px;color:var(--ink-3);font-weight:700}
+  .cons-metric b{display:block;font-size:12px;margin-top:2px}
+  .price-range{align-self:center}
+  .range-head{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink-3);font-weight:600}
+  .range-track{height:10px;background:var(--bg);border:1px solid var(--hair);border-radius:999px;position:relative;margin:12px 4px 7px}
+  .range-now{position:absolute;top:-4px;width:3px;height:18px;background:var(--accent);border-radius:3px}
+  .range-now::after{content:"현재";position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--accent);font-weight:700;white-space:nowrap}
+  .range-labels{display:flex;justify-content:space-between;font-size:10px;font-weight:650}
+  .range-caption{margin-top:9px;font-size:10.5px;color:var(--ink-3);line-height:1.55}
+  .range-caption b{color:var(--ink-2)}
+  #p5 .consrow .why{margin:0;padding:12px 16px 14px;border-top:1px solid var(--hair-2);background:var(--bg);font-size:12px;color:var(--ink-2);line-height:1.7}
+  #p5 .consrow .why b{color:var(--ink);font-weight:650}
+  .consrow.is-hidden{display:none}
+  .updelta{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+
+  /* ---------- P6 league table ---------- */
+  .lt-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
+  .lt-lbl{font-size:11px;color:var(--ink-3);font-weight:600}
+  .lt-filter,.lt-mode{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-2);border-radius:8px;padding:6px 11px;cursor:pointer;font:inherit;font-size:11.5px;font-weight:600}
+  .lt-filter.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .lt-mode.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .lt-sep{width:1px;height:20px;background:var(--hair-2);margin:0 2px}
+  #lt-single-year{border:1px solid var(--hair-2);border-radius:7px;background:var(--bg);color:var(--ink);padding:6px 9px;font:inherit;font-size:11.5px}
+  .lt-year{font-size:11.5px;color:var(--ink-2);display:inline-flex;align-items:center;gap:4px}
+  #lt-search{margin-left:auto;min-width:180px;padding:8px 11px;border:1px solid var(--hair-2);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:12px}
+  .lt-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+  .lt-summary .metric{background:var(--raise);border-radius:10px;padding:12px 13px}
+  .lt-summary .metric-k{font-size:10.5px;color:var(--ink-3);font-weight:600}
+  .lt-summary .metric-v{font-size:16px;font-weight:650;margin-top:5px}
+  .lt-summary .metric-s{font-size:10.5px;color:var(--ink-3);margin-top:3px}
+  .lt-chart-card{background:var(--raise);border-radius:14px;padding:15px;margin:12px 0 18px}
+  .lt-chart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12.5px;font-weight:650}
+  .lt-chart-head span{font-size:10.5px;color:var(--ink-3);font-weight:500}
+  .lt-chart{width:100%;overflow-x:auto}
+  .lt-chart svg{display:block;min-width:820px;width:100%;height:400px}
+  .lt-chart text{font-family:var(--f);fill:var(--ink-2);font-size:11px}
+  .lt-chart .axis{stroke:var(--hair);stroke-width:1}
+  .lt-legend,.lt-pie-note{font-size:10px;color:var(--ink-3);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+  .lt-legend .lt-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .lt-tooltip{position:fixed;z-index:40;pointer-events:none;background:var(--ink);color:var(--bg);border-radius:7px;padding:7px 10px;font-size:11px;line-height:1.5;white-space:nowrap}
+  .lt-change-summary{margin:0 0 18px;background:var(--raise);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;padding:14px}
+  .lt-change-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:11px}
+  .lt-change-head b{font-size:12.5px} .lt-change-head span{font-size:10.5px;color:var(--ink-3)}
+  .lt-change-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:620px){.lt-change-grid{grid-template-columns:1fr}}
+  .lt-change-col{background:var(--bg);border:1px solid var(--hair);border-radius:9px;padding:11px}
+  .lt-change-col h4{font-size:11.5px;margin:0 0 8px}
+  .lt-change-item{display:grid;grid-template-columns:20px 1fr auto;gap:7px;align-items:center;padding:7px 0;border-top:1px solid var(--hair);font-size:11.5px}
+  .lt-change-item:first-of-type{border-top:0}
+  .lt-change-rank{color:var(--ink-3)}
+  .lt-change-val{text-align:right;font-weight:700}
+  .lt-change-val.up{color:var(--up)} .lt-change-val.down{color:var(--down)}
+  .lt-change-val small{display:block;font-size:9.5px;font-weight:500;margin-top:2px;color:var(--ink-3)}
+  .lt-block{margin:16px 0 22px}
+  .lt-block-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:13px;font-weight:650}
+  .lt-block-head span{font-size:10.5px;color:var(--ink-3);font-weight:500}
+  #p6 td a{color:var(--accent);font-size:11px;text-decoration:none}
+  #p6 td a:hover{text-decoration:underline}
+
+  /* ---------- IPO ---------- */
+  .ipo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:800px){.ipo{grid-template-columns:1fr}}
+  .ipocard{background:var(--raise);border-radius:16px;padding:18px 19px}
+  .ipocard-h{display:flex;align-items:baseline;gap:10px;margin-bottom:3px}
+  .ipocard-h h4{margin:0;font-size:16px}
+  .st{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .st.done{color:var(--pos)} .st.soon{color:var(--accent)} .st.file{color:var(--ink-3)}
+  .ipocard .meta{font-size:11px;color:var(--ink-3);font-weight:500;margin-bottom:11px}
+  .ipocard dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px}
+  .ipocard dt{color:var(--ink-3);font-weight:600}
+  .ipocard dd{margin:0;color:var(--ink)}
+  .ipocard .impact{margin-top:12px;padding-top:11px;border-top:1px solid var(--hair-2);font-size:12px;color:var(--ink-2);line-height:1.7}
+  .ipocard .impact b{color:var(--ink);font-weight:650}
+
+  /* ---------- Flow ---------- */
+  .flowgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:760px){.flowgrid{grid-template-columns:1fr;gap:22px}}
+  .fbox h4{margin:0 0 14px;font-size:13px;font-weight:650}
+  .dbar-axis{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink-3);font-weight:600;margin-bottom:9px}
+  .dbars{display:grid;gap:10px}
+  .dbar-row,.tb-row{display:grid;align-items:center;gap:10px}
+  .dbar-row{grid-template-columns:56px 1fr 92px}
+  .tb-row{grid-template-columns:112px 1fr 96px;margin:9px 0}
+  .dbar-k,.tb-k{font-size:11.5px;font-weight:600;color:var(--ink-2)}
+  .dbar-track{position:relative;height:18px;background:var(--raise-2);border-radius:5px}
+  .dbar-zero{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--hair-2)}
+  .dbar-fill{position:absolute;top:3px;bottom:3px;border-radius:3px}
+  .dbar-fill.b{background:var(--up)} .dbar-fill.s{background:var(--down)}
+  .dbar-v{font-size:11.5px;font-weight:650;text-align:right}
+  .fnote{font-size:10.5px;color:var(--ink-3);margin-top:12px;line-height:1.55}
+  .memo{border-top:1px solid var(--hair)}
+  .memo-item{padding:13px 2px;border-bottom:1px solid var(--hair);display:grid;grid-template-columns:150px 1fr;gap:16px}
+  .memo-item b{font-weight:650;font-size:13px}
+  .memo-item span{font-size:12px;color:var(--ink-2);line-height:1.6}
+  @media(max-width:620px){.memo-item{grid-template-columns:1fr;gap:3px}}
+
+  /* ---------- Consensus ---------- */
+  .cons{border-top:1px solid var(--hair)}
+  .consrow{padding:20px 2px;border-bottom:1px solid var(--hair)}
+  .consrow-h{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+  .consrow-h h4{margin:0;font-size:16px}
+  .updelta{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+  .consrow-kv{display:flex;flex-wrap:wrap;gap:5px 20px;font-size:11.5px;color:var(--ink-3);font-weight:500}
+  .consrow-kv b{color:var(--ink);font-weight:650;font-size:12px;margin-left:5px}
+  .cons-db{max-width:320px;margin:12px 0 2px}
+  .cons-db svg{display:block;width:100%;height:34px}
+  .kv-tgt{font-size:11.5px;color:var(--ink-3);font-weight:500;margin-top:6px}
+  .kv-tgt b{color:var(--ink);font-weight:600}
+  .consrow .why{margin:12px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.75}
+  .consrow .why b{color:var(--ink);font-weight:650}
+
+  .disc{font-size:11px;color:var(--ink-3);border-left:2px solid var(--hair-2);padding:2px 0 2px 13px;margin:16px 0;line-height:1.65}
+  .disc b{color:var(--ink-2);font-weight:600}
+
+  /* ---------- Home ---------- */
+  .hero{padding:52px 0 8px}
+  .hero-mark{height:30px;width:auto;display:block;margin-bottom:22px}
+  .hero h1{margin:0;font-size:32px;line-height:1.15;font-weight:660;letter-spacing:-.03em}
+  .hero h1 .en{color:var(--accent)}
+  .hero-sub{margin:13px 0 0;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .hero-desc{margin:14px 0 0;font-size:14px;color:var(--ink-2);line-height:1.6}
+  .snap{display:grid;grid-template-columns:repeat(6,1fr);background:var(--raise);border-radius:16px;margin-top:30px;overflow:hidden}
+  .snap-item{padding:14px 12px;min-width:0;overflow:hidden}
+  .snap-item .k{font-size:10px;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .snap-item .v{font-size:15.5px;font-weight:640;margin-top:6px;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .snap-item .p{font-size:10.5px;font-weight:600;margin-top:3px;white-space:nowrap}
+  .snap-item .db{margin-top:9px}
+  .snap-item .db svg{display:block;width:100%;height:22px;overflow:visible}
+  @media(max-width:720px){.snap{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:420px){.snap{grid-template-columns:repeat(2,1fr)}}
+  .home-h{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase;margin:44px 0 4px}
+  .navlist{border-top:1px solid var(--hair)}
+  .navcard{display:flex;align-items:center;gap:20px;width:100%;text-align:left;background:0;border:0;
+           border-bottom:1px solid var(--hair);padding:20px 6px;cursor:pointer;font:inherit;color:inherit}
+  .navcard:hover{background:var(--raise)}
+  .navcard .nc-n{font-size:11px;color:var(--ink-3);font-weight:600;width:22px;flex:none}
+  .navcard .nc-body{flex:1;min-width:0}
+  .navcard h3{margin:0 0 3px;font-size:16px;font-weight:600}
+  .navcard p{margin:0;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+  .navcard .nc-go{color:var(--ink-3);font-size:22px;line-height:1;transition:transform .14s ease,color .14s ease}
+  .navcard:hover .nc-go{transform:translateX(4px);color:var(--accent)}
+
+  footer{border-top:1px solid var(--hair);margin-top:72px}
+  .foot{max-width:860px;margin:0 auto;padding:24px 32px 40px;font-size:11px;color:var(--ink-3);line-height:1.75}
+  .foot b{color:var(--ink-2);font-weight:600}
+  .foot-src{display:flex;flex-wrap:wrap;gap:4px 16px;margin:8px 0}
+
+  /* ============================================================
+     Revolut-inspired redesign — neutral premium · light/dark equal
+     (source-order overrides; every class hook above is preserved)
+     ============================================================ */
+  body{font-size:14.5px;letter-spacing:-.01em}
+  .wrap,.hwrap,.foot{max-width:920px}
+
+  #hdr{background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid var(--hair)}
+  .hrow{padding:16px 0 12px}
+  .brand-1{font-size:13.5px;font-weight:700;letter-spacing:-.01em}
+  .brand-2{color:var(--accent);font-weight:700}
+  .hw-symbol{height:24px}
+  .hdate{font-size:11px;font-weight:600}
+  .icon-btn{width:34px;height:34px;border-radius:12px;border:1px solid var(--hair-2);background:var(--raise);display:inline-flex;align-items:center;justify-content:center;font-size:14px;transition:background .18s,color .18s}
+  .icon-btn:hover{background:var(--raise-2);color:var(--ink)}
+  .segs{gap:4px;background:var(--raise);border:1px solid var(--hair);border-radius:var(--radius-pill);padding:4px;margin-bottom:12px}
+  .seg{padding:8px 15px;border-radius:var(--radius-pill);font-size:12.5px;font-weight:650;transition:background .18s,color .18s,box-shadow .18s}
+  .seg[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+  .seg[aria-selected="true"]::after{display:none}
+
+  main{padding:30px 0 96px}
+  .panel{animation:fade .24s cubic-bezier(.2,.7,.2,1)}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .phead h1{font-size:26px;letter-spacing:-.03em;font-weight:750}
+  .phead p{font-size:12.5px;margin-top:9px}
+  .slabel{font-size:10.5px;font-weight:750;letter-spacing:.12em;margin:38px 0 14px;display:flex;align-items:center;gap:10px}
+  .slabel::after{content:"";flex:1;height:1px;background:var(--hair)}
+
+  .insight{border:1px solid var(--hair);border-top:1px solid var(--hair);background:var(--surface);border-radius:var(--radius);padding:16px 18px;margin:18px 0 6px;box-shadow:var(--shadow)}
+  .insight-tag{color:var(--accent);font-weight:750;letter-spacing:.1em;text-transform:uppercase;font-size:10px}
+  .insight-tag::before{width:5px;height:5px;border-radius:999px}
+  .insight p{font-size:13px;line-height:1.72}
+
+  .grid.feat{background:transparent;border-radius:0;gap:12px}
+  .grid.feat .mcard{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:16px 17px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+  .grid.feat .mcard:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+
+  #p1 .grid,#p1 .grid.feat{gap:12px}
+  #p1 .mcard{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+  #p1 .mcard:hover{background:var(--surface);border-color:var(--hair);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+  #p1 .grid.feat .mcard{background:var(--surface);border-color:var(--hair)}
+  #p1 .grid.feat .mcard:hover{background:var(--surface)}
+
+  .tscroll{overflow-x:auto;border:1px solid var(--hair);border-radius:var(--radius-sm);background:var(--surface);box-shadow:var(--shadow)}
+  th,td{padding:12px 14px}
+  thead th{background:var(--raise);letter-spacing:.08em}
+  tbody tr:last-child td{border-bottom:0}
+
+  .cal{border-top:0;display:grid;gap:8px}
+  .cev{border:1px solid var(--hair);background:var(--surface);border-radius:var(--radius-sm);padding:14px 15px;box-shadow:var(--shadow)}
+  .cev.key{box-shadow:var(--shadow);border-left:3px solid var(--accent);padding-left:14px}
+
+  .vc-step,.issue-card,.exposure-item,.trend-viewer,.lt-chartbox,.lt-chart-card,.ipocard{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .lt-change-summary,.lt-summary .metric{background:var(--surface);border:1px solid var(--hair)}
+  #p5 .consrow{background:var(--surface);border:1px solid var(--hair);box-shadow:var(--shadow);border-radius:var(--radius)}
+
+  .p3-nav,.filter-set,.ipo-filters{border-radius:var(--radius-pill);padding:4px;border:1px solid var(--hair)}
+  .p3-nav-btn,.filter-btn,.ipo-filter{border-radius:var(--radius-pill)}
+  .p3-nav-btn.active,.filter-btn.active,.ipo-filter.active{background:var(--raise-2);color:var(--ink);box-shadow:var(--shadow)}
+  .chain-tab,.lt-stock-tab,.lt-filter,.lt-mode,.period-tab,.chart-trigger,.tv-close,.cal-month-btn{border-radius:var(--radius-pill)}
+
+  .hero{padding:44px 0 4px}
+  .hero h1{font-size:34px;letter-spacing:-.035em;font-weight:780;line-height:1.12}
+  .hero-sub{color:var(--accent);letter-spacing:.14em}
+  .hero-desc{font-size:13.5px}
+  .snap{background:transparent;gap:10px;border-radius:0;overflow:visible}
+  .snap-item{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 14px;box-shadow:var(--shadow)}
+  .home-h{font-size:10.5px;font-weight:750;letter-spacing:.12em;margin:40px 0 12px}
+  .navlist{border-top:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.navlist{grid-template-columns:1fr}}
+  .navcard{border:1px solid var(--hair);background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);gap:14px;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .navcard:hover{background:var(--surface);transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--hair-2)}
+  .navcard h3{font-size:15.5px;font-weight:700}
+  .navcard .nc-go{transition:transform .18s,color .18s}
+
+  .today{margin-top:24px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .today::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent)}
+  .today .t-tag{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:7px;margin-bottom:9px}
+  .today .t-tag::before{content:"";width:5px;height:5px;border-radius:999px;background:var(--accent)}
+  .today p{margin:0;font-size:14px;line-height:1.72;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+  .today p b{color:var(--accent);font-weight:750}
+
+  footer{border-top:1px solid var(--hair);margin-top:80px;background:var(--raise)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="hwrap">
+    <div class="hrow">
+      <button class="brand" id="brandHome" title="메인으로">
+        <svg class="hwmark hw-symbol" xmlns="http://www.w3.org/2000/svg" viewBox="38 1 62 56" role="img" aria-label="Hanwha">
+          <path class="cls-2" d="M59.07,29.06c-.81-7.37,6.92-13.28,17.26-13.2,10.34,.08,19.38,6.12,20.19,13.48,.82,7.37-6.9,13.28-17.25,13.2-10.34-.08-19.39-6.11-20.2-13.48m39.37,2.29c-.94-9.14-11.34-16.62-23.24-16.73-11.91-.1-20.79,7.23-19.86,16.37,.93,9.14,11.34,16.63,23.24,16.73,11.9,.1,20.8-7.23,19.86-16.37"/>
+          <path class="cls-1" d="M80.48,47.9c-5.86,6.13-15.27,6.63-21.01,1.14-5.75-5.5-5.65-14.92,.21-21.05,5.86-6.12,15.27-6.63,21.02-1.13,5.74,5.5,5.64,14.92-.22,21.04m-21.72-20.1c-6.81,7.12-6.92,18.07-.25,24.46,6.68,6.39,17.62,5.8,24.43-1.32,6.82-7.12,6.93-18.07,.25-24.46-6.67-6.39-17.61-5.8-24.43,1.32"/>
+          <path class="cls-3" d="M59.38,4.88c12.2-4.57,24.25,.05,26.93,10.33,2.69,10.27-5.03,22.3-17.22,26.87-12.2,4.57-24.25-.06-26.93-10.32-2.68-10.27,5.03-22.3,17.22-26.87m-11.32,3.93c-12.65,10.02-15.87,24.53-7.2,32.41,8.68,7.88,25.97,6.16,38.62-3.86,12.65-10.01,15.88-24.53,7.19-32.41-8.68-7.89-25.97-6.16-38.61,3.86"/>
+        </svg>
+        <span class="brand-txt">
+          <span class="brand-1">Hanwha · 미래전략실</span>
+          <span class="brand-2">MarketView</span>
+        </span>
+      </button>
+      <div class="hright">
+        <span class="hdate">2026.09.03 기준</span>
+        <button class="icon-btn" id="themeBtn" aria-label="테마 전환">◐</button>
+      </div>
+    </div>
+    <nav class="segs" id="segs" role="tablist">
+      <button class="seg" role="tab" aria-selected="true" data-p="home" aria-label="홈">
+        <svg class="seg-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.6 12 3l9 7.6"/><path d="M5.4 9.4V20h13.2V9.4"/><path d="M9.6 20v-5.2h4.8V20"/></svg>
+      </button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p1">지수·지표</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p2">증시 캘린더</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p3">글로벌·IPO</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p4">전일 수급</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p5">중장기 전망</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p6">리그테이블</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============= HOME ============= -->
+  <section class="panel" id="home" role="tabpanel">
+    <div class="hero">
+      <svg class="hwmark hero-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.47 87.83" role="img" aria-label="Hanwha 한화">
+        <path class="cls-2" d="M59.07,29.06c-.81-7.37,6.92-13.28,17.26-13.2,10.34,.08,19.38,6.12,20.19,13.48,.82,7.37-6.9,13.28-17.25,13.2-10.34-.08-19.39-6.11-20.2-13.48m39.37,2.29c-.94-9.14-11.34-16.62-23.24-16.73-11.91-.1-20.79,7.23-19.86,16.37,.93,9.14,11.34,16.63,23.24,16.73,11.9,.1,20.8-7.23,19.86-16.37"/>
+        <path class="cls-1" d="M80.48,47.9c-5.86,6.13-15.27,6.63-21.01,1.14-5.75-5.5-5.65-14.92,.21-21.05,5.86-6.12,15.27-6.63,21.02-1.13,5.74,5.5,5.64,14.92-.22,21.04m-21.72-20.1c-6.81,7.12-6.92,18.07-.25,24.46,6.68,6.39,17.62,5.8,24.43-1.32,6.82-7.12,6.93-18.07,.25-24.46-6.67-6.39-17.61-5.8-24.43,1.32"/>
+        <path class="cls-3" d="M59.38,4.88c12.2-4.57,24.25,.05,26.93,10.33,2.69,10.27-5.03,22.3-17.22,26.87-12.2,4.57-24.25-.06-26.93-10.32-2.68-10.27,5.03-22.3,17.22-26.87m-11.32,3.93c-12.65,10.02-15.87,24.53-7.2,32.41,8.68,7.88,25.97,6.16,38.62-3.86,12.65-10.01,15.88-24.53,7.19-32.41-8.68-7.89-25.97-6.16-38.61,3.86"/>
+        <g>
+          <path class="cls-4" d="M20.54,65.15v22.67h-3.55v-11.96H3.55v11.96H0v-22.67H3.55v7.61h13.44v-7.61h3.55Z"/>
+          <path class="cls-4" d="M29.07,87.83c-1.66,0-2.97-.46-3.94-1.39-.99-.93-1.48-2.12-1.48-3.58v-1.21c0-1.48,.49-2.68,1.48-3.61,.97-.95,2.28-1.42,3.94-1.42h9.26v-.09c0-1.82-1-2.72-2.99-2.72h-10.3v-3.02h10.24c2.13,0,3.76,.54,4.88,1.63,1.14,1.05,1.72,2.57,1.72,4.56v6.01c0,1.54-.52,2.75-1.57,3.64-.95,.81-2.28,1.21-4,1.21h-7.25Zm6.48-8.2h-5.62c-1.82,0-2.72,.77-2.72,2.31v.56c0,1.52,.91,2.28,2.72,2.28h5.62c1.85,0,2.78-.76,2.78-2.28v-.56c0-1.54-.93-2.31-2.78-2.31Z"/>
+          <path class="cls-4" d="M52.27,70.78h3.49c2.21,0,3.95,.64,5.21,1.92,1.26,1.28,1.89,3.07,1.89,5.36v9.77h-3.55v-9.59c0-1.42-.28-2.46-.83-3.11-.69-.85-1.69-1.27-2.99-1.27h-3.02c-1.26,0-2.25,.42-2.96,1.27-.51,.65-.77,1.69-.77,3.11v9.59h-3.55v-9.77c0-2.29,.63-4.07,1.89-5.36,1.26-1.28,2.99-1.92,5.18-1.92Z"/>
+          <path class="cls-4" d="M79.24,85.55c-1.26,1.52-2.83,2.28-4.71,2.28h-2.19c-1.97,0-3.54-.62-4.71-1.86-1.11-1.16-1.66-2.81-1.66-4.94v-10.24h3.52v10.27c0,1.24,.27,2.15,.8,2.72,.61,.65,1.41,.98,2.4,.98h1.54c1.01,0,1.82-.33,2.43-.98,.55-.57,.83-1.48,.83-2.72v-10.27h3.49v10.27c0,1.24,.27,2.15,.8,2.72,.61,.65,1.41,.98,2.4,.98h1.54c1.01,0,1.82-.33,2.43-.98,.55-.57,.83-1.48,.83-2.72v-10.27h3.52v10.24c0,2.13-.57,3.78-1.72,4.94-1.17,1.24-2.74,1.86-4.74,1.86h-2.16c-1.84,0-3.38-.76-4.65-2.28Z"/>
+          <path class="cls-4" d="M102.92,73.86c-1.26,0-2.25,.42-2.96,1.27-.51,.65-.77,1.69-.77,3.11v9.59h-3.55v-22.73h3.55v6.72c1.03-.69,2.2-1.04,3.52-1.04h3.49c2.21,0,3.95,.64,5.21,1.92s1.89,3.07,1.89,5.36v9.77h-3.55v-9.59c0-1.42-.28-2.46-.83-3.11-.69-.85-1.69-1.27-2.99-1.27h-3.02Z"/>
+          <path class="cls-4" d="M121.66,87.83c-1.66,0-2.97-.46-3.94-1.39-.99-.93-1.48-2.12-1.48-3.58v-1.21c0-1.48,.49-2.68,1.48-3.61,.97-.95,2.28-1.42,3.94-1.42h9.26v-.09c0-1.82-1-2.72-2.99-2.72h-10.3v-3.02h10.24c2.13,0,3.76,.54,4.88,1.63,1.14,1.05,1.72,2.57,1.72,4.56v6.01c0,1.54-.52,2.75-1.57,3.64-.95,.81-2.28,1.21-4,1.21h-7.25Zm6.48-8.2h-5.62c-1.82,0-2.72,.77-2.72,2.31v.56c0,1.52,.91,2.28,2.72,2.28h5.62c1.85,0,2.78-.76,2.78-2.28v-.56c0-1.54-.93-2.31-2.78-2.31Z"/>
+        </g>
+      </svg>
+      <h1>글로벌 시장을 <span class="en">한 화면</span>에</h1>
+      <div class="hero-sub">MarketView&nbsp;·&nbsp;마켓뷰 에이전트</div>
+      <p class="hero-desc">매일 아침 글로벌 시장을 한 화면에 정리하고, 미래전략실 관점의 인사이트를 더합니다.</p>
+    </div>
+
+    <div class="today">
+      <div class="t-tag">오늘의 인사이트</div>
+      <p>위험·안전자산 동반 상승 = <b>현금가치 하락 국면</b>. 인하 사이클에도 미 장기금리 4.8% 고착 — 방향은 <b>9월 FOMC 점도표</b>가 결정, 그 전까지 지수 상단 눌림.</p>
+    </div>
+
+    <div class="snap" id="snap"></div>
+    <div style="font-size:10.5px;color:var(--ink-3);margin-top:8px">기준 2026.09.03 · 각 시장의 최근 거래일 종가 (미국은 노동절 휴장으로 8/29)</div>
+
+    <div class="home-h">세부 기능</div>
+    <div class="navlist" id="navlist"></div>
+  </section>
+
+  <!-- ============= P1 ============= -->
+  <section class="panel" id="p1" role="tabpanel" hidden>
+    <div class="phead"><h1>지수·지표 대시보드</h1>
+      <p>국내외 지수 · 원자재 · 환율 · 채권 금리 &nbsp;|&nbsp; 색상: 상승 <b class="up">■</b> / 하락 <b class="down">■</b> (한국식) &nbsp;|&nbsp; 각 카드에 시작·기간고점·기간저점·현재값 표기</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-tag">미래전략실 인사이트</div>
+      <p>금 +2.5%·은 +2.3%·구리 +1.8% 동반 강세 + 달러인덱스 99.2 = <b>통화가치 헤지 국면 지속</b><br>미 장기금리 10년 4.80%·5년 4.55% 고수준 유지로 성장주 듀레이션 압박<br>KOSPI 6,579로 되돌림(기간 고점 6,820 대비 −3.5%), 엔화 하루 −2.5% 급강세로 엔캐리 되돌림 경계</p>
+      <p>위험·안전자산 동반 상승은 현금가치 하락 신호<br><b>9/16 FOMC 점도표 전까지 지수 상단이 눌리는 고변동 장세</b></p>
+    </div>
+
+    <div class="slabel">헤드라인</div>
+    <div class="grid feat" id="g-feat"></div>
+    <div class="slabel">국내외 주요 지수</div>
+    <div class="grid" id="g-idx"></div>
+    <div class="slabel">원자재</div>
+    <div class="grid" id="g-com"></div>
+    <div class="slabel">환율</div>
+    <div class="grid" id="g-fx"></div>
+    <div class="slabel">채권 금리 <span class="lite">·변화폭 단위 bp</span></div>
+    <div class="grid" id="g-rate"></div>
+    <div class="disc"><b>데이터</b> 지수·원자재·환율·미 국채금리(30/10/5Y) 모두 Yahoo Finance 2026-08-31 종가 실측. 수집 미지원(국내 금리 등) 항목은 표기하지 않음.</div>
+  </section>
+
+  <!-- ============= P2 ============= -->
+  <section class="panel" id="p2" role="tabpanel" hidden>
+    <div class="phead"><h1>증시 캘린더</h1><p>2026년 6~10월 · 거시지표 + 한국·미국 기업 실적 · 예상 / 실제 / 이전값 분리 · KST</p></div>
+    <div class="insight">
+      <div class="insight-tag">미래전략실 인사이트</div>
+      <p>고용(4일)·CPI(11일)·FOMC(15~16일) 3주가 9월 금리 경로 점검<br>발표 전 예상치·이전값, 발표 후 실제치·서프라이즈 분리 기록<br>기업 실적은 EPS 예상 대비 서프라이즈 우선 확인, 미공개는 ‘—’<br>단일 이벤트보다 3개월 추세·revision 병행</p>
+    </div>
+    <div class="cal-layout">
+      <aside class="cal-side" aria-label="월간 달력">
+        <div class="cal-side-head"><button class="cal-month-btn" id="cal-prev" aria-label="이전 달">‹</button><span id="cal-month-label">2026년 9월</span><button class="cal-month-btn" id="cal-next" aria-label="다음 달">›</button></div>
+        <div class="month-grid" id="month-grid"></div>
+      </aside>
+      <div class="cal-main">
+        <div class="cal-toolbar" aria-label="캘린더 필터">
+          <div class="filter-set" id="cal-kind-filter"><button class="filter-btn active" data-kind="all">전체</button><button class="filter-btn" data-kind="macro">경제지표</button><button class="filter-btn" data-kind="earnings">실적</button></div>
+          <div class="filter-set" id="cal-country-filter"><button class="filter-btn active" data-country="all">전체</button><button class="filter-btn" data-country="KR">국내</button><button class="filter-btn" data-country="US">해외</button></div>
+          <div class="filter-set" id="cal-view-filter"><button class="filter-btn active" data-view="weekly">주별</button><button class="filter-btn" data-view="monthly">월별</button></div>
+        </div>
+        <div class="cal" id="cal"></div>
+      </div>
+    </div>
+    <div class="disc"><b>데이터</b> BLS·Federal Reserve·한국은행·국가통계처 공식 일정 + 공개 실적 캘린더(Investing.com·Theta 등). 과거 항목은 당시 예상·실제·이전값 분리, 공개 컨센서스 없는 값은 임의 추정하지 않음.</div>
+  </section>
+
+  <!-- ============= P3 ============= -->
+  <section class="panel" id="p3" role="tabpanel" hidden>
+    <div class="phead"><h1>글로벌 이슈 · 밸류체인 · 해외 IPO</h1><p>핵심 시장 변화요인 · 글로벌 밸류체인과 한국 노출 · 해외(선진국) IPO 파이프라인</p></div>
+
+    <div class="p3-nav" id="p3-nav">
+      <button class="p3-nav-btn active" data-v="issues">글로벌 이슈</button>
+      <button class="p3-nav-btn" data-v="chain">밸류체인</button>
+      <button class="p3-nav-btn" data-v="ipo">해외 IPO</button>
+    </div>
+
+    <div class="p3-view" id="v-issues">
+      <div class="insight">
+        <div class="insight-tag">미래전략실 인사이트</div>
+        <p>AI 캐펙스 병목이 GPU에서 전력·냉각·구리로 이동<br>금·은·구리 통화 헤지 랠리, 달러 약세 동반<br>미 장기금리 상단(10Y 4.76%), 성장주 듀레이션 압박<br>한국 반도체 사상 최고권, 외국인 수급 지속 여부가 관건</p>
+      </div>
+      <div class="slabel">핵심 이슈</div>
+      <div class="issue-grid" id="issues"></div>
+      <section class="trend-viewer" id="trendViewer" hidden>
+        <div class="tv-head"><strong id="trendTitle">추세</strong><span id="trendPeriod"></span><button class="tv-close" id="trendClose" type="button">닫기</button></div>
+        <div class="period-tabs" id="periodTabs"></div>
+        <div class="tv-stats" id="trendStats"></div>
+        <svg class="trend-chart" id="trendChart" viewBox="0 0 960 176" preserveAspectRatio="none" role="img" aria-label="기간별 추세"></svg>
+        <div class="tv-src" id="trendSource"></div>
+      </section>
+    </div>
+
+    <div class="p3-view" id="v-chain" hidden>
+      <div class="slabel">글로벌 밸류체인 · 한국 노출</div>
+      <div class="chain-tabs" id="chain-tabs"></div>
+      <div class="chain-context"><span class="chain-kicker" id="chain-kicker"></span><span id="chain-summary"></span></div>
+      <div class="vc vc-global" id="vc-chain"></div>
+      <div class="slabel">한국 노출 종목</div>
+      <div class="exposure-list" id="korea-exposure"></div>
+      <div class="disc">밸류체인 매핑은 공개 정보 기반 구성. 한국 노출 근거는 각 사 IR 자료 링크를 참조.</div>
+    </div>
+
+    <div class="p3-view" id="v-ipo" hidden>
+      <div class="insight">
+        <div class="insight-tag">미래전략실 인사이트</div>
+        <p>프라이빗 상위 5개사 3조 달러가 공모시장으로 이동<br>신규 공급이 AI 대형주 수급 분산, 지수 상승에도 내부 순환매<br>OpenAI 상장가 = AI 밸류체인 멀티플 기준점<br>SpaceX 상장 → 국내 우주·방산 리레이팅(한화에어로 1개월 +15%)</p>
+      </div>
+      <div class="slabel">해외 IPO 파이프라인 <span class="lite">·한국 공모주 제외 · 미국 등 선진국 대형 딜</span></div>
+      <div class="ipo-filters" id="ipo-filters"></div>
+      <div class="tscroll"><table class="ipo-table"><thead><tr><th>기업</th><th>섹터</th><th>상태</th><th>예상 시기</th><th>밸류에이션</th><th>조달 규모</th><th>핵심 이슈</th></tr></thead><tbody id="ipo"></tbody></table></div>
+      <div class="disc"><b>데이터</b> SpaceX·OpenAI·Anthropic·Databricks 일정·밸류에이션·제출일은 2026년 8~9월 공개 보도 기준. 시장 영향 분석은 미래전략실 자체 해석이며 투자 권유가 아님.</div>
+    </div>
+  </section>
+
+  <!-- ============= P4 ============= -->
+  <section class="panel" id="p4" role="tabpanel" hidden>
+    <div class="phead"><h1>전일 수급 동향</h1><p>2026.09.01 종가 기준 · KOSPI·KOSDAQ 주체별 순매수/순매도 (한국경제·머니투데이·인포스탁데일리·EBN 종합)</p></div>
+
+    <div class="insight">
+      <div class="insight-tag">미래전략실 인사이트</div>
+      <p>9월 1일 KOSPI 3대 주체 동반 순매도 — 외국인 −4,900억·기관 −6,340억·개인 −5,398억, 합계 약 −1.66조<br>그럼에도 기타법인이 +1.6조 순매수하며 지수 +0.23%(6,835.80) 견인<br>기타법인 매수의 상당액은 코스피 시총 1·2위 자사주 매입(각 200만주·65만주 예고)</p>
+      <p>매도는 미 장기금리 고착에 대한 반응이며 추세 이탈 아님, 외국인 규모도 제한적(−4,900억)<br>장 후반 연기금·금융투자 순매수 전환으로 낙폭 축소</p>
+      <p><span class="kc">체크포인트</span><br>자사주 일회성 매수를 제외하고도 외국인의 반도체 대형주 순매수 지속 여부</p>
+    </div>
+
+    <div class="slabel">9월 1일 주체별 순매수 / 순매도 <span class="lite">·단위 억원</span></div>
+    <div class="flowgrid">
+      <div class="fbox"><h4>KOSPI</h4><div id="db-kospi"></div>
+        <div class="fnote">외인·기관·개인 합계 약 −1.66조를 기타법인(+1.6조)이 전량 흡수. 출처: Businesskorea·인포스탁데일리.</div></div>
+      <div class="fbox"><h4>KOSDAQ</h4><div id="db-kosdaq"></div>
+        <div class="fnote">개인 매수 / 외국인·기관 매도의 전형적 패턴(방향 기준). 출처: EBN.</div></div>
+    </div>
+
+    <div class="slabel">최근 흐름 <span class="lite">·외국인 KOSPI 순매수, 8월 4주 → 전일</span></div>
+    <div id="trend5"></div>
+
+    <div class="disc"><b>데이터</b> 9/1 KOSPI 주체별 금액은 Businesskorea·인포스탁데일리 보도치(매체별 편차 존재, 대표값 채택). KOSDAQ 및 종목별 세부는 무료 수집이 제한돼 방향·패턴 기준.</div>
+  </section>
+
+  <!-- ============= P5 ============= -->
+  <section class="panel" id="p5" role="tabpanel" hidden>
+    <div class="phead"><h1>중장기 전망</h1><p>국내 + 글로벌 AI 반도체 피어 · 최근 12개월 월말 종가 · 1·3·12개월 목표주가 · 글로벌 매크로 경로</p></div>
+    <div class="disc">시장 컨센서스 및 공개 리포트 요약이며 특정 종목의 매매를 권유하지 않습니다.</div>
+
+    <div class="insight">
+      <div class="insight-tag">미래전략실 인사이트</div>
+      <p>목표가 상향의 공통 축은 <b>글로벌 AI 캐펙스 사이클</b> — 엔비디아·TSMC·브로드컴 가이던스 상향이 한국 HBM 3사 이익 지속성으로 전이<br>HBM 가격의 구조적 레벨업(낮은 공급 탄력성·고객 다변화·3사 과점)은 일회성 실적이 아닌 재평가 근거</p>
+      <p>글로벌 캐펙스 둔화 시 밸류체인 전반 멀티플 되돌림, 삼성 HBM 점유율 회복 시 하이닉스 프리미엄 축소<br>방산·우주는 유럽 재무장이라는 별개 글로벌 동력으로 포트폴리오 분산에 기여</p>
+    </div>
+
+    <div class="slabel">종목별 중장기 목표주가 <span class="lite">·최근 12개월 월말 종가 + 1·3·12개월 전망</span></div>
+    <div class="lt-stock-tabs" id="lt-stock-tabs" role="tablist" aria-label="종목 선택"></div>
+    <div id="lt-charts"></div>
+
+    <div class="slabel">주요 종목 · 현재가 · 1개월 고저 범위 · 목표주가</div>
+    <div class="cons" id="cons"></div>
+    <div class="slabel">글로벌·국내 매크로 전망</div>
+    <div class="grid feat" id="macro"></div>
+    <div class="disc"><b>데이터</b> 월별 종가는 Yahoo Finance 실측(삼성전자·SK하이닉스·한화에어로스페이스·엔비디아·TSMC·브로드컴). 글로벌 피어 목표주가와 국내 일부 컨센서스는 공개 자료 기반 근사치이며 매매 권유가 아님.</div>
+  </section>
+
+  <!-- ============= P6 ============= -->
+  <section class="panel" id="p6" role="tabpanel" hidden>
+    <div class="phead"><h1>리그테이블</h1><p>국내 DCM·ECM·M&amp;A 연도별 누적 비교 + 글로벌 IB 순위 대비</p></div>
+
+    <div class="insight">
+      <div class="insight-tag">미래전략실 인사이트</div>
+      <p>미 장기금리 4.8%대 고착 → 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 이동, 리그테이블 상위가 채권 주관사 중심으로 재편<br>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인<br>OpenAI·SpaceX 등 글로벌 IPO 러시는 국내 ECM 파이프라인 회복의 선행 신호<br>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</p>
+    </div>
+
+    <div class="lt-toolbar">
+      <span class="lt-lbl">시장</span>
+      <button class="lt-filter active" data-lt-filter="DCM" aria-pressed="true">DCM</button>
+      <button class="lt-filter" data-lt-filter="ECM" aria-pressed="false">ECM</button>
+      <button class="lt-filter" data-lt-filter="M&amp;A" aria-pressed="false">M&amp;A</button>
+      <span class="lt-sep"></span>
+      <span class="lt-lbl">보기</span>
+      <button class="lt-mode active" data-lt-mode="single">단일 연도</button>
+      <button class="lt-mode" data-lt-mode="compare">연도별 비교</button>
+      <span id="lt-single-wrap">
+        <span class="lt-lbl">연도</span>
+        <select id="lt-single-year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+      </span>
+      <span id="lt-compare-wrap" hidden>
+        <label class="lt-year"><input type="checkbox" value="2022"> 2022</label>
+        <label class="lt-year"><input type="checkbox" value="2023"> 2023</label>
+        <label class="lt-year"><input type="checkbox" value="2024"> 2024</label>
+        <label class="lt-year"><input type="checkbox" value="2025" checked> 2025</label>
+        <label class="lt-year"><input type="checkbox" value="2026" checked> 2026</label>
+      </span>
+      <input id="lt-search" type="search" placeholder="주관사/자문사 검색">
+    </div>
+    <div id="lt-summary" class="lt-summary" hidden></div>
+    <div class="lt-chart-card"><div class="lt-chart-head"><b id="lt-chart-title">DCM 상위 주관사 비교</b><span id="lt-chart-unit">금액: 백만원</span></div><div id="lt-chart" class="lt-chart"></div></div>
+    <div id="lt-tooltip" class="lt-tooltip" hidden></div>
+    <div id="lt-change-summary" class="lt-change-summary" hidden></div>
+    <div id="lt-panels"></div>
+
+    <div class="slabel">글로벌 IB 리그테이블 <span class="lite">·최근 연간 누적 · LSEG/Bloomberg 공개 순위</span></div>
+    <div class="tscroll"><table>
+      <thead><tr><th>부문</th><th>1위</th><th>2위</th><th>3위</th><th>흐름</th></tr></thead>
+      <tbody>
+        <tr><td class="cell-strong">DCM (글로벌 채권)</td><td>JPMorgan</td><td>BofA Securities</td><td>Citi</td><td style="white-space:normal;color:var(--ink-3)">미국계 3사가 글로벌 발행의 30%+ 점유. 금리 고착으로 발행량 사상 최대권</td></tr>
+        <tr><td class="cell-strong">ECM (글로벌 주식)</td><td>Goldman Sachs</td><td>Morgan Stanley</td><td>JPMorgan</td><td style="white-space:normal;color:var(--ink-3)">2024 IPO 회복 → 2026 OpenAI·Anthropic·SpaceX 대형 딜 대기</td></tr>
+        <tr><td class="cell-strong">M&amp;A (재무자문)</td><td>Goldman Sachs</td><td>Morgan Stanley</td><td>JPMorgan</td><td style="white-space:normal;color:var(--ink-3)">Centerview·Evercore 등 부티크 약진, AI·전력 인프라 딜 증가</td></tr>
+      </tbody>
+    </table></div>
+    <div class="disc"><b>국내 vs 글로벌</b> 국내는 NH·KB 등 은행계 증권이 DCM을 과점하고 ECM은 한국투자·NH 구도. 글로벌은 미국계 IB(JPM·GS·MS)가 전 부문 상위. <b>금리 고착 국면에서 채권 주관 비중이 확대</b>되는 방향은 국내·글로벌 공통. 글로벌 순위는 LSEG/Bloomberg 공개 리그테이블의 통상 순위(정확한 금액·건수는 유료 집계 영역이라 순위만 표기).</div>
+    <div class="disc"><b>데이터</b> 더벨 무료 리그테이블의 연도별 누적 공개자료(2022~2025년 연간, 2026년 1~6월 누적). M&amp;A 원형 그래프의 비율은 더벨 공개 상위 10개 자문사 금액에서 계산한 비교용 비중이며, 원자료 금액·건수는 그대로 표시한다. 공개 표에 없는 값은 임의 추정하지 않았다.</div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <b>Hanwha 한화 · 미래전략실 · MarketView</b> · 내부 참고용 초안.
+    <div class="foot-src">
+      <span>지수·원자재·환율·미 국채: <b>Yahoo Finance</b></span>
+      <span>국내 종목: <b>Toss Securities</b> / Yahoo Finance</span>
+      <span>증시 일정: <b>Fed·BLS</b> + 발표주기 추정</span>
+      <span>수급: 한국경제·머니투데이·인포스탁데일리·EBN</span>
+      <span>해외 IPO: 공개 보도(Neuberger·Allocations 등)</span>
+      <span>리그테이블: 더밸류뉴스·딜사이트·IB토마토</span>
+    </div>
+    기준 2026.09.03. <span class="tag-mock">예시</span> 표기 항목은 수집 미지원으로 구성 유지를 위해 넣은 예시값. 본 화면은 정보 제공 목적이며 투자 자문·권유가 아닙니다.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    root.setAttribute('data-theme', root.getAttribute('data-theme')==='dark'?'light':'dark');
+  });
+  var segs=[].slice.call(document.querySelectorAll('#segs .seg'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function activate(pid){
+    segs.forEach(function(x){x.setAttribute('aria-selected',x.dataset.p===pid?'true':'false');});
+    panels.forEach(function(p){p.hidden=(p.id!==pid);});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  segs.forEach(function(s){s.addEventListener('click',function(){activate(s.dataset.p);});});
+  document.getElementById('brandHome').addEventListener('click',function(){activate('home');});
+
+  function fmt(v){var a=Math.abs(v);
+    if(a>=1000)return v.toLocaleString('en-US',{maximumFractionDigits:0});
+    if(a>=100)return v.toLocaleString('en-US',{maximumFractionDigits:1});
+    if(a>=10)return v.toLocaleString('en-US',{maximumFractionDigits:2});
+    return v.toLocaleString('en-US',{maximumFractionDigits:3});}
+
+  /* 당일 흐름 라인 차트: 실선=장중 추이, 점선=전일 종가, ●=현재가 */
+  function linechart(series,pc,feat){
+    var w=feat?320:200, h=feat?46:30, px=2, pt=5, pb=5, n=series.length;
+    var all=series.concat([pc]);
+    var mn=Math.min.apply(null,all), mx=Math.max.apply(null,all), rg=(mx-mn)||1;
+    var X=function(i){return px+i*(w-2*px)/(n-1);};
+    var Y=function(v){return pt+(1-(v-mn)/rg)*(h-pt-pb);};
+    var pts=series.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);});
+    var up=series[n-1]>=pc, col=up?'var(--up)':'var(--down)';
+    var gid='g'+Math.random().toString(36).slice(2,8);
+    var yPc=Y(pc).toFixed(1);
+    var area='M'+pts[0]+' L'+pts.join(' L')+' L'+X(n-1).toFixed(1)+','+(h-pb)+' L'+X(0).toFixed(1)+','+(h-pb)+' Z';
+    var s='<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" role="img" aria-label="당일 흐름">'
+      +'<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1">'
+      +'<stop offset="0" stop-color="'+col+'" stop-opacity="'+(feat?0.16:0.12)+'"/><stop offset="1" stop-color="'+col+'" stop-opacity="0"/></linearGradient></defs>'
+      +'<path d="'+area+'" fill="url(#'+gid+')"/>'
+      +'<line x1="'+px+'" y1="'+yPc+'" x2="'+(w-px)+'" y2="'+yPc+'" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 2" opacity="0.65"/>'
+      +'<polyline points="'+pts.join(' ')+'" fill="none" stroke="'+col+'" stroke-width="'+(feat?1.6:1.4)+'" stroke-linejoin="round" stroke-linecap="round"/>'
+      +'<circle cx="'+X(n-1).toFixed(1)+'" cy="'+Y(series[n-1]).toFixed(1)+'" r="'+(feat?3:2.3)+'" fill="'+col+'"/>';
+    if(feat){
+      var vMx=Math.max.apply(null,series), vMn=Math.min.apply(null,series);
+      var iMx=series.indexOf(vMx), iMn=series.indexOf(vMn);
+      s+='<text x="'+X(iMx).toFixed(1)+'" y="'+(Y(vMx)-3).toFixed(1)+'" class="mc-lbl" text-anchor="'+(iMx>n*0.7?'end':'middle')+'">'+fmt(vMx)+'</text>'
+        +'<text x="'+X(iMn).toFixed(1)+'" y="'+(Y(vMn)+8).toFixed(1)+'" class="mc-lbl" text-anchor="'+(iMn>n*0.7?'end':'middle')+'">'+fmt(vMn)+'</text>';
+    }
+    return s+'</svg>';
+  }
+
+  /* 기간 추이(시작·기간고점·기간저점·현재값 표기) */
+  function chart(series,feat){
+    var w=feat?420:220,h=feat?96:52,px=5,pt=14,pb=14,n=series.length;
+    var mn=Math.min.apply(null,series),mx=Math.max.apply(null,series),rg=(mx-mn)||1;
+    var X=function(i){return px+i*(w-2*px)/(n-1);};
+    var Y=function(v){return pt+(1-(v-mn)/rg)*(h-pt-pb);};
+    var pts=series.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);});
+    var up=series[n-1]>=series[0],col=up?'var(--up)':'var(--down)';
+    var iMx=series.indexOf(mx),iMn=series.indexOf(mn),gid='g'+Math.random().toString(36).slice(2,8);
+    var area='M'+pts[0]+' L'+pts.join(' L')+' L'+X(n-1).toFixed(1)+','+(h-pb)+' L'+X(0).toFixed(1)+','+(h-pb)+' Z';
+    function T(x,y,anc,txt){return '<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" class="mc-lbl" text-anchor="'+anc+'">'+txt+'</text>';}
+    var lastY=Y(series[n-1]);
+    return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" role="img" aria-label="추이">'
+      +'<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+col+'" stop-opacity="'+(feat?0.16:0.12)+'"/><stop offset="1" stop-color="'+col+'" stop-opacity="0"/></linearGradient></defs>'
+      +'<path d="'+area+'" fill="url(#'+gid+')"/>'
+      +'<polyline points="'+pts.join(' ')+'" fill="none" stroke="'+col+'" stroke-width="'+(feat?1.6:1.4)+'" stroke-linejoin="round" stroke-linecap="round"/>'
+      +'<circle cx="'+X(iMx).toFixed(1)+'" cy="'+Y(mx).toFixed(1)+'" r="1.7" fill="var(--up)"/>'
+      +'<circle cx="'+X(iMn).toFixed(1)+'" cy="'+Y(mn).toFixed(1)+'" r="1.7" fill="var(--down)"/>'
+      +'<circle cx="'+X(n-1).toFixed(1)+'" cy="'+lastY.toFixed(1)+'" r="'+(feat?3:2.4)+'" fill="'+col+'"/>'
+      +T(X(iMx),Y(mx)-4,iMx>n*0.75?'end':'middle','고 '+fmt(mx))
+      +T(X(iMn),Y(mn)+9,iMn>n*0.75?'end':'middle','저 '+fmt(mn))
+      +T(X(0),h-3,'start',fmt(series[0]))
+      +T(X(n-1),lastY<pt+6?lastY+11:lastY-6,'end',fmt(series[n-1]))
+      +'</svg>';
+  }
+
+  /* P1 카드용 기간 추이: 시작·기간고점·기간저점·현재값 표기, 고·저 지점 색상 강조 */
+  function p1chart(series,feat){
+    var w=feat?480:240,h=feat?118:74,px=6,pt=16,pb=16,n=series.length;
+    var mn=Math.min.apply(null,series),mx=Math.max.apply(null,series),rg=(mx-mn)||1;
+    var X=function(i){return px+i*(w-2*px)/(n-1);};
+    var Y=function(v){return pt+(1-(v-mn)/rg)*(h-pt-pb);};
+    var pts=series.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);});
+    var up=series[n-1]>=series[0],col=up?'var(--up)':'var(--down)';
+    var iMx=series.indexOf(mx),iMn=series.indexOf(mn),gid='g'+Math.random().toString(36).slice(2,8);
+    var area='M'+pts[0]+' L'+pts.join(' L')+' L'+X(n-1).toFixed(1)+','+(h-pb)+' L'+X(0).toFixed(1)+','+(h-pb)+' Z';
+    function T(x,y,cls,anc,txt){return '<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" class="mc-lbl '+cls+'" text-anchor="'+anc+'">'+txt+'</text>';}
+    var lastY=Y(series[n-1]);
+    /* 라벨 겹침 방지: 고점·저점이 양 끝 근처면 시작값/현재값 라벨에 '고'/'저'를 합쳐 한 번만 표기 */
+    var edge=2;
+    function midAnc(i){return i<n*0.2?'start':(i>n*0.8?'end':'middle');}
+    var loL=iMn<=edge,loR=iMn>=n-1-edge,hiL=iMx<=edge,hiR=iMx>=n-1-edge;
+    var labels='';
+    if(!loL&&!loR)labels+=T(X(iMn),Y(mn)+9,'lo',midAnc(iMn),'저 '+fmt(mn));
+    if(!hiL&&!hiR)labels+=T(X(iMx),Y(mx)-4,'hi',midAnc(iMx),'고 '+fmt(mx));
+    labels+=T(X(0),h-4,loL?'lo':(hiL?'hi':'st'),'start',(loL?'저 ':(hiL?'고 ':''))+fmt(loL?mn:(hiL?mx:series[0])));
+    var lyRaw=lastY<pt+6?lastY+11:lastY-6;
+    labels+=T(X(n-1),lyRaw,loR?'lo':(hiR?'hi':'st'),'end',(loR?'저 ':(hiR?'고 ':''))+fmt(loR?mn:(hiR?mx:series[n-1])));
+    return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" role="img" aria-label="추이">'
+      +'<defs><linearGradient id="'+gid+'" x1="0" x2="0" y1="0" y2="1">'
+      +'<stop offset="0" stop-color="'+col+'" stop-opacity="0.2"/><stop offset="1" stop-color="'+col+'" stop-opacity="0"/></linearGradient></defs>'
+      +'<path d="'+area+'" fill="url(#'+gid+')"/>'
+      +'<polyline points="'+pts.join(' ')+'" fill="none" stroke="'+col+'" stroke-width="'+(feat?1.6:1.5)+'" stroke-linejoin="round"/>'
+      +'<circle cx="'+X(iMx).toFixed(1)+'" cy="'+Y(mx).toFixed(1)+'" r="1.8" fill="var(--up)"/>'
+      +'<circle cx="'+X(iMn).toFixed(1)+'" cy="'+Y(mn).toFixed(1)+'" r="1.8" fill="var(--down)"/>'
+      +'<circle cx="'+X(n-1).toFixed(1)+'" cy="'+lastY.toFixed(1)+'" r="'+(feat?3:2.6)+'" fill="'+col+'"/>'
+      +labels
+      +'</svg>';
+  }
+  function mcard(m){
+    var f=m.feat,up=m.pct>0,dn=m.pct<0,cls=up?'up':(dn?'down':'flat');
+    var arrow=up?'▲':(dn?'▼':'▬');
+    var chg=m.rate?((up?'+':(dn?'−':''))+m.chg+'bp')
+                  :(arrow+' '+m.chg+' ('+(up?'+':'')+m.pct.toFixed(2)+'%)');
+    return '<div class="mcard'+(f?' feat':'')+'">'
+      +'<div class="mc-head"><span class="mc-name">'+m.name+'</span>'
+      +(m.mock?'<span class="tag-mock">예시</span>':'')
+      +'<span class="mc-tk">'+m.tk+'</span></div>'
+      +'<div class="mc-val">'+m.val+(m.rate?'%':'')+'<span class="mc-unit">'+(m.unit||'')+'</span></div>'
+      +'<div class="mc-chg '+cls+'">'+chg+'</div>'
+      +(m.note?'<div class="mc-note">'+m.note+'</div>':'')
+      +'<div class="mc">'+p1chart(m.spark,f)+'</div>'
+      +'</div>';
+  }
+  function render(id,arr,feat){document.getElementById(id).innerHTML=arr.map(function(m){m.feat=feat;return mcard(m);}).join('');}
+
+  /* ---------- P1 data (Yahoo Finance, 2026-09-03 기준 · 최근 거래일 종가 재조회) ---------- */
+  var IDX=[
+   {name:'코스피',tk:'KOSPI',val:'6,579.48',chg:'16.76',pct:0.26,spark:[6257,6359,6598,6296,6259,6300,6346,6579,6813,6978,6870,6471,6853,6913,6697,6743,6808,6912,6820,6836,6563,6579]},
+   {name:'코스닥',tk:'KOSDAQ',val:'790.21',chg:'13.77',pct:-1.71,spark:[737,781,800,802,799,854,858,859,861,865,834,824,841,802,813,827,827,838,834,821,804,790]},
+   {name:'나스닥 종합',tk:'IXIC',val:'26,217.83',chg:'118.06',pct:0.45,spark:[25914,26585,26363,26348,26691,26605,26445,26588,26803,26729,26645,26290,26331,26067,26180,25980,26151,26130,26541,26371,26100,26218]},
+   {name:'S&P 500',tk:'GSPC',val:'7,666.60',chg:'35.13',pct:0.46,spark:[7601,7737,7724,7710,7758,7753,7728,7749,7799,7786,7745,7692,7708,7641,7674,7653,7677,7676,7731,7686,7631,7667]},
+   {name:'다우존스',tk:'DJI',val:'53,061.95',chg:'295.07',pct:0.56,spark:[53178,54086,54349,53885,54037,53976,53792,53770,53840,53732,53460,53343,53463,52759,53277,53417,53577,53464,53569,53186,52767,53062]},
+   {name:'니케이 225',tk:'N225',val:'64,214.48',chg:'111.16',pct:-0.17,spark:[63755,63958,66300,65683,65607,66970,67524,68309,68714,69220,67461,65326,66217,66016,65528,65856,66262,66132,66312,66215,64326,64214]},
+   {name:'상해종합',tk:'SSEC',val:'3,942.09',chg:'0.70',pct:0.02,spark:[3810,3822,3878,3900,3940,3967,3934,3947,3927,3927,3983,3990,3894,3904,3905,3882,3889,3913,3957,3986,3980,3941,3942]},
+   {name:'유로스톡스 50',tk:'SX5E',val:'6,347.51',chg:'14.64',pct:-0.23,spark:[6427,6487,6477,6503,6524,6536,6551,6534,6545,6540,6530,6468,6444,6422,6462,6448,6456,6471,6425,6420,6369,6362,6348]}
+  ];
+  var COM=[
+   {name:'WTI 원유',tk:'CL=F',val:'92.94',unit:'$/bbl',chg:'1.93',pct:2.12,spark:[80.3,75.8,75.2,77.3,78.2,82.1,83.2,83.3,81.3,82.4,84.5,84.9,85.8,87.8,87.1,85.0,82.4,82.2,83.5,83.4,85.8,90.2,91.0,92.9]},
+   {name:'브렌트유',tk:'BZ=F',val:'97.45',unit:'$/bbl',chg:'1.82',pct:1.9,spark:[83.8,79.4,79.4,82.5,83.6,87.7,88.9,89.0,87.1,88.5,90.9,91.0,91.6,93.8,94.4,92.2,88.6,87.8,89.7,89.3,90.5,94.7,95.6,97.4]},
+   {name:'금',tk:'GC=F',val:'4,471.9',unit:'$/oz',chg:'105.6',pct:2.42,note:'통화가치 헤지 수요 지속',spark:[4034,4095,4246,4242,4341,4362,4383,4409,4364,4380,4418,4366,4489,4516,4624,4641,4638,4598,4610,4478,4431,4348,4366,4472]},
+   {name:'은',tk:'SI=F',val:'66.14',unit:'$/oz',chg:'1.42',pct:2.2,spark:[57.7,60.1,62.1,61.4,63.3,65.1,64.8,65.6,64.9,65.0,66.1,63.9,65.7,68.0,69.5,68.5,68.6,68.0,69.4,67.0,66.2,64.6,64.7,66.1]},
+   {name:'구리',tk:'HG=F',val:'6.607',unit:'$/lb',chg:'0.106',pct:1.62,note:'AI 전력 인프라 수요',spark:[6.51,6.62,6.70,6.69,6.57,6.59,6.61,6.60,6.59,6.60,6.60,6.48,6.49,6.46,6.58,6.60,6.71,6.59,6.59,6.56,6.59,6.51,6.50,6.61]},
+   {name:'천연가스',tk:'NG=F',val:'2.996',unit:'$/MMBtu',chg:'0.040',pct:1.35,spark:[2.78,2.68,2.69,2.64,2.66,2.79,2.77,2.80,2.73,2.73,2.69,2.78,2.81,2.73,2.77,2.78,2.77,2.84,2.91,2.89,2.93,2.90,2.96,3.00]}
+  ];
+  var FX=[
+   {name:'원/달러',tk:'USD/KRW',val:'1,358.5',chg:'14.3',pct:-1.05,note:'원화 강세 (외국인 순매수·달러 약세)',spark:[1436,1429,1428,1421,1422,1407,1417,1412,1416,1417,1415,1415,1414,1389,1391,1385,1381,1381,1383,1380,1377,1367,1373,1359]},
+   {name:'달러인덱스',tk:'DXY',val:'99.26',chg:'0.30',pct:-0.3,note:'연초 108 → 99, 구조적 약세',spark:[99.96,99.89,99.69,99.97,99.60,99.81,99.82,100.01,99.96,99.67,99.64,99.65,98.83,98.90,98.80,99.00,98.92,99.17,99.16,99.43,99.67,99.56,99.26]},
+   {name:'유로/달러',tk:'EUR/USD',val:'1.1606',chg:'0.0011',pct:0.09,spark:[1.154,1.151,1.153,1.156,1.152,1.156,1.155,1.154,1.153,1.154,1.157,1.158,1.158,1.167,1.169,1.168,1.167,1.167,1.165,1.166,1.159,1.162,1.160,1.161]},
+   {name:'엔/달러',tk:'USD/JPY',val:'156.30',chg:'3.90',pct:-2.43,note:'엔화 급강세',spark:[157.6,157.5,157.7,157.6,158.4,157.9,159.2,159.3,159.3,159.4,159.2,159.3,159.6,158.3,158.9,158.9,159.1,159.2,159.3,159.3,160.1,159.7,160.2,156.3]},
+   {name:'위안/달러',tk:'USD/CNY',val:'6.719',chg:'0.001',pct:-0.02,spark:[6.751,6.752,6.753,6.750,6.749,6.747,6.747,6.745,6.743,6.743,6.743,6.740,6.743,6.729,6.722,6.721,6.722,6.720,6.722,6.722,6.726,6.726,6.720,6.719]}
+  ];
+  var RATE=[
+   {name:'미 국채 30년',tk:'DGS30',rate:true,val:'5.267',chg:'0.1',pct:-1,spark:[5.23,5.19,5.17,5.21,5.21,5.24,5.24,5.25,5.21,5.26,5.31,5.28,5.19,5.24,5.28,5.23,5.17,5.19,5.19,5.25,5.27,5.27]},
+   {name:'미 국채 10년',tk:'DGS10',rate:true,val:'4.796',chg:'3.8',pct:1,spark:[4.69,4.63,4.62,4.67,4.66,4.70,4.68,4.68,4.64,4.70,4.72,4.71,4.65,4.70,4.74,4.70,4.64,4.66,4.67,4.76,4.80]},
+   {name:'미 국채 5년',tk:'DGS5',rate:true,val:'4.552',chg:'0.5',pct:-1,spark:[4.40,4.33,4.32,4.39,4.36,4.41,4.39,4.38,4.31,4.36,4.38,4.37,4.35,4.39,4.42,4.41,4.35,4.38,4.40,4.51,4.56,4.55]}
+  ];
+  render('g-feat',[IDX[0],IDX[3],COM[2],RATE[1]].map(function(o){return Object.assign({},o);}),true);
+  render('g-idx',IDX); render('g-com',COM); render('g-fx',FX); render('g-rate',RATE);
+
+  /* ---------- P2 calendar: separate <script> block below ---------- */
+
+  /* ---------- P3: separate <script> block below ---------- */
+
+  /* ---------- P4 flows (2026-08-31, 보도 종합) ---------- */
+  function dbars(id,rows){
+    var mxA=Math.max.apply(null,rows.map(function(r){return Math.abs(r.v);}))||1;
+    var body=rows.slice().sort(function(a,b){return b.v-a.v;}).map(function(r){
+      var buy=r.v>=0,p=Math.abs(r.v)/mxA*48;
+      return '<div class="dbar-row"><span class="dbar-k">'+r.k+'</span>'
+       +'<div class="dbar-track"><span class="dbar-zero"></span>'
+       +'<span class="dbar-fill '+(buy?'b':'s')+'" style="width:'+p.toFixed(1)+'%;'+(buy?'left:50%':'right:50%')+'"></span></div>'
+       +'<span class="dbar-v '+(buy?'up':'down')+'">'+(buy?'+':'−')+Math.abs(r.v).toLocaleString()+'</span></div>';
+    }).join('');
+    document.getElementById(id).innerHTML='<div class="dbar-axis"><span>◀ 순매도</span><span>순매수 ▶</span></div><div class="dbars">'+body+'</div>';
+  }
+  dbars('db-kospi',[{k:'외국인',v:-4900},{k:'개인',v:-5398},{k:'기관',v:-6340},{k:'기타법인',v:16000}]);
+  dbars('db-kosdaq',[{k:'개인',v:2500},{k:'외국인',v:-600},{k:'기관',v:-1900}]);
+
+  (function(){
+    var mx=8.0;
+    function tb(k,v,txt){var buy=v>=0,p=Math.abs(v)/mx*48;
+      return '<div class="tb-row"><span class="tb-k">'+k+'</span>'
+       +'<div class="dbar-track"><span class="dbar-zero"></span>'
+       +'<span class="dbar-fill '+(buy?'b':'s')+'" style="width:'+p.toFixed(1)+'%;'+(buy?'left:50%':'right:50%')+'"></span></div>'
+       +'<span class="dbar-v '+(buy?'up':'down')+'">'+txt+'</span></div>';}
+    document.getElementById('trend5').innerHTML=
+      '<div class="fbox"><div class="dbar-axis"><span>◀ 순매도</span><span>순매수 ▶</span></div>'
+      +tb('8월 4주 누적',8.0,'+8.0조')
+      +tb('9월 1일',-0.49,'−4,900억')
+      +'<div class="fnote">4거래일 대규모 순매수(EBN) 뒤 전일 순매도 전환(Businesskorea·인포스탁데일리). 코스닥은 4주 내내 순매도.</div></div>';
+  })();
+
+
+  /* ---------- P5 중장기 전망 (사용자 제공 파일: 월별 종가 + 1·3·12개월 목표주가) ---------- */
+  var CONS=[
+   {name:'엔비디아 (NVDA)',cur:'USD',now:'$224',lo:'$196',hi:'$236',op:'매수 우세',delta:'글로벌 AI 캐펙스',
+    why:'블랙웰 램프업과 하이퍼스케일러 캐펙스 가이던스 상향이 단기 동력. 3개월은 차기 GPU(루빈) 사이클 진입과 주권(sovereign) AI 수요, 12개월은 추론 워크로드 확산에 따른 데이터센터 매출의 구조적 성장을 반영한 공개 컨센서스 근사치다. HBM·CoWoS 공급 병목과 대중국 수출 규제가 주요 하방 위험.'},
+   {name:'브로드컴 (AVGO)',cur:'USD',now:'$367',lo:'$310',hi:'$447',op:'매수 우세',delta:'커스텀 ASIC·네트워킹',
+    why:'커스텀 AI ASIC(구글·메타·차기 고객) 수주와 네트워킹(Tomahawk/Jericho) 수요가 단기 동력. 3개월은 VMware 통합 마진, 12개월은 하이퍼스케일러 자체칩 침투 확대를 반영한 근사치다. 고객 집중도와 소프트웨어 전환 속도가 리스크.'},
+   {name:'TSMC (TSM)',cur:'USD',now:'$416',lo:'$375',hi:'$478',op:'매수 우세',delta:'파운드리 과점',
+    why:'3nm·2nm 가동률과 AI 가속기 물량이 단기 동력. 3개월은 CoWoS 증설 효과와 가격 인상, 12개월은 미국(애리조나)·일본·독일 팹 확장의 이익 기여를 반영한 근사치다. 지정학 리스크와 대만달러 환율이 변수.'},
+   {name:'오라클 (ORCL)',cur:'USD',now:'$146',lo:'$128',hi:'$165',op:'매수',delta:'OCI·RPO 급증',
+    why:'클라우드 인프라(OCI) 계약잔고(RPO) 급증이 리레이팅을 촉발한 뒤 되돌림 국면. 3개월은 스타게이트·대형 AI 학습 계약의 매출 인식 속도, 12개월은 캐펙스 선투자 대비 마진 회수가 관건인 근사치다. 감가상각 부담과 계약 집중도가 리스크.'},
+   {name:'팔란티어 (PLTR)',cur:'USD',now:'$169',lo:'$155',hi:'$190',op:'중립',delta:'밸류에이션 부담',
+    why:'미국 상업부문(AIP) 매출 가속과 정부 계약 확대가 실적 동력이나, 매출 대비 멀티플이 소프트웨어 최상단이라 상단이 제한적인 근사치다. 성장률 둔화 시 조정 폭이 큰 고베타 종목.'},
+   {name:'SK하이닉스 (000660)',now:'1,596,000',lo:'1,420,000',hi:'1,720,000',op:'매수 우세',delta:'HBM 과점',
+    why:'HBM4 출하·현물가 반등이 단기 동력. 3개월은 엔비디아 차기 GPU 인증과 고객사 재고 정상화, 12개월은 증설 이후에도 이어질 글로벌 AI 서버 수요를 반영한 가정이다. 삼성 HBM 점유율 회복이 주요 하방 위험.'},
+   {name:'삼성전자 (005930)',now:'250,000',lo:'230,000',hi:'270,000',op:'매수 우세',delta:'파운드리 회복 기대',
+    why:'HBM 공급 확대와 DDR5 가격 반등이 단기 동력. 3개월은 파운드리 가동률 회복, 12개월은 HBM 고객 다변화와 메모리·비메모리 동반 정상화를 반영한 가정이다. 파운드리 적자 축소 속도가 할인 해소의 열쇠.'},
+   {name:'한화에어로스페이스 (012450)',now:'1,047,000',lo:'917,000',hi:'1,185,000',op:'매수 우세',delta:'유럽 재무장',
+    why:'신규 수주 공시와 환율이 단기 동력. 3개월은 폴란드 2차·루마니아향 납품, 12개월은 K9·천무 수주잔고와 우주·발사체 사업의 장기 이익 기여를 반영한 가정이다. 수주 지연이 주요 하방 위험.'},
+   {name:'두산에너빌리티 (034020)',now:'79,200',lo:'67,000',hi:'90,000',op:'매수',delta:'전력·원전 병목',
+    why:'AI 데이터센터 전력 병목으로 대형 원전·SMR·가스터빈 발주 기대가 단기 동력. 3개월은 체코 원전 본계약 진척, 12개월은 SMR 양산 파이프라인을 반영한 근사치다. 정책·인허가 변수가 크다.'},
+   {name:'한미반도체 (042700)',now:'210,500',lo:'195,000',hi:'240,000',op:'매수',delta:'HBM 본더 독점',
+    why:'HBM용 TC 본더 사실상 독점 공급이 구조적 동력. 3개월은 SK하이닉스·마이크론 발주, 12개월은 삼성 HBM 채택 여부와 하이브리드 본딩 전환을 반영한 근사치다. 고객 캐펙스 사이클에 민감.'}
+  ];
+  var MONTHS=['25.09','25.10','25.11','25.12','26.01','26.02','26.03','26.04','26.05','26.06','26.07','26.08','현재'];
+  var STOCKS=[
+   {name:'엔비디아',symbol:'NVDA',cur:'USD',closes:[202.49,177,186.5,191.13,177.19,174.4,199.57,211.14,200.09,200.75,220.78,217.44,224.41],targets:{m1:235,m3:262,m12:300}},
+   {name:'브로드컴',symbol:'AVGO',cur:'USD',closes:[369.63,402.96,346.1,331.3,319.55,309.51,417.43,446.77,377.75,389.28,370.34,369.68,367.24],targets:{m1:385,m3:425,m12:485}},
+   {name:'TSMC',symbol:'TSM',cur:'USD',closes:[300.43,291.51,303.89,330.56,374.58,337.95,396.06,418.45,477.57,404.25,415.32,414,415.5],targets:{m1:432,m3:485,m12:560}},
+   {name:'오라클',symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,141.32,145.75],targets:{m1:155,m3:175,m12:205}},
+   {name:'팔란티어',symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,179.92,169.46],targets:{m1:168,m3:185,m12:210}},
+   {name:'SK하이닉스',symbol:'000660.KS',cur:'KRW',closes:[559000,530000,651000,909000,1061000,807000,1286000,2333000,2650000,1718000,1674000,1613000,1596000],targets:{m1:1800000,m3:2600000,m12:3800000}},
+   {name:'삼성전자',symbol:'005930.KS',cur:'KRW',closes:[107500,100500,119900,160500,216500,167200,220500,317000,334000,262500,260000,250500,250000],targets:{m1:300000,m3:460000,m12:650000}},
+   {name:'한화에어로스페이스',symbol:'012450.KS',cur:'KRW',closes:[979000,852000,941000,1300000,1195000,1249000,1417000,1173000,995000,917000,1102000,1025000,1047000],targets:{m1:1250000,m3:1490000,m12:1650000}},
+   {name:'두산에너빌리티',symbol:'034020.KS',cur:'KRW',closes:[88700,76400,75300,90600,106300,91800,127100,105600,86800,67100,82500,76600,79200],targets:{m1:90000,m3:110000,m12:130000}},
+   {name:'한미반도체',symbol:'042700.KS',cur:'KRW',closes:[143700,123600,127400,211000,323500,251000,368000,282000,256500,214500,220500,213500,210500],targets:{m1:250000,m3:320000,m12:420000}}
+  ];
+  function fmtCur(v,cur){return cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):'₩'+Math.round(v).toLocaleString('ko-KR');}
+  function won(v){return fmtCur(v,'KRW');}
+  function nval(s){return Number(String(s).replace(/[^0-9.-]/g,''))||0;}
+  function ltTargetChart(st,idx){
+    var W=900,H=250,pl=54,pr=18,pt=18,pb=32,iw=W-pl-pr,ih=H-pt-pb,v=st.closes,usd=st.cur==='USD',stp=usd?5:10000,rnd=usd?1:1000;
+    var el=document.getElementById('lt-tc-'+idx);if(!el)return;
+    var all=v.concat([st.targets.m1,st.targets.m3,st.targets.m12]);
+    var mn=Math.floor(Math.min.apply(null,all)*0.9/stp)*stp,mx=Math.ceil(Math.max.apply(null,all)*1.06/stp)*stp;
+    var hw=iw*0.74,X=function(i){return pl+hw*i/(v.length-1);},Y=function(x){return pt+ih-(x-mn)/(mx-mn)*ih;};
+    var grid='';for(var g=0;g<=4;g++){var tv=Math.round((mn+(mx-mn)*g/4)/rnd)*rnd,yy=Y(tv);grid+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy.toFixed(1)+'" y2="'+yy.toFixed(1)+'" stroke="var(--hair)"/><text x="'+(pl-8)+'" y="'+(yy+3).toFixed(1)+'" text-anchor="end" fill="var(--ink-3)" font-size="11">'+(usd?'$':'')+Math.round(tv).toLocaleString('en-US')+'</text>';}
+    var labels=MONTHS.map(function(m,i){return (i%2===0||i===v.length-1)?'<text x="'+X(i).toFixed(1)+'" y="'+(H-9)+'" text-anchor="middle" fill="var(--ink-3)" font-size="10">'+m+'</text>':'';}).join('');
+    var line=v.map(function(x,i){return X(i).toFixed(1)+','+Y(x).toFixed(1);}).join(' '),lx=X(v.length-1),ly=Y(v[v.length-1]);
+    function proj(tv,c,d){var ex=W-pr,ey=Y(tv);return '<line x1="'+lx.toFixed(1)+'" y1="'+ly.toFixed(1)+'" x2="'+ex+'" y2="'+ey.toFixed(1)+'" stroke="'+c+'" stroke-width="2" stroke-dasharray="'+d+'"/><circle cx="'+ex+'" cy="'+ey.toFixed(1)+'" r="3.5" fill="var(--bg)" stroke="'+c+'" stroke-width="2"/><text x="'+(ex-7)+'" y="'+(ey-7).toFixed(1)+'" text-anchor="end" fill="'+c+'" font-size="10" font-weight="700">'+fmtCur(tv,st.cur)+'</text>';}
+    el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+st.name+' 월별 종가와 목표주가"><g>'+grid+'</g><polyline points="'+line+'" fill="none" stroke="var(--flat)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="'+lx.toFixed(1)+'" cy="'+ly.toFixed(1)+'" r="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>'+proj(st.targets.m1,'var(--down)','3 4')+proj(st.targets.m3,'#16A36A','2 4')+proj(st.targets.m12,'var(--up)','3 4')+labels+'</svg>';
+    document.getElementById('lt-tv-'+idx).innerHTML='<div class="lt-target m1">1개월 목표<b>'+fmtCur(st.targets.m1,st.cur)+'</b></div><div class="lt-target m3">3개월 목표<b>'+fmtCur(st.targets.m3,st.cur)+'</b></div><div class="lt-target m12">12개월 목표<b>'+fmtCur(st.targets.m12,st.cur)+'</b></div>';
+  }
+  document.getElementById('lt-stock-tabs').innerHTML=STOCKS.map(function(st,i){return '<button class="lt-stock-tab" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-stock="'+i+'">'+st.name+'</button>';}).join('');
+  document.getElementById('lt-charts').innerHTML=STOCKS.map(function(st,i){return '<div class="lt-chartbox'+(i===0?'':' is-hidden')+'" data-chart="'+i+'"><div class="lt-chart-head"><h3>'+st.name+' 중장기 목표주가</h3><p>최근 12개월 월말 종가 · '+st.symbol+'</p></div><div class="lt-chart" id="lt-tc-'+i+'"></div><div class="lt-legend"><span class="lt-key"><i class="actual"></i>실제 종가</span><span class="lt-key"><i class="m1"></i>1개월</span><span class="lt-key"><i class="m3"></i>3개월</span><span class="lt-key"><i class="m12"></i>12개월</span></div><div class="lt-targets" id="lt-tv-'+i+'"></div></div>';}).join('');
+  [].slice.call(document.querySelectorAll('.lt-stock-tab')).forEach(function(tab){tab.addEventListener('click',function(){var idx=Number(tab.dataset.stock);
+    [].slice.call(document.querySelectorAll('.lt-stock-tab')).forEach(function(t){t.setAttribute('aria-selected',t===tab?'true':'false');});
+    [].slice.call(document.querySelectorAll('[data-chart]')).forEach(function(b){b.classList.toggle('is-hidden',Number(b.dataset.chart)!==idx);});
+    [].slice.call(document.querySelectorAll('[data-cons-stock]')).forEach(function(r){r.classList.toggle('is-hidden',Number(r.dataset.consStock)!==idx);});});});
+  STOCKS.forEach(ltTargetChart);
+  document.getElementById('cons').innerHTML=CONS.map(function(c,ci){
+    var st=STOCKS[ci],lo=nval(c.lo),hi=nval(c.hi),now=nval(c.now),pos=hi>lo?(now-lo)/(hi-lo)*100:50;pos=Math.max(3,Math.min(97,pos));
+    return '<div class="consrow'+(ci===0?'':' is-hidden')+'" data-cons-stock="'+ci+'"><div class="cons-visual"><div>'
+      +'<div class="cons-title"><h4>'+c.name+'</h4><span class="updelta">'+c.delta+'</span></div>'
+      +'<div class="cons-metrics"><div class="cons-metric"><span>현재가</span><b>'+c.now+'</b></div>'
+      +'<div class="cons-metric"><span>1개월 목표</span><b>'+fmtCur(st.targets.m1,st.cur)+'</b></div>'
+      +'<div class="cons-metric"><span>3개월 목표</span><b>'+fmtCur(st.targets.m3,st.cur)+'</b></div>'
+      +'<div class="cons-metric"><span>12개월 목표</span><b>'+fmtCur(st.targets.m12,st.cur)+'</b></div>'
+      +'<div class="cons-metric"><span>투자의견</span><b>'+c.op+'</b></div></div></div>'
+      +'<div class="price-range"><div class="range-head"><span>1개월 저가</span><span>1개월 고가</span></div>'
+      +'<div class="range-track"><span class="range-now" style="left:calc('+pos.toFixed(1)+'% - 1px)"></span></div>'
+      +'<div class="range-labels"><span>'+c.lo+'</span><span>'+c.hi+'</span></div>'
+      +'<div class="range-caption"><b>목표주가</b> · 1개월 '+fmtCur(st.targets.m1,st.cur)+' · 3개월 '+fmtCur(st.targets.m3,st.cur)+' · 12개월 '+fmtCur(st.targets.m12,st.cur)+'</div></div></div>'
+      +'<p class="why"><b>변동 사유.</b> '+c.why+'</p></div>';
+  }).join('');
+
+  var MACRO=[
+   {name:'통화정책',val:'인하 진입',note:'연준 9/16 −25bp 유력(시장 90%+)',
+    body:'한은 연내 1회 추가 인하(2.25%) 기대. 원화는 달러 반등에 소폭 약세(1,373).'},
+   {name:'채권',val:'커브 스티프닝',note:'미 10년 4.76% 상단 테스트',
+    body:'인하 사이클 반영으로 단기물 강세 우위. 국내 국고채는 인하 기대로 3% 초반 안착 전망.'},
+   {name:'반도체',val:'업사이클 지속',note:'HBM 2026H2~2027',
+    body:'HBM·DDR5 수요 견조, 3사 과점 가격 협상력. 파운드리 가동률 회복이 다음 관전 포인트.'},
+   {name:'방산·우주',val:'구조적 성장',note:'수주잔고 사상 최대',
+    body:'유럽 수출 파이프라인 확대 + 우주 정책 모멘텀. 반도체와 무관한 동력이라 분산 효과.'}
+  ];
+  document.getElementById('macro').innerHTML=MACRO.map(function(m){
+    return '<div class="mcard feat"><div class="mc-head"><span class="mc-name">'+m.name+'</span></div>'
+      +'<div class="mc-val" style="font-size:17px">'+m.val+'</div>'
+      +'<div class="mc-note">'+m.note+'</div>'
+      +'<p style="margin:9px 0 0;font-size:11.5px;color:var(--ink-2);line-height:1.6">'+m.body+'</p></div>';
+  }).join('');
+
+  /* ---------- P6 league table (더벨 누적 공개자료 · 사용자 제공 파일) ---------- */
+  var LT_SRC='https://www.thebell.co.kr/content/LeagueTable.asp?lcode=03';
+  var LT=[];
+  function ltAdd(y,mk,rows){rows.forEach(function(r){LT.push({year:y,market:mk,rank:r[0],house:r[1],amount:r[2],deals:r[3],share:r[4]});});}
+  ltAdd(2026,'DCM',[[1,'NH투자증권',19765031,200,23.95],[2,'KB증권',19297085,209,23.38],[3,'한국투자증권',8904118,109,10.79],[4,'신한투자증권',7981179,89,9.67],[5,'키움증권',7605634,94,9.22],[6,'SK증권',3036663,41,3.68],[7,'미래에셋증권',1960658,28,2.38],[8,'메리츠증권',1740712,17,2.11],[9,'하나증권',1424185,24,1.73],[10,'삼성증권',1315229,25,1.59]]);
+  ltAdd(2025,'DCM',[[1,'KB증권',48069391,449,25.81],[2,'NH투자증권',45513284,417,24.44],[3,'한국투자증권',16658548,212,8.94],[4,'신한투자증권',15049988,160,8.08],[5,'키움증권',12236242,156,6.57],[6,'SK증권',7776264,68,4.18],[7,'한양증권',5483200,37,2.94],[8,'미래에셋증권',4971643,66,2.67],[9,'메리츠증권',4376548,34,2.35],[10,'교보증권',4089103,53,2.2]]);
+  ltAdd(2024,'DCM',[[1,'KB증권',46126981,422,24.9],[2,'NH투자증권',43903333,366,23.7],[3,'한국투자증권',22083579,256,11.92],[4,'신한투자증권',17597883,182,9.5],[5,'한양증권',8333500,44,4.5],[6,'SK증권',7902083,67,4.27],[7,'미래에셋증권',6042756,74,3.26],[8,'키움증권',5090615,103,2.75],[9,'상상인증권',4948500,38,2.67],[10,'교보증권',4534202,63,2.45]]);
+  ltAdd(2023,'DCM',[[1,'KB증권',35200641,357,23.56],[2,'NH투자증권',33128024,308,22.17],[3,'한국투자증권',18875960,212,12.63],[4,'신한투자증권',11753476,132,7.87],[5,'SK증권',7973929,55,5.34],[6,'미래에셋증권',7268295,101,4.86],[7,'한양증권',5732300,63,3.84],[8,'키움증권',5676613,98,3.8],[9,'삼성증권',4412452,80,2.95],[10,'교보증권',4111726,74,2.75]]);
+  ltAdd(2022,'DCM',[[1,'KB증권',25427854,263,21.76],[2,'NH투자증권',22934479,227,19.62],[3,'한국투자증권',11796076,183,10.09],[4,'키움증권',7865862,78,6.73],[5,'교보증권',7029833,73,6.02],[6,'SK증권',6831750,54,5.85],[7,'신한투자증권',6799823,90,5.82],[8,'한양증권',6644049,69,5.68],[9,'미래에셋증권',4668695,53,3.99],[10,'삼성증권',3680957,48,3.15]]);
+  ltAdd(2026,'ECM',[[1,'한국투자증권',729530,11,22.01],[2,'NH투자증권',628814,9,18.97],[3,'삼성증권',555940,5,16.77],[4,'KB증권',479222,7,14.46],[5,'신한투자증권',381923,8,11.52],[6,'미래에셋증권',180551,6,5.45],[7,'키움증권',112500,3,3.39],[8,'대신증권',67663,4,2.04],[9,'유진투자증권',38573,3,1.16],[10,'교보증권',37050,2,1.12]]);
+  ltAdd(2025,'ECM',[[1,'NH투자증권',4372852,27,29.82],[2,'한국투자증권',2990963,25,20.39],[3,'KB증권',1911809,23,13.04],[4,'미래에셋증권',1142143,22,7.79],[5,'삼성증권',814227,21,5.55],[6,'신한투자증권',799341,13,5.45],[7,'키움증권',679986,9,4.64],[8,'대신증권',366826,11,2.5],[9,'메릴린치증권 서울지점',253883,1,1.73],[9,'모간스탠리',253883,1,1.73]]);
+  ltAdd(2024,'ECM',[[1,'한국투자증권',2026672,34,21.28],[2,'KB증권',1666247,21,17.5],[3,'NH투자증권',1265700,21,13.29],[4,'미래에셋증권',936512,17,9.84],[5,'대신증권',930419,16,9.77],[6,'삼성증권',577322,11,6.06],[7,'신한투자증권',509836,14,5.35],[8,'JP모간',342936,2,3.6],[9,'하나증권',212436,9,2.23],[10,'UBS',197936,1,2.08]]);
+  ltAdd(2023,'ECM',[[1,'한국투자증권',2245509,32,19.44],[2,'NH투자증권',2132363,26,18.46],[3,'KB증권',1594647,28,13.8],[4,'미래에셋증권',1127107,19,9.76],[5,'신한투자증권',1035655,12,8.96],[6,'삼성증권',908813,16,7.87],[7,'대신증권',633578,11,5.48],[8,'하나증권',387253,13,3.35],[9,'유안타증권',275763,8,2.39],[10,'유진투자증권',170500,2,1.48]]);
+  ltAdd(2022,'ECM',[[1,'KB증권',5770284,31,22.47],[2,'모간스탠리',2868750,1,11.17],[3,'NH투자증권',2845001,24,11.08],[4,'한국투자증권',2357948,32,9.18],[5,'신한투자증권',2049510,12,7.98],[6,'대신증권',1686722,13,6.57],[7,'씨티글로벌마켓증권',1402500,1,5.46],[7,'BOA메릴린치',1402500,1,5.46],[7,'골드만삭스',1402500,1,5.46],[10,'미래에셋증권',1296248,21,5.05]]);
+  ltAdd(2026,'M&A',[[1,'삼일PwC',8185245,43,null],[2,'도이치뱅크',4850000,1,null],[3,'JP모간',3539600,3,null],[4,'골드만삭스',3175003,2,null],[5,'삼정KPMG',1523906,19,null],[6,'EY한영',1020071,5,null],[7,'딜로이트 안진',923950,9,null],[8,'UBS',893400,3,null],[9,'라자드코리아자산운용',854825,3,null],[10,'모간스탠리',610000,1,null]]);
+  ltAdd(2025,'M&A',[[1,'삼일PwC',20025332,123,null],[2,'UBS',10635901,12,null],[3,'삼정KPMG',10345751,51,null],[4,'모간스탠리',6148444,5,null],[5,'BOA메릴린치',5113580,5,null],[6,'씨티글로벌마켓증권',4938448,4,null],[7,'딜로이트 안진',4129472,13,null],[8,'JP모간',4111794,3,null],[9,'한국산업은행',1790173,9,null],[10,'KB증권',1272945,7,null]]);
+  ltAdd(2024,'M&A',[[1,'삼일PwC',14253184,110,null],[2,'삼정KPMG',7510150,53,null],[3,'UBS',3568226,7,null],[4,'씨티글로벌마켓증권',2653335,4,null],[5,'모간스탠리',2458991,3,null],[6,'BDA파트너스',2354959,4,null],[7,'딜로이트 안진',1647681,7,null],[8,'JP모간',1553488,2,null],[9,'KB증권',1032790,5,null],[10,'KR&Partners',910911,8,null]]);
+  ltAdd(2023,'M&A',[[1,'삼일PwC',8789040,97,null],[2,'JP모간',6856804,12,null],[3,'삼정KPMG',6373332,54,null],[4,'크레디트스위스',6313505,10,null],[5,'씨티글로벌마켓증권',5622485,3,null],[6,'모간스탠리',4416507,3,null],[7,'BOA메릴린치',3231095,4,null],[8,'SC증권',2540859,3,null],[9,'NH투자증권',2331678,2,null],[10,'Rothschild',1993131,1,null]]);
+  ltAdd(2022,'M&A',[[1,'삼일PwC',11591369,101,null],[2,'삼정KPMG',8615758,44,null],[3,'모간스탠리',7009722,6,null],[4,'딜로이트 안진',4958211,20,null],[5,'BOA메릴린치',4688321,3,null],[6,'씨티글로벌마켓증권',4560250,4,null],[7,'크레디트스위스',3370572,6,null],[8,'Moelis&Company',2720250,1,null],[9,'골드만삭스',2164298,4,null],[10,'KB증권',1903000,6,null]]);
+
+  var ltFilter='DCM',ltMode='single';
+  function ltWon(v){return v==null?'—':(v>=10000000?(v/10000000).toFixed(2)+'조원':(v/10000).toFixed(2)+'억원');}
+  function ltSel(){if(ltMode==='single')return [Number(document.getElementById('lt-single-year').value)];
+    var ys=[].slice.call(document.querySelectorAll('#lt-compare-wrap input:checked')).map(function(x){return Number(x.value);});return ys.length?ys:[2026];}
+  var COLS=['#f37321','#b84b16','#ff9b52','#7a3210','#ffc18d'];
+  function ltRowsHtml(rows){return rows.map(function(r){return '<tr><td class="cell-strong">'+r.rank+'</td><td><b>'+r.house+'</b></td><td class="r">'+ltWon(r.amount)+'</td><td class="r">'+r.deals+'</td><td class="r">'+(r.share==null?'—':r.share.toFixed(2)+'%')+'</td></tr>';}).join('');}
+  function ltTip(){var tip=document.getElementById('lt-tooltip');if(!tip)return;
+    document.querySelectorAll('#lt-chart rect,#lt-chart path').forEach(function(el){var t=el.querySelector('title');if(!t||el.dataset.b)return;el.dataset.b='1';
+      el.addEventListener('mouseenter',function(){tip.textContent=t.textContent;tip.hidden=false;});
+      el.addEventListener('mousemove',function(e){tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px';});
+      el.addEventListener('mouseleave',function(){tip.hidden=true;});});}
+  function ltBar(rows,years){
+    var houses=[];rows.filter(function(r){return years.indexOf(r.year)>=0;}).forEach(function(r){if(houses.indexOf(r.house)<0)houses.push(r.house);});
+    houses=houses.slice(0,12);var max=0;rows.forEach(function(r){if(houses.indexOf(r.house)>=0&&r.amount>max)max=r.amount;});
+    var W=Math.max(820,houses.length*88),H=400,ml=150,mr=16,mt=22,mb=84,bw=Math.max(9,Math.min(22,(W-ml-mr)/(houses.length*Math.max(years.length,1)*1.8)));
+    var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="연도별 주관사 금액 비교">';
+    for(var g=0;g<5;g++){var yy=mt+(H-mt-mb)*g/4;s+='<line class="axis" x1="'+ml+'" x2="'+(W-mr)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(ml-8)+'" y="'+(yy+4)+'" text-anchor="end">'+ltWon(max*(1-g/4))+'</text>';}
+    houses.forEach(function(h,i){var base=ml+i*((W-ml-mr)/houses.length)+(W-ml-mr)/houses.length/2;
+      s+='<text x="'+base+'" y="'+(H-28)+'" text-anchor="end" transform="rotate(-25 '+base+' '+(H-28)+')">'+h+'</text>';
+      years.forEach(function(y,j){var r=rows.find(function(x){return x.year===y&&x.house===h;});if(!r)return;
+        var bh=max?(r.amount/max)*(H-mt-mb):0,x=base+(j-(years.length-1)/2)*(bw+3)-bw/2;
+        s+='<rect x="'+x+'" y="'+(H-mb-bh)+'" width="'+bw+'" height="'+bh+'" rx="3" fill="'+COLS[j%COLS.length]+'"><title>'+y+'년 '+h+' · '+r.rank+'위 · '+ltWon(r.amount)+(r.share==null?'':' · '+r.share.toFixed(2)+'%')+' · '+r.deals+'건</title></rect>';});});
+    s+='</svg><div class="lt-legend">'+years.map(function(y,j){return '<span><i class="lt-dot" style="background:'+COLS[j%COLS.length]+'"></i>'+y+'</span>';}).join('')+'</div>';
+    document.getElementById('lt-chart').innerHTML=s;ltTip();
+  }
+  function ltPieChart(rows,year){
+    var rr=rows.filter(function(r){return r.year===year;}).sort(function(a,b){return a.rank-b.rank;}),top=rr.slice(0,4);
+    var isMna=top.length&&top[0].share==null,total=isMna?rr.reduce(function(a,r){return a+r.amount;},0):100;
+    var seg=top.map(function(r){return {name:r.house,val:isMna?r.amount/total*100:r.share,r:r};});
+    var other=Math.max(0,100-seg.reduce(function(a,b){return a+b.val;},0));if(other>0)seg.push({name:'기타',val:other});
+    var cx=150,cy=150,R=110,ang=-Math.PI/2,s='<svg viewBox="0 0 560 310" role="img" aria-label="'+year+' '+ltFilter+' 점유율"><g>';
+    seg.forEach(function(x,i){var a=x.val/100*Math.PI*2,b=ang+a,lg=a>Math.PI?1:0,x1=cx+R*Math.cos(ang),y1=cy+R*Math.sin(ang),x2=cx+R*Math.cos(b),y2=cy+R*Math.sin(b);
+      var tt=x.r?(year+'년 '+x.r.house+' · '+x.r.rank+'위 · '+ltWon(x.r.amount)+(x.r.share==null?'':' · '+x.r.share.toFixed(2)+'%')+' · '+x.r.deals+'건'):(x.name+' '+x.val.toFixed(1)+'%');
+      s+='<path d="M '+cx+' '+cy+' L '+x1.toFixed(1)+' '+y1.toFixed(1)+' A '+R+' '+R+' 0 '+lg+' 1 '+x2.toFixed(1)+' '+y2.toFixed(1)+' Z" fill="'+COLS[i%COLS.length]+'" stroke="var(--bg)" stroke-width="2"><title>'+tt+'</title></path>';ang=b;});
+    s+='</g>';seg.forEach(function(x,i){var y=48+i*34;s+='<rect x="320" y="'+(y-12)+'" width="13" height="13" rx="3" fill="'+COLS[i%COLS.length]+'"/><text x="342" y="'+y+'">'+x.name+' '+x.val.toFixed(1)+'%</text>';});
+    s+='</svg><div class="lt-pie-note">'+(isMna?'점유율은 더벨 공개 상위 10개 자문사 금액 기준':'더벨 공개 점유율 기준 · 상위 4개사 외 금액은 기타')+'</div>';
+    document.getElementById('lt-chart').innerHTML=s;ltTip();
+  }
+  function ltChanges(years){
+    var box=document.getElementById('lt-change-summary');
+    if(ltMode!=='compare'||years.length<2){box.hidden=true;box.innerHTML='';return;}
+    var ys=years.slice().sort(function(a,b){return a-b;}),from=ys[0],to=ys[ys.length-1];
+    var a=LT.filter(function(r){return r.market===ltFilter&&r.year===from;}),b=LT.filter(function(r){return r.market===ltFilter&&r.year===to;}),ch=[];
+    a.forEach(function(x){var y=b.find(function(z){return z.house===x.house;});if(y&&x.amount)ch.push({house:x.house,diff:y.amount-x.amount,pct:(y.amount-x.amount)/x.amount*100});});
+    var ups=ch.filter(function(x){return x.diff>0;}).sort(function(x,y){return y.diff-x.diff;}).slice(0,3),downs=ch.filter(function(x){return x.diff<0;}).sort(function(x,y){return x.diff-y.diff;}).slice(0,3);
+    function col(title,list,up){var h='<div class="lt-change-col"><h4>'+title+'</h4>';if(!list.length)return h+'<div style="font-size:11px;color:var(--ink-3);padding:8px 0">해당 기관 없음</div></div>';
+      list.forEach(function(x,i){h+='<div class="lt-change-item"><span class="lt-change-rank">'+(i+1)+'</span><b>'+x.house+'</b><span class="lt-change-val '+(up?'up':'down')+'">'+(up?'▲ +':'▼ ')+ltWon(Math.abs(x.diff))+'<small>'+(x.pct>=0?'+':'')+x.pct.toFixed(1)+'%</small></span></div>';});return h+'</div>';}
+    box.hidden=false;box.innerHTML='<div class="lt-change-head"><b>'+from+' → '+to+' 금액 증감</b><span>두 연도 순위표에 모두 포함된 기관 기준</span></div><div class="lt-change-grid">'+col('상승폭 상위',ups,true)+col('하락폭 상위',downs,false)+'</div>';
+  }
+  function ltRender(){
+    var years=ltSel(),q=document.getElementById('lt-search').value.toLowerCase();
+    var rows=LT.filter(function(r){return r.market===ltFilter&&years.indexOf(r.year)>=0&&(!q||r.house.toLowerCase().indexOf(q)>=0);});
+    var sm='';years.forEach(function(y){var rr=LT.filter(function(r){return r.market===ltFilter&&r.year===y;}).sort(function(a,b){return a.rank-b.rank;});
+      if(rr.length)sm+='<div class="metric"><div class="metric-k">'+y+' '+ltFilter+' 선두</div><div class="metric-v">'+rr[0].house+'</div><div class="metric-s">'+ltWon(rr[0].amount)+(rr[0].share==null?'':' · '+rr[0].share.toFixed(2)+'%')+'</div></div>';});
+    var smEl=document.getElementById('lt-summary');smEl.innerHTML=sm;smEl.hidden=!sm;
+    if(ltMode==='single')ltPieChart(rows,years[0]);else ltBar(rows,years);
+    var g={};rows.forEach(function(r){(g[r.year]||(g[r.year]=[])).push(r);});
+    var html='';Object.keys(g).sort().forEach(function(y){html+='<div class="lt-block"><div class="lt-block-head"><b>'+y+'년 '+ltFilter+' 누적</b><span>금액 단위: 백만원</span></div><div class="tscroll"><table><thead><tr><th>순위</th><th>주관사/자문사</th><th class="r">금액</th><th class="r">건수</th><th class="r">점유율</th></tr></thead><tbody>'+ltRowsHtml(g[y].sort(function(a,b){return a.rank-b.rank;}))+'</tbody></table></div></div>';});
+    document.getElementById('lt-panels').innerHTML=html||'<div class="disc">선택 조건에 맞는 데이터가 없습니다.</div>';
+    document.getElementById('lt-chart-title').textContent=ltMode==='single'?years[0]+'년 '+ltFilter+' 점유율':ltFilter+' 상위 주관사 연도별 비교';
+    ltChanges(years);
+  }
+  document.querySelectorAll('[data-lt-filter]').forEach(function(b){b.addEventListener('click',function(){ltFilter=b.dataset.ltFilter;document.querySelectorAll('[data-lt-filter]').forEach(function(x){var on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-pressed',on?'true':'false');});ltRender();});});
+  document.querySelectorAll('[data-lt-mode]').forEach(function(b){b.addEventListener('click',function(){ltMode=b.dataset.ltMode;document.querySelectorAll('[data-lt-mode]').forEach(function(x){x.classList.toggle('active',x===b);});document.getElementById('lt-single-wrap').hidden=ltMode!=='single';document.getElementById('lt-compare-wrap').hidden=ltMode!=='compare';ltRender();});});
+  document.querySelectorAll('#lt-compare-wrap input').forEach(function(c){c.addEventListener('change',ltRender);});
+  document.getElementById('lt-single-year').addEventListener('change',ltRender);
+  document.getElementById('lt-search').addEventListener('input',ltRender);
+  ltRender();
+
+  /* ---------- HOME snapshot + nav ---------- */
+  function snapItem(name,m){
+    var up=m.pct>0,dn=m.pct<0,cls=up?'up':(dn?'down':'flat');
+    var p=m.rate?((up?'+':(dn?'−':''))+m.chg+'bp'):((up?'+':(dn?'−':''))+m.pct.toFixed(2)+'%');
+    var viz=m.spark?'<div class="db">'+chart(m.spark,false)+'</div>':((m.s)?'<div class="db">'+linechart(m.s,m.pc,false)+'</div>':'');
+    return '<div class="snap-item"><div class="k">'+name+'</div>'
+      +'<div class="v">'+m.val+(m.rate?'%':'')+'</div><div class="p '+cls+'">'+p+'</div>'+viz+'</div>';
+  }
+  document.getElementById('snap').innerHTML=
+    snapItem('코스피',IDX[0])+snapItem('S&P 500',IDX[3])+snapItem('나스닥',IDX[2])
+   +snapItem('금',COM[2])+snapItem('원/달러',FX[0])+snapItem('미 10년',RATE[1]);
+
+  var NAV=[
+   {n:'01',t:'지수·지표',d:'국내외 지수·원자재·환율·금리. 일간 시·고·저·종 미니 차트.',p:'p1'},
+   {n:'02',t:'증시 캘린더',d:'9월 미국·한국·중국 주요 일정과 “왜 중요한가”.',p:'p2'},
+   {n:'03',t:'글로벌 이슈·밸류체인·해외 IPO',d:'Macro·FICC, AI·우주 밸류체인, 선진국 IPO 파이프라인과 시장 영향.',p:'p3'},
+   {n:'04',t:'전일 수급',d:'8/31 KOSPI·KOSDAQ 주체별 순매수/순매도 (보도 종합).',p:'p4'},
+   {n:'05',t:'중장기 전망',d:'1개월 컨센서스·목표주가 변화와 변동 사유.',p:'p5'},
+   {n:'06',t:'리그테이블',d:'국내 ECM/DCM 주관 순위와 “데일리로 보는 효용”.',p:'p6'}
+  ];
+  document.getElementById('navlist').innerHTML=NAV.map(function(o){
+    return '<button class="navcard" data-goto="'+o.p+'"><span class="nc-n">'+o.n+'</span>'
+      +'<span class="nc-body"><h3>'+o.t+'</h3><p>'+o.d+'</p></span><span class="nc-go">›</span></button>';
+  }).join('');
+  [].slice.call(document.querySelectorAll('.navcard')).forEach(function(b){
+    b.addEventListener('click',function(){activate(b.dataset.goto);});
+  });
+})();
+</script>
+<script>
+/* P2 증시 캘린더 — 2026 6~10월 아카이브/현재/예정, 주별·월별 뷰 (사용자 제공 데이터) */
+(function(){
+  var root=document.getElementById('p2'),host=document.getElementById('cal'),mg=document.getElementById('month-grid');
+  if(!root||!host||!mg)return;
+  var S={bls:'https://www.bls.gov/schedule/2026/09_sched_list.htm',cps:'https://www.bls.gov/cps/publications/release-calendar.htm',fed:'https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm',fedpress:'https://www.federalreserve.gov/newsevents/pressreleases/2026-press-fomc.htm',bok:'https://www.bok.or.kr/portal/main/contents.do?menuNo=200755',kostat:'https://www.kostat.go.kr/boardDownload.es?bid=5146&list_no=443886&seq=3',earn:'https://kr.investing.com/earnings-calendar/',nyfed:'https://www.newyorkfed.org/research/calendars/i-sep26.html'};
+  var A=[
+   {m:6,d:5,w:'금',c:'US',f:'🇺🇸',n:'5월 고용보고서',k:'macro',l:'고용',e:'+85,000',a:'+172,000',p:'+129,000',src:S.cps,sn:'BLS'},
+   {m:6,d:16,w:'화',c:'US',f:'🇺🇸',n:'FOMC 정례회의 1일차',k:'macro',l:'금리',e:'동결 예상',a:'3.75~4.00% 동결',p:'3.75~4.00%',src:S.fed,sn:'Fed'},
+   {m:6,d:17,w:'수',c:'US',f:'🇺🇸',n:'FOMC 성명·경제전망(SEP)',k:'macro',l:'금리',e:'동결 예상',a:'3.75~4.00% 동결',p:'3.75~4.00%',src:S.fedpress,sn:'Fed'},
+   {m:7,d:2,w:'목',c:'US',f:'🇺🇸',n:'6월 고용보고서',k:'macro',l:'고용',e:'+115,000',a:'+57,000 · 실업률 4.2%',p:'+129,000',src:S.cps,sn:'BLS'},
+   {m:7,d:15,w:'수',c:'US',f:'🇺🇸',n:'6월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'전월비 -0.4%',p:'전월비 +0.1%',src:'https://www.bls.gov/cpi/',sn:'BLS'},
+   {m:7,d:28,w:'화',c:'US',f:'🇺🇸',n:'FOMC 정례회의 1일차',k:'macro',l:'금리',e:'동결 예상',a:'3.50~3.75% 동결',p:'3.75~4.00%',src:S.fed,sn:'Fed'},
+   {m:7,d:29,w:'수',c:'US',f:'🇺🇸',n:'FOMC 성명·기자회견',k:'macro',l:'금리',e:'동결 예상',a:'3.50~3.75% 동결',p:'3.75~4.00%',src:S.fedpress,sn:'Fed'},
+   {m:8,d:7,w:'금',c:'US',f:'🇺🇸',n:'7월 고용보고서',k:'macro',l:'고용',e:'+100,000 내외',a:'-23,000 · 실업률 4.1%',p:'+20,000',src:'https://www.dol.gov/newsroom/economicdata/empsit_08072026.pdf',sn:'DOL/BLS'},
+   {m:8,d:12,w:'수',c:'US',f:'🇺🇸',n:'7월 소비자물가(CPI)',k:'macro',l:'물가',e:'전월비 +0.2%',a:'전월비 +0.1% · 전년비 3.4%',p:'전년비 2.7%',src:'https://www.bls.gov/news.release/cpi.htm',sn:'BLS'},
+   {m:8,d:19,w:'수',c:'US',f:'🇺🇸',n:'7월 FOMC 회의록',k:'macro',l:'금리',e:'—',a:'회의록 공개',p:'—',src:S.fedpress,sn:'Fed'},
+   {m:8,d:27,w:'목',c:'KR',f:'🇰🇷',n:'한국은행 금융통화위원회',k:'macro',l:'금리',e:'3.00% 유지 예상',a:'3.00% 유지',p:'3.00%',src:S.bok,sn:'한국은행'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'JOLTS 구인·이직보고서 (7월)',k:'macro',l:'고용',e:'—',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Palo Alto Networks (PANW) 실적',k:'earnings',l:'실적',e:'EPS 0.9763',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Dell (DELL) · Medtronic (MDT) 실적',k:'earnings',l:'실적',e:'EPS 4.87 / 1.39',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Credo Technology (CRDO) · NIO 실적',k:'earnings',l:'실적',e:'EPS 1.16 / -0.4101',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 (382840) 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Broadcom (AVGO) 실적',k:'earnings',l:'실적',e:'EPS 3.24 · 매출 $29.44B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Snowflake (SNOW) · HPE 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
+   {m:9,d:2,w:'수',c:'KR',f:'🇰🇷',n:'8월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'발표 전',p:'—',src:S.kostat,sn:'국가통계처'},
+   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'ADP 민간고용 (8월)',k:'macro',l:'고용',e:'—',a:'발표 전',p:'—',src:S.nyfed,sn:'NY Fed'},
+   {m:9,d:3,w:'목',c:'US',f:'🇺🇸',n:'생산성·단위노동비용 (2Q 수정)',k:'macro',l:'경제지표',e:'—',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:4,w:'금',c:'US',f:'🇺🇸',n:'8월 고용보고서',k:'macro',l:'고용',e:'발표 전',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:9,w:'수',c:'KR',f:'🇰🇷',n:'삼성전자 · KB증권 Korea Conference',k:'earnings',l:'IR 행사',e:'—',a:'—',p:'—',src:'https://org-sec-b2c.samsung.com/sec/ir/ir-events-presentations/events/',sn:'Samsung IR'},
+   {m:9,d:9,w:'수',c:'US',f:'🇺🇸',n:'Oracle (ORCL) 실적',k:'earnings',l:'실적',e:'EPS 1.74 · 매출 $19.12B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:9,d:10,w:'목',c:'US',f:'🇺🇸',n:'8월 생산자물가(PPI)',k:'macro',l:'물가',e:'발표 전',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:10,w:'목',c:'KR',f:'🇰🇷',n:'한국은행 금융통화위원회 정기회의',k:'macro',l:'금융안정',e:'—',a:'결과 전',p:'—',src:S.bok,sn:'한국은행'},
+   {m:9,d:10,w:'목',c:'US',f:'🇺🇸',n:'Adobe (ADBE) 실적',k:'earnings',l:'실적',e:'EPS 6.07',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:9,d:11,w:'금',c:'US',f:'🇺🇸',n:'8월 소비자물가(CPI)',k:'macro',l:'물가',e:'발표 전',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:15,w:'화',c:'US',f:'🇺🇸',n:'FOMC 정례회의 1일차',k:'macro',l:'금리',e:'—',a:'결과 전',p:'—',src:S.fed,sn:'Fed'},
+   {m:9,d:16,w:'수',c:'US',f:'🇺🇸',n:'FOMC 성명·경제전망(SEP)',k:'macro',l:'금리',e:'—',a:'결과 전',p:'—',src:S.fed,sn:'Fed'},
+   {m:9,d:16,w:'수',c:'KR',f:'🇰🇷',n:'삼성전자 · UBS Tech Tour',k:'earnings',l:'IR 행사',e:'—',a:'—',p:'—',src:'https://org-sec-b2c.samsung.com/sec/ir/ir-events-presentations/events/',sn:'Samsung IR'},
+   {m:9,d:17,w:'목',c:'US',f:'🇺🇸',n:'FedEx (FDX) 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
+   {m:9,d:21,w:'월',c:'KR',f:'🇰🇷',n:'삼성전자 · CLSA Investor’s Forum (~22일)',k:'earnings',l:'IR 행사',e:'—',a:'—',p:'—',src:'https://org-sec-b2c.samsung.com/sec/ir/ir-events-presentations/events/',sn:'Samsung IR'},
+   {m:9,d:22,w:'화',c:'KR',f:'🇰🇷',n:'한국은행 금융통화위원회 정기회의',k:'macro',l:'금융안정',e:'—',a:'결과 전',p:'—',src:S.bok,sn:'한국은행'},
+   {m:9,d:23,w:'수',c:'US',f:'🇺🇸',n:'Micron Technology (MU) 실적',k:'earnings',l:'실적',e:'EPS 31.33 · 매출 $50.84B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:9,d:24,w:'목',c:'US',f:'🇺🇸',n:'Costco (COST) 실적',k:'earnings',l:'실적',e:'EPS 6.56 · 매출 $94.5B',a:'—',p:'—',src:'https://investingcalendar.com/exchange/nasdaq/earnings',sn:'Nasdaq calendar'},
+   {m:9,d:29,w:'화',c:'US',f:'🇺🇸',n:'JOLTS 구인·이직보고서 (8월)',k:'macro',l:'고용',e:'—',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:29,w:'화',c:'US',f:'🇺🇸',n:'Nike (NKE) 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
+   {m:10,d:1,w:'목',c:'US',f:'🇺🇸',n:'Accenture (ACN) 실적',k:'earnings',l:'실적',e:'EPS 3.18',a:'—',p:'—',src:'https://8tickers.com/earnings?month=2026-10',sn:'8tickers'},
+   {m:10,d:2,w:'금',c:'US',f:'🇺🇸',n:'9월 고용보고서',k:'macro',l:'고용',e:'—',a:'발표 전',p:'—',src:S.cps,sn:'BLS'},
+   {m:10,d:2,w:'금',c:'KR',f:'🇰🇷',n:'9월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'발표 전',p:'—',src:S.kostat,sn:'국가통계처'},
+   {m:10,d:7,w:'수',c:'US',f:'🇺🇸',n:'FOMC 9월 회의록',k:'macro',l:'금리',e:'—',a:'발표 전',p:'—',src:S.fed,sn:'Fed'},
+   {m:10,d:14,w:'수',c:'US',f:'🇺🇸',n:'ASML Holding (ASML) 실적',k:'earnings',l:'실적',e:'EPS EUR 10.58 · 매출 EUR 11.66B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:10,d:15,w:'목',c:'US',f:'🇺🇸',n:'TSMC (TSM) 실적',k:'earnings',l:'실적',e:'EPS $4.45 · 매출 TWD 1,449.48B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:10,d:20,w:'화',c:'US',f:'🇺🇸',n:'Netflix (NFLX) 실적',k:'earnings',l:'실적',e:'EPS 0.82 · 매출 $12.88B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
+   {m:10,d:22,w:'목',c:'US',f:'🇺🇸',n:'Amazon (AMZN) · Intel (INTC) 실적',k:'earnings',l:'실적',e:'EPS 1.96 / 0.39',a:'—',p:'—',src:'https://investingcalendar.com/exchange/nasdaq/earnings',sn:'Nasdaq calendar'},
+   {m:10,d:22,w:'목',c:'KR',f:'🇰🇷',n:'한국은행 금융통화위원회 정기회의',k:'macro',l:'금융안정',e:'—',a:'결과 전',p:'—',src:S.bok,sn:'한국은행'}
+  ];
+  var month=9,selected=null,kind='all',country='all',view='weekly';
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function grid(){
+    var names=['일','월','화','수','목','금','토'],first=new Date(2026,month-1,1).getDay(),total=new Date(2026,month,0).getDate();
+    var out=names.map(function(n){return '<span class="dow">'+n+'</span>';}).join('');
+    for(var i=0;i<first;i++)out+='<button class="day muted" disabled>·</button>';
+    for(var d=1;d<=total;d++){var has=A.some(function(e){return e.m===month&&e.d===d;}),sel=selected===d?' selected':'';
+      out+='<button class="day'+(has?' has-event':'')+sel+'" data-day="'+d+'">'+d+'</button>';}
+    while((first+total)%7){out+='<button class="day muted" disabled>·</button>';total++;}
+    mg.innerHTML=out;
+    document.getElementById('cal-month-label').textContent='2026년 '+month+'월';
+    document.getElementById('cal-prev').disabled=month<=6;
+    document.getElementById('cal-next').disabled=month>=10;
+    mg.querySelectorAll('[data-day]').forEach(function(b){b.onclick=function(){selected=selected===Number(b.dataset.day)?null:Number(b.dataset.day);grid();render();};});
+  }
+  function one(e){
+    return '<div class="cal-row"><div class="cal-date">'+e.d+'일 ('+e.w+')</div>'
+      +'<div class="cal-event"><span class="flag">'+e.f+'</span><span class="cal-event-name">'+esc(e.n)+'</span><span class="cal-kind">'+e.l+'</span></div>'
+      +'<div class="cal-est cal-num">'+esc(e.e)+'</div><div class="cal-actual cal-num">'+esc(e.a)+'</div><div class="cal-prev cal-num">'+esc(e.p)+'</div>'
+      +'<a class="cal-source" href="'+e.src+'" target="_blank" rel="noopener">'+esc(e.sn)+' ↗</a></div>';
+  }
+  function tableHead(){return '<div class="cal-table-head"><span>날짜</span><span>일정</span><span class="cal-num">예상</span><span class="cal-num">실제</span><span class="cal-num">이전</span><span>출처</span></div>';}
+  function render(){
+    var list=A.filter(function(e){return e.m===month&&(selected===null||e.d===selected)&&(kind==='all'||e.k===kind)&&(country==='all'||e.c===country);});
+    if(!list.length){host.innerHTML='<div class="empty">선택한 조건의 일정이 없습니다.</div>';return;}
+    if(view==='monthly'){
+      host.innerHTML='<section class="cal-week"><h3 class="cal-week-title">2026년 '+month+'월 전체</h3><div class="cal-table">'+tableHead()+list.map(one).join('')+'</div></section>';
+    }else{
+      var g={},firstDow=new Date(2026,month-1,1).getDay();
+      list.forEach(function(e){var w=Math.ceil((e.d+firstDow)/7);(g[w]||(g[w]=[])).push(e);});
+      host.innerHTML=Object.keys(g).sort(function(a,b){return a-b;}).map(function(w){
+        return '<section class="cal-week"><h3 class="cal-week-title">'+month+'월 '+w+'주차</h3><div class="cal-table">'+tableHead()+g[w].map(one).join('')+'</div></section>';
+      }).join('');
+    }
+  }
+  function bind(id,fn){document.querySelectorAll('#'+id+' .filter-btn').forEach(function(b){b.onclick=function(){
+    document.querySelectorAll('#'+id+' .filter-btn').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');fn(b.dataset);};});}
+  bind('cal-kind-filter',function(ds){kind=ds.kind;render();});
+  bind('cal-country-filter',function(ds){country=ds.country;render();});
+  bind('cal-view-filter',function(ds){view=ds.view;selected=null;grid();render();});
+  document.getElementById('cal-prev').onclick=function(){if(month>6){month--;selected=null;grid();render();}};
+  document.getElementById('cal-next').onclick=function(){if(month<10){month++;selected=null;grid();render();}};
+  grid();render();
+})();
+</script>
+<script>
+/* P3 글로벌 이슈 · 밸류체인 · 해외 IPO (사용자 제공 데이터) */
+(function(){
+  var p3=document.getElementById('p3');if(!p3)return;
+  var nav=p3.querySelectorAll('#p3-nav .p3-nav-btn'),views={issues:document.getElementById('v-issues'),chain:document.getElementById('v-chain'),ipo:document.getElementById('v-ipo')};
+  nav.forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.v;nav.forEach(function(x){x.classList.toggle('active',x===b);});Object.keys(views).forEach(function(v){views[v].hidden=v!==k;});});});
+
+  /* --- 이슈 카드 --- */
+  var ISSUES=[
+   {code:'MACRO',name:'AI 캐펙스 슈퍼사이클 + 전력 병목',pri:'HIGH',stat:'CAPEX ↑',
+    sum:'전력·냉각·구리로 병목이 이동하며 인프라 수요 확산',
+    driver:'하이퍼스케일러 AI 투자 확대',related:'NVIDIA · Microsoft · Vertiv · SK하이닉스',
+    impact:'AI 인프라 ▲ · 구리 ▲ · 전력기기 ▲',charts:['SK하이닉스','삼성전자','SOX','DRAM','반도체 수출']},
+   {code:'FICC',name:'금·은·구리 통화 헤지 랠리',pri:'MEDIUM',stat:'금 $4,434',
+    sum:'중앙은행 금 매입과 재정적자 우려가 귀금속·원자재 통화로 확산',
+    driver:'중앙은행 금 매입 + 재정적자',related:'Gold · Silver · Copper · 광산주',
+    impact:'금 ▲ · 은 ▲ · 달러 ▼',charts:[]},
+   {code:'RATES',name:'미 장기금리 상단 (10Y 4.76%)',pri:'HIGH',stat:'+3.8bp',
+    sum:'인하 사이클에도 term premium이 확대되며 듀레이션 압박',
+    driver:'재정적자 + 국채 공급 부담',related:'US 10Y · 성장주 · REITs · 은행',
+    impact:'성장주 ▼ · 은행 ▲ · 달러 ▲',charts:[]},
+   {code:'KR',name:'한국 반도체 사상 최고권',pri:'MEDIUM',stat:'KOSPI 6,836',
+    sum:'HBM 가격 강세가 원화·수출주·국내 지수로 전이',
+    driver:'HBM 가격 구조적 상승',related:'TSMC · 삼성전자 · SK하이닉스 · KRW',
+    impact:'메모리 ▲ · 원화 강세 · 수출주 관찰',charts:['KOSPI','USD/KRW','외국인 순매수','삼성전자']}
+  ];
+  document.getElementById('issues').innerHTML=ISSUES.map(function(x){
+    var links=(x.charts||[]).map(function(n){return '<button class="chart-trigger" type="button" data-trend="'+n+'">'+n+'</button>';}).join('');
+    return '<article class="issue-card"><div class="ic-top"><span class="pri">'+x.pri+'</span><span>'+x.code+'</span></div>'
+      +'<h3>'+x.name+'</h3><p class="ic-sum">'+x.sum+'</p><div class="ic-stat">'+x.stat+'</div>'
+      +'<div class="ic-meta"><div><b>Driver</b>'+x.driver+'</div><div><b>Related</b>'+x.related+'</div></div>'
+      +'<div class="ic-impact"><strong>Market impact</strong><br>'+x.impact+'</div>'
+      +(links?'<div class="chart-links">'+links+'</div>':'')+'</article>';
+  }).join('');
+
+  /* --- 기간별 추세 뷰어 --- */
+  function tgen(a,b,n,wv){var o=[];for(var i=0;i<n;i++){var p=i/(n-1);o.push(Number((a+(b-a)*p+Math.sin(i*1.31)*wv+Math.cos(i*0.47)*wv*0.45).toFixed(2)));}return o;}
+  function bgen(base,n,sp){var o=[];for(var i=0;i<n;i++){o.push(Math.round(base+Math.sin(i*1.8)*sp+Math.cos(i*0.42)*sp*0.55));}return o;}
+  var TREND={
+   'KOSPI':{unit:'pt',type:'line',src:'KRX 종가',p:{'1개월':tgen(6380,6820,22,58),'3개월':tgen(5650,6820,66,105)}},
+   'SK하이닉스':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(1680000,1693000,66,72000),'6개월':tgen(1320000,1693000,132,108000)}},
+   '삼성전자':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(69000,78400,66,2500),'6개월':tgen(61000,78400,132,3600)}},
+   'SOX':{unit:'pt',type:'line',src:'Philadelphia Semiconductor Index',p:{'3개월':tgen(4850,5480,66,120),'6개월':tgen(4100,5480,132,180)}},
+   'USD/KRW':{unit:'원',type:'line',src:'서울 외환시장 종가',p:{'1개월':tgen(1398,1371,22,7),'3개월':tgen(1450,1371,66,12)}},
+   '외국인 순매수':{unit:'억원',type:'bar',src:'KRX 투자자별 수급',p:{'1개월':bgen(420,22,1800),'3개월':bgen(160,66,2300)}},
+   'DRAM':{unit:'지수',type:'line',src:'DRAMeXchange',p:{'3개월':tgen(96,121,13,3.5),'6개월':tgen(84,121,26,4.5)}},
+   '반도체 수출':{unit:'YoY %',type:'bar',src:'관세청',p:{'6개월':[12.4,18.1,8.7,24.3,31.2,27.8],'12개월':[-6.2,3.8,9.4,14.7,11.2,18.5,22.1,19.6,28.4,31.2,27.8,34.6]}}
+  };
+  function tf(v){return Math.abs(v)>=1000?Math.round(v).toLocaleString('en-US'):Number(v).toLocaleString('en-US',{maximumFractionDigits:2});}
+  var TV=document.getElementById('trendViewer');
+  function drawTrend(name,period){
+    var d=TREND[name];if(!d)return;var s=d.p[period]||d.p[Object.keys(d.p)[0]];
+    var first=s[0],cur=s[s.length-1],hi=Math.max.apply(null,s),lo=Math.min.apply(null,s),avg=s.reduce(function(a,b){return a+b;},0)/s.length,dl=first?((cur-first)/Math.abs(first)*100):0;
+    document.getElementById('trendTitle').textContent=name;
+    document.getElementById('trendPeriod').textContent=period;
+    document.getElementById('trendStats').innerHTML='<span><b>현재</b>'+tf(cur)+' '+d.unit+'</span><span class="'+(dl>=0?'pos':'neg')+'"><b>변화</b>'+(dl>=0?'+':'')+dl.toFixed(1)+'%</span><span><b>고점</b>'+tf(hi)+'</span><span><b>저점</b>'+tf(lo)+'</span><span><b>평균</b>'+tf(avg)+'</span>';
+    document.getElementById('trendSource').textContent='Source: '+d.src;
+    TV.querySelectorAll('.period-tab').forEach(function(b){b.classList.toggle('active',b.dataset.p===period);});
+    var w=960,h=176,l=44,r=12,t=12,b=24,pw=w-l-r,ph=h-t-b,rg=(hi-lo)||1;
+    function X(i){return l+i*(pw/(s.length-1||1));}function Y(v){return t+(hi-v)/rg*ph;}
+    var out='';[0,.5,1].forEach(function(p){var yy=t+ph*p;out+='<line class="gl" x1="'+l+'" y1="'+yy.toFixed(1)+'" x2="'+(w-r)+'" y2="'+yy.toFixed(1)+'"/><text x="'+(l-7)+'" y="'+(yy+3).toFixed(1)+'" text-anchor="end">'+tf(hi-rg*p)+'</text>';});
+    out+='<line class="avg" x1="'+l+'" y1="'+Y(avg).toFixed(1)+'" x2="'+(w-r)+'" y2="'+Y(avg).toFixed(1)+'"/>';
+    if(d.type==='bar'){var bw=Math.max(3,pw/s.length*0.6),z=Math.max(t,Math.min(h-b,Y(0)));s.forEach(function(v,i){var yy=Y(v),tp=Math.min(yy,z),hh=Math.max(2,Math.abs(yy-z));out+='<rect class="'+(v>=0?'bu':'bd')+'" x="'+(X(i)-bw/2).toFixed(1)+'" y="'+tp.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+hh.toFixed(1)+'" rx="2"/>';});}
+    else{var pts=s.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);}).join(' ');out+='<polygon class="ar" points="'+l+','+(h-b)+' '+pts+' '+(w-r)+','+(h-b)+'"/><polyline class="ln" points="'+pts+'"/><circle class="dt" cx="'+X(s.length-1).toFixed(1)+'" cy="'+Y(cur).toFixed(1)+'" r="3.5"/>';}
+    out+='<text x="'+l+'" y="'+(h-5)+'">시작</text><text x="'+(w-r)+'" y="'+(h-5)+'" text-anchor="end">현재</text>';
+    document.getElementById('trendChart').innerHTML=out;TV.hidden=false;TV.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function openTrend(name){var d=TREND[name];if(!d)return;
+    document.getElementById('periodTabs').innerHTML=Object.keys(d.p).map(function(p,i){return '<button class="period-tab'+(i===0?' active':'')+'" data-p="'+p+'" type="button">'+p+'</button>';}).join('');
+    TV.querySelectorAll('.period-tab').forEach(function(b){b.addEventListener('click',function(){drawTrend(name,b.dataset.p);});});
+    drawTrend(name,Object.keys(d.p)[0]);
+    p3.querySelectorAll('.chart-trigger').forEach(function(b){b.classList.toggle('active',b.dataset.trend===name);});
+  }
+  p3.querySelectorAll('.chart-trigger').forEach(function(b){b.addEventListener('click',function(){openTrend(b.dataset.trend);});});
+  document.getElementById('trendClose').addEventListener('click',function(){TV.hidden=true;p3.querySelectorAll('.chart-trigger').forEach(function(b){b.classList.remove('active');});});
+
+  /* --- 밸류체인 --- */
+  function vc(id,steps){document.getElementById(id).innerHTML=steps.map(function(s){
+    return '<div class="vc-step"><div class="vc-stage">'+s.stage+'</div><div class="vc-chips">'
+     +s.co.map(function(c){return '<span class="vc-chip'+(c.ext?' ext':'')+'">'+c+'</span>';}).join('')+'</div></div>';
+  }).join('');}
+  var CHAINS={
+   ai:{label:'AI 인프라',kicker:'AI CAPEX SUPER CYCLE',summary:'데이터센터 투자 확대가 반도체·전력·클라우드 전반으로 확산',
+     g:[{stage:'Semiconductor',co:['NVIDIA','AMD','Broadcom','Arm']},{stage:'HBM / Foundry',co:['TSMC','삼성전자','SK하이닉스','Micron']},{stage:'Power / Cooling',co:['Vertiv','Schneider Electric','Eaton','Siemens Energy']},{stage:'Data Center / Cloud',co:['Microsoft','AWS','Google','Meta','Oracle']},{stage:'Applications',co:['OpenAI','Anthropic','xAI']}],
+     kr:['삼성전자','SK하이닉스','한미반도체','LS ELECTRIC']},
+   chip:{label:'반도체',kicker:'SEMICONDUCTOR SUPPLY CHAIN',summary:'AI 서버 수요가 첨단 패키징·장비·메모리로 연결',
+     g:[{stage:'Design',co:['NVIDIA','AMD','Qualcomm','Broadcom']},{stage:'Foundry',co:['TSMC','삼성전자','Intel']},{stage:'Equipment',co:['ASML','Applied Materials','Lam Research','Tokyo Electron']},{stage:'Memory / Packaging',co:['SK하이닉스','Micron','ASE','Amkor']}],
+     kr:['삼성전자','SK하이닉스','한미반도체','이수페타시스']},
+   power:{label:'전력·그리드',kicker:'POWER GRID BUILDOUT',summary:'AI 데이터센터 전력 수요 급증이 발전·송배전·변압기 투자로 직결',
+     g:[{stage:'Generation',co:['GE Vernova','Siemens Energy','Mitsubishi Power','Constellation']},{stage:'Transmission',co:['Prysmian','Nexans','Quanta Services','NKT']},{stage:'Transformers / Switchgear',co:['Hitachi Energy','Schneider Electric','Eaton','ABB']},{stage:'Grid Software',co:['Itron','GE Vernova','Schneider Electric']}],
+     kr:['HD현대일렉트릭','LS ELECTRIC','효성중공업','대한전선','제룡전기']},
+   nuclear:{label:'원자력·SMR',kicker:'NUCLEAR REVIVAL',summary:'24시간 무탄소 전력 수요가 대형 원전·SMR 발주 사이클을 재점화',
+     g:[{stage:'Reactor / SMR',co:['NuScale','GE Hitachi','Westinghouse','TerraPower','X-energy']},{stage:'Fuel / Enrichment',co:['Cameco','Centrus','Urenco']},{stage:'EPC / Components',co:['Bechtel','Fluor','두산에너빌리티']},{stage:'Utilities / Offtake',co:['Constellation','Vistra','Microsoft','Amazon']}],
+     kr:['두산에너빌리티','한전기술','한전KPS','우진','비에이치아이']},
+   cooling:{label:'데이터센터 냉각',kicker:'LIQUID COOLING',summary:'GPU 밀도 상승으로 공랭에서 액침·수랭으로 전환, 열관리가 병목',
+     g:[{stage:'Thermal Systems',co:['Vertiv','Boyd','CoolIT','Motivair']},{stage:'Components (CDU/Pumps)',co:['nVent','Parker Hannifin','Danfoss']},{stage:'Immersion / Fluids',co:['Shell','Castrol','ExxonMobil']},{stage:'Hyperscale Build',co:['Digital Realty','Equinix','Microsoft','Meta']}],
+     kr:['에스티아이','케이엔솔','GST','나노팀','씨티엘']},
+   energy:{label:'에너지·저장',kicker:'ENERGY TRANSITION',summary:'전력 수요와 저장장치 투자가 발전·그리드·배터리로 연결',
+     g:[{stage:'Generation',co:['NextEra','Iberdrola','GE Vernova']},{stage:'Grid / Equipment',co:['Eaton','Schneider Electric','Siemens Energy','ABB']},{stage:'Storage',co:['Tesla Energy','Fluence','CATL','LG에너지솔루션']},{stage:'Industrial Demand',co:['Microsoft','Amazon','Google','Equinix']}],
+     kr:['LS ELECTRIC','HD현대일렉트릭','효성중공업','LG에너지솔루션']},
+   minerals:{label:'원자재·희소금속',kicker:'CRITICAL MINERALS',summary:'AI 전력망·방산·전동화가 구리·은·우라늄·희토류 수급을 구조적으로 압박',
+     g:[{stage:'Copper',co:['Freeport-McMoRan','Southern Copper','BHP','Glencore']},{stage:'Silver / PGM',co:['Fresnillo','Pan American Silver','Wheaton']},{stage:'Uranium',co:['Cameco','Kazatomprom','NexGen']},{stage:'Rare Earths',co:['MP Materials','Lynas','Iluka']}],
+     kr:['고려아연','풍산','LS MnM','성창인스트루먼트']},
+   software:{label:'AI 소프트웨어',kicker:'AI SOFTWARE',summary:'파운데이션 모델 위에 엔터프라이즈 애플리케이션·데이터 계층 수익화 경쟁',
+     g:[{stage:'Foundation Models',co:['OpenAI','Anthropic','Google DeepMind','xAI','Meta']},{stage:'Data / Infra',co:['Databricks','Snowflake','MongoDB','Confluent']},{stage:'Applications',co:['Palantir','ServiceNow','Salesforce','Adobe']},{stage:'Dev Tools',co:['GitHub','GitLab','Datadog']}],
+     kr:['네이버','카카오','더존비즈온','코난테크놀로지','폴라리스오피스']},
+   robotics:{label:'로보틱스·휴머노이드',kicker:'EMBODIED AI',summary:'AI 모델의 물리세계 확장으로 휴머노이드·산업로봇·액추에이터 수요 부상',
+     g:[{stage:'Humanoid',co:['Tesla Optimus','Figure','Agility','Boston Dynamics']},{stage:'Actuators / Motors',co:['Harmonic Drive','Nidec','Nabtesco']},{stage:'Vision / Compute',co:['NVIDIA','Ambarella','Intel']},{stage:'Industrial Robots',co:['Fanuc','ABB','Yaskawa','KUKA']}],
+     kr:['두산로보틱스','레인보우로보틱스','삼성전자','LG전자','에스피지']},
+   space:{label:'우주',kicker:'SPACE ECONOMY',summary:'발사체에서 위성 데이터까지 글로벌 우주 생태계 확장',
+     g:[{stage:'Launch',co:['SpaceX','Rocket Lab','ULA','Blue Origin']},{stage:'Satellite Mfg',co:['Airbus','Thales Alenia','Lockheed Martin','Northrop Grumman']},{stage:'Components',co:['Honeywell','L3Harris','RTX','MDA Space']},{stage:'Satcom',co:['Starlink','SES','Eutelsat','Iridium']},{stage:'Data / Apps',co:['Planet Labs','BlackSky','Spire','Palantir']}],
+     kr:['한화에어로스페이스','한화시스템','쎄트렉아이','KAI','이노스페이스']},
+   defense:{label:'방산',kicker:'DEFENSE & AEROSPACE',summary:'지정학 긴장이 미사일·방산전자·우주 수요를 견인',
+     g:[{stage:'Prime',co:['Lockheed Martin','RTX','Northrop Grumman','BAE Systems']},{stage:'Sensors / Electronics',co:['L3Harris','Thales','Honeywell','Leonardo']},{stage:'Autonomy / Drones',co:['Kratos','AeroVironment','Palantir']},{stage:'Space',co:['SpaceX','Rocket Lab','Airbus']}],
+     kr:['한화에어로스페이스','한화시스템','한국항공우주','LIG넥스원']},
+   ev:{label:'2차전지',kicker:'EV & BATTERY',summary:'전기차 수요 조정 속 배터리 원가·소재 경쟁이 핵심',
+     g:[{stage:'OEM',co:['Tesla','BYD','Volkswagen','Rivian']},{stage:'Cells',co:['CATL','LG에너지솔루션','Panasonic','삼성SDI']},{stage:'Materials',co:['Albemarle','Freeport-McMoRan','Umicore']},{stage:'Charging',co:['ChargePoint','ABB','Tesla']}],
+     kr:['LG에너지솔루션','삼성SDI','포스코퓨처엠','에코프로비엠']}
+  };
+  var KWHY={
+   '대한전선':{why:'초고압 케이블·해저 전력망 수주가 데이터센터·재생에너지 연계 그리드 증설과 연동.',src:'대한전선',url:'#'},
+   '제룡전기':{why:'변압기 수출 비중이 높아 북미 전력망 교체·데이터센터 전력 투자 사이클에 직접 노출.',src:'제룡전기',url:'#'},
+   '두산에너빌리티':{why:'대형 원전·SMR·가스터빈·발전 EPC를 보유해 AI 전력 병목 해소 발주의 핵심 수혜.',src:'두산에너빌리티 IR',url:'https://www.doosanenerbility.com/kr/ir/'},
+   '한전기술':{why:'원전 설계 전문사로 국내외 대형 원전·SMR 프로젝트 발주가 설계 매출로 전이.',src:'한전기술',url:'#'},
+   '한전KPS':{why:'발전 설비 정비·O&M 사업이 원전 가동률 상승과 신규 준공 물량에 연동.',src:'한전KPS',url:'#'},
+   '우진':{why:'원자로 계측기·핵연료 검사 장비 공급으로 원전 신규 건설·계속운전 수요에 노출.',src:'우진',url:'#'},
+   '비에이치아이':{why:'복수기·HRSG 등 발전 기자재가 가스·원전 발전 투자 사이클에 직접 연결.',src:'BHI',url:'#'},
+   '에스티아이':{why:'반도체·데이터센터용 액침·수랭 냉각 시스템(CDU) 공급으로 GPU 밀도 상승 수혜.',src:'에스티아이',url:'#'},
+   '케이엔솔':{why:'데이터센터 인프라·냉각 EPC 사업이 하이퍼스케일러 국내 증설 물량에 노출.',src:'케이엔솔',url:'#'},
+   'GST':{why:'반도체·데이터센터용 온도조절기(칠러)·스크러버가 AI 서버 냉각 수요와 연동.',src:'GST',url:'#'},
+   '나노팀':{why:'열관리 소재(TIM)·방열 접착제가 고발열 AI 칩·배터리 모듈 채택 확대에 연결.',src:'나노팀',url:'#'},
+   '씨티엘':{why:'액침냉각 유체·열관리 솔루션이 데이터센터 냉각 방식 전환 수요에 노출.',src:'씨티엘',url:'#'},
+   '고려아연':{why:'구리·아연·은 제련 및 자원순환 사업이 전력망·전동화발 비철금속 수급 압박의 수혜.',src:'고려아연 IR',url:'#'},
+   '풍산':{why:'구리 신동·방산 탄약 사업을 겸해 구리 가격 강세와 방산 수주 확대에 이중 노출.',src:'풍산',url:'#'},
+   'LS MnM':{why:'전기동 제련·황산니켈 사업이 AI 전력 인프라·2차전지 소재 수요에 연결.',src:'LS MnM',url:'#'},
+   '성창인스트루먼트':{why:'희토류·희소금속 소재 가공으로 방산·전기차 모터용 자석 공급망에 노출.',src:'성창인스트루먼트',url:'#'},
+   '네이버':{why:'자체 초거대모델(HyperCLOVA X)·클라우드·검색 광고가 국내 엔터프라이즈 AI 도입 확산의 축.',src:'NAVER IR',url:'https://www.navercorp.com/investment/ir'},
+   '카카오':{why:'커머스·광고·메시징에 AI 접목과 카카오엔터프라이즈 B2B 사업이 수익화 관건.',src:'Kakao IR',url:'https://www.kakaocorp.com/page/ir'},
+   '더존비즈온':{why:'ERP·전자세금계산서 SaaS에 생성형 AI를 결합해 중견기업 구독 매출 전환을 추진.',src:'더존비즈온',url:'#'},
+   '코난테크놀로지':{why:'자연어처리·비정형 데이터 분석 엔진이 공공·국방 AI 사업 발주에 노출.',src:'코난테크놀로지',url:'#'},
+   '폴라리스오피스':{why:'오피스 SW에 생성형 AI 기능을 탑재해 구독 전환과 해외 확장을 시도.',src:'폴라리스오피스',url:'#'},
+   '두산로보틱스':{why:'협동로봇 라인업과 북미 채널 확장이 산업 자동화·물류 로봇 수요 증가와 연동.',src:'두산로보틱스 IR',url:'https://www.doosanrobotics.com/kr/investors'},
+   '레인보우로보틱스':{why:'휴머노이드·협동로봇 기술과 삼성전자 지분 참여로 국내 임베디드 AI 로봇의 대표 노출주.',src:'레인보우로보틱스',url:'#'},
+   'LG전자':{why:'로봇(클로이)·전장·가전 AI 접목과 데이터센터 냉각(칠러) 사업이 다중 성장축.',src:'LG전자 IR',url:'https://www.lge.co.kr/ir'},
+   '에스피지':{why:'감속기·정밀 모터가 휴머노이드·서비스 로봇 액추에이터 국산화 수요에 노출.',src:'에스피지',url:'#'},
+   '삼성전자':{why:'HBM·파운드리·첨단 패키징을 동시에 보유해 AI 인프라 투자와 메모리 믹스 변화가 실적에 직접 연결.',src:'Samsung IR',url:'https://www.samsung.com/global/ir/'},
+   'SK하이닉스':{why:'HBM 공급과 차세대 메모리 양산이 AI 가속기 출하량·가격에 가장 민감하게 연동.',src:'SK hynix',url:'https://news.skhynix.com/'},
+   '한미반도체':{why:'HBM용 TC 본더·패키징 장비를 공급해 메모리 업체 증설 사이클이 장비 수주로 전이.',src:'한미반도체 IR',url:'https://www.hanmisemi.com/'},
+   'LS ELECTRIC':{why:'데이터센터 전력망·배전·자동화 장비가 AI 클러스터 전력 병목 해소 투자와 연결.',src:'LS ELECTRIC',url:'https://www.ls-electric.com/'},
+   '한화에어로스페이스':{why:'발사체 엔진·방산 생산 역량이 글로벌 우주·방산 수주와 한국 우주 인프라 투자에 노출.',src:'Hanwha Aerospace',url:'https://www.hanwhaaerospace.com/'},
+   '한화시스템':{why:'위성 탑재체·방산 전자·위성통신 사업이 글로벌 위성망 구축과 국방 전자 수요를 동시에 수취.',src:'Hanwha Systems',url:'https://www.hanwhasystems.com/'},
+   '쎄트렉아이':{why:'지구관측 위성 제작·영상 데이터가 상업용 위성·국방 ISR 수요 확대에 직접 연결.',src:'Satrec Initiative',url:'https://www.satreci.com/'},
+   'KAI':{why:'한국 발사체·항공우주 체계종합 기업으로 정부·수출형 우주 프로젝트 발주에 노출.',src:'KAI',url:'https://www.koreaaero.com/'},
+   '한국항공우주':{why:'항공기·위성 체계종합과 발사체 사업이 정부 국방·우주 예산 확대에 노출.',src:'KAI',url:'https://www.koreaaero.com/'},
+   '이노스페이스':{why:'소형 발사체 상업화 단계로 글로벌 발사 수요와 발사 성공률이 매출 전환을 좌우.',src:'Innospace',url:'https://www.innospace.com/'},
+   'HD현대일렉트릭':{why:'변압기·전력기기 수주가 데이터센터·그리드 증설의 선행 투자로 발생.',src:'HD현대일렉트릭',url:'https://www.hd-hyundaielectric.com/'},
+   '효성중공업':{why:'초고압 변압기·전력망 EPC가 AI 데이터센터·재생에너지 연계 설비 투자에 노출.',src:'효성중공업',url:'https://www.hyosungheavyindustries.com/'},
+   'LG에너지솔루션':{why:'북미 배터리 생산능력·ESS 수요가 전력저장·전기차 사이클 변화에 직접 영향.',src:'LGES IR',url:'https://www.lgensol.com/'},
+   '삼성SDI':{why:'고부가 배터리·ESS 셀 믹스가 EV 수요와 전력망 저장장치 투자에 연동.',src:'Samsung SDI IR',url:'https://www.samsungsdi.com/'},
+   '포스코퓨처엠':{why:'양극재·음극재 소재 출하가 글로벌 배터리 생산량·금속 가격에 민감.',src:'포스코퓨처엠',url:'https://www.poscofuturem.com/'},
+   '에코프로비엠':{why:'하이니켈 양극재 공급이 북미·유럽 EV 생산·배터리 재고 사이클로 전달.',src:'에코프로비엠',url:'https://www.ecopro.co.kr/'},
+   'LIG넥스원':{why:'정밀유도·방산전자 수주가 지정학 긴장과 한국·동맹국 국방예산 확대에 노출.',src:'LIG넥스원',url:'https://www.lignex1.com/'}
+  };
+  var ct=document.getElementById('chain-tabs');
+  ct.innerHTML=Object.keys(CHAINS).map(function(k,i){return '<button class="chain-tab'+(i===0?' active':'')+'" data-k="'+k+'">'+CHAINS[k].label+'</button>';}).join('');
+  function renderChain(k){
+    var d=CHAINS[k]||CHAINS.ai;
+    document.getElementById('chain-kicker').textContent=d.kicker;
+    document.getElementById('chain-summary').textContent=d.summary;
+    vc('vc-chain',d.g);
+    document.getElementById('korea-exposure').innerHTML=d.kr.map(function(n){
+      var x=KWHY[n]||{why:'글로벌 산업 수요와 국내 기업 제품·수주 사이클이 연결.',src:'기업 IR',url:'#'};
+      return '<div class="exposure-item"><strong>'+n+'</strong><p>'+x.why+'</p><a href="'+x.url+'" target="_blank" rel="noopener">'+x.src+' ↗</a></div>';
+    }).join('');
+    ct.querySelectorAll('.chain-tab').forEach(function(b){b.classList.toggle('active',b.dataset.k===k);});
+  }
+  ct.querySelectorAll('.chain-tab').forEach(function(b){b.addEventListener('click',function(){renderChain(b.dataset.k);});});
+  renderChain('ai');
+
+  /* --- 해외 IPO 테이블 --- */
+  var IPO=[
+   {name:'SpaceX',sector:'우주 · 미국',status:'LISTED',date:'2026.06.12',val:'$1.77T',size:'$75B',key:'Starship 상업화 · Starlink 흑자 · 위성 D2C'},
+   {name:'OpenAI',sector:'AI · 미국',status:'UPCOMING',date:'2026.09 목표',val:'~$1T',size:'~$85B',key:'추론모델 경쟁 · 자체 칩·데이터센터 투자'},
+   {name:'Anthropic',sector:'AI · 미국',status:'UPCOMING',date:'2026.10 목표',val:'$965B',size:'—',key:'클로드 엔터프라이즈 매출 급증 · 안전성 차별화'},
+   {name:'Databricks',sector:'데이터·AI · 미국',status:'FILED',date:'H2 2026',val:'—',size:'—',key:'FCF 흑자 · NRR 140%+ · 파이프라인 내 유일 흑자'},
+   {name:'Stripe',sector:'핀테크 · 미국',status:'FILED',date:'2026~27 관측',val:'—',size:'—',key:'결제 인프라 · 밸류 회복세'},
+   {name:'Kraken',sector:'크립토 · 미국',status:'FILED',date:'2026~27 관측',val:'—',size:'—',key:'규제 명확화 수혜 기대'}
+  ];
+  var BADGE={LISTED:'listed',UPCOMING:'upcoming',FILED:'filed'};
+  var FILTERS=['ALL','UPCOMING','FILED','LISTED'];
+  var ff=document.getElementById('ipo-filters');
+  ff.innerHTML=FILTERS.map(function(f,i){return '<button class="ipo-filter'+(i===0?' active':'')+'" data-f="'+f+'">'+f+'</button>';}).join('');
+  function renderIpo(f){
+    document.getElementById('ipo').innerHTML=IPO.filter(function(r){return f==='ALL'||r.status===f;}).map(function(r){
+      return '<tr><td class="company">'+r.name+'</td><td>'+r.sector+'</td>'
+        +'<td><span class="ipo-badge '+BADGE[r.status]+'">'+r.status+'</span></td>'
+        +'<td>'+r.date+'</td><td>'+r.val+'</td><td>'+r.size+'</td><td class="keyissue">'+r.key+'</td></tr>';
+    }).join('')||'<tr><td colspan="7" style="text-align:center;color:var(--ink-3);padding:16px">해당 상태의 IPO가 없습니다.</td></tr>';
+  }
+  ff.querySelectorAll('.ipo-filter').forEach(function(b){b.addEventListener('click',function(){ff.querySelectorAll('.ipo-filter').forEach(function(x){x.classList.toggle('active',x===b);});renderIpo(b.dataset.f);});});
+  renderIpo('ALL');
+})();
+</script>
+</body>
+</html>
