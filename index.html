@@ -1573,7 +1573,6 @@
   var p1=document.getElementById('p1');if(!p1||p1.querySelector('.p1-category-nav'))return;
   var headline=p1.querySelector('#g-feat');if(!headline)return;
   var defs=[
-    {key:'all',label:'전체'},
     {key:'g-idx',label:'주요 지수'},
     {key:'g-com',label:'원자재'},
     {key:'g-fx',label:'환율'},
@@ -1585,7 +1584,7 @@
   var sections=defs.slice(1).map(function(d){return {key:d.key,el:document.getElementById(d.key)?document.getElementById(d.key).closest('.slabel')||document.getElementById(d.key):null};});
   function sectionFor(grid){var prev=grid&&grid.previousElementSibling;return prev&&prev.classList&&prev.classList.contains('slabel')?prev:null;}
   sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
-  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
+  function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});sections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
   nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
   show('all');
 })();
