@@ -1581,7 +1581,7 @@
   ];
   var nav=document.createElement('div');nav.className='p1-category-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','지수·지표 카테고리');
   defs.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.textContent=d.label;b.dataset.category=d.key;b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');if(i===0)b.className='active';nav.appendChild(b);});
-  headline.parentNode.insertBefore(nav,headline);
+  headline.parentNode.insertBefore(nav,headline.nextElementSibling);
   var sections=defs.slice(1).map(function(d){return {key:d.key,el:document.getElementById(d.key)?document.getElementById(d.key).closest('.slabel')||document.getElementById(d.key):null};});
   function sectionFor(grid){var el=grid,prev=null;while(el&&el!==p1){if(el.classList&&el.classList.contains('slabel'))prev=el;el=el.previousElementSibling;}return prev;}
   sections.forEach(function(s){var grid=document.getElementById(s.key);s.grid=grid;s.label=sectionFor(grid);});
