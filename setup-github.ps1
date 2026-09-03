@@ -39,12 +39,21 @@ Write-Host ('[1/6] git {0} / gh {1} ready' -f ((git --version) -replace 'git ver
 & gh auth status
 if ($LASTEXITCODE -ne 0) {
   Write-Host ''
-  Write-Host '[2/6] GitHub sign-in needed. A browser page will open - enter the code shown, click Authorize.' -ForegroundColor Yellow
+  Write-Host '[2/6] GitHub sign-in needed. Enter the code shown at https://github.com/login/device , click Authorize.' -ForegroundColor Yellow
   Write-Host '      (no account? click "Sign up" on that page first, then continue)' -ForegroundColor Yellow
-  & gh auth login --hostname github.com --git-protocol https --web
+  & gh auth login --hostname github.com --git-protocol https --web --scopes 'repo,workflow'
   if ($LASTEXITCODE -ne 0) { Die 'login not completed. re-run the script after signing in.' }
-  & gh auth setup-git
 }
+
+# 2b) make sure the token carries the 'workflow' scope (required to push .github/workflows/*)
+$scopeOk = (& gh api -i user 2>$null | Select-String -Pattern 'x-oauth-scopes:.*workflow' -Quiet)
+if (-not $scopeOk) {
+  Write-Host '[2/6] adding "workflow" permission - authorize ONE more time at https://github.com/login/device' -ForegroundColor Yellow
+  & gh auth refresh --hostname github.com --scopes 'repo,workflow'
+  if ($LASTEXITCODE -ne 0) { Die 'permission upgrade not completed. re-run the script and authorize the browser prompt.' }
+}
+& gh auth setup-git
+
 $owner = (& gh api user --jq '.login')
 if (-not $owner) { Die 'could not read GitHub username. re-run the script.' }
 $owner = "$owner".Trim()
