@@ -93,7 +93,9 @@ async function investorFlow(sosok, targetIso) {
     return { iso, personal: nums[0], foreign: nums[1], institution: nums[2], other: nums[9] ?? 0 };
   }).filter(Boolean).filter((x) => x.iso <= targetIso).sort((a, b) => b.iso.localeCompare(a.iso));
   if (!candidates.length) throw new Error(`investor ${sosok} no dated rows`);
-  return candidates[0];
+  // 최신 거래일과 직전 거래일을 함께 반환한다. P4 '최근 흐름'은
+  // 누적값이 아니라 각 거래일의 외국인 순매수/순매도 일자별 값이다.
+  return { ...candidates[0], previous: candidates[1] ?? null };
 }
 
 function flowText(n) {
@@ -107,6 +109,31 @@ function patchFlowBars(html, id, f) {
     : [{ k: '개인', v: Math.round(f.personal) }, { k: '외국인', v: Math.round(f.foreign) }, { k: '기관', v: Math.round(f.institution) }, { k: '기타법인', v: Math.round(f.other) }];
   const literal = rows.map((x) => `{k:'${x.k}',v:${x.v}}`).join(',');
   return html.replace(re, `dbars('${id}',[${literal}]);`);
+}
+function patchFlowTrend(html, latest, previous) {
+  if (!previous) return html;
+  const fmt = (iso) => {
+    const [, m, d] = iso.split('-').map(Number);
+    return `${m}월 ${d}일`;
+  };
+  const v1 = Math.round(previous.foreign);
+  const v2 = Math.round(latest.foreign);
+  const mx = Math.max(Math.abs(v1), Math.abs(v2), 1);
+  const bar = (label, value) => {
+    const buy = value >= 0;
+    const p = Math.abs(value) / mx * 48;
+    return `<div class="tb-row"><span class="tb-k">${label}</span><div class="dbar-track"><span class="dbar-zero"></span><span class="dbar-fill ${buy ? 'b' : 's'}" style="width:${p.toFixed(1)}%;${buy ? 'left:50%' : 'right:50%'}"></span></div><span class="dbar-v ${buy ? 'up' : 'down'}">${flowText(value)}</span></div>`;
+  };
+  const block = `(function(){
+    var mx=${mx};
+    document.getElementById('trend5').innerHTML=
+      '<div class="fbox"><div class="dbar-axis"><span>순매도</span><span>순매수</span></div>'
+      +${JSON.stringify(bar(fmt(previous.iso), v1))}
+      +${JSON.stringify(bar(fmt(latest.iso), v2))}
+      +'<div class="fnote">KOSPI 외국인 순매수·순매도, 각 거래일 수치(단위 억원). 네이버 금융 공개표 기준.</div></div>';
+  })();`;
+  const re = /(dbars\('db-kosdaq',[\s\S]*?\n\s+)(\(function\(\)\{[\s\S]*?\n\s+\}\)\(\);)/;
+  return html.replace(re, `$1${block}`);
 }
 function patchFlowInsight(html, date, k, q) {
   const [y, m, d] = date.split('-').map(Number);
@@ -190,6 +217,7 @@ async function run() {
     const flowDate = kospiFlow.iso;
     html = patchFlowBars(html, 'db-kospi', kospiFlow);
     html = patchFlowBars(html, 'db-kosdaq', kosdaqFlow);
+    html = patchFlowTrend(html, kospiFlow, kospiFlow.previous);
     html = patchFlowInsight(html, flowDate, kospiFlow, kosdaqFlow);
     console.log(`  수급 반영: ${flowDate}`);
   } catch (e) {
