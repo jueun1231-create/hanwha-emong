@@ -691,6 +691,7 @@
       <button class="seg" role="tab" aria-selected="false" data-p="p5">중장기 전망</button>
       <button class="seg" role="tab" aria-selected="false" data-p="p6">리그테이블</button>
       <button class="seg" role="tab" aria-selected="false" data-p="p7">주요뉴스</button>
+      <button class="seg" role="tab" aria-selected="false" data-p="p8">하우스 뷰</button>
     </nav>
   </div>
 </header>
@@ -960,10 +961,6 @@
     </table></div>
     <div class="disc"><b>국내 vs 글로벌</b> 국내는 NH·KB 등 은행계 증권이 DCM을 과점하고 ECM은 한국투자·NH 구도. 글로벌은 미국계 IB(JPM·GS·MS)가 전 부문 상위. <b>금리 고착 국면에서 채권 주관 비중이 확대</b>되는 방향은 국내·글로벌 공통. 글로벌 순위는 LSEG/Bloomberg 공개 리그테이블의 통상 순위(정확한 금액·건수는 유료 집계 영역이라 순위만 표기).</div>
     <div class="disc"><b>데이터</b> 더벨 무료 리그테이블의 연도별 누적 공개자료(2022~2025년 연간, 2026년 1~6월 누적). M&amp;A 원형 그래프의 비율은 더벨 공개 상위 10개 자문사 금액에서 계산한 비교용 비중이며, 원자료 금액·건수는 그대로 표시한다. 공개 표에 없는 값은 임의 추정하지 않았다.</div>
-
-    <div class="slabel">하우스 뷰 <span class="lite" id="hv-asof">26.09.04 · 네이버페이 증권 리서치</span></div>
-    <div id="houseview" class="hv-grid"></div>
-    <div class="disc"><b>하우스 뷰</b> 네이버페이 증권 ‘리서치 &gt; 시황정보’ 공개 목록에서 당일 증권사 시황 리포트 헤드라인을 모아 표기. 제목·원문 링크만 인용하며 리포트 본문은 재배포하지 않는다.</div>
   </section>
 
   <!-- ============= P7 ============= -->
@@ -977,6 +974,15 @@
     <div class="news-list" id="news-list"></div>
     <div class="news-pagination" id="news-pagination" aria-label="뉴스 페이지 이동"></div>
     <div class="disc"><b>데이터</b> Google News 공개 RSS 검색 결과를 매시간 수집·누적합니다. 기사 제목·요약·원문 링크의 저작권은 각 언론사에 있으며, 본 페이지는 링크와 짧은 요약만 제공합니다.</div>
+  </section>
+
+  <!-- ============= P8 ============= -->
+  <section class="panel" id="p8" role="tabpanel" hidden>
+    <div class="phead"><h1>하우스 뷰</h1><p>증권사 리서치센터의 당일 시황 리포트 · 매시간 갱신 · 제목 클릭 시 원문 연결</p></div>
+    <div class="insight"><div class="insight-tag">미래전략실 인사이트</div><ul class="ins"><li>네이버페이 증권 ‘리서치 &gt; 시황정보’ 공개 목록에서 각 증권사가 아침에 낸 시황·마감 리포트 헤드라인을 모읍니다.</li><li>제목·원문 링크만 인용하며 리포트 본문은 재배포하지 않습니다.</li></ul></div>
+    <div class="slabel">오늘의 증권사 시황 리포트 <span class="lite" id="hv-asof">26.09.04 · 네이버페이 증권 리서치</span></div>
+    <div id="houseview" class="hv-grid"></div>
+    <div class="disc"><b>데이터</b> 네이버페이 증권 리서치 시황정보 공개 목록. 증권사별 최신 1건, 최대 10개. 텔레그램 리서치 채널은 비공개라 수집 대상이 아니며, 공개 리포트 목록으로 대체했습니다.</div>
   </section>
 
 </main>
@@ -1574,7 +1580,8 @@
    {n:'04',t:'전일 수급',d:'9/3 KOSPI·KOSDAQ 주체별 순매수/순매도 (보도 종합).',p:'p4'},
    {n:'05',t:'중장기 전망',d:'1개월 컨센서스·목표주가 변화와 변동 사유.',p:'p5'},
    {n:'06',t:'리그테이블',d:'국내 ECM/DCM 주관 순위와 “데일리로 보는 효용”.',p:'p6'},
-   {n:'07',t:'주요뉴스',d:'산업군·경제·세계 금융뉴스를 매시간 수집·누적.',p:'p7'}
+   {n:'07',t:'주요뉴스',d:'산업군·경제·세계 금융뉴스를 매시간 수집·누적.',p:'p7'},
+   {n:'08',t:'하우스 뷰',d:'증권사 리서치센터의 당일 시황 리포트 헤드라인.',p:'p8'}
   ];
   document.getElementById('navlist').innerHTML=NAV.map(function(o){
     return '<button class="navcard" data-goto="'+o.p+'"><span class="nc-n">'+o.n+'</span>'
