@@ -346,17 +346,19 @@
   .lt-target.m12{background:var(--up-wash,rgba(196,48,43,.1));color:var(--up)}
   #p5 .consrow{padding:0;overflow:hidden;background:var(--raise);border:0;border-radius:14px}
   #p5 .cons{display:grid;gap:12px;border:0}
-  .cons-visual{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;padding:15px 16px}
+  /* 고가 종목도 현재가·목표가·투자의견을 한 줄에 담도록 왼쪽 지표 영역을 넓히고
+     오른쪽 1개월 가격 범위 영역은 컴팩트하게 유지한다. */
+  .cons-visual{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(180px,.7fr);gap:14px;padding:15px 16px}
   @media(max-width:760px){.cons-visual{grid-template-columns:1fr}}
   .cons-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .cons-title h4{margin:0;font-size:14.5px}
-  .cons-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+  .cons-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:12px}
   @media(max-width:760px){.cons-metrics{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:480px){.cons-metrics{grid-template-columns:1fr 1fr}}
-  .cons-metric{background:var(--bg);border:1px solid var(--hair);border-radius:8px;padding:7px 8px}
+  .cons-metric{min-width:0;background:var(--bg);border:1px solid var(--hair);border-radius:8px;padding:7px 6px}
   .cons-metric span{display:block;font-size:9px;color:var(--ink-3);font-weight:700}
-  .cons-metric b{display:block;font-size:12px;margin-top:2px}
-  .price-range{align-self:center}
+  .cons-metric b{display:block;font-size:12px;margin-top:2px;white-space:nowrap;letter-spacing:-.02em}
+  .price-range{align-self:center;min-width:0}
   .range-head{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink-3);font-weight:600}
   .range-track{height:10px;background:var(--bg);border:1px solid var(--hair);border-radius:999px;position:relative;margin:12px 4px 7px}
   .range-now{position:absolute;top:-4px;width:3px;height:18px;background:var(--accent);border-radius:3px}
