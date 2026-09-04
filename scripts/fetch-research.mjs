@@ -11,6 +11,16 @@ const UA = { headers: { 'User-Agent': 'Mozilla/5.0 (hanwha-emong research)' } };
 const SRC = 'https://finance.naver.com/research/market_info_list.naver';
 const READ = 'https://finance.naver.com/research/market_info_read.naver';
 
+// 주요 하우스는 당일 리포트가 없더라도 화면에서 빠지지 않도록 우선 노출한다.
+// 네이버 공개 목록에 리포트가 없을 때는 각 회사의 무료 공식 리서치 페이지로 연결한다.
+const MAJOR_HOUSES = ['미래에셋증권', '한국투자증권', '삼성증권', 'KB증권', '신한투자증권', 'NH투자증권', '한화투자증권'];
+const FALLBACK_HOUSES = [
+  { house: '미래에셋증권', title: '미래에셋증권 리서치센터 최신 리포트', url: 'https://securities.miraeasset.com/' },
+  { house: '한국투자증권', title: '한국투자증권 리서치센터 최신 리포트', url: 'https://www.truefriend.com/' },
+  { house: '삼성증권', title: '삼성증권 리서치센터 최신 리포트', url: 'https://www.samsungpop.com/' },
+  { house: '한화투자증권', title: '한화투자증권 리서치센터 최신 리포트', url: 'https://www.hanwhawm.com/' },
+];
+
 const dec = (buf) => new TextDecoder('euc-kr').decode(buf);
 const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/&nbsp;|&#160;/gi, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
 const esc = (s) => String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
@@ -59,15 +69,24 @@ async function run() {
   let pick = items.filter((x) => x.date === today);
   if (pick.length < 6) pick = items.slice(0, 16);           // 당일 물량 적으면 최근분
 
-  // 5대 증권사 우선 → 상단. 증권사별 최신 1건, 최대 12개
-  const BIG5 = ['미래에셋증권', '한국투자증권', 'NH투자증권', '삼성증권', 'KB증권', '신한투자증권'];
+  // 주요 증권사 우선 → 상단. 당일 목록에 없으면 전체 목록의 최신 자료를 확인한다.
   const byHouse = new Map();
   for (const it of pick) if (!byHouse.has(it.house)) byHouse.set(it.house, it);
+  const latestByHouse = new Map();
+  for (const it of items) if (!latestByHouse.has(it.house)) latestByHouse.set(it.house, it);
   const uniq = [];
-  for (const h of BIG5) if (byHouse.has(h)) { const it = byHouse.get(h); it.big = true; uniq.push(it); byHouse.delete(h); }
+  for (const h of MAJOR_HOUSES) {
+    const it = byHouse.get(h) || latestByHouse.get(h);
+    if (it) { it.big = true; uniq.push(it); byHouse.delete(h); }
+  }
+  // 공개 목록에 해당 하우스가 없을 때도 카드와 공식 링크를 유지한다.
+  for (const fb of FALLBACK_HOUSES) {
+    if (uniq.some((it) => it.house === fb.house)) continue;
+    uniq.push({ ...fb, href: fb.url, date: today, sum: '공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.', big: true, fallback: true });
+  }
   for (const it of byHouse.values()) { if (uniq.length >= 12) break; it.big = false; uniq.push(it); }
 
-  for (const it of uniq) it.sum = await preview(it.href);
+  for (const it of uniq) if (!it.fallback) it.sum = await preview(it.href);
 
   const literal = uniq.map((it) =>
     `{house:'${esc(it.house)}',title:'${esc(it.title)}',date:'${esc(it.date)}',url:'${esc(it.pdf || it.href)}',sum:'${esc(it.sum || '')}',big:${it.big ? 'true' : 'false'}}`,

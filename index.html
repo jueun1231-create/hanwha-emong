@@ -378,6 +378,7 @@
   .news-filters{display:flex;gap:4px;flex-wrap:wrap}
   .news-filter{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);border-radius:7px;padding:7px 11px;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer}
   .news-filter.active{background:var(--bg);border-color:var(--hair);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
+  #p7 .insight{display:none}
   .news-updated{font-size:10.5px;color:var(--ink-3)}
   .news-list{display:grid;gap:9px}
   .news-card{display:block;background:var(--raise);border:1px solid var(--hair);border-radius:12px;padding:13px 15px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
@@ -427,6 +428,24 @@
   #p7 .news-pulse-v{display:block;margin-top:5px;font-size:17px;font-weight:800;letter-spacing:-.04em}
   #p7 .news-pulse-v em{font-style:normal;font-size:10px;color:var(--accent);margin-left:4px}
   @media(max-width:520px){#p7 .news-pulse{grid-template-columns:1fr 1fr}.news-pulse-item:last-child{display:none}}
+
+  /* ---------- MarketView AI chatbot ---------- */
+  .chat-launcher{position:fixed;right:28px;bottom:26px;z-index:50;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:var(--ink);color:var(--surface);padding:12px 16px;box-shadow:0 10px 28px rgba(20,30,45,.22);font:inherit;font-size:12px;font-weight:750;cursor:pointer}
+  .chat-launcher:hover{background:var(--accent)}
+  .chat-launcher i{display:grid;place-items:center;width:18px;height:18px;border-radius:6px;background:var(--accent);font-style:normal;font-size:10px;font-weight:800}
+  .chat-panel{position:fixed;right:28px;bottom:82px;z-index:51;width:min(390px,calc(100vw - 28px));height:min(570px,calc(100vh - 112px));display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hair);border-radius:16px;box-shadow:0 18px 52px rgba(20,30,45,.2);overflow:hidden}
+  .chat-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:15px 16px 12px;border-bottom:1px solid var(--hair)}
+  .chat-head strong{display:block;font-size:14px;letter-spacing:-.02em}.chat-head span{display:block;margin-top:2px;font-size:10px;color:var(--ink-3)}
+  .chat-close{border:0;background:transparent;color:var(--ink-3);font:inherit;font-size:19px;line-height:1;padding:2px;cursor:pointer}.chat-close:hover{color:var(--ink)}
+  .chat-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .chat-notice{margin:0;padding:11px 12px;border:1px solid var(--hair);border-radius:10px;background:var(--surface);color:var(--ink-2);font-size:11.5px;line-height:1.65}.chat-notice b{color:var(--accent)}
+  .chat-msg{max-width:90%;padding:10px 12px;border-radius:11px;font-size:12px;line-height:1.65;white-space:pre-wrap;word-break:break-word}.chat-msg.user{align-self:flex-end;background:var(--ink);color:var(--surface);border-bottom-right-radius:3px}.chat-msg.assistant{align-self:flex-start;background:var(--surface);border:1px solid var(--hair);color:var(--ink);border-bottom-left-radius:3px}.chat-msg.error{color:var(--down);border-color:rgba(36,87,197,.28)}
+  .chat-context{margin:0 14px;padding:7px 0 0;color:var(--ink-3);font-size:10.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chat-form{display:grid;grid-template-columns:1fr auto;gap:8px;padding:11px 12px 12px;border-top:1px solid var(--hair);background:var(--surface)}
+  .chat-input{resize:none;min-height:38px;max-height:100px;border:1px solid var(--hair-2);border-radius:9px;background:var(--bg);color:var(--ink);padding:9px 10px;font:inherit;font-size:12px;line-height:1.45;outline:none}.chat-input:focus{border-color:var(--accent);background:var(--surface)}
+  .chat-send{align-self:end;border:0;border-radius:8px;background:var(--accent);color:#fff;min-width:48px;height:38px;padding:0 10px;font:inherit;font-size:11px;font-weight:750;cursor:pointer}.chat-send:disabled{opacity:.5;cursor:wait}
+  .chat-selection{position:fixed;z-index:52;border:0;border-radius:8px;background:var(--ink);color:var(--surface);padding:7px 10px;font:inherit;font-size:11px;font-weight:700;box-shadow:0 5px 18px rgba(20,30,45,.2);cursor:pointer}.chat-selection:hover{background:var(--accent)}
+  @media(max-width:640px){.chat-launcher{right:18px;bottom:18px}.chat-panel{right:14px;bottom:72px;width:calc(100vw - 28px);height:min(570px,calc(100vh - 92px))}}
 
   /* ---------- P6 league table ---------- */
   .lt-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
@@ -1026,6 +1045,15 @@
 
 </main>
 
+<button class="chat-launcher" id="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel"><i>AI</i> MarketView AI</button>
+<aside class="chat-panel" id="chat-panel" aria-label="MarketView AI 챗봇" hidden>
+  <div class="chat-head"><div><strong>MarketView AI</strong><span>GPT-5.4 mini · 선택한 화면 내용 기반 답변</span></div><button class="chat-close" id="chat-close" type="button" aria-label="챗봇 닫기">×</button></div>
+  <div class="chat-log" id="chat-log" aria-live="polite"><p class="chat-notice"><b>질문 방법</b><br>페이지에서 문장·수치를 복사한 뒤 붙여 넣거나, 텍스트를 선택해 “이 내용 질문하기”를 누르세요. 제공된 내용 밖의 최신 수치나 사실은 추정하지 않습니다.</p></div>
+  <p class="chat-context" id="chat-context" hidden></p>
+  <form class="chat-form" id="chat-form"><textarea class="chat-input" id="chat-input" maxlength="2000" rows="2" placeholder="궁금한 점을 입력하세요" aria-label="챗봇 질문"></textarea><button class="chat-send" id="chat-send" type="submit">전송</button></form>
+</aside>
+<button class="chat-selection" id="chat-selection" type="button" hidden>이 내용 질문하기</button>
+
 <footer>
   <div class="foot">
     <b>Hanwha 한화 · 미래전략실 · MarketView</b> · 내부 참고용 초안.
@@ -1581,6 +1609,10 @@
    {house:'삼성증권',title:'Global Market Review',date:'26.09.04',url:'https://www.samsungpop.com/common.do?cmd=down&amp;contentType=application%2Fpdf&amp;fileName=4020%2F2026090407132539K_02_03.pdf&amp;inlineYn=Y&amp;saveKey=research.pdf',sum:'삼성증권 글로벌주식팀 공식 데일리 리포트',big:true},
    {house:'KB증권',title:'9/4 KB 리서치 모닝코멘트',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/58/20260904_market_933890000.pdf',sum:'',big:true},
    {house:'신한투자증권',title:'Daily 신한생각 (9월 4일)',date:'26.09.04',url:'https://finance.naver.com/research/market_info_read.naver?nid=37398',sum:'',big:true},
+   {house:'미래에셋증권',title:'미래에셋증권 리서치센터 최신 리포트',date:'26.09.04',url:'https://securities.miraeasset.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
+   {house:'한국투자증권',title:'한국투자증권 리서치센터 최신 리포트',date:'26.09.04',url:'https://www.truefriend.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
+   {house:'삼성증권',title:'삼성증권 리서치센터 최신 리포트',date:'26.09.04',url:'https://www.samsungpop.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
+   {house:'한화투자증권',title:'한화투자증권 리서치센터 최신 리포트',date:'26.09.04',url:'https://www.hanwhawm.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
    {house:'DS투자증권',title:'[DS Defense Daily] 2026-09-04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/66/20260904_market_2678000.pdf',sum:'',big:false},
    {house:'유안타증권',title:'유안타 AI 미국 주식시장 마감 시황 (26.09.04)',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/18/20260904_market_915065000.pdf',sum:'',big:false},
    {house:'메리츠증권',title:'프랑스로 알아보는 재정 불안의 미래',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/17/20260904_market_119925000.pdf',sum:'',big:false},
@@ -1594,7 +1626,7 @@
     var el=document.getElementById('houseview');if(!el||typeof HOUSEVIEW==='undefined')return;
     el.innerHTML=HOUSEVIEW.map(function(h){
       return '<a class="hv-card'+(h.big?' hv-big':'')+'" href="'+h.url+'" target="_blank" rel="noopener">'
-        +'<div class="hv-top"><span class="hv-house">'+h.house+(h.big?' <span class="hv-badge">5대</span>':'')+'</span><span class="hv-date">'+h.date+'</span></div>'
+        +'<div class="hv-top"><span class="hv-house">'+h.house+(h.big?' <span class="hv-badge">주요</span>':'')+'</span><span class="hv-date">'+h.date+'</span></div>'
         +'<div class="hv-title">'+h.title+'</div>'
         +(h.sum?'<p class="hv-sum">'+h.sum+'</p>':'')
         +'<span class="hv-go">원문 ↗</span></a>';
@@ -1996,6 +2028,55 @@
   function show(key){nav.querySelectorAll('button').forEach(function(b){var on=key!=='all'&&b.dataset.category===key;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});var allSections=sections.concat([headlineSection]);allSections.forEach(function(s){var on=key==='all'||key===s.key;if(s.grid)s.grid.classList.toggle('is-filtered-out',!on);if(s.label)s.label.classList.toggle('is-filtered-out',!on);});}
   nav.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.category);});});
   show('g-idx');
+})();
+</script>
+<script>
+/* ---------- MarketView AI ----------
+   Cloudflare Worker 배포 후 아래 빈 문자열에 Worker URL을 넣는다.
+   OpenAI API 키는 절대 이 파일에 넣지 않는다. */
+window.MARKETVIEW_CHAT_API = '';
+(function(){
+  var endpoint=window.MARKETVIEW_CHAT_API;
+  var launcher=document.getElementById('chat-launcher'),panel=document.getElementById('chat-panel'),close=document.getElementById('chat-close');
+  var form=document.getElementById('chat-form'),input=document.getElementById('chat-input'),send=document.getElementById('chat-send');
+  var log=document.getElementById('chat-log'),contextEl=document.getElementById('chat-context'),selectButton=document.getElementById('chat-selection');
+  var copiedContext='',lastRange=null;
+  if(!launcher||!panel||!form)return;
+  function openChat(){panel.hidden=false;launcher.setAttribute('aria-expanded','true');input.focus();}
+  function closeChat(){panel.hidden=true;launcher.setAttribute('aria-expanded','false');selectButton.hidden=true;}
+  function addMessage(type,text){var el=document.createElement('div');el.className='chat-msg '+type;el.textContent=text;log.appendChild(el);log.scrollTop=log.scrollHeight;return el;}
+  function setContext(text){copiedContext=String(text||'').trim().slice(0,8000);contextEl.hidden=!copiedContext;contextEl.textContent=copiedContext?'선택한 내용: '+copiedContext.replace(/\s+/g,' ').slice(0,100):'';}
+  launcher.addEventListener('click',function(){if(panel.hidden)openChat();else closeChat();});
+  close.addEventListener('click',closeChat);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closeChat();});
+  document.addEventListener('mouseup',function(){
+    window.setTimeout(function(){
+      var selection=window.getSelection(),text=selection?selection.toString().trim():'';
+      if(!text||text.length<2||panel.contains(selection&&selection.anchorNode)||launcher.contains(selection&&selection.anchorNode)){selectButton.hidden=true;return;}
+      lastRange=selection.rangeCount?selection.getRangeAt(0).cloneRange():null;
+      var rect=lastRange&&lastRange.getBoundingClientRect();if(!rect){selectButton.hidden=true;return;}
+      selectButton.style.left=Math.max(12,Math.min(rect.left,window.innerWidth-150))+'px';
+      selectButton.style.top=Math.max(12,rect.bottom+8)+'px';selectButton.hidden=false;
+    },0);
+  });
+  document.addEventListener('scroll',function(){selectButton.hidden=true;},{passive:true});
+  selectButton.addEventListener('click',function(){
+    var text=window.getSelection()?window.getSelection().toString():'';setContext(text);openChat();selectButton.hidden=true;
+    if(!input.value.trim())input.placeholder='선택한 내용에 대해 무엇이 궁금한가요?';
+  });
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();var question=input.value.trim();if(!question)return;
+    if(!endpoint){addMessage('error','챗봇 서버가 아직 연결되지 않았습니다. 관리자에게 Worker URL과 OpenAI API 키 설정을 요청해 주세요.');return;}
+    addMessage('user',question);input.value='';send.disabled=true;send.textContent='응답 중';
+    var pending=addMessage('assistant','분석 중입니다…');
+    try{
+      var response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:question,context:copiedContext})});
+      var data=await response.json().catch(function(){return {};});
+      if(!response.ok)throw new Error(data.error||'챗봇 응답을 가져오지 못했습니다.');
+      pending.textContent=data.answer||'응답을 생성하지 못했습니다.';
+    }catch(err){pending.className='chat-msg error';pending.textContent=err.message||'네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';}
+    finally{send.disabled=false;send.textContent='전송';log.scrollTop=log.scrollHeight;}
+  });
 })();
 </script>
 </body>

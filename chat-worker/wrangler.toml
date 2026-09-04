@@ -1,0 +1,7 @@
+name = "hanwha-emong-chat"
+main = "src/index.mjs"
+compatibility_date = "2026-09-04"
+
+# GitHub Pages의 실제 배포 도메인만 허용합니다. 필요하면 쉼표로 추가할 수 있습니다.
+[vars]
+ALLOWED_ORIGIN = "https://jueun1231-create.github.io"
