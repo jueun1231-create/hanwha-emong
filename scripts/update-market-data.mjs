@@ -9,7 +9,13 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const FILE = new URL('../index.html', import.meta.url);
+const NEWS_FILE = new URL('../data/news.json', import.meta.url);
 const UA = { headers: { 'User-Agent': 'Mozilla/5.0 (hanwha-emong daily updater)' } };
+const NEWS_FEEDS = [
+  ['industry', '산업군', '(반도체 OR AI OR 배터리 OR 방산 OR 전력 OR 조선) 주식'],
+  ['economy', '경제', '(한국 경제 OR 미국 경제 OR 연준 OR 금리 OR 인플레이션)'],
+  ['world', '세계', '(글로벌 시장 OR 세계 경제 OR 무역 OR 지정학)'],
+];
 
 /* ---- 티커 설정: [파일상 tk값, Yahoo 심볼, val소수, spark소수] ---- */
 const IDX = [
@@ -71,6 +77,66 @@ async function chart(sym, range) {
     .sort((a, b) => (a.d < b.d ? -1 : a.d > b.d ? 1 : 0));
   if (bars.length < 3) throw new Error(`${sym} no data`);
   return bars;
+}
+
+/* Google News 공개 RSS에서 제목·짧은 요약·원문 링크를 수집한다. API 키나 유료 계정이 필요 없다. */
+function decodeXml(s) {
+  return String(s || '').replace(/^<!\[CDATA\[|\]\]>$/g, '')
+    .replace(/&#(x[0-9a-f]+|\d+);/gi, (_, n) => String.fromCodePoint(n[0].toLowerCase() === 'x' ? parseInt(n.slice(1), 16) : Number(n)))
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'");
+}
+function stripHtml(s) {
+  return decodeXml(s).replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+function newsRelevant(category, title) {
+  const t = title.toLowerCase();
+  const keys = {
+    industry: ['ai', '반도체', '배터리', '리튬', '방산', '전력', '원전', '조선', '주식', '기업', 'ipo', '데이터센터'],
+    economy: ['경제', '금리', '연준', '물가', '인플레이션', '환율', '코스피', '코스닥', '증시', '채권', '고용', 'gdp', '무역'],
+    world: ['글로벌', '세계', '무역', '관세', '지정학', '미국', '중국', '유럽', '일본', '시장', '경제', '금리', '원유', '유가'],
+  };
+  return (keys[category] || []).some((k) => t.includes(k));
+}
+function xmlField(item, tag) {
+  const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i');
+  return re.exec(item)?.[1] || '';
+}
+async function fetchNewsFeed(category, categoryLabel, query) {
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
+  const r = await fetch(url, UA);
+  if (!r.ok) throw new Error(`news ${category} HTTP ${r.status}`);
+  const xml = await r.text();
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].map((m) => {
+    const item = m[1];
+    const title = stripHtml(xmlField(item, 'title'));
+    const link = decodeXml(xmlField(item, 'link')).trim();
+    const rawSummary = stripHtml(xmlField(item, 'description'));
+    const source = stripHtml(xmlField(item, 'source')) || 'Google News';
+    const pubDate = new Date(decodeXml(xmlField(item, 'pubDate')).trim());
+    if (!title || !link || Number.isNaN(pubDate.getTime()) || !newsRelevant(category, title)) return null;
+    const summaryText = rawSummary.replace(title, '').replace(source, '').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
+    const summary = (summaryText.length >= 24 ? summaryText : '공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.').slice(0, 280);
+    return { id: `${link}|${title}`, category, categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
+  }).filter(Boolean);
+}
+async function updateNews(html) {
+  let old = [];
+  try { old = JSON.parse(await readFile(NEWS_FILE, 'utf8')); if (!Array.isArray(old)) old = []; } catch { /* 첫 실행 */ }
+  const fetched = [];
+  for (const [category, label, query] of NEWS_FEEDS) {
+    try { fetched.push(...await fetchNewsFeed(category, label, query)); }
+    catch (e) { console.warn(`  뉴스 ${category} 실패 — 기존 뉴스 유지`, e.message); }
+  }
+  const byId = new Map();
+  [...old, ...fetched].forEach((n) => { if (n?.id && !byId.has(n.id)) byId.set(n.id, n); });
+  const merged = [...byId.values()].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  await writeFile(NEWS_FILE, JSON.stringify(merged, null, 2) + '\n');
+  const literal = JSON.stringify(merged).replace(/</g, '\\u003c');
+  // 기사 본문에 포함될 수 있는 "];" 문자열 때문에 단순 비탐욕 정규식은
+  // 배열 중간에서 끊길 수 있다. 다음 고정 데이터 선언까지를 경계로 삼는다.
+  const next = html.replace(/var NEWS_DATA\s*=\s*\[[\s\S]*?\];\s*var IDX=/, `var NEWS_DATA = ${literal};\n  var IDX=`);
+  if (next === html) throw new Error('NEWS_DATA 배열을 찾지 못함');
+  return { html: next, added: Math.max(0, merged.length - old.length), total: merged.length };
 }
 
 /* 네이버 금융 공개 표에서 전 거래일 시장 전체 투자자별 순매수(억원)를 읽는다.
@@ -248,6 +314,16 @@ async function run() {
       if (next == null) { console.warn('  항목 못 찾음', sy); fail++; }
       else { html = next; ok++; }
     } catch (e) { console.warn('  fail', sym, e.message); fail++; }
+  }
+
+  console.log('· 주요뉴스 (Google News 공개 RSS)');
+  try {
+    const news = await updateNews(html);
+    html = news.html;
+    console.log(`  뉴스 반영: 신규 ${news.added}건 / 누적 ${news.total}건`);
+  } catch (e) {
+    console.warn('  뉴스 갱신 실패 — 기존 뉴스 유지', e.message);
+    fail++;
   }
 
   // 기준일자(KST) 갱신

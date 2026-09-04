@@ -63,7 +63,7 @@ jobs:
           git config user.name  "hanwha-emong-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main || true
-          git add index.html
+          git add index.html data/news.json
           if git diff --cached --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
