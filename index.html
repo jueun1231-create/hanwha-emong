@@ -1658,7 +1658,7 @@
   (function(){
     var el=document.getElementById('houseview');if(!el||typeof HOUSEVIEW==='undefined')return;
     var seen={};
-    var unique=HOUSEVIEW.filter(function(h){var key=String(h.house).replace(/<[^>]+>/g,'').replace(/증권$|투자증권$/,'').replace(/\s+/g,'').toLowerCase();if(seen[key])return false;seen[key]=true;return true;});
+    var unique=HOUSEVIEW.filter(function(h){var plain=String(h.house).replace(/<[^>]+>/g,'');if(plain.indexOf('한국투자증권')>=0||plain.indexOf('미래에셋증권')>=0)return false;var key=plain.replace(/증권$|투자증권$/,'').replace(/\s+/g,'').toLowerCase();if(seen[key])return false;seen[key]=true;return true;});
     el.innerHTML=unique.map(function(h){
       return '<a class="hv-card'+(h.big?' hv-big':'')+'" href="'+h.url+'" target="_blank" rel="noopener">'
         +'<div class="hv-top"><span class="hv-house">'+h.house+(h.big?' <span class="hv-badge">주요</span>':'')+'</span><span class="hv-date">'+h.date+'</span></div>'
