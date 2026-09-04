@@ -390,6 +390,30 @@
   .news-page.active{background:var(--accent);border-color:var(--accent);color:#fff}
   .news-page:disabled{opacity:.4;cursor:default}
   .news-empty{padding:28px 15px;text-align:center;background:var(--raise);border:1px solid var(--hair);border-radius:12px;color:var(--ink-3);font-size:12px}
+  /* 주요뉴스 · Revolut/Robinhood 스타일의 절제된 피드 */
+  #p7{max-width:1040px}
+  #p7 .phead{padding-bottom:18px;border-bottom:1px solid var(--hair)}
+  #p7 .phead h1{font-size:25px;letter-spacing:-.04em}
+  #p7 .phead p{margin-top:6px;color:var(--ink-3)}
+  #p7 .news-toolbar{margin:18px 0 14px;align-items:flex-start}
+  #p7 .news-filters{gap:6px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;scrollbar-width:none}
+  #p7 .news-filters::-webkit-scrollbar{display:none}
+  #p7 .news-filter{white-space:nowrap;border:0;background:var(--raise);border-radius:999px;padding:8px 13px;color:var(--ink-2);font-size:11px;transition:background .15s,color .15s}
+  #p7 .news-filter:hover{background:var(--hair);color:var(--ink)}
+  #p7 .news-filter.active{background:var(--ink);color:var(--surface);box-shadow:none}
+  #p7 .news-list{gap:0;border-top:1px solid var(--hair)}
+  #p7 .news-card{position:relative;background:transparent;border:0;border-bottom:1px solid var(--hair);border-radius:0;padding:17px 12px 17px 18px;transition:background .15s,padding-left .15s}
+  #p7 .news-card::before{content:"";position:absolute;left:0;top:18px;width:3px;height:0;border-radius:3px;background:var(--accent);transition:height .15s}
+  #p7 .news-card:hover{background:var(--raise);transform:none;padding-left:22px}
+  #p7 .news-card:hover::before{height:calc(100% - 36px)}
+  #p7 .news-card-head{margin-bottom:7px;gap:8px}
+  #p7 .news-cat{font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+  #p7 .news-source,#p7 .news-time{font-size:10px}
+  #p7 .news-title{font-size:15px;line-height:1.42;letter-spacing:-.02em}
+  #p7 .news-summary{max-width:760px;margin-top:6px;font-size:11.5px;line-height:1.55;color:var(--ink-3)}
+  #p7 .news-pagination{margin:20px 0 6px}
+  #p7 .news-page{border:0;background:var(--raise);border-radius:999px;width:30px;min-width:30px;height:30px}
+  #p7 .news-page.active{background:var(--ink);color:var(--surface)}
 
   /* ---------- P6 league table ---------- */
   .lt-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
