@@ -428,6 +428,39 @@
   #p7 .news-pulse-v{display:block;margin-top:5px;font-size:17px;font-weight:800;letter-spacing:-.04em}
   #p7 .news-pulse-v em{font-style:normal;font-size:10px;color:var(--accent);margin-left:4px}
   @media(max-width:520px){#p7 .news-pulse{grid-template-columns:1fr 1fr}.news-pulse-item:last-child{display:none}}
+  /* 주요뉴스 · 한국형 증권 앱 피드 레이아웃 */
+  #p7{max-width:900px;background:var(--surface);padding:0 2px 28px}
+  #p7 .phead{padding:28px 4px 8px;border:0}
+  #p7 .phead h1{font-size:28px;letter-spacing:-.06em;font-weight:850}
+  #p7 .phead p{font-size:11px;margin-top:8px;color:var(--ink-3)}
+  #p7 .news-pulse{grid-template-columns:1.4fr 1fr 1fr;margin:16px 0 20px;border:0;border-radius:14px;overflow:hidden;background:#f5f6f8}
+  #p7 .news-pulse-item{padding:16px 18px;background:#f5f6f8}
+  #p7 .news-pulse-item:first-child{background:#fff3eb}
+  #p7 .news-pulse-k{font-size:9px;font-weight:700;letter-spacing:.02em;color:#8b929d;text-transform:none}
+  #p7 .news-pulse-v{font-size:16px;margin-top:7px;font-weight:800;color:#191c20}
+  #p7 .news-pulse-v em{color:#e86a25;font-size:9px}
+  #p7 .news-toolbar{margin:0 0 14px;display:block}
+  #p7 .news-filters{gap:4px;border-bottom:1px solid #eceef1;padding:0 0 10px}
+  #p7 .news-filter{background:transparent;color:#8b929d;border-radius:0;padding:7px 10px;font-size:11px;font-weight:700}
+  #p7 .news-filter:hover{background:#f5f6f8;color:#34383e}
+  #p7 .news-filter.active{background:transparent;color:#e86a25;box-shadow:inset 0 -2px #e86a25}
+  #p7 .news-updated{display:block;margin-top:11px;text-align:right;font-size:10px;color:#9aa1aa}
+  #p7 .news-list{border:0;gap:0}
+  #p7 .news-card{padding:18px 8px;border-bottom:1px solid #eef0f3;background:transparent}
+  #p7 .news-card:first-child{margin:0 0 4px;padding:20px 18px;background:#f7f8fa;color:var(--ink);border-radius:14px}
+  #p7 .news-card:first-child::before{display:none}
+  #p7 .news-card:first-child .news-title{font-size:20px;color:#17191c;letter-spacing:-.045em}
+  #p7 .news-card:first-child .news-cat{color:#e86a25}
+  #p7 .news-card:first-child .news-source,#p7 .news-card:first-child .news-time,#p7 .news-card:first-child .news-summary{color:#7d858f}
+  #p7 .news-card:hover{padding-left:12px;background:#fafafa}
+  #p7 .news-card:hover::before{display:block;height:calc(100% - 36px);background:#e86a25}
+  #p7 .news-card-head{margin-bottom:6px}
+  #p7 .news-cat{font-size:10px;color:#e86a25}
+  #p7 .news-title{font-size:15px;line-height:1.45;font-weight:750;color:#25282d}
+  #p7 .news-summary{font-size:11px;line-height:1.55;color:#858c95;margin-top:5px}
+  #p7 .news-page{background:#f3f4f6;color:#626a74}
+  #p7 .news-page.active{background:#e86a25;color:#fff}
+  @media(max-width:520px){#p7{padding-left:0;padding-right:0}#p7 .news-pulse{grid-template-columns:1fr 1fr}#p7 .news-pulse-item:last-child{display:none}}
 
   /* ---------- MarketView AI chatbot ---------- */
   .chat-launcher{position:fixed;right:28px;bottom:26px;z-index:50;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:var(--ink);color:var(--surface);padding:12px 16px;box-shadow:0 10px 28px rgba(20,30,45,.22);font:inherit;font-size:12px;font-weight:750;cursor:pointer}
