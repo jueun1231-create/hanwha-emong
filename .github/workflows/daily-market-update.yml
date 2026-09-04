@@ -34,6 +34,11 @@ jobs:
       - name: 시장데이터 갱신
         run: node scripts/update-market-data.mjs
 
+      # 1b) 하우스 뷰 (네이버 증권 리서치, 무료) — 매시간
+      - name: 하우스 뷰 갱신
+        run: node scripts/fetch-research.mjs
+        continue-on-error: true
+
       - name: 데이터 갱신본 백업
         run: cp index.html /tmp/index.data.html
 
