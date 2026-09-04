@@ -86,14 +86,14 @@ function decodeXml(s) {
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'");
 }
 function stripHtml(s) {
-  return decodeXml(s).replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return decodeXml(s).replace(/&nbsp;|&#160;/gi, ' ').replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 function newsRelevant(category, title) {
   const t = title.toLowerCase();
   const keys = {
-    industry: ['ai', '반도체', '배터리', '리튬', '방산', '전력', '원전', '조선', '주식', '기업', 'ipo', '데이터센터'],
-    economy: ['경제', '금리', '연준', '물가', '인플레이션', '환율', '코스피', '코스닥', '증시', '채권', '고용', 'gdp', '무역'],
-    world: ['글로벌', '세계', '무역', '관세', '지정학', '미국', '중국', '유럽', '일본', '시장', '경제', '금리', '원유', '유가'],
+    industry: ['ai', 'semiconductor', 'battery', 'lithium', 'defense', 'power', 'nuclear', 'shipping', '반도체', '배터리', '리튬', '방산', '전력', '원전', '조선', '주식', '기업', 'ipo', '데이터센터'],
+    economy: ['economy', 'fed', 'rate', 'inflation', 'jobs', 'gdp', 'market', '경제', '금리', '연준', '물가', '인플레이션', '환율', '코스피', '코스닥', '증시', '채권', '고용', '무역'],
+    world: ['global', 'world', 'trade', 'tariff', 'geopolit', 'market', 'economy', '글로벌', '세계', '무역', '관세', '지정학', '미국', '중국', '유럽', '일본', '시장', '경제', '금리', '원유', '유가'],
   };
   return (keys[category] || []).some((k) => t.includes(k));
 }
@@ -101,8 +101,7 @@ function xmlField(item, tag) {
   const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i');
   return re.exec(item)?.[1] || '';
 }
-async function fetchNewsFeed(category, categoryLabel, query) {
-  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
+async function fetchNewsUrl(category, categoryLabel, url) {
   const r = await fetch(url, UA);
   if (!r.ok) throw new Error(`news ${category} HTTP ${r.status}`);
   const xml = await r.text();
@@ -119,6 +118,9 @@ async function fetchNewsFeed(category, categoryLabel, query) {
     return { id: `${link}|${title}`, category, categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
   }).filter(Boolean);
 }
+async function fetchNewsFeed(category, categoryLabel, query) {
+  return fetchNewsUrl(category, categoryLabel, `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`);
+}
 async function updateNews(html) {
   let old = [];
   try { old = JSON.parse(await readFile(NEWS_FILE, 'utf8')); if (!Array.isArray(old)) old = []; } catch { /* 첫 실행 */ }
@@ -127,8 +129,20 @@ async function updateNews(html) {
     try { fetched.push(...await fetchNewsFeed(category, label, query)); }
     catch (e) { console.warn(`  뉴스 ${category} 실패 — 기존 뉴스 유지`, e.message); }
   }
+  // 본문 설명을 제공하는 무료 공개 RSS도 함께 수집해 요약 품질을 보완한다.
+  const direct = [
+    ['economy', '경제', 'https://feeds.bbci.co.uk/news/business/rss.xml'],
+    ['world', '세계', 'https://feeds.bbci.co.uk/news/world/rss.xml'],
+    ['industry', '산업군', 'https://www.cnbc.com/id/100003114/device/rss/rss.html'],
+  ];
+  for (const [category, label, url] of direct) {
+    try { fetched.push(...await fetchNewsUrl(category, label, url)); }
+    catch (e) { console.warn(`  직접 RSS ${category} 실패 — 기존 뉴스 유지`, e.message); }
+  }
   const byId = new Map();
-  [...old, ...fetched].forEach((n) => { if (n?.id && !byId.has(n.id)) byId.set(n.id, n); });
+  old.forEach((n) => { if (n?.id) byId.set(n.id, n); });
+  // 같은 링크가 재수집되면 요약·출처가 개선된 최신 레코드를 우선한다.
+  fetched.forEach((n) => { if (n?.id) byId.set(n.id, n); });
   const merged = [...byId.values()].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
   await writeFile(NEWS_FILE, JSON.stringify(merged, null, 2) + '\n');
   const literal = JSON.stringify(merged).replace(/</g, '\\u003c');
