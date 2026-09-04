@@ -104,9 +104,12 @@ function flowText(n) {
 }
 function patchFlowBars(html, id, f) {
   const re = new RegExp(`dbars\\('${id}',\\[[^\\n]*?\\]\\);`);
-  const rows = id === 'db-kospi'
-    ? [{ k: '외국인', v: Math.round(f.foreign) }, { k: '개인', v: Math.round(f.personal) }, { k: '기관', v: Math.round(f.institution) }, { k: '기타법인', v: Math.round(f.other) }]
-    : [{ k: '개인', v: Math.round(f.personal) }, { k: '외국인', v: Math.round(f.foreign) }, { k: '기관', v: Math.round(f.institution) }, { k: '기타법인', v: Math.round(f.other) }];
+  const rows = [
+    { k: '개인', v: Math.round(f.personal) },
+    { k: '외국인', v: Math.round(f.foreign) },
+    { k: '기관', v: Math.round(f.institution) },
+    { k: '기타법인', v: Math.round(f.other) },
+  ];
   const literal = rows.map((x) => `{k:'${x.k}',v:${x.v}}`).join(',');
   return html.replace(re, `dbars('${id}',[${literal}]);`);
 }
