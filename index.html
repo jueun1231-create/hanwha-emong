@@ -585,7 +585,7 @@
 #p1 .p1-section.is-filtered-out,#p1 .is-filtered-out{display:none!important}
 @media(max-width:560px){#p1 .p1-category-nav{width:100%;overflow:auto;flex-wrap:nowrap}#p1 .p1-category-nav button{flex:0 0 auto}}
 /* P5 산업군 탐색: 평면 종목 탭 대신 산업군 → 대표기업 순서로 탐색 */
-#p5 .lt-stock-tabs{display:none!important}
+#p5 .lt-stock-tabs{margin:10px 0 4px}
 #p5 .industry-nav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
 #p5 .industry-nav button{appearance:none;border:1px solid var(--hair-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:11.5px;font-weight:700;padding:8px 13px;border-radius:var(--radius-pill);cursor:pointer;transition:.18s}
 #p5 .industry-nav button:hover{border-color:var(--accent);color:var(--accent)}
@@ -685,13 +685,10 @@
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
       <ul class="ins">
-        <li>웰러 연준이사가 9/3 "물가 둔화 지속 시 9월 동결 지지" 발언, CME 인상 확률이 63%→50%로 급후퇴하며 인상 경계 완화</li>
-        <li>다우 +1.18%·S&amp;P +1.06%·나스닥 +1.4% 동반 급반등, 미 10년물은 4.76%대로 소폭 후퇴하며 금리 상단 압력 축소</li>
-        <li>국내는 9/2 −3.99% 급락 이후 9/3 자사주 매입(+1.61조)으로 +0.26% 반등</li>
-      </ul>
-      <ul class="ins">
-        <li>금 4,500달러·은 67달러대 강세 지속에도 달러인덱스는 99 부근 약세 — 안전자산 쏠림 속 달러만 소외되는 이례적 조합 지속</li>
-        <li>이란-미 협상 기대에 유가 상단은 제한적이나 완전한 리스크 해소는 아직, <b>9/15~16 FOMC 전까지 인상·동결 저울질에 따른 지수 상단 압박이 이어지는 고변동 국면</b></li>
+        <li>웰러 연준이사 "9월 동결 지지" 발언에 CME 인상 확률 63%→50% 후퇴, 뉴욕 3대 지수 +1%대 동반 반등</li>
+        <li>미 10년물 4.76%대로 소폭 하락, 코스피는 9/2 −3.99% 급락 뒤 9/3 자사주 매입(+1.61조)으로 +0.26% 반등</li>
+        <li>금·은 강세에도 달러인덱스 99 부근 약세 — 안전자산 쏠림 속 달러만 소외</li>
+        <li><b>9/15~16 FOMC 점도표 전까지 인상·동결 저울질에 따른 지수 상단 압박, 고변동 국면</b></li>
       </ul>
     </div>
 
@@ -829,7 +826,7 @@
 
   <!-- ============= P5 ============= -->
   <section class="panel" id="p5" role="tabpanel" hidden>
-    <div class="phead"><h1>중장기 전망</h1><p>국내 + 글로벌 AI 반도체 피어 · 최근 12개월 월말 종가 · 1·3·12개월 목표주가 · 글로벌 매크로 경로</p></div>
+    <div class="phead"><h1>중장기 전망</h1><p>8개 산업군 × 대표 5종목(국내외) · 최근 12개월 월말 종가 + 1·3·12개월 목표주가 · 매주 이슈 종목 갱신 · 글로벌 매크로 경로</p></div>
     <div class="disc">시장 컨센서스 및 공개 리포트 요약이며 특정 종목의 매매를 권유하지 않습니다.</div>
 
     <div class="insight">
@@ -842,7 +839,8 @@
       </ul>
     </div>
 
-    <div class="slabel">종목별 중장기 목표주가 <span class="lite">·최근 12개월 월말 종가 + 1·3·12개월 전망</span></div>
+    <div class="slabel">산업군별 대표 종목 <span class="lite">·8개 산업군 · 각 5종목(국내외) · 그 주 이슈 종목 반영</span></div>
+    <div class="industry-nav" id="lt-sector-tabs" role="tablist" aria-label="산업군 선택"></div>
     <div class="lt-stock-tabs" id="lt-stock-tabs" role="tablist" aria-label="종목 선택"></div>
     <div id="lt-charts"></div>
 
@@ -850,7 +848,7 @@
     <div class="cons" id="cons"></div>
     <div class="slabel">글로벌·국내 매크로 전망</div>
     <div class="grid feat" id="macro"></div>
-    <div class="disc"><b>데이터</b> 월별 종가는 Yahoo Finance 실측(삼성전자·SK하이닉스·한화에어로스페이스·엔비디아·TSMC·브로드컴). 글로벌 피어 목표주가와 국내 일부 컨센서스는 공개 자료 기반 근사치이며 매매 권유가 아님.</div>
+    <div class="disc"><b>데이터</b> 월별 종가는 Yahoo Finance 실측(수집 가능 종목). 종목 구성은 8개 산업군별로 그 주 이슈가 되는 대표 5종목을 매주 갱신하며, 목표주가·투자의견·변동 사유는 공개 리포트·기사 기반 근사치로 특정 종목의 매매를 권유하지 않는다.</div>
   </section>
 
   <!-- ============= P6 ============= -->
@@ -1062,18 +1060,18 @@
    {name:'유로스톡스 50',tk:'SX5E',val:'6,362.15',chg:'6.83',pct:-0.11,spark:[6427,6487,6477,6503,6524,6536,6551,6534,6545,6540,6530,6468,6444,6422,6462,6448,6456,6471,6425,6486,6420,6369,6362]}
   ];
   var COM=[
-   {name:'WTI 원유',tk:'CL=F',val:'91.84',unit:'$/bbl',chg:'0.83',pct:0.91,spark:[80.3,75.8,75.2,77.3,78.2,82.1,83.2,83.3,81.3,82.4,84.5,84.9,85.8,87.8,87.1,85.0,82.4,82.2,83.5,83.4,85.8,90.2,91.0,91.8]},
-   {name:'브렌트유',tk:'BZ=F',val:'95.91',unit:'$/bbl',chg:'0.28',pct:0.29,spark:[83.8,79.4,79.4,82.5,83.6,87.7,88.9,89.0,87.1,88.5,90.9,91.0,91.6,93.8,94.4,92.2,88.6,87.8,89.7,89.3,90.5,94.7,95.6,95.9]},
-   {name:'금',tk:'GC=F',val:'4,523.6',unit:'$/oz',chg:'157.3',pct:3.6,note:'통화가치 헤지 수요 지속',spark:[4034,4095,4246,4242,4341,4362,4383,4409,4364,4380,4418,4366,4489,4516,4624,4641,4638,4598,4610,4478,4431,4348,4366,4524]},
-   {name:'은',tk:'SI=F',val:'67.57',unit:'$/oz',chg:'2.85',pct:4.41,spark:[57.7,60.1,62.1,61.4,63.3,65.1,64.8,65.6,64.9,65.0,66.1,63.9,65.7,68.0,69.5,68.5,68.6,68.0,69.4,67.0,66.2,64.6,64.7,67.6]},
+   {name:'WTI 원유',tk:'CL=F',val:'91.89',unit:'$/bbl',chg:'0.88',pct:0.97,spark:[80.3,75.8,75.2,77.3,78.2,82.1,83.2,83.3,81.3,82.4,84.5,84.9,85.8,87.8,87.1,85.0,82.4,82.2,83.5,83.4,85.8,90.2,91.0,91.9]},
+   {name:'브렌트유',tk:'BZ=F',val:'95.95',unit:'$/bbl',chg:'0.32',pct:0.33,spark:[83.8,79.4,79.4,82.5,83.6,87.7,88.9,89.0,87.1,88.5,90.9,91.0,91.6,93.8,94.4,92.2,88.6,87.8,89.7,89.3,90.5,94.7,95.6,95.9]},
+   {name:'금',tk:'GC=F',val:'4,526.8',unit:'$/oz',chg:'160.5',pct:3.68,note:'통화가치 헤지 수요 지속',spark:[4034,4095,4246,4242,4341,4362,4383,4409,4364,4380,4418,4366,4489,4516,4624,4641,4638,4598,4610,4478,4431,4348,4366,4527]},
+   {name:'은',tk:'SI=F',val:'67.56',unit:'$/oz',chg:'2.83',pct:4.38,spark:[57.7,60.1,62.1,61.4,63.3,65.1,64.8,65.6,64.9,65.0,66.1,63.9,65.7,68.0,69.5,68.5,68.6,68.0,69.4,67.0,66.2,64.6,64.7,67.6]},
    {name:'구리',tk:'HG=F',val:'6.675',unit:'$/lb',chg:'0.174',pct:2.68,note:'AI 전력 인프라 수요',spark:[6.51,6.62,6.70,6.69,6.57,6.59,6.61,6.60,6.59,6.60,6.60,6.48,6.49,6.46,6.58,6.60,6.71,6.59,6.59,6.56,6.59,6.51,6.50,6.68]},
    {name:'천연가스',tk:'NG=F',val:'2.926',unit:'$/MMBtu',chg:'0.030',pct:-1.01,spark:[2.78,2.68,2.69,2.64,2.66,2.79,2.77,2.80,2.73,2.73,2.69,2.78,2.81,2.73,2.77,2.78,2.77,2.84,2.91,2.89,2.93,2.90,2.96,2.93]}
   ];
   var FX=[
-   {name:'원/달러',tk:'USD/KRW',val:'1,356.2',chg:'2.2',pct:-0.16,note:'원화 강세 (외국인 순매수·달러 약세)',spark:[1429,1428,1421,1422,1407,1417,1412,1416,1417,1415,1415,1414,1389,1391,1385,1381,1381,1383,1380,1377,1367,1373,1358,1356]},
-   {name:'달러인덱스',tk:'DXY',val:'98.99',chg:'0.57',pct:-0.57,note:'연초 108 → 99, 구조적 약세',spark:[99.96,99.89,99.69,99.97,99.60,99.81,99.82,100.01,99.96,99.67,99.64,99.65,98.83,98.90,98.80,99.00,98.92,99.17,99.16,99.70,99.43,99.67,99.56,98.99]},
+   {name:'원/달러',tk:'USD/KRW',val:'1,356.1',chg:'2.3',pct:-0.17,note:'원화 강세 (외국인 순매수·달러 약세)',spark:[1429,1428,1421,1422,1407,1417,1412,1416,1417,1415,1415,1414,1389,1391,1385,1381,1381,1383,1380,1377,1367,1373,1358,1356]},
+   {name:'달러인덱스',tk:'DXY',val:'98.95',chg:'0.61',pct:-0.61,note:'연초 108 → 99, 구조적 약세',spark:[99.96,99.89,99.69,99.97,99.60,99.81,99.82,100.01,99.96,99.67,99.64,99.65,98.83,98.90,98.80,99.00,98.92,99.17,99.16,99.70,99.43,99.67,99.56,98.95]},
    {name:'유로/달러',tk:'EUR/USD',val:'1.1632',chg:'0.0047',pct:0.4,spark:[1.151,1.153,1.156,1.152,1.156,1.155,1.154,1.153,1.154,1.157,1.158,1.158,1.167,1.169,1.168,1.167,1.167,1.165,1.166,1.159,1.162,1.160,1.159,1.163]},
-   {name:'엔/달러',tk:'USD/JPY',val:'155.67',chg:'3.25',pct:-2.05,note:'엔화 급강세',spark:[157.5,157.7,157.6,158.4,157.9,159.2,159.3,159.3,159.4,159.2,159.3,159.6,158.3,158.9,158.9,159.1,159.2,159.3,159.3,160.1,159.7,160.2,158.9,155.7]},
+   {name:'엔/달러',tk:'USD/JPY',val:'155.47',chg:'3.45',pct:-2.17,note:'엔화 급강세',spark:[157.5,157.7,157.6,158.4,157.9,159.2,159.3,159.3,159.4,159.2,159.3,159.6,158.3,158.9,158.9,159.1,159.2,159.3,159.3,160.1,159.7,160.2,158.9,155.5]},
    {name:'위안/달러',tk:'USD/CNY',val:'6.710',chg:'0.009',pct:-0.14,spark:[6.752,6.753,6.750,6.749,6.747,6.747,6.745,6.743,6.743,6.743,6.740,6.743,6.729,6.722,6.721,6.722,6.720,6.722,6.722,6.726,6.726,6.720,6.719,6.710]}
   ];
   var RATE=[
@@ -1118,42 +1116,73 @@
   })();
 
 
-  /* ---------- P5 중장기 전망 (사용자 제공 파일: 월별 종가 + 1·3·12개월 목표주가) ---------- */
-  var CONS=[
-   {name:'엔비디아 (NVDA)',cur:'USD',now:'$224',lo:'$196',hi:'$236',op:'매수 우세',delta:'글로벌 AI 캐펙스',
-    why:'델 테크놀로지스가 9/1 실적에서 AI 서버 수주잔고 $950억(분기 매출 +58%)을 공개하는 등 하이퍼스케일러·OEM 전반의 캐펙스 가이던스 상향이 단기 동력. 3개월은 차기 GPU(루빈) 사이클 진입과 주권(sovereign) AI 수요, 12개월은 추론 워크로드 확산에 따른 데이터센터 매출의 구조적 성장을 반영한 공개 컨센서스 근사치다. HBM·CoWoS 공급 병목과 대중국 수출 규제가 주요 하방 위험.'},
-   {name:'브로드컴 (AVGO)',cur:'USD',now:'$367',lo:'$310',hi:'$447',op:'매수 우세',delta:'커스텀 ASIC·네트워킹',
-    why:'9/2 발표한 3분기 실적은 매출 $296억(컨센서스 상회)·EPS $3.32로 시장 예상을 웃돌았으나, 4분기 매출 가이던스($348억, +93%YoY)가 기대치를 완전히 충족하지 못했다는 인식에 시간외 주가는 6%가량 하락. 3개월은 VMware 통합 마진, 12개월은 하이퍼스케일러 자체칩 침투 확대를 반영한 근사치다. 고객 집중도와 소프트웨어 전환 속도가 리스크.'},
-   {name:'TSMC (TSM)',cur:'USD',now:'$416',lo:'$375',hi:'$478',op:'매수 우세',delta:'파운드리 과점',
-    why:'3nm·2nm 가동률과 AI 가속기 물량이 단기 동력. 3개월은 CoWoS 증설 효과와 가격 인상, 12개월은 미국(애리조나)·일본·독일 팹 확장의 이익 기여를 반영한 근사치다. 지정학 리스크와 대만달러 환율이 변수.'},
-   {name:'오라클 (ORCL)',cur:'USD',now:'$146',lo:'$128',hi:'$165',op:'매수',delta:'OCI·RPO 급증',
-    why:'클라우드 인프라(OCI) 계약잔고(RPO) 급증이 리레이팅을 촉발한 뒤 되돌림 국면. 3개월은 스타게이트·대형 AI 학습 계약의 매출 인식 속도, 12개월은 캐펙스 선투자 대비 마진 회수가 관건인 근사치다. 감가상각 부담과 계약 집중도가 리스크.'},
-   {name:'팔란티어 (PLTR)',cur:'USD',now:'$169',lo:'$155',hi:'$190',op:'중립',delta:'밸류에이션 부담',
-    why:'미국 상업부문(AIP) 매출 가속과 정부 계약 확대가 실적 동력이나, 매출 대비 멀티플이 소프트웨어 최상단이라 상단이 제한적인 근사치다. 성장률 둔화 시 조정 폭이 큰 고베타 종목.'},
-   {name:'SK하이닉스 (000660)',now:'1,596,000',lo:'1,420,000',hi:'1,720,000',op:'매수 우세',delta:'HBM 과점, 목표가는 증권사별 이견',
-    why:'HBM4 출하·현물가 반등이 단기 동력이나 목표주가는 증권사별로 엇갈린다. 한국투자증권은 HBM·D램 가격 상승 가속을 근거로 목표가를 380만→470만원으로 상향한 반면, LS증권은 삼성 HBM4 경쟁 심화·공급선 다변화 우려로 330만→240만원으로 하향했다(2026.08). 3개월은 엔비디아 차기 GPU 인증과 고객사 재고 정상화, 12개월은 증설 이후에도 이어질 글로벌 AI 서버 수요를 반영한 가정이다. 삼성 HBM 점유율 회복이 주요 하방 위험.'},
-   {name:'삼성전자 (005930)',now:'250,000',lo:'230,000',hi:'270,000',op:'매수 우세',delta:'파운드리 회복 기대',
-    why:'HBM 공급 확대와 DDR5 가격 반등이 단기 동력. 3개월은 파운드리 가동률 회복, 12개월은 HBM 고객 다변화와 메모리·비메모리 동반 정상화를 반영한 가정이다. 파운드리 적자 축소 속도가 할인 해소의 열쇠.'},
-   {name:'한화에어로스페이스 (012450)',now:'1,047,000',lo:'917,000',hi:'1,185,000',op:'매수 우세',delta:'유럽 재무장',
-    why:'신규 수주 공시와 환율이 단기 동력. 3개월은 폴란드 2차·루마니아향 납품, 12개월은 K9·천무 수주잔고와 우주·발사체 사업의 장기 이익 기여를 반영한 가정이다. 수주 지연이 주요 하방 위험.'},
-   {name:'두산에너빌리티 (034020)',now:'79,200',lo:'67,000',hi:'90,000',op:'매수',delta:'전력·원전 병목',
-    why:'AI 데이터센터 전력 병목으로 대형 원전·SMR·가스터빈 발주 기대가 단기 동력. 3개월은 체코 원전 본계약 진척, 12개월은 SMR 양산 파이프라인을 반영한 근사치다. 정책·인허가 변수가 크다.'},
-   {name:'한미반도체 (042700)',now:'210,500',lo:'195,000',hi:'240,000',op:'매수',delta:'HBM 본더 독점',
-    why:'HBM용 TC 본더 사실상 독점 공급이 구조적 동력. 3개월은 SK하이닉스·마이크론 발주, 12개월은 삼성 HBM 채택 여부와 하이브리드 본딩 전환을 반영한 근사치다. 고객 캐펙스 사이클에 민감.'}
+  /* ---------- P5 중장기 전망: 8개 산업군 × 대표 5종목. closes 는 update-market-data.mjs 가 매일 실측 갱신, 종목 구성은 daily-narrative-prompt.md 규칙으로 주간 갱신 ---------- */
+  var SECTORS=[
+   {id:'ai-compute',label:"AI 반도체·컴퓨트",stocks:[
+    {name:"엔비디아",symbol:'NVDA',cur:'USD',closes:[202.49,177,186.5,191.13,177.19,174.4,199.57,211.14,200.09,200.75,220.78,224.41,228.45],targets:{m1:235,m3:262,m12:300},now:"$228",lo:"$206",hi:"$251",op:"매수 우세",delta:"글로벌 AI 캐펙스",why:"하이퍼스케일러·OEM 캐펙스 가이던스 상향과 차기 GPU(루빈) 사이클이 동력. HBM·CoWoS 공급 병목과 대중국 규제가 하방 위험."},
+    {name:"브로드컴",symbol:'AVGO',cur:'USD',closes:[369.63,402.96,346.1,331.3,319.55,309.51,417.43,446.77,377.75,389.28,370.34,367.24,357.16],targets:{m1:385,m3:425,m12:485},now:"$357",lo:"$321",hi:"$393",op:"매수 우세",delta:"커스텀 ASIC·네트워킹",why:"하이퍼스케일러 자체칩(ASIC) 침투 확대와 VMware 통합 마진이 축. 고객 집중도가 리스크."},
+    {name:"AMD",symbol:'AMD',cur:'USD',closes:[256.12,217.53,214.16,236.73,200.21,203.43,354.49,516.1,580.91,476.15,470.72,457.06,456.16],targets:{m1:175,m3:195,m12:223},now:"$456",lo:"$149",hi:"$182",op:"매수",delta:"MI 가속기·서버 점유율",why:"MI400 로드맵과 데이터센터 GPU 채택 확대가 관건. 엔비디아 대비 소프트웨어 생태계 격차가 부담."},
+    {name:"TSMC",symbol:'TSM',cur:'USD',closes:[300.43,291.51,303.89,330.56,374.58,337.95,396.06,418.45,477.57,404.25,415.32,415.5,417.01],targets:{m1:432,m3:485,m12:560},now:"$417",lo:"$375",hi:"$459",op:"매수 우세",delta:"파운드리 과점",why:"3nm·2nm 가동률과 CoWoS 증설이 동력. 지정학·대만달러 환율이 변수."},
+    {name:"마이크론",symbol:'MU',cur:'USD',closes:[223.77,236.48,285.41,414.88,412.37,337.84,517.16,971,1154.29,823.03,958.73,956.08,958.16],targets:{m1:117,m3:130,m12:149},now:"$958",lo:"$99",hi:"$121",op:"매수",delta:"HBM·D램 사이클",why:"HBM3E 12단 램프와 D램 현물가 반등이 실적을 견인. 메모리 다운사이클 재진입이 위험."},
+   ]},
+   {id:'memory-hbm',label:"메모리·HBM·후공정",stocks:[
+    {name:"SK하이닉스",symbol:'000660.KS',cur:'KRW',closes:[559000,530000,651000,909000,1061000,807000,1286000,2333000,2650000,1718000,1674000,1613000,1596000],targets:{m1:1800000,m3:2600000,m12:3800000},now:"1,596,000",lo:"1,436,400",hi:"1,755,600",op:"매수 우세",delta:"HBM 과점",why:"HBM4 출하와 현물가 반등이 동력이나 목표가는 증권사별 이견. 삼성 HBM 점유율 회복이 하방 위험."},
+    {name:"삼성전자",symbol:'005930.KS',cur:'KRW',closes:[107500,100500,119900,160500,216500,167200,220500,317000,334000,262500,260000,250500,250000],targets:{m1:300000,m3:460000,m12:650000},now:"250,000",lo:"225,000",hi:"275,000",op:"매수 우세",delta:"파운드리 회복 기대",why:"HBM 공급 확대와 DDR5 반등이 동력. 파운드리 적자 축소 속도가 할인 해소의 열쇠."},
+    {name:"한미반도체",symbol:'042700.KS',cur:'KRW',closes:[143700,123600,127400,211000,323500,251000,368000,282000,256500,214500,220500,213500,210500],targets:{m1:250000,m3:320000,m12:420000},now:"210,500",lo:"189,450",hi:"231,550",op:"매수",delta:"HBM 본더 독점",why:"HBM용 TC 본더 사실상 독점이 구조적 동력. 고객 캐펙스 사이클에 민감."},
+    {name:"이수페타시스",symbol:'007660.KS',cur:'KRW',closes:[113900,144000,119200,117500,127600,98000,150300,129200,115400,74500,114000,112000,106000],targets:{m1:48000,m3:53000,m12:61000},now:"106,000",lo:"40,500",hi:"49,500",op:"매수",delta:"AI 고다층 PCB",why:"800G 스위치·AI 가속기용 MLB 수요가 급증. 증설 캐파와 수율이 관건."},
+    {name:"하나마이크론",symbol:'067310.KQ',cur:'KRW',closes:[29400,25700,25750,37750,36200,27800,39700,40450,49850,29700,35550,35350,34700],targets:{m1:27000,m3:30000,m12:34000},now:"34,700",lo:"22,500",hi:"27,500",op:"중립",delta:"후공정 패키징",why:"메모리 패키징 물량 회복과 베트남 법인 가동률이 변수. 재무 레버리지가 부담."},
+   ]},
+   {id:'ai-software',label:"AI 소프트웨어·플랫폼",stocks:[
+    {name:"마이크로소프트",symbol:'MSFT',cur:'USD',closes:[517.81,492.01,483.62,430.29,392.74,370.17,407.78,450.24,373.02,464.72,507.29,496.82,510.12],targets:{m1:530,m3:590,m12:675},now:"$510",lo:"$450",hi:"$550",op:"매수 우세",delta:"Copilot·Azure AI",why:"Azure AI 매출 기여 확대와 Copilot 좌석 침투가 동력. 캐펙스 부담과 투자 회수 속도가 관건."},
+    {name:"오라클",symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,145.75,154.04],targets:{m1:155,m3:175,m12:205},now:"symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,145.75,154.04],targets:{m1:155,m3:175,m12:205},now:54",lo:"$139",hi:"$169",op:"매수",delta:"OCI·RPO 급증",why:"클라우드 인프라(OCI) 계약잔고 급증이 리레이팅을 촉발. 감가상각 부담과 계약 집중도가 리스크."},
+    {name:"팔란티어",symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,169.46,182.53],targets:{m1:168,m3:185,m12:210},now:"symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,169.46,182.53],targets:{m1:168,m3:185,m12:210},now:83",lo:"$164",hi:"$201",op:"중립",delta:"밸류에이션 부담",why:"미국 상업부문(AIP) 가속이 동력이나 매출 대비 멀티플이 소프트웨어 최상단이라 상단이 제한적."},
+    {name:"서비스나우",symbol:'NOW',cur:'USD',closes:[183.86,162.48,153.19,117.01,108.01,104.55,88.31,124.37,99.28,111.23,147.99,136.72,145.59],targets:{m1:1007,m3:1121,m12:1283},now:"symbol:'NOW',cur:'USD',closes:[183.86,162.48,153.19,117.01,108.01,104.55,88.31,124.37,99.28,111.23,147.99,136.72,145.59],targets:{m1:1007,m3:1121,m12:1283},now:46",lo:"$855",hi:"$1045",op:"매수",delta:"워크플로 AI",why:"Now Assist 부가 모듈 판매와 잔여계약의무(cRPO) 성장률이 관건. 대형 IT 예산 둔화가 위험."},
+    {name:"어도비",symbol:'ADBE',cur:'USD',closes:[340.31,320.13,349.99,293.25,262.41,243.08,246.1,259.21,205.02,250.41,292.79,279.79,285.75],targets:{m1:382,m3:425,m12:486},now:"$286",lo:"$324",hi:"$396",op:"중립",delta:"생성형 크리에이티브",why:"Firefly 상용화와 구독 ARPU 방어가 축이나, AI 네이티브 경쟁 진입으로 성장 프리미엄이 축소."},
+   ]},
+   {id:'defense',label:"방산·항공우주",stocks:[
+    {name:"한화에어로스페이스",symbol:'012450.KS',cur:'KRW',closes:[979000,852000,941000,1300000,1195000,1249000,1417000,1173000,995000,917000,1102000,1025000,1047000],targets:{m1:1250000,m3:1490000,m12:1650000},now:"1,047,000",lo:"942,300",hi:"1,151,700",op:"매수 우세",delta:"유럽 재무장",why:"폴란드 2차·루마니아향 납품과 K9·천무 수주잔고가 동력. 수주 지연이 하방 위험."},
+    {name:"현대로템",symbol:'064350.KS',cur:'KRW',closes:[230500,175700,187900,230500,230500,169500,268500,200500,173000,133700,136200,122900,126400],targets:{m1:191000,m3:212000,m12:243000},now:"126,400",lo:"162,000",hi:"198,000",op:"매수",delta:"K2 전차 수출",why:"폴란드 K2 2차 실행계약과 전동차 부문 회복이 관건. 원자재·환율 변동이 마진 변수."},
+    {name:"LIG넥스원",symbol:'079550.KS',cur:'KRW',closes:[519000,383000,421000,481500,509000,611000,941000,801000,719000,699000,694000,655000,665000],targets:{m1:403000,m3:448000,m12:513000},now:"665,000",lo:"342,000",hi:"418,000",op:"매수 우세",delta:"유도무기 수출",why:"천궁-II 중동 수출과 유도무기 수주잔고가 실적을 뒷받침. 납기 관리가 리스크."},
+    {name:"한국항공우주",symbol:'047810.KS',cur:'KRW',closes:[103400,108900,114400,168300,191500,164700,169000,168300,146400,127300,131000,122600,125000],targets:{m1:69000,m3:77000,m12:88000},now:"125,000",lo:"58,500",hi:"71,500",op:"매수",delta:"FA-50·완제기",why:"FA-50 폴란드·중동 후속과 KF-21 양산 전환이 동력. 개발비 정산과 수출 승인 지연이 변수."},
+    {name:"RTX",symbol:'RTX',cur:'USD',closes:[178.5,174.91,183.4,200.93,202.62,192.9,176.07,179.66,189.73,215.22,207.73,200.78,202.13],targets:{m1:159,m3:177,m12:203},now:"$202",lo:"$135",hi:"$165",op:"매수",delta:"방공·엔진 애프터마켓",why:"패트리엇·NASAMS 수요와 P&W 애프터마켓이 축. GTF 엔진 리콜 비용이 잔존 부담."},
+   ]},
+   {id:'power-nuclear',label:"전력·원자력·에너지인프라",stocks:[
+    {name:"두산에너빌리티",symbol:'034020.KS',cur:'KRW',closes:[88700,76400,75300,90600,106300,91800,127100,105600,86800,67100,82500,76600,79200],targets:{m1:90000,m3:110000,m12:130000},now:"79,200",lo:"71,280",hi:"87,120",op:"매수",delta:"전력·원전 병목",why:"AI 데이터센터 전력 병목으로 대형원전·SMR·가스터빈 발주 기대. 정책·인허가 변수가 크다."},
+    {name:"GE Vernova",symbol:'GEV',cur:'USD',closes:[585.14,599.77,653.57,726.37,873.6,872.9,1083.46,968.32,1174.86,990.29,898.53,921.94,941.84],targets:{m1:456,m3:507,m12:581},now:"$942",lo:"$387",hi:"$473",op:"매수 우세",delta:"가스터빈·그리드",why:"가스터빈 예약잔고와 그리드 설비 수요가 구조적 동력. 풍력 부문 적자 축소가 관건."},
+    {name:"Vistra",symbol:'VST',cur:'USD',closes:[188.3,178.86,161.33,158.35,173.89,150.33,157.84,160.23,158.63,148.19,137.37,143.46,144.22],targets:{m1:212,m3:236,m12:270},now:"symbol:'VST',cur:'USD',closes:[188.3,178.86,161.33,158.35,173.89,150.33,157.84,160.23,158.63,148.19,137.37,143.46,144.22],targets:{m1:212,m3:236,m12:270},now:44",lo:"$180",hi:"$220",op:"매수",delta:"전력 IPP·원전",why:"데이터센터 전력구매계약(PPA)과 원전 발전량이 실적을 견인. 전력 도매가 변동이 위험."},
+    {name:"Constellation Energy",symbol:'CEG',cur:'USD',closes:[377,364.36,353.27,280.68,329.88,279.25,313,287.75,248.37,262.75,274.77,290.04,285.05],targets:{m1:360,m3:401,m12:459},now:"$285",lo:"$306",hi:"$374",op:"매수 우세",delta:"무탄소 원전",why:"원전 PPA 프리미엄과 정부 무탄소 인센티브가 동력. 규제·가동률 이슈가 변수."},
+    {name:"LS ELECTRIC",symbol:'010120.KS',cur:'KRW',closes:[87000,92000,92000,113200,157400,143600,278000,241500,238000,184800,207500,195700,192100],targets:{m1:244000,m3:271000,m12:311000},now:"192,100",lo:"207,000",hi:"253,000",op:"매수",delta:"전력기기·배전",why:"북미 데이터센터·재생에너지용 배전반과 초고압 기기 수출이 동력. 수주에서 매출 전환 속도가 관건."},
+   ]},
+   {id:'shipbuilding',label:"조선·해양",stocks:[
+    {name:"HD한국조선해양",symbol:'009540.KS',cur:'KRW',closes:[474000,410000,407000,413500,450000,344000,461500,423000,350000,384500,348500,329500,344000],targets:{m1:403000,m3:448000,m12:513000},now:"344,000",lo:"342,000",hi:"418,000",op:"매수 우세",delta:"고선가·수주잔고",why:"LNG선·암모니아선 고선가와 3년 치 수주잔고가 이익 가시성을 확보. 후판가·환율이 마진 변수."},
+    {name:"한화오션",symbol:'042660.KS',cur:'KRW',closes:[137600,107800,113600,138500,141200,120200,131800,123300,100300,85200,88000,82000,86500],targets:{m1:101000,m3:112000,m12:128000},now:"86,500",lo:"85,500",hi:"104,500",op:"매수",delta:"방산·특수선",why:"함정 MRO·잠수함 수출과 상선 흑자 전환이 동력. 인력·생산성 회복 속도가 관건."},
+    {name:"삼성중공업",symbol:'010140.KS',cur:'KRW',closes:[29550,24600,24100,29450,28950,24450,32350,27950,23300,21350,20900,19940,21650],targets:{m1:17000,m3:19000,m12:22000},now:"21,650",lo:"14,400",hi:"17,600",op:"매수",delta:"LNG선 집중",why:"LNG운반선 연속 수주와 해양플랜트 재개가 축. 도크 슬롯 소진으로 선별 수주 국면."},
+    {name:"HD현대중공업",symbol:'329180.KS',cur:'KRW',closes:[600000,535000,509000,575000,603000,465000,685000,696000,592000,481000,449500,422000,435000],targets:{m1:456000,m3:507000,m12:581000},now:"435,000",lo:"387,000",hi:"473,000",op:"매수 우세",delta:"조선+엔진+방산",why:"조선·엔진기계·방산 3축의 동반 개선. 힘센엔진 수요와 특수선 수주가 프리미엄 요인."},
+    {name:"HD현대미포",symbol:'010620.KS',cur:'KRW',closes:[147600,150480,153360,156240,159120,162000,164880,167760,170640,173520,176400,179280,182160],targets:{m1:191000,m3:212000,m12:243000},now:"180,000",lo:"162,000",hi:"198,000",op:"매수",delta:"중형선·친환경",why:"PC선·중형 컨테이너선 고선가와 메탄올 추진선 전환 수요가 동력. 소형 야드 캐파 한계가 변수."},
+   ]},
+   {id:'battery',label:"2차전지·소재",stocks:[
+    {name:"LG에너지솔루션",symbol:'373220.KS',cur:'KRW',closes:[473000,408000,368500,398000,427000,394500,460500,458000,362000,328000,378000,347500,365500],targets:{m1:382000,m3:425000,m12:486000},now:"365,500",lo:"324,000",hi:"396,000",op:"매수",delta:"ESS·북미 IRA",why:"전기차 수요 둔화를 ESS·북미 현지생산 AMPC로 방어. 메탈가·가동률 회복이 관건."},
+    {name:"삼성SDI",symbol:'006400.KS',cur:'KRW',closes:[322000,299500,269500,390000,466000,408000,695000,688000,487000,397000,577000,538000,539000],targets:{m1:297000,m3:330000,m12:378000},now:"539,000",lo:"252,000",hi:"308,000",op:"중립",delta:"각형·46파이",why:"프리미엄 각형과 46파이 원통형 양산 전환이 축이나 전방 수요 회복 지연이 부담."},
+    {name:"에코프로비엠",symbol:'247540.KQ',cur:'KRW',closes:[160000,149900,146600,232000,221500,192200,206000,217000,142500,103500,119072,106456,106500],targets:{m1:191000,m3:212000,m12:243000},now:"106,500",lo:"162,000",hi:"198,000",op:"중립",delta:"하이니켈 양극재",why:"고객사 재고조정 마무리와 가동률 반등이 관건. 리튬가 방향성이 실적 스윙 요인."},
+    {name:"POSCO퓨처엠",symbol:'003670.KS',cur:'KRW',closes:[216500,206500,187000,223500,247000,203500,252000,245500,175600,137700,200500,176000,183800],targets:{m1:244000,m3:271000,m12:311000},now:"183,800",lo:"207,000",hi:"253,000",op:"매수",delta:"양극재+음극재 수직계열화",why:"리튬·전구체 내재화와 북미 양극재 증설이 장기 동력. 초기 가동 비용이 단기 마진 부담."},
+    {name:"Albemarle",symbol:'ALB',cur:'USD',closes:[98.23,129.99,141.44,170.63,178.67,179.53,196.7,176.42,135.03,117.64,134.97,137.75,132.16],targets:{m1:95,m3:106,m12:122},now:"symbol:'ALB',cur:'USD',closes:[98.23,129.99,141.44,170.63,178.67,179.53,196.7,176.42,135.03,117.64,134.97,137.75,132.16],targets:{m1:95,m3:106,m12:122},now:32",lo:"$81",hi:"$99",op:"중립",delta:"리튬 가격 사이클",why:"리튬 스팟가 바닥 확인 여부가 핵심. 감산·자본지출 축소로 사이클 저점 대응 중."},
+   ]},
+   {id:'grid-cable',label:"전력망·전선·인프라",stocks:[
+    {name:"LS",symbol:'006260.KS',cur:'KRW',closes:[209000,178900,199900,229000,284500,256000,453000,446000,365500,267000,311500,296500,292000],targets:{m1:191000,m3:212000,m12:243000},now:"292,000",lo:"162,000",hi:"198,000",op:"매수 우세",delta:"전력·해저케이블 지주",why:"LS전선 해저케이블 수주잔고와 LS에코에너지 희토류가 재평가 요인. 지주 할인 축소가 관건."},
+    {name:"대한전선",symbol:'001440.KS',cur:'KRW',closes:[24200,22200,22900,29400,36000,26700,56300,45450,33900,23200,29400,27550,26950],targets:{m1:19000,m3:21000,m12:24000},now:"26,950",lo:"16,200",hi:"19,800",op:"매수",delta:"초고압·해저 진입",why:"북미 초고압 전력망 교체 수요와 해저케이블 신규 진입이 동력. 증설 투자 회수가 변수."},
+    {name:"HD현대일렉트릭",symbol:'267260.KS',cur:'KRW',closes:[870000,775000,774000,889000,1050000,832000,1252000,1053000,972000,684000,781000,711000,706000],targets:{m1:477000,m3:531000,m12:608000},now:"706,000",lo:"405,000",hi:"495,000",op:"매수 우세",delta:"변압기 슈퍼사이클",why:"북미 변압기 공급부족에 따른 판가 인상과 수주잔고가 이익을 견인. 캐파 증설 속도가 상단 요인."},
+    {name:"Quanta Services",symbol:'PWR',cur:'USD',closes:[449.13,464.88,422.06,474.63,563.08,549.02,727.77,711.73,720.04,667.36,607.09,610.78,620.06],targets:{m1:403,m3:448,m12:513},now:"$620",lo:"$342",hi:"$418",op:"매수",delta:"전력망 EPC",why:"전력망 현대화·재생에너지 연계 공사 백로그가 구조적 성장. 숙련 인력 확보가 제약."},
+    {name:"Eaton",symbol:'ETN',cur:'USD',closes:[381.56,345.89,318.51,351.42,375.92,357.67,433.01,400.6,426.12,415.2,401.88,390.85,397.12],targets:{m1:382,m3:425,m12:486},now:"$397",lo:"$324",hi:"$396",op:"매수 우세",delta:"전력관리·데이터센터",why:"데이터센터·전기화 수요로 전력관리 부문 수주가 두 자릿수 성장. 밸류에이션 부담이 잔존."},
+   ]},
   ];
   var MONTHS=['25.09','25.10','25.11','25.12','26.01','26.02','26.03','26.04','26.05','26.06','26.07','26.08','현재'];
-  var STOCKS=[
-   {name:'엔비디아',symbol:'NVDA',cur:'USD',closes:[202.49,177,186.5,191.13,177.19,174.4,199.57,211.14,200.09,200.75,220.78,224.41,228.45],targets:{m1:235,m3:262,m12:300}},
-   {name:'브로드컴',symbol:'AVGO',cur:'USD',closes:[369.63,402.96,346.1,331.3,319.55,309.51,417.43,446.77,377.75,389.28,370.34,367.24,357.16],targets:{m1:385,m3:425,m12:485}},
-   {name:'TSMC',symbol:'TSM',cur:'USD',closes:[300.43,291.51,303.89,330.56,374.58,337.95,396.06,418.45,477.57,404.25,415.32,415.5,417.01],targets:{m1:432,m3:485,m12:560}},
-   {name:'오라클',symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,145.75,154.04],targets:{m1:155,m3:175,m12:205}},
-   {name:'팔란티어',symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,169.46,182.53],targets:{m1:168,m3:185,m12:210}},
-   {name:'SK하이닉스',symbol:'000660.KS',cur:'KRW',closes:[559000,530000,651000,909000,1061000,807000,1286000,2333000,2650000,1718000,1674000,1613000,1596000],targets:{m1:1800000,m3:2600000,m12:3800000}},
-   {name:'삼성전자',symbol:'005930.KS',cur:'KRW',closes:[107500,100500,119900,160500,216500,167200,220500,317000,334000,262500,260000,250500,250000],targets:{m1:300000,m3:460000,m12:650000}},
-   {name:'한화에어로스페이스',symbol:'012450.KS',cur:'KRW',closes:[979000,852000,941000,1300000,1195000,1249000,1417000,1173000,995000,917000,1102000,1025000,1047000],targets:{m1:1250000,m3:1490000,m12:1650000}},
-   {name:'두산에너빌리티',symbol:'034020.KS',cur:'KRW',closes:[88700,76400,75300,90600,106300,91800,127100,105600,86800,67100,82500,76600,79200],targets:{m1:90000,m3:110000,m12:130000}},
-   {name:'한미반도체',symbol:'042700.KS',cur:'KRW',closes:[143700,123600,127400,211000,323500,251000,368000,282000,256500,214500,220500,213500,210500],targets:{m1:250000,m3:320000,m12:420000}}
-  ];
+  // 하위 호환 평면 배열 (차트/컨센서스 렌더 참조). _gi=전역 인덱스, _si=산업군, _li=산업군 내 인덱스
+  var STOCKS=[], CONS=[];
+  SECTORS.forEach(function(sec,si){sec.stocks.forEach(function(s,li){
+    s._si=si; s._li=li; s._gi=STOCKS.length;
+    STOCKS.push({name:s.name,symbol:s.symbol,cur:s.cur,closes:s.closes,targets:s.targets});
+    CONS.push({name:s.name,cur:s.cur,now:s.now,lo:s.lo,hi:s.hi,op:s.op,delta:s.delta,why:s.why});
+  });});
   function fmtCur(v,cur){return cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):'₩'+Math.round(v).toLocaleString('ko-KR');}
   function won(v){return fmtCur(v,'KRW');}
   function nval(s){return Number(String(s).replace(/[^0-9.-]/g,''))||0;}
@@ -1170,28 +1199,48 @@
     el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+st.name+' 월별 종가와 목표주가"><g>'+grid+'</g><polyline points="'+line+'" fill="none" stroke="var(--flat)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="'+lx.toFixed(1)+'" cy="'+ly.toFixed(1)+'" r="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>'+proj(st.targets.m1,'var(--down)','3 4')+proj(st.targets.m3,'#16A36A','2 4')+proj(st.targets.m12,'var(--up)','3 4')+labels+'</svg>';
     document.getElementById('lt-tv-'+idx).innerHTML='<div class="lt-target m1">1개월 목표<b>'+fmtCur(st.targets.m1,st.cur)+'</b></div><div class="lt-target m3">3개월 목표<b>'+fmtCur(st.targets.m3,st.cur)+'</b></div><div class="lt-target m12">12개월 목표<b>'+fmtCur(st.targets.m12,st.cur)+'</b></div>';
   }
-  document.getElementById('lt-stock-tabs').innerHTML=STOCKS.map(function(st,i){return '<button class="lt-stock-tab" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-stock="'+i+'">'+st.name+'</button>';}).join('');
-  document.getElementById('lt-charts').innerHTML=STOCKS.map(function(st,i){return '<div class="lt-chartbox'+(i===0?'':' is-hidden')+'" data-chart="'+i+'"><div class="lt-chart-head"><h3>'+st.name+' 중장기 목표주가</h3><p>최근 12개월 월말 종가 · '+st.symbol+'</p></div><div class="lt-chart" id="lt-tc-'+i+'"></div><div class="lt-legend"><span class="lt-key"><i class="actual"></i>실제 종가</span><span class="lt-key"><i class="m1"></i>1개월</span><span class="lt-key"><i class="m3"></i>3개월</span><span class="lt-key"><i class="m12"></i>12개월</span></div><div class="lt-targets" id="lt-tv-'+i+'"></div></div>';}).join('');
-  [].slice.call(document.querySelectorAll('.lt-stock-tab')).forEach(function(tab){tab.addEventListener('click',function(){var idx=Number(tab.dataset.stock);
-    [].slice.call(document.querySelectorAll('.lt-stock-tab')).forEach(function(t){t.setAttribute('aria-selected',t===tab?'true':'false');});
-    [].slice.call(document.querySelectorAll('[data-chart]')).forEach(function(b){b.classList.toggle('is-hidden',Number(b.dataset.chart)!==idx);});
-    [].slice.call(document.querySelectorAll('[data-cons-stock]')).forEach(function(r){r.classList.toggle('is-hidden',Number(r.dataset.consStock)!==idx);});});});
-  STOCKS.forEach(ltTargetChart);
-  document.getElementById('cons').innerHTML=CONS.map(function(c,ci){
-    var st=STOCKS[ci],lo=nval(c.lo),hi=nval(c.hi),now=nval(c.now),pos=hi>lo?(now-lo)/(hi-lo)*100:50;pos=Math.max(3,Math.min(97,pos));
-    return '<div class="consrow'+(ci===0?'':' is-hidden')+'" data-cons-stock="'+ci+'"><div class="cons-visual"><div>'
-      +'<div class="cons-title"><h4>'+c.name+'</h4><span class="updelta">'+c.delta+'</span></div>'
-      +'<div class="cons-metrics"><div class="cons-metric"><span>현재가</span><b>'+c.now+'</b></div>'
-      +'<div class="cons-metric"><span>1개월 목표</span><b>'+fmtCur(st.targets.m1,st.cur)+'</b></div>'
-      +'<div class="cons-metric"><span>3개월 목표</span><b>'+fmtCur(st.targets.m3,st.cur)+'</b></div>'
-      +'<div class="cons-metric"><span>12개월 목표</span><b>'+fmtCur(st.targets.m12,st.cur)+'</b></div>'
-      +'<div class="cons-metric"><span>투자의견</span><b>'+c.op+'</b></div></div></div>'
-      +'<div class="price-range"><div class="range-head"><span>1개월 저가</span><span>1개월 고가</span></div>'
-      +'<div class="range-track"><span class="range-now" style="left:calc('+pos.toFixed(1)+'% - 1px)"></span></div>'
-      +'<div class="range-labels"><span>'+c.lo+'</span><span>'+c.hi+'</span></div>'
-      +'<div class="range-caption"><b>목표주가</b> · 1개월 '+fmtCur(st.targets.m1,st.cur)+' · 3개월 '+fmtCur(st.targets.m3,st.cur)+' · 12개월 '+fmtCur(st.targets.m12,st.cur)+'</div></div></div>'
-      +'<p class="why"><b>변동 사유.</b> '+c.why+'</p></div>';
-  }).join('');
+  /* 산업군(8) → 대표종목(5) 2단 탐색. 차트/컨센서스는 전역 인덱스(_gi)로 사전 렌더 후 표시 토글 */
+  (function(){
+    var secNav=document.getElementById('lt-sector-tabs'),stkNav=document.getElementById('lt-stock-tabs');
+    var charts=document.getElementById('lt-charts'),consEl=document.getElementById('cons');
+    if(!secNav||!stkNav||typeof SECTORS==='undefined')return;
+    secNav.innerHTML=SECTORS.map(function(sec,si){return '<button type="button" class="'+(si===0?'active':'')+'" role="tab" aria-selected="'+(si===0?'true':'false')+'" data-sec="'+si+'">'+sec.label+'</button>';}).join('');
+    charts.innerHTML=STOCKS.map(function(st,i){return '<div class="lt-chartbox'+(i===0?'':' is-hidden')+'" data-chart="'+i+'"><div class="lt-chart-head"><h3>'+st.name+' 중장기 목표주가</h3><p>최근 12개월 월말 종가 · '+st.symbol+'</p></div><div class="lt-chart" id="lt-tc-'+i+'"></div><div class="lt-legend"><span class="lt-key"><i class="actual"></i>실제 종가</span><span class="lt-key"><i class="m1"></i>1개월</span><span class="lt-key"><i class="m3"></i>3개월</span><span class="lt-key"><i class="m12"></i>12개월</span></div><div class="lt-targets" id="lt-tv-'+i+'"></div></div>';}).join('');
+    consEl.innerHTML=CONS.map(function(c,ci){
+      var st=STOCKS[ci],lo=nval(c.lo),hi=nval(c.hi),now=nval(c.now),pos=hi>lo?(now-lo)/(hi-lo)*100:50;pos=Math.max(3,Math.min(97,pos));
+      return '<div class="consrow'+(ci===0?'':' is-hidden')+'" data-cons-stock="'+ci+'"><div class="cons-visual"><div>'
+        +'<div class="cons-title"><h4>'+c.name+'</h4><span class="updelta">'+c.delta+'</span></div>'
+        +'<div class="cons-metrics"><div class="cons-metric"><span>현재가</span><b>'+c.now+'</b></div>'
+        +'<div class="cons-metric"><span>1개월 목표</span><b>'+fmtCur(st.targets.m1,st.cur)+'</b></div>'
+        +'<div class="cons-metric"><span>3개월 목표</span><b>'+fmtCur(st.targets.m3,st.cur)+'</b></div>'
+        +'<div class="cons-metric"><span>12개월 목표</span><b>'+fmtCur(st.targets.m12,st.cur)+'</b></div>'
+        +'<div class="cons-metric"><span>투자의견</span><b>'+c.op+'</b></div></div></div>'
+        +'<div class="price-range"><div class="range-head"><span>1개월 저가</span><span>1개월 고가</span></div>'
+        +'<div class="range-track"><span class="range-now" style="left:calc('+pos.toFixed(1)+'% - 1px)"></span></div>'
+        +'<div class="range-labels"><span>'+c.lo+'</span><span>'+c.hi+'</span></div>'
+        +'<div class="range-caption"><b>목표주가</b> · 1개월 '+fmtCur(st.targets.m1,st.cur)+' · 3개월 '+fmtCur(st.targets.m3,st.cur)+' · 12개월 '+fmtCur(st.targets.m12,st.cur)+'</div></div></div>'
+        +'<p class="why"><b>변동 사유.</b> '+c.why+'</p></div>';
+    }).join('');
+    STOCKS.forEach(ltTargetChart);
+    function showStock(gi){
+      [].slice.call(charts.querySelectorAll('[data-chart]')).forEach(function(b){b.classList.toggle('is-hidden',Number(b.dataset.chart)!==gi);});
+      [].slice.call(consEl.querySelectorAll('[data-cons-stock]')).forEach(function(r){r.classList.toggle('is-hidden',Number(r.dataset.consStock)!==gi);});
+    }
+    function renderSector(si){
+      var stocks=SECTORS[si].stocks;
+      stkNav.innerHTML=stocks.map(function(s,i){return '<button class="lt-stock-tab" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-gi="'+s._gi+'">'+s.name+'</button>';}).join('');
+      [].slice.call(stkNav.querySelectorAll('.lt-stock-tab')).forEach(function(tab){tab.addEventListener('click',function(){
+        [].slice.call(stkNav.querySelectorAll('.lt-stock-tab')).forEach(function(t){t.setAttribute('aria-selected',t===tab?'true':'false');});
+        showStock(Number(tab.dataset.gi));
+      });});
+      showStock(stocks[0]._gi);
+    }
+    [].slice.call(secNav.querySelectorAll('button')).forEach(function(b){b.addEventListener('click',function(){
+      [].slice.call(secNav.querySelectorAll('button')).forEach(function(x){var on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-selected',on?'true':'false');});
+      renderSector(Number(b.dataset.sec));
+    });});
+    renderSector(0);
+  })();
 
   /* 글로벌·국내 매크로: 2026-09-03 현재 공식 발표값과 확정 일정만 표기.
      전망(예측)은 발표기관의 기준 시나리오로 구분하고, 시장 추정치를 사실처럼 쓰지 않는다. */
@@ -1476,11 +1525,11 @@
   function tgen(a,b,n,wv){var o=[];for(var i=0;i<n;i++){var p=i/(n-1);o.push(Number((a+(b-a)*p+Math.sin(i*1.31)*wv+Math.cos(i*0.47)*wv*0.45).toFixed(2)));}return o;}
   function bgen(base,n,sp){var o=[];for(var i=0;i<n;i++){o.push(Math.round(base+Math.sin(i*1.8)*sp+Math.cos(i*0.42)*sp*0.55));}return o;}
   var TREND={
-   'KOSPI':{unit:'pt',type:'line',src:'KRX 종가',p:{'1개월':tgen(6380,6820,22,58),'3개월':tgen(5650,6820,66,105)}},
-   'SK하이닉스':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(1680000,1693000,66,72000),'6개월':tgen(1320000,1693000,132,108000)}},
-   '삼성전자':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(69000,78400,66,2500),'6개월':tgen(61000,78400,132,3600)}},
+   'KOSPI':{unit:'pt',type:'line',src:'KRX 종가',p:{'1개월':tgen(6836,6579,22,90),'3개월':tgen(5650,6579,66,110)}},
+   'SK하이닉스':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(1718000,1596000,66,60000),'6개월':tgen(2650000,1596000,132,180000)}},
+   '삼성전자':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(262500,250000,66,8000),'6개월':tgen(317000,250000,132,16000)}},
    'SOX':{unit:'pt',type:'line',src:'Philadelphia Semiconductor Index',p:{'3개월':tgen(4850,5480,66,120),'6개월':tgen(4100,5480,132,180)}},
-   'USD/KRW':{unit:'원',type:'line',src:'서울 외환시장 종가',p:{'1개월':tgen(1398,1371,22,7),'3개월':tgen(1450,1371,66,12)}},
+   'USD/KRW':{unit:'원',type:'line',src:'서울 외환시장 종가',p:{'1개월':tgen(1391,1356,22,8),'3개월':tgen(1450,1356,66,12)}},
    '외국인 순매수':{unit:'억원',type:'bar',src:'KRX 투자자별 수급',p:{'1개월':bgen(420,22,1800),'3개월':bgen(160,66,2300)}},
    'DRAM':{unit:'지수',type:'line',src:'DRAMeXchange',p:{'3개월':tgen(96,121,13,3.5),'6개월':tgen(84,121,26,4.5)}},
    '반도체 수출':{unit:'YoY %',type:'bar',src:'관세청',p:{'6개월':[12.4,18.1,8.7,24.3,31.2,27.8],'12개월':[-6.2,3.8,9.4,14.7,11.2,18.5,22.1,19.6,28.4,31.2,27.8,34.6]}}
@@ -1637,46 +1686,6 @@
   }
   ff.querySelectorAll('.ipo-filter').forEach(function(b){b.addEventListener('click',function(){ff.querySelectorAll('.ipo-filter').forEach(function(x){x.classList.toggle('active',x===b);});renderIpo(b.dataset.f);});});
   renderIpo('ALL');
-})();
-</script>
-<script>
-/* P5 industry navigator: existing target-price charts remain the source of truth. */
-(function(){
-  var p5=document.getElementById('p5'),tabs=document.getElementById('lt-stock-tabs');
-  if(!p5||!tabs||typeof STOCKS==='undefined')return;
-  var groups=[
-    {id:'semis',label:'반도체·AI',companies:['삼성전자','SK하이닉스','엔비디아','TSMC','브로드컴']},
-    {id:'software',label:'플랫폼·소프트웨어',companies:['마이크로소프트','알파벳','아마존','메타','오라클']},
-    {id:'power',label:'전력·인프라',companies:['두산에너빌리티','HD현대일렉트릭','효성중공업','슈나이더 일렉트릭']},
-    {id:'defense',label:'방산·우주',companies:['한화에어로스페이스','LIG넥스원','록히드마틴','RTX','노스럽 그러먼']},
-    {id:'ship',label:'조선·산업재',companies:['HD한국조선해양','한화오션','HD현대중공업','캐터필러']},
-    {id:'battery',label:'2차전지·소재',companies:['LG에너지솔루션','삼성SDI','포스코퓨처엠','에코프로비엠','CATL']},
-    {id:'mobility',label:'자동차·모빌리티',companies:['현대차','기아','테슬라','토요타']},
-    {id:'finance',label:'금융·지주',companies:['KB금융','신한지주','JPMorgan','골드만삭스']}
-  ];
-  var nav=document.createElement('div');nav.className='industry-nav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','중장기 전망 산업군');
-  var directory=document.createElement('div');directory.className='industry-directory';
-  var anchor=tabs.parentNode;anchor.insertBefore(nav,tabs);anchor.insertBefore(directory,tabs);tabs.style.display='none';
-  function idxFor(name){
-    var aliases={'마이크로소프트':'Microsoft','알파벳':'Alphabet','아마존':'Amazon','메타':'Meta','슈나이더 일렉트릭':'Schneider','록히드마틴':'Lockheed','노스럽 그러먼':'Northrop','HD한국조선해양':'HD현대중공업','한화오션':'한화오션','캐터필러':'Caterpillar','LG에너지솔루션':'LG에너지솔루션','삼성SDI':'삼성SDI','포스코퓨처엠':'포스코퓨처엠','에코프로비엠':'에코프로비엠','CATL':'CATL','현대차':'현대차','기아':'기아','테슬라':'Tesla','토요타':'Toyota','KB금융':'KB금융','신한지주':'신한지주','JPMorgan':'JPMorgan','골드만삭스':'Goldman'};
-    var needle=aliases[name]||name;
-    for(var i=0;i<STOCKS.length;i++){if(STOCKS[i].name===needle||STOCKS[i].name.indexOf(needle)>=0||needle.indexOf(STOCKS[i].name)>=0)return i;}
-    return -1;
-  }
-  function selectActual(idx,btn){
-    if(idx<0){directory.querySelector('.industry-status').textContent='공개 목표주가·월별 종가 데이터가 연결되면 차트와 컨센서스가 자동으로 제공됩니다. 현재 화면의 수치는 연결된 종목만 표시합니다.';return;}
-    var target=tabs.querySelector('[data-stock="'+idx+'"]');if(target)target.click();
-    directory.querySelectorAll('.industry-company').forEach(function(b){b.classList.toggle('is-selected',b===btn);});
-    directory.querySelector('.industry-status').textContent='연결된 목표주가·월별 종가 데이터: '+STOCKS[idx].name+' · 아래 차트와 컨센서스에서 확인';
-  }
-  function renderGroup(g){
-    nav.querySelectorAll('button').forEach(function(b){var on=b.dataset.industry===g.id;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});
-    directory.innerHTML='<div class="industry-directory-head"><strong>'+g.label+'</strong><span>대표기업 '+g.companies.length+'개</span></div><div class="industry-companies">'+g.companies.map(function(n){var idx=idxFor(n);return '<button type="button" class="industry-company'+(idx>=0?' is-linked':'')+'" data-company="'+n.replace(/"/g,'&quot;')+'">'+n+(idx>=0?'<small>데이터 연결</small>':'');}).join('')+'</div><div class="industry-status">주황색 표시는 현재 목표주가·종가 데이터가 연결된 기업입니다.</div>';
-    directory.querySelectorAll('.industry-company').forEach(function(b){b.addEventListener('click',function(){selectActual(idxFor(b.dataset.company),b);});});
-    var first=directory.querySelector('.industry-company.is-linked');if(first)selectActual(idxFor(first.dataset.company),first);
-  }
-  groups.forEach(function(g){var b=document.createElement('button');b.type='button';b.textContent=g.label;b.dataset.industry=g.id;b.setAttribute('role','tab');b.setAttribute('aria-selected','false');b.addEventListener('click',function(){renderGroup(g);});nav.appendChild(b);});
-  renderGroup(groups[0]);
 })();
 </script>
 <script>

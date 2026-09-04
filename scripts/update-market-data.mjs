@@ -29,13 +29,18 @@ const FX = [
 const RATE = [ // 금리: val 3소수, chg 는 bp, spark 2소수
   ['DGS30', '^TYX'], ['DGS10', '^TNX'], ['DGS5', '^FVX'],
 ];
-const STOCKS = [ // P5 월별 종가만 갱신 (symbol값, cur)
-  ['NVDA', 'NVDA', 'USD'], ['AVGO', 'AVGO', 'USD'], ['TSM', 'TSM', 'USD'],
-  ['ORCL', 'ORCL', 'USD'], ['PLTR', 'PLTR', 'USD'],
-  ['000660.KS', '000660.KS', 'KRW'], ['005930.KS', '005930.KS', 'KRW'],
-  ['012450.KS', '012450.KS', 'KRW'], ['034020.KS', '034020.KS', 'KRW'],
-  ['042700.KS', '042700.KS', 'KRW'],
-];
+// P5 SECTORS 의 종목 심볼은 index.html 에서 파싱한다(주간 종목 교체를 자동 반영).
+function deriveStocks(html) {
+  const seen = new Set(), out = [];
+  const re = /symbol:'([^']+)',cur:'(USD|KRW)'/g;
+  let m;
+  while ((m = re.exec(html))) {
+    if (seen.has(m[1])) continue;
+    seen.add(m[1]);
+    out.push([m[1], m[1], m[2]]);
+  }
+  return out;
+}
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const grp = (n, d) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -126,11 +131,19 @@ async function run() {
   console.log('· 금리'); await doQuote(RATE, '1mo', 'rate');
 
   console.log('· P5 월별 종가');
+  const STOCKS = deriveStocks(html);
   for (const [sy, sym, cur] of STOCKS) {
     try {
       const bars = await chart(sym, '1y');
       const arr = bars.slice(-13).map((b) => cur === 'USD' ? +b.v.toFixed(2) : Math.round(b.v));
-      const next = patchCloses(html, sy, arr.join(','));
+      const last = arr[arr.length - 1];
+      const nowStr = cur === 'USD' ? '$' + Math.round(last) : Math.round(last).toLocaleString('en-US');
+      let next = patchCloses(html, sy, arr.join(','));
+      // 같은 줄의 now:"..." 도 최신 종가로
+      if (next != null) {
+        const reNow = new RegExp(`(symbol:'${esc(sym)}'[^\\n]*?now:)"[^"]*"`);
+        if (reNow.test(next)) next = next.replace(reNow, `$1"${nowStr}"`);
+      }
       if (next == null) { console.warn('  항목 못 찾음', sy); fail++; }
       else { html = next; ok++; }
     } catch (e) { console.warn('  fail', sym, e.message); fail++; }
