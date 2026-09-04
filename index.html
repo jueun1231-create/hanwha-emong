@@ -1178,7 +1178,8 @@
   /* ---------- P4 flows (2026-09-03, 보도 종합) ---------- */
   function dbars(id,rows){
     var mxA=Math.max.apply(null,rows.map(function(r){return Math.abs(r.v);}))||1;
-    var body=rows.slice().sort(function(a,b){return b.v-a.v;}).map(function(r){
+    // 주체별 고정 표시 순서: 개인 → 외국인 → 기관 → 기타법인
+    var body=rows.map(function(r){
       var buy=r.v>=0,p=Math.abs(r.v)/mxA*48;
       return '<div class="dbar-row"><span class="dbar-k">'+r.k+'</span>'
        +'<div class="dbar-track"><span class="dbar-zero"></span>'
@@ -1196,7 +1197,7 @@
       '<div class="fbox"><div class="dbar-axis"><span>순매도</span><span>순매수</span></div>'
       +"<div class=\"tb-row\"><span class=\"tb-k\">9월 2일</span><div class=\"dbar-track\"><span class=\"dbar-zero\"></span><span class=\"dbar-fill s\" style=\"width:48.0%;right:50%\"></span></div><span class=\"dbar-v down\">−19,173억</span></div>"
       +"<div class=\"tb-row\"><span class=\"tb-k\">9월 3일</span><div class=\"dbar-track\"><span class=\"dbar-zero\"></span><span class=\"dbar-fill b\" style=\"width:1.0%;left:50%\"></span></div><span class=\"dbar-v up\">+414억</span></div>"
-      +'<div class="fnote">KOSPI 외국인 순매수·순매도, 각 거래일 수치(단위 억원). 네이버 금융 공개표 기준.</div></div>';
+      +'<div class="fnote">KOSPI 외국인 순매수·순매도, 각 거래일 수치(단위 원). 네이버 금융 공개표 기준.</div></div>';
   })();
 
 
