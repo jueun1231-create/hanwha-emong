@@ -16,6 +16,12 @@ const NEWS_FEEDS = [
   ['economy', '경제', '(한국 경제 OR 미국 경제 OR 연준 OR 금리 OR 인플레이션)'],
   ['world', '세계', '(글로벌 시장 OR 세계 경제 OR 무역 OR 지정학)'],
 ];
+const NEWS_SECTORS = [
+  ['ai-compute', 'AI 반도체·컴퓨트'], ['memory-hbm', '메모리·HBM·후공정'],
+  ['ai-software', 'AI 소프트웨어·플랫폼'], ['defense', '방산·항공우주'],
+  ['power-nuclear', '전력·원자력·에너지인프라'], ['shipbuilding', '조선·해양'],
+  ['battery', '2차전지·소재'], ['grid-cable', '전력망·전선·인프라'],
+];
 
 /* ---- 티커 설정: [파일상 tk값, Yahoo 심볼, val소수, spark소수] ---- */
 const IDX = [
@@ -97,6 +103,23 @@ function newsRelevant(category, title) {
   };
   return (keys[category] || []).some((k) => t.includes(k));
 }
+function classifyNews(title) {
+  const t = title.toLowerCase();
+  const rules = [
+    ['battery', '2차전지·소재', ['배터리', 'battery', '리튬', '전기차', 'ev ', '양극재', '음극재', 'albemarle']],
+    ['defense', '방산·항공우주', ['방산', '방위', '미사일', '전투기', '우주', 'satellite', 'defense', 'military', '무기']],
+    ['shipbuilding', '조선·해양', ['조선업', '조선소', '선박', 'shipbuilding', '해양', 'lng선', '컨테이너선']],
+    ['memory-hbm', '메모리·HBM·후공정', ['hbm', 'd램', 'dram', '메모리', 'micron', 'sk하이닉스', '하이닉스', '한미반도체']],
+    ['grid-cable', '전력망·전선·인프라', ['전력망', '전선', '케이블', '변압기', '송전', '전력 인프라', 'grid', 'cable']],
+    ['power-nuclear', '전력·원자력·에너지인프라', ['원전', '원자력', 'smr', '가스터빈', '전력', '에너지', '유가', '원유', 'nuclear', 'utility']],
+    ['ai-software', 'AI 소프트웨어·플랫폼', ['소프트웨어', '클라우드', '생성형 ai', 'openai', 'anthropic', 'oracle', '팔란티어', 'copilot', 'cloud']],
+    ['ai-compute', 'AI 반도체·컴퓨트', ['반도체', 'semiconductor', '엔비디아', 'nvidia', '브로드컴', '브로드밴드', 'ai ', '데이터센터', 'datacenter', 'asic', 'gpu']],
+  ];
+  const hit = rules.find(([, , keys]) => keys.some((k) => t.includes(k)));
+  // 산업 키워드가 없는 거시·시장 기사는 AI 컴퓨트가 아닌 인프라 관점으로 묶어
+  // 경제·세계라는 비산업 카테고리가 다시 생기지 않도록 한다.
+  return hit ? { category: hit[0], categoryLabel: hit[1] } : { category: 'grid-cable', categoryLabel: '전력망·전선·인프라' };
+}
 function xmlField(item, tag) {
   const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i');
   return re.exec(item)?.[1] || '';
@@ -115,7 +138,8 @@ async function fetchNewsUrl(category, categoryLabel, url) {
     if (!title || !link || Number.isNaN(pubDate.getTime()) || !newsRelevant(category, title)) return null;
     const summaryText = rawSummary.replace(title, '').replace(source, '').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
     const summary = (summaryText.length >= 24 ? summaryText : '공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.').slice(0, 280);
-    return { id: `${link}|${title}`, category, categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
+    const assigned = classifyNews(title);
+    return { id: `${link}|${title}`, category: assigned.category, categoryLabel: assigned.categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
   }).filter(Boolean);
 }
 async function fetchNewsFeed(category, categoryLabel, query) {
@@ -124,6 +148,7 @@ async function fetchNewsFeed(category, categoryLabel, query) {
 async function updateNews(html) {
   let old = [];
   try { old = JSON.parse(await readFile(NEWS_FILE, 'utf8')); if (!Array.isArray(old)) old = []; } catch { /* 첫 실행 */ }
+  old = old.map((n) => ({ ...n, ...classifyNews(n.title || '') }));
   const fetched = [];
   for (const [category, label, query] of NEWS_FEEDS) {
     try { fetched.push(...await fetchNewsFeed(category, label, query)); }
