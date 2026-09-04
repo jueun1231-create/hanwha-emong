@@ -99,6 +99,12 @@
   .insight p{margin:0;font-size:13.5px;line-height:1.78;color:var(--ink-2)}
   .insight p + p{margin-top:9px}
   .insight b{color:var(--ink);font-weight:650}
+  .insight ul.ins{margin:0;padding:0;list-style:none}
+  .insight ul.ins li{position:relative;padding-left:15px;font-size:13.5px;line-height:1.78;color:var(--ink-2)}
+  .insight ul.ins li + li{margin-top:7px}
+  .insight ul.ins li::before{content:"•";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  .insight ul.ins + ul.ins{margin-top:9px}
+  .insight p + ul.ins,.insight ul.ins + p{margin-top:9px}
 
   /* ---------- Metric rows ---------- */
   .grid{border-top:1px solid var(--hair)}
@@ -360,7 +366,6 @@
   .lt-sep{width:1px;height:20px;background:var(--hair-2);margin:0 2px}
   #lt-single-year{border:1px solid var(--hair-2);border-radius:7px;background:var(--bg);color:var(--ink);padding:6px 9px;font:inherit;font-size:11.5px}
   .lt-year{font-size:11.5px;color:var(--ink-2);display:inline-flex;align-items:center;gap:4px}
-  #lt-search{margin-left:auto;min-width:180px;padding:8px 11px;border:1px solid var(--hair-2);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:12px}
   .lt-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
   .lt-summary .metric{background:var(--raise);border-radius:10px;padding:12px 13px}
   .lt-summary .metric-k{font-size:10.5px;color:var(--ink-3);font-weight:600}
@@ -517,6 +522,7 @@
   .insight-tag{color:var(--accent);font-weight:750;letter-spacing:.1em;text-transform:uppercase;font-size:10px}
   .insight-tag::before{width:5px;height:5px;border-radius:999px}
   .insight p{font-size:13px;line-height:1.72}
+  .insight ul.ins li{font-size:13px;line-height:1.72}
 
   .grid.feat{background:transparent;border-radius:0;gap:12px}
   .grid.feat .mcard{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:16px 17px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
@@ -678,8 +684,15 @@
 
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>웰러 연준이사가 9/3 "물가 둔화 지속 시 9월 동결 지지" 발언, CME 인상 확률이 63%→50%로 급후퇴하며 인상 경계 완화<br>다우 +1.18%·S&amp;P +1.06%·나스닥 +1.4% 동반 급반등, 미 10년물은 4.76%대로 소폭 후퇴하며 금리 상단 압력 축소<br>국내는 9/2 −3.99% 급락 이후 9/3 자사주 매입(+1.61조)으로 +0.26% 반등, 이번 갱신의 지수 스냅샷은 9/2 종가 기준이라 하루 시차 유의</p>
-      <p>금 4,500달러·은 67달러대 강세 지속에도 달러인덱스는 99 부근 약세 — 안전자산 쏠림 속 달러만 소외되는 이례적 조합 지속<br>이란-미 협상 기대에 유가 상단은 제한적이나 완전한 리스크 해소는 아직, <b>9/15~16 FOMC 전까지 인상·동결 저울질에 따른 지수 상단 압박이 이어지는 고변동 국면</b></p>
+      <ul class="ins">
+        <li>웰러 연준이사가 9/3 "물가 둔화 지속 시 9월 동결 지지" 발언, CME 인상 확률이 63%→50%로 급후퇴하며 인상 경계 완화</li>
+        <li>다우 +1.18%·S&amp;P +1.06%·나스닥 +1.4% 동반 급반등, 미 10년물은 4.76%대로 소폭 후퇴하며 금리 상단 압력 축소</li>
+        <li>국내는 9/2 −3.99% 급락 이후 9/3 자사주 매입(+1.61조)으로 +0.26% 반등</li>
+      </ul>
+      <ul class="ins">
+        <li>금 4,500달러·은 67달러대 강세 지속에도 달러인덱스는 99 부근 약세 — 안전자산 쏠림 속 달러만 소외되는 이례적 조합 지속</li>
+        <li>이란-미 협상 기대에 유가 상단은 제한적이나 완전한 리스크 해소는 아직, <b>9/15~16 FOMC 전까지 인상·동결 저울질에 따른 지수 상단 압박이 이어지는 고변동 국면</b></li>
+      </ul>
     </div>
 
     <div class="slabel">헤드라인</div>
@@ -700,10 +713,12 @@
     <div class="phead"><h1>증시 캘린더</h1><p>2026년 6~10월 · 거시지표 + 한국·미국 기업 실적 · 예상 / 실제 / 이전값 분리 · KST</p></div>
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p><b>이미 확인된 결과(9/1~3):</b> JOLTS 7월 구인건수 727.1만 건으로 컨센서스(733~736만) 하회, 8월 ADP 민간고용은 +3.8만 명으로 예상(+4.7만) 밑돌아 1월 이후 최저, 한국 8월 CPI는 전년비 +3.1%로 7월(+2.8%) 대비 재가속, 9/3 웰러 연준이사가 "동결 지지" 입장을 밝히며 CME 인상 확률이 63%→50%로 후퇴 — 노동시장 냉각·물가 재반등·금리 인상 경계가 동시 진행</p>
-      <p><b>9월 1주 잔여(9/4):</b> 미국 8월 고용보고서 발표 예정, 다우존스 컨센서스는 비농업고용 +5.3만 명·실업률 4.1%(7월은 −2.3만 명). 예상보다 약하면 동결 무게 확대, 예상 상회 시 유가발 물가 압력과 맞물려 금리 인상 경계 재부각</p>
-      <p><b>9월 2주(9/9~11):</b> 삼성전자·KB증권 코리아 컨퍼런스(9/9)에 이어 Oracle·Adobe 실적이 9/10 같은 날 발표, 8월 PPI(9/10)·CPI(9/11)가 뒤따름. 근원 물가가 높고 실적 가이던스가 약하면 밸류에이션 부담 확대, 물가 둔화와 실적 상회 동시 발생 시 기술주·반도체 상승 여력 확대</p>
-      <p><b>9월 3주(9/15~16):</b> FOMC 성명·점도표·기자회견이 월중 방향 결정. 9/3 기준 시장은 인상 50.4%·동결 49.6%로 팽팽히 저울질 중이라 25bp 결정 여부보다 2026년 점도표 경로와 기자회견 톤이 지수·환율 변동성을 좌우할 관건</p>
+      <ul class="ins">
+        <li><b>이미 확인된 결과(9/1~3):</b> JOLTS 7월 구인건수 727.1만 건으로 컨센서스(733~736만) 하회, 8월 ADP 민간고용은 +3.8만 명으로 예상(+4.7만) 밑돌아 1월 이후 최저, 한국 8월 CPI는 전년비 +3.1%로 7월(+2.8%) 대비 재가속, 9/3 웰러 연준이사가 "동결 지지" 입장을 밝히며 CME 인상 확률이 63%→50%로 후퇴 — 노동시장 냉각·물가 재반등·금리 인상 경계가 동시 진행</li>
+        <li><b>9월 1주 잔여(9/4):</b> 미국 8월 고용보고서 발표 예정, 다우존스 컨센서스는 비농업고용 +5.3만 명·실업률 4.1%(7월은 −2.3만 명). 예상보다 약하면 동결 무게 확대, 예상 상회 시 유가발 물가 압력과 맞물려 금리 인상 경계 재부각</li>
+        <li><b>9월 2주(9/9~11):</b> 삼성전자·KB증권 코리아 컨퍼런스(9/9)에 이어 Oracle·Adobe 실적이 9/10 같은 날 발표, 8월 PPI(9/10)·CPI(9/11)가 뒤따름. 근원 물가가 높고 실적 가이던스가 약하면 밸류에이션 부담 확대, 물가 둔화와 실적 상회 동시 발생 시 기술주·반도체 상승 여력 확대</li>
+        <li><b>9월 3주(9/15~16):</b> FOMC 성명·점도표·기자회견이 월중 방향 결정. 9/3 기준 시장은 인상 50.4%·동결 49.6%로 팽팽히 저울질 중이라 25bp 결정 여부보다 2026년 점도표 경로와 기자회견 톤이 지수·환율 변동성을 좌우할 관건</li>
+      </ul>
     </div>
     <div class="cal-layout">
       <aside class="cal-side" aria-label="월간 달력">
@@ -735,7 +750,13 @@
     <div class="p3-view" id="v-issues">
       <div class="insight">
         <div class="insight-tag">미래전략실 인사이트</div>
-        <p>미-이란 사태는 파키스탄 중재·베선트 재무장관의 협상 시사로 진정 조짐, 브렌트 $95·WTI $91달러대로 상단 제한 국면(완전한 리스크 해소는 아직 아님)<br>웰러 연준이사의 "동결 지지" 발언에 나스닥 +1.4%·다우 +1.18% 급반등, 브로드컴은 실적 컨센서스 상회에도 4분기 가이던스 우려로 시간외 4~6% 급락<br>델 AI 서버 수주잔고 $950억·FY27 매출전망 $600억→$740억 상향 등 AI 캐펙스 슈퍼사이클은 견조세 지속<br>금 4,500달러·은 67달러대 강세, 달러인덱스는 99 부근 약세 지속 — 안전자산 쏠림 속 달러만 소외되는 이례적 조합<br>코스피는 9/2 급락 후 9/3 자사주 매입(+1.61조)으로 반등, 외국인·기관 수급 정상화 여부가 관건</p>
+        <ul class="ins">
+          <li>미-이란 사태는 파키스탄 중재·베선트 재무장관의 협상 시사로 진정 조짐, 브렌트 $95·WTI $91달러대로 상단 제한 국면(완전한 리스크 해소는 아직 아님)</li>
+          <li>웰러 연준이사의 "동결 지지" 발언에 나스닥 +1.4%·다우 +1.18% 급반등, 브로드컴은 실적 컨센서스 상회에도 4분기 가이던스 우려로 시간외 4~6% 급락</li>
+          <li>델 AI 서버 수주잔고 $950억·FY27 매출전망 $600억→$740억 상향 등 AI 캐펙스 슈퍼사이클은 견조세 지속</li>
+          <li>금 4,500달러·은 67달러대 강세, 달러인덱스는 99 부근 약세 지속 — 안전자산 쏠림 속 달러만 소외되는 이례적 조합</li>
+          <li>코스피는 9/2 급락 후 9/3 자사주 매입(+1.61조)으로 반등, 외국인·기관 수급 정상화 여부가 관건</li>
+        </ul>
       </div>
       <div class="slabel">핵심 이슈</div>
       <div class="issue-grid" id="issues"></div>
@@ -761,7 +782,12 @@
     <div class="p3-view" id="v-ipo" hidden>
       <div class="insight">
         <div class="insight-tag">미래전략실 인사이트</div>
-        <p>Anthropic, 골드만삭스·JPMorgan·모건스탠리 주관으로 10월 나스닥 상장 목표, 밸류에이션 ~$1조 거론 — 코딩 매출 급증으로 OpenAI 대비 매출·기업가치 우위 전환<br>OpenAI는 밸류에이션 이견·시장 변동성에 IPO를 2027년으로 순연, S-1은 6월 제출 완료 상태로 유지<br>신규 공급이 AI 대형주 수급 분산, 지수 상승에도 내부 순환매 지속<br>해외 우주·방산 수주 확대 → 국내 우주·방산 리레이팅을 별도 관찰</p>
+        <ul class="ins">
+          <li>Anthropic, 골드만삭스·JPMorgan·모건스탠리 주관으로 10월 나스닥 상장 목표, 밸류에이션 ~$1조 거론 — 코딩 매출 급증으로 OpenAI 대비 매출·기업가치 우위 전환</li>
+          <li>OpenAI는 밸류에이션 이견·시장 변동성에 IPO를 2027년으로 순연, S-1은 6월 제출 완료 상태로 유지</li>
+          <li>신규 공급이 AI 대형주 수급 분산, 지수 상승에도 내부 순환매 지속</li>
+          <li>해외 우주·방산 수주 확대 → 국내 우주·방산 리레이팅을 별도 관찰</li>
+        </ul>
       </div>
       <div class="slabel">해외 IPO 파이프라인 <span class="lite">·한국 공모주 제외 · 미국 등 선진국 대형 딜</span></div>
       <div class="ipo-filters" id="ipo-filters"></div>
@@ -776,9 +802,15 @@
 
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>9월 3일 KOSPI 3대 주체 동반 순매도 — 외국인 −2,077억·기관 −2,419억·개인 −1조1,597억, 합계 약 −1.61조<br>그럼에도 기타법인이 +1조6,504억 순매수하며 지수 +0.26%(6,579.48) 견인<br>기타법인 매수의 상당액은 삼성전자·SK하이닉스 자사주 매입 물량</p>
-      <p>전일(9/2) KOSPI는 미-이란 확전 우려로 −3.99% 급락(외국인 −1,920억·기관 −2,043억, 개인은 +2,302억 저가매수)했던 만큼 9/3 순매도는 급락 이후 차익실현 성격<br>장중 한때 6,650선 회복 시도 후 오후 매도 출회로 상승폭 반납, 코스닥은 기관 매도(−1,974억) 속 개인 순매수(+3,403억)에도 −1.71% 약세</p>
-      <p><span class="kc">체크포인트</span><br>자사주 매입 효과를 제외한 외국인·기관의 반도체 대형주 순매수 전환 여부, 미-이란 리스크 재점화 시 변동성 확대 가능성</p>
+      <ul class="ins">
+        <li>9월 3일 KOSPI 3대 주체 동반 순매도 — 외국인 −2,077억·기관 −2,419억·개인 −1조1,597억, 합계 약 −1.61조</li>
+        <li>그럼에도 기타법인이 +1조6,504억 순매수하며 지수 +0.26%(6,579.48) 견인, 매수 상당액은 삼성전자·SK하이닉스 자사주 매입 물량</li>
+        <li>전일(9/2) KOSPI는 미-이란 확전 우려로 −3.99% 급락(외국인 −1,920억·기관 −2,043억, 개인 +2,302억 저가매수)했던 만큼 9/3 순매도는 급락 이후 차익실현 성격</li>
+        <li>장중 한때 6,650선 회복 시도 후 오후 매도 출회로 상승폭 반납, 코스닥은 기관 매도(−1,974억) 속 개인 순매수(+3,403억)에도 −1.71% 약세</li>
+      </ul>
+      <ul class="ins">
+        <li><span class="kc">체크포인트</span> 자사주 매입 효과를 제외한 외국인·기관의 반도체 대형주 순매수 전환 여부, 미-이란 리스크 재점화 시 변동성 확대 가능성</li>
+      </ul>
     </div>
 
     <div class="slabel">9월 3일 주체별 순매수 / 순매도 <span class="lite">·단위 억원</span></div>
@@ -802,8 +834,12 @@
 
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>목표가 상향의 공통 축은 <b>글로벌 AI 캐펙스 사이클</b> — 델 AI 서버 수주잔고 $950억(+58% 매출)·브로드컴 매출 +86% 등 실적이 뒷받침, 한국 HBM 3사 이익 지속성으로 전이<br>HBM 목표주가는 증권사별로 엇갈림 — 한국투자증권은 SK하이닉스 목표가를 380만→470만원 상향한 반면 LS증권은 삼성 HBM4 경쟁 심화를 이유로 330만→240만원 하향</p>
-      <p>미-이란 확전에 따른 유가·금리 변동성은 밸류에이션 할인 요인이나 AI 캐펙스 사이클 자체를 훼손하진 않는 것으로 판단<br>삼성 HBM 점유율 회복 시 하이닉스 프리미엄 축소, 방산·우주는 유럽 재무장이라는 별개 글로벌 동력으로 포트폴리오 분산에 기여</p>
+      <ul class="ins">
+        <li>목표가 상향의 공통 축은 <b>글로벌 AI 캐펙스 사이클</b> — 델 AI 서버 수주잔고 $950억(+58% 매출)·브로드컴 매출 +86% 등 실적이 뒷받침, 한국 HBM 3사 이익 지속성으로 전이</li>
+        <li>HBM 목표주가는 증권사별로 엇갈림 — 한국투자증권은 SK하이닉스 목표가를 380만→470만원 상향한 반면 LS증권은 삼성 HBM4 경쟁 심화를 이유로 330만→240만원 하향</li>
+        <li>미-이란 확전에 따른 유가·금리 변동성은 밸류에이션 할인 요인이나 AI 캐펙스 사이클 자체를 훼손하진 않는 것으로 판단</li>
+        <li>삼성 HBM 점유율 회복 시 하이닉스 프리미엄 축소, 방산·우주는 유럽 재무장이라는 별개 글로벌 동력으로 포트폴리오 분산에 기여</li>
+      </ul>
     </div>
 
     <div class="slabel">종목별 중장기 목표주가 <span class="lite">·최근 12개월 월말 종가 + 1·3·12개월 전망</span></div>
@@ -823,7 +859,12 @@
 
     <div class="insight">
       <div class="insight-tag">미래전략실 인사이트</div>
-      <p>미-이란 확전발 유가·미 장기금리 급등(10Y 4.766%)으로 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 더 쏠리는 압박<br>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인<br>Anthropic 10월 나스닥 상장 목표(~$1조)는 국내 ECM 회복의 선행 신호, OpenAI는 2027년으로 순연<br>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</p>
+      <ul class="ins">
+        <li>미-이란 확전발 유가·미 장기금리 급등(10Y 4.76%)으로 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 더 쏠리는 압박</li>
+        <li>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인</li>
+        <li>Anthropic 10월 나스닥 상장 목표(~$1조)는 국내 ECM 회복의 선행 신호, OpenAI는 2027년으로 순연</li>
+        <li>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</li>
+      </ul>
     </div>
 
     <div class="lt-toolbar">
@@ -846,7 +887,6 @@
         <label class="lt-year"><input type="checkbox" value="2025" checked> 2025</label>
         <label class="lt-year"><input type="checkbox" value="2026" checked> 2026</label>
       </span>
-      <input id="lt-search" type="search" placeholder="주관사/자문사 검색">
     </div>
     <div id="lt-summary" class="lt-summary" hidden></div>
     <div class="lt-chart-card"><div class="lt-chart-head"><b id="lt-chart-title">DCM 상위 주관사 비교</b><span id="lt-chart-unit">금액: 백만원</span></div><div id="lt-chart" class="lt-chart"></div></div>
@@ -1248,9 +1288,10 @@
     box.hidden=false;box.innerHTML='<div class="lt-change-head"><b>'+from+' → '+to+' 금액 증감</b><span>두 연도 순위표에 모두 포함된 기관 기준</span></div><div class="lt-change-grid">'+col('상승폭 상위',ups,true)+col('하락폭 상위',downs,false)+'</div>';
   }
   function ltRender(){
-    var years=ltSel(),q=document.getElementById('lt-search').value.toLowerCase();
-    var rows=LT.filter(function(r){return r.market===ltFilter&&years.indexOf(r.year)>=0&&(!q||r.house.toLowerCase().indexOf(q)>=0);});
-    var sm='';years.forEach(function(y){var rr=LT.filter(function(r){return r.market===ltFilter&&r.year===y;}).sort(function(a,b){return a.rank-b.rank;});
+    var years=ltSel();
+    var rows=LT.filter(function(r){return r.market===ltFilter&&years.indexOf(r.year)>=0;});
+    var sm='';
+    if(ltMode!=='compare')years.forEach(function(y){var rr=LT.filter(function(r){return r.market===ltFilter&&r.year===y;}).sort(function(a,b){return a.rank-b.rank;});
       if(rr.length)sm+='<div class="metric"><div class="metric-k">'+y+' '+ltFilter+' 선두</div><div class="metric-v">'+rr[0].house+'</div><div class="metric-s">'+ltWon(rr[0].amount)+(rr[0].share==null?'':' · '+rr[0].share.toFixed(2)+'%')+'</div></div>';});
     var smEl=document.getElementById('lt-summary');smEl.innerHTML=sm;smEl.hidden=!sm;
     if(ltMode==='single')ltPieChart(rows,years[0]);else ltBar(rows,years);
@@ -1264,7 +1305,6 @@
   document.querySelectorAll('[data-lt-mode]').forEach(function(b){b.addEventListener('click',function(){ltMode=b.dataset.ltMode;document.querySelectorAll('[data-lt-mode]').forEach(function(x){x.classList.toggle('active',x===b);});document.getElementById('lt-single-wrap').hidden=ltMode!=='single';document.getElementById('lt-compare-wrap').hidden=ltMode!=='compare';ltRender();});});
   document.querySelectorAll('#lt-compare-wrap input').forEach(function(c){c.addEventListener('change',ltRender);});
   document.getElementById('lt-single-year').addEventListener('change',ltRender);
-  document.getElementById('lt-search').addEventListener('input',ltRender);
   ltRender();
 
   /* ---------- HOME snapshot + nav ---------- */
