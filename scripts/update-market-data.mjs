@@ -116,9 +116,12 @@ function classifyNews(title) {
     ['ai-compute', 'AI 반도체·컴퓨트', ['반도체', 'semiconductor', '엔비디아', 'nvidia', '브로드컴', '브로드밴드', 'ai ', '데이터센터', 'datacenter', 'asic', 'gpu']],
   ];
   const hit = rules.find(([, , keys]) => keys.some((k) => t.includes(k)));
-  // 산업 키워드가 없는 거시·시장 기사는 AI 컴퓨트가 아닌 인프라 관점으로 묶어
-  // 경제·세계라는 비산업 카테고리가 다시 생기지 않도록 한다.
-  return hit ? { category: hit[0], categoryLabel: hit[1] } : { category: 'grid-cable', categoryLabel: '전력망·전선·인프라' };
+  // 어느 산업군에도 명확히 매칭되지 않는 기사는 저장하지 않는다.
+  return hit ? { category: hit[0], categoryLabel: hit[1] } : null;
+}
+function cleanNewsTitle(title, source = '') {
+  const suffix = source ? new RegExp(`\\s*-\\s*${esc(source)}\\s*$`, 'i') : null;
+  return String(title || '').replace(suffix || /$^/, '').trim();
 }
 function xmlField(item, tag) {
   const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, 'i');
@@ -130,15 +133,17 @@ async function fetchNewsUrl(category, categoryLabel, url) {
   const xml = await r.text();
   return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].map((m) => {
     const item = m[1];
-    const title = stripHtml(xmlField(item, 'title'));
+    const rawTitle = stripHtml(xmlField(item, 'title'));
     const link = decodeXml(xmlField(item, 'link')).trim();
     const rawSummary = stripHtml(xmlField(item, 'description'));
     const source = stripHtml(xmlField(item, 'source')) || 'Google News';
+    const title = cleanNewsTitle(rawTitle, source);
     const pubDate = new Date(decodeXml(xmlField(item, 'pubDate')).trim());
     if (!title || !link || Number.isNaN(pubDate.getTime()) || !newsRelevant(category, title)) return null;
     const summaryText = rawSummary.replace(title, '').replace(source, '').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
     const summary = (summaryText.length >= 24 ? summaryText : '공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.').slice(0, 280);
     const assigned = classifyNews(title);
+    if (!assigned) return null;
     return { id: `${link}|${title}`, category: assigned.category, categoryLabel: assigned.categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
   }).filter(Boolean);
 }
@@ -148,7 +153,11 @@ async function fetchNewsFeed(category, categoryLabel, query) {
 async function updateNews(html) {
   let old = [];
   try { old = JSON.parse(await readFile(NEWS_FILE, 'utf8')); if (!Array.isArray(old)) old = []; } catch { /* 첫 실행 */ }
-  old = old.map((n) => ({ ...n, ...classifyNews(n.title || '') }));
+  old = old.map((n) => {
+    const title = cleanNewsTitle(n.title || '', n.source || '');
+    const assigned = classifyNews(title);
+    return assigned ? { ...n, ...assigned, title, id: `${n.link}|${title}` } : null;
+  }).filter(Boolean);
   const fetched = [];
   for (const [category, label, query] of NEWS_FEEDS) {
     try { fetched.push(...await fetchNewsFeed(category, label, query)); }
