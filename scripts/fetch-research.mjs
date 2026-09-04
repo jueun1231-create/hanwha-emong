@@ -57,15 +57,20 @@ async function run() {
   try { items = await list(); } catch (e) { console.warn('목록 수집 실패:', e.message); return; }
   const today = todayKST();
   let pick = items.filter((x) => x.date === today);
-  if (pick.length < 4) pick = items.slice(0, 10);           // 당일 물량 적으면 최근분
-  // 증권사별 최신 1건, 최대 10개
-  const seen = new Set(), uniq = [];
-  for (const it of pick) { if (seen.has(it.house)) continue; seen.add(it.house); uniq.push(it); if (uniq.length >= 10) break; }
+  if (pick.length < 6) pick = items.slice(0, 16);           // 당일 물량 적으면 최근분
+
+  // 5대 증권사 우선 → 상단. 증권사별 최신 1건, 최대 12개
+  const BIG5 = ['미래에셋증권', '한국투자증권', 'NH투자증권', '삼성증권', 'KB증권', '신한투자증권'];
+  const byHouse = new Map();
+  for (const it of pick) if (!byHouse.has(it.house)) byHouse.set(it.house, it);
+  const uniq = [];
+  for (const h of BIG5) if (byHouse.has(h)) { const it = byHouse.get(h); it.big = true; uniq.push(it); byHouse.delete(h); }
+  for (const it of byHouse.values()) { if (uniq.length >= 12) break; it.big = false; uniq.push(it); }
 
   for (const it of uniq) it.sum = await preview(it.href);
 
   const literal = uniq.map((it) =>
-    `{house:'${esc(it.house)}',title:'${esc(it.title)}',date:'${esc(it.date)}',url:'${esc(it.pdf || it.href)}',sum:'${esc(it.sum || '')}'}`,
+    `{house:'${esc(it.house)}',title:'${esc(it.title)}',date:'${esc(it.date)}',url:'${esc(it.pdf || it.href)}',sum:'${esc(it.sum || '')}',big:${it.big ? 'true' : 'false'}}`,
   ).join(',\n   ');
 
   html = html.replace(

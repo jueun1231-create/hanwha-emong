@@ -591,6 +591,8 @@
   .hv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:4px}
   .hv-card{display:block;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);padding:13px 14px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
   .hv-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+  .hv-card.hv-big{border-color:rgba(233,100,10,.5)}
+  .hv-badge{font-size:8.5px;font-weight:800;color:#fff;background:var(--accent);border-radius:4px;padding:1px 4px;margin-left:4px;vertical-align:1px}
   .hv-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
   .hv-house{font-size:11px;font-weight:750;color:var(--accent)}
   .hv-date{font-size:10px;color:var(--ink-3);white-space:nowrap}
@@ -978,8 +980,7 @@
 
   <!-- ============= P8 ============= -->
   <section class="panel" id="p8" role="tabpanel" hidden>
-    <div class="phead"><h1>하우스별 뷰</h1><p>증권사 리서치센터의 당일 시황 리포트 · 매시간 갱신 · 제목 클릭 시 원문 연결</p></div>
-    <div class="insight"><div class="insight-tag">미래전략실 인사이트</div><ul class="ins"><li>네이버페이 증권 ‘리서치 &gt; 시황정보’ 공개 목록에서 각 증권사가 아침에 낸 시황·마감 리포트 헤드라인을 하우스별로 모읍니다.</li><li>제목·원문 링크만 인용하며 리포트 본문은 재배포하지 않습니다.</li></ul></div>
+    <div class="phead"><h1>하우스별 뷰</h1><p>증권사 리서치센터의 당일 시황 리포트 · 5대 증권사 우선 · 매시간 갱신 · 제목 클릭 시 원문</p></div>
     <div class="slabel">오늘의 증권사 시황 리포트 <span class="lite" id="hv-asof">26.09.04 · 네이버페이 증권 리서치</span></div>
     <div id="houseview" class="hv-grid"></div>
     <div class="disc"><b>데이터</b> 네이버페이 증권 리서치 시황정보 공개 목록. 증권사별 최신 1건, 최대 10개. 텔레그램 리서치 채널은 비공개라 수집 대상이 아니며, 공개 리포트 목록으로 대체했습니다.</div>
@@ -1537,21 +1538,21 @@
   /* ---------- 하우스 뷰 (네이버페이 증권 리서치 · scripts/fetch-research.mjs 가 갱신) ---------- */
   /* HV:start */
   var HOUSEVIEW=[
-   {house:'DS투자증권',title:'[DS Defense Daily] 2026-09-04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/66/20260904_market_2678000.pdf',sum:''},
-   {house:'유안타증권',title:'유안타 AI 미국 주식시장 마감 시황 (26.09.04)',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/18/20260904_market_915065000.pdf',sum:''},
-   {house:'메리츠증권',title:'프랑스로 알아보는 재정 불안의 미래',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/17/20260904_market_119925000.pdf',sum:''},
-   {house:'신한투자증권',title:'Daily 신한생각 (9월 4일)',date:'26.09.04',url:'https://finance.naver.com/research/market_info_read.naver?nid=37398',sum:''},
-   {house:'유진투자증권',title:'Eugene Daily Snapshot - 수급 외나무다리에서 늦출 ..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/63/20260904_market_657905000.pdf',sum:''},
-   {house:'SK증권',title:'SK증권 아침에 슥_2026.09.04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/64/20260904_market_543269000.pdf',sum:''},
-   {house:'iM증권',title:'[Morning Brief] 금리 인상 우려 완화에 국채 금리 하..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/61/20260904_market_997092000.pdf',sum:''},
-   {house:'KB증권',title:'9/4 KB 리서치 모닝코멘트',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/58/20260904_market_933890000.pdf',sum:''}
+   {house:'KB증권',title:'9/4 KB 리서치 모닝코멘트',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/58/20260904_market_933890000.pdf',sum:'',big:true},
+   {house:'신한투자증권',title:'Daily 신한생각 (9월 4일)',date:'26.09.04',url:'https://finance.naver.com/research/market_info_read.naver?nid=37398',sum:'',big:true},
+   {house:'DS투자증권',title:'[DS Defense Daily] 2026-09-04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/66/20260904_market_2678000.pdf',sum:'',big:false},
+   {house:'유안타증권',title:'유안타 AI 미국 주식시장 마감 시황 (26.09.04)',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/18/20260904_market_915065000.pdf',sum:'',big:false},
+   {house:'메리츠증권',title:'프랑스로 알아보는 재정 불안의 미래',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/17/20260904_market_119925000.pdf',sum:'',big:false},
+   {house:'유진투자증권',title:'Eugene Daily Snapshot - 수급 외나무다리에서 늦출 ..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/63/20260904_market_657905000.pdf',sum:'',big:false},
+   {house:'SK증권',title:'SK증권 아침에 슥_2026.09.04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/64/20260904_market_543269000.pdf',sum:'',big:false},
+   {house:'iM증권',title:'[Morning Brief] 금리 인상 우려 완화에 국채 금리 하..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/61/20260904_market_997092000.pdf',sum:'',big:false}
   ];
   /* HV:end */
   (function(){
     var el=document.getElementById('houseview');if(!el||typeof HOUSEVIEW==='undefined')return;
     el.innerHTML=HOUSEVIEW.map(function(h){
-      return '<a class="hv-card" href="'+h.url+'" target="_blank" rel="noopener">'
-        +'<div class="hv-top"><span class="hv-house">'+h.house+'</span><span class="hv-date">'+h.date+'</span></div>'
+      return '<a class="hv-card'+(h.big?' hv-big':'')+'" href="'+h.url+'" target="_blank" rel="noopener">'
+        +'<div class="hv-top"><span class="hv-house">'+h.house+(h.big?' <span class="hv-badge">5대</span>':'')+'</span><span class="hv-date">'+h.date+'</span></div>'
         +'<div class="hv-title">'+h.title+'</div>'
         +(h.sum?'<p class="hv-sum">'+h.sum+'</p>':'')
         +'<span class="hv-go">원문 ↗</span></a>';
