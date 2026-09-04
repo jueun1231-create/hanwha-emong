@@ -141,8 +141,13 @@ async function updateNews(html) {
   }
   const byId = new Map();
   old.forEach((n) => { if (n?.id) byId.set(n.id, n); });
-  // 같은 링크가 재수집되면 요약·출처가 개선된 최신 레코드를 우선한다.
-  fetched.forEach((n) => { if (n?.id) byId.set(n.id, n); });
+  // 같은 링크는 매시간 수집 시각만 바뀌므로 기존 레코드를 유지한다.
+  // 요약이 실제로 개선된 경우에만 교체해 불필요한 대량 커밋을 막는다.
+  fetched.forEach((n) => {
+    if (!n?.id) return;
+    const prev = byId.get(n.id);
+    if (!prev || (n.summary && n.summary !== prev.summary)) byId.set(n.id, n);
+  });
   const merged = [...byId.values()].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
   await writeFile(NEWS_FILE, JSON.stringify(merged, null, 2) + '\n');
   const literal = JSON.stringify(merged).replace(/</g, '\\u003c');
