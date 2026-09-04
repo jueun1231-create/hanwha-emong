@@ -53,7 +53,7 @@
   .wrap{max-width:860px;margin:0 auto;padding:0 32px}
   @media(max-width:640px){.wrap{padding:0 18px}}
   .lite{text-transform:none;letter-spacing:0;color:var(--ink-3);font-weight:500}
-  .kc{color:var(--accent);font-weight:750}
+  .kc{color:var(--accent);font-weight:700;font-size:11px;letter-spacing:.02em}
 
   .hwmark .cls-1{fill:#F4A051} .hwmark .cls-2{fill:#F7BB82}
   .hwmark .cls-3{fill:#ED7100} .hwmark .cls-4{fill:var(--ink)}
@@ -372,10 +372,10 @@
   /* ---------- P6 league table ---------- */
   .lt-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
   .lt-lbl{font-size:11px;color:var(--ink-3);font-weight:600}
-  .lt-filter,.lt-mode{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-2);border-radius:8px;padding:6px 11px;cursor:pointer;font:inherit;font-size:11.5px;font-weight:600}
-  .lt-filter.active{background:var(--accent);border-color:var(--accent);color:#fff}
-  .lt-mode.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-  .lt-sep{width:1px;height:20px;background:var(--hair-2);margin:0 2px}
+  .lt-seg{display:inline-flex;align-items:center;gap:4px;padding:4px;background:var(--raise);border:1px solid var(--hair);border-radius:10px}
+  .lt-filter,.lt-mode{appearance:none;border:0;background:transparent;color:var(--ink-3);border-radius:7px;padding:7px 12px;cursor:pointer;font:inherit;font-size:11.5px;font-weight:700;white-space:nowrap}
+  .lt-filter:hover,.lt-mode:hover{color:var(--accent)}
+  .lt-filter.active,.lt-mode.active{background:var(--bg);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
   #lt-single-year{border:1px solid var(--hair-2);border-radius:7px;background:var(--bg);color:var(--ink);padding:6px 9px;font:inherit;font-size:11.5px}
   .lt-year{font-size:11.5px;color:var(--ink-2);display:inline-flex;align-items:center;gap:4px}
   .lt-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
@@ -534,6 +534,7 @@
 
   .insight{border:1px solid var(--hair);border-top:1px solid var(--hair);background:var(--surface);border-radius:var(--radius);padding:16px 18px;margin:18px 0 6px;box-shadow:var(--shadow)}
   .insight-tag{color:var(--accent);font-weight:750;letter-spacing:.1em;text-transform:uppercase;font-size:10px}
+  .kc{font-size:10px}
   .insight-tag::before{width:5px;height:5px;border-radius:999px}
   .insight p{font-size:13px;line-height:1.72}
   .insight ul.ins li{font-size:13px;line-height:1.72}
@@ -886,13 +887,16 @@
 
     <div class="lt-toolbar">
       <span class="lt-lbl">시장</span>
-      <button class="lt-filter active" data-lt-filter="DCM" aria-pressed="true">DCM</button>
-      <button class="lt-filter" data-lt-filter="ECM" aria-pressed="false">ECM</button>
-      <button class="lt-filter" data-lt-filter="M&amp;A" aria-pressed="false">M&amp;A</button>
-      <span class="lt-sep"></span>
+      <span class="lt-seg">
+        <button class="lt-filter active" data-lt-filter="DCM" aria-pressed="true">DCM</button>
+        <button class="lt-filter" data-lt-filter="ECM" aria-pressed="false">ECM</button>
+        <button class="lt-filter" data-lt-filter="M&amp;A" aria-pressed="false">M&amp;A</button>
+      </span>
       <span class="lt-lbl">보기</span>
-      <button class="lt-mode active" data-lt-mode="single">단일 연도</button>
-      <button class="lt-mode" data-lt-mode="compare">연도별 비교</button>
+      <span class="lt-seg">
+        <button class="lt-mode active" data-lt-mode="single">단일 연도</button>
+        <button class="lt-mode" data-lt-mode="compare">연도별 비교</button>
+      </span>
       <span id="lt-single-wrap">
         <span class="lt-lbl">연도</span>
         <select id="lt-single-year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
