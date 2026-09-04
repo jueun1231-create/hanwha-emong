@@ -1270,6 +1270,8 @@
     STOCKS.push({name:s.name,symbol:s.symbol,cur:s.cur,closes:s.closes,targets:s.targets});
     CONS.push({name:s.name,cur:s.cur,now:s.now,lo:s.lo,hi:s.hi,op:s.op,delta:s.delta,why:s.why});
   });});
+  // 다른 스크립트 블록(P3 추세 뷰어)이 실측 시계열을 재사용할 수 있게 노출
+  try{window.MVDATA={IDX:IDX,FX:FX,SECTORS:SECTORS};}catch(e){}
   function fmtCur(v,cur){return cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):'₩'+Math.round(v).toLocaleString('ko-KR');}
   function won(v){return fmtCur(v,'KRW');}
   function nval(s){return Number(String(s).replace(/[^0-9.-]/g,''))||0;}
@@ -1613,7 +1615,7 @@
    {code:'MACRO',name:'AI CAPEX 슈퍼사이클, 지정학 변동성 속 견조',pri:'HIGH',stat:'Dell AI 수주 $950억·FY27 상향',
     sum:'델 AI 서버 수주잔고 $950억(FY27 매출전망 $600억→$740억 상향), 브로드컴은 실적 상회에도 가이던스 우려로 조정',
     driver:'하이퍼스케일러 AI 투자 확대 + 데이터센터 전력·냉각 병목',related:'Dell · Broadcom · NVIDIA · Vertiv · SK하이닉스',
-    impact:'AI 인프라 ▲ · 구리 ▲ · 전력기기 ▲',charts:['SK하이닉스','삼성전자','SOX','DRAM','반도체 수출']},
+    impact:'AI 인프라 ▲ · 구리 ▲ · 전력기기 ▲',charts:['SK하이닉스','삼성전자']},
    {code:'FICC',name:'유가 상단 제한, 귀금속은 달러 약세 속 강세',pri:'HIGH',stat:'WTI $91.8·금 $4,522',
     sum:'미-이란 협상 기대에 유가 상단은 제한적, 금·은·구리는 달러 약세 속 안전자산 수요로 동반 강세',
     driver:'미-이란 협상 기대 vs 잔존 지정학 리스크 + 중앙은행 금 매입',related:'WTI·Brent · Gold · Silver · Copper',
@@ -1625,30 +1627,27 @@
    {code:'KR',name:'KOSPI 급락 후 반등, 자사주가 방파제',pri:'MEDIUM',stat:'KOSPI 6,579(+0.26%)',
     sum:'9/2 −3.99% 급락 뒤 9/3 삼성전자·SK하이닉스 자사주 매입(+1.61조)이 3주체 매도를 상쇄',
     driver:'미-이란 리스크발 변동성 + HBM 가격 강세',related:'삼성전자 · SK하이닉스 · KRW · 자사주',
-    impact:'변동성 확대 · 원화 강세 · 수급 정상화 관찰',charts:['KOSPI','USD/KRW','외국인 순매수','삼성전자']}
+    impact:'변동성 확대 · 원화 강세 · 수급 정상화 관찰',charts:['KOSPI','USD/KRW','삼성전자']}
   ];
+
+  /* --- 기간별 추세 뷰어: 대시보드가 이미 보유한 실측 시계열만 사용 (합성 데이터 제거) --- */
+  var MV=window.MVDATA||{};
+  function mvStock(nm){var S=MV.SECTORS||[];for(var i=0;i<S.length;i++)for(var j=0;j<S[i].stocks.length;j++)if(S[i].stocks[j].name===nm)return S[i].stocks[j];return null;}
+  function mvTk(arr,tk){arr=arr||[];for(var i=0;i<arr.length;i++)if(arr[i].tk===tk)return arr[i];return null;}
+  var TREND={};
+  ['삼성전자','SK하이닉스'].forEach(function(nm){var st=mvStock(nm);if(!st||!st.closes)return;
+    var c=st.closes.map(Number);TREND[nm]={unit:'원',type:'line',src:'Yahoo Finance · 월별 종가',p:{'6개월':c.slice(-7),'12개월':c.slice()}};});
+  (function(){var k=mvTk(MV.IDX,'KOSPI');if(k&&k.spark)TREND['KOSPI']={unit:'pt',type:'line',src:'Yahoo Finance · 일별 종가',p:{'1개월':k.spark.map(Number),'2주':k.spark.slice(-10).map(Number)}};})();
+  (function(){var f=mvTk(MV.FX,'USD/KRW');if(f&&f.spark)TREND['USD/KRW']={unit:'원',type:'line',src:'Yahoo Finance · 일별 종가',p:{'1개월':f.spark.map(Number),'2주':f.spark.slice(-10).map(Number)}};})();
+
   document.getElementById('issues').innerHTML=ISSUES.map(function(x){
-    var links=(x.charts||[]).map(function(n){return '<button class="chart-trigger" type="button" data-trend="'+n+'">'+n+'</button>';}).join('');
+    var links=(x.charts||[]).filter(function(n){return TREND[n];}).map(function(n){return '<button class="chart-trigger" type="button" data-trend="'+n+'">'+n+'</button>';}).join('');
     return '<article class="issue-card"><div class="ic-top"><span class="pri">'+x.pri+'</span><span>'+x.code+'</span></div>'
       +'<h3>'+x.name+'</h3><p class="ic-sum">'+x.sum+'</p><div class="ic-stat">'+x.stat+'</div>'
       +'<div class="ic-meta"><div><b>Driver</b>'+x.driver+'</div><div><b>Related</b>'+x.related+'</div></div>'
       +'<div class="ic-impact"><strong>Market impact</strong><br>'+x.impact+'</div>'
       +(links?'<div class="chart-links">'+links+'</div>':'')+'</article>';
   }).join('');
-
-  /* --- 기간별 추세 뷰어 --- */
-  function tgen(a,b,n,wv){var o=[];for(var i=0;i<n;i++){if(i===n-1){o.push(Number(b));continue;}var p=i/(n-1);o.push(Number((a+(b-a)*p+Math.sin(i*1.31)*wv+Math.cos(i*0.47)*wv*0.45).toFixed(2)));}return o;}
-  function bgen(base,n,sp){var o=[];for(var i=0;i<n;i++){o.push(Math.round(base+Math.sin(i*1.8)*sp+Math.cos(i*0.42)*sp*0.55));}return o;}
-  var TREND={
-   'KOSPI':{unit:'pt',type:'line',src:'KRX 종가',p:{'1개월':tgen(6836,6579,22,90),'3개월':tgen(5650,6579,66,110)}},
-   'SK하이닉스':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(1718000,1596000,66,60000),'6개월':tgen(2650000,1596000,132,180000)}},
-   '삼성전자':{unit:'원',type:'line',src:'KRX 종가',p:{'3개월':tgen(262500,250000,66,8000),'6개월':tgen(317000,250000,132,16000)}},
-   'SOX':{unit:'pt',type:'line',src:'Philadelphia Semiconductor Index',p:{'3개월':tgen(4850,5480,66,120),'6개월':tgen(4100,5480,132,180)}},
-   'USD/KRW':{unit:'원',type:'line',src:'서울 외환시장 종가',p:{'1개월':tgen(1391,1356,22,8),'3개월':tgen(1450,1356,66,12)}},
-   '외국인 순매수':{unit:'억원',type:'bar',src:'KRX 투자자별 수급',p:{'1개월':bgen(420,22,1800),'3개월':bgen(160,66,2300)}},
-   'DRAM':{unit:'지수',type:'line',src:'DRAMeXchange',p:{'3개월':tgen(96,121,13,3.5),'6개월':tgen(84,121,26,4.5)}},
-   '반도체 수출':{unit:'YoY %',type:'bar',src:'관세청',p:{'6개월':[12.4,18.1,8.7,24.3,31.2,27.8],'12개월':[-6.2,3.8,9.4,14.7,11.2,18.5,22.1,19.6,28.4,34.6,31.2,27.8]}}
-  };
   function tf(v){return Math.abs(v)>=1000?Math.round(v).toLocaleString('en-US'):Number(v).toLocaleString('en-US',{maximumFractionDigits:2});}
   var TV=document.getElementById('trendViewer');
   function drawTrend(name,period){
