@@ -307,6 +307,18 @@
   .trend-chart .bu{fill:var(--up);opacity:.75} .trend-chart .bd{fill:var(--down);opacity:.75}
   .trend-chart .dt{fill:var(--accent)}
   .tv-src{font-size:10px;color:var(--ink-3);margin-top:5px}
+  #p1Detail{margin:10px 0 6px}
+  .p1d-chart-wrap{position:relative;margin-top:4px}
+  #p1dChart{width:100%;height:220px;display:block;overflow:visible}
+  #p1dChart .gl{stroke:var(--hair);stroke-width:1}
+  #p1dChart .axis{fill:var(--ink-3);font-size:10px}
+  #p1dChart .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+  #p1dChart .ar{fill:var(--accent);opacity:.09}
+  #p1dChart .cursor{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:3 3}
+  #p1dChart .cdot{fill:var(--accent);stroke:var(--bg);stroke-width:1.5}
+  .p1d-tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:10.5px;font-weight:700;padding:4px 8px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-125%);z-index:5}
+  .p1d-insight{margin:9px 0 0;font-size:11.5px;line-height:1.6;color:var(--ink-2)}
+  #p1 .mcard{cursor:pointer}
 
   /* ---------- P5 중장기 (목표주가 차트 + 컨센서스) ---------- */
   .lt-stock-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px}
@@ -586,10 +598,14 @@
 @media(max-width:560px){#p1 .p1-category-nav{width:100%;overflow:auto;flex-wrap:nowrap}#p1 .p1-category-nav button{flex:0 0 auto}}
 /* P5 산업군 탐색: 평면 종목 탭 대신 산업군 → 대표기업 순서로 탐색 */
 #p5 .lt-stock-tabs{margin:10px 0 4px}
-#p5 .industry-nav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
-#p5 .industry-nav button{appearance:none;border:1px solid var(--hair-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:11.5px;font-weight:700;padding:8px 13px;border-radius:var(--radius-pill);cursor:pointer;transition:.18s}
-#p5 .industry-nav button:hover{border-color:var(--accent);color:var(--accent)}
-#p5 .industry-nav button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+#p5 .industry-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:4px;background:var(--raise);border:1px solid var(--hair);border-radius:10px;width:max-content;max-width:100%;margin:10px 0 12px}
+#p5 .industry-nav button{appearance:none;border:0;background:transparent;color:var(--ink-3);font:inherit;font-size:11.5px;font-weight:700;padding:7px 12px;border-radius:7px;cursor:pointer;white-space:nowrap;transition:.15s}
+#p5 .industry-nav button:hover{color:var(--accent)}
+#p5 .industry-nav button.active{background:var(--bg);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
+#p5 .lt-stock-tabs{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:4px;background:var(--raise);border:1px solid var(--hair);border-radius:10px;width:max-content;max-width:100%;margin:10px 0 4px}
+#p5 .lt-stock-tab{border:0;background:transparent;color:var(--ink-3);border-radius:7px;padding:7px 12px;font-weight:700;white-space:nowrap;transition:.15s}
+#p5 .lt-stock-tab:hover{color:var(--accent)}
+#p5 .lt-stock-tab[aria-selected="true"]{background:var(--bg);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
 #p5 .industry-directory{border:1px solid var(--hair);background:var(--surface);border-radius:var(--radius);padding:15px 16px;margin:0 0 14px;box-shadow:var(--shadow)}
 #p5 .industry-directory-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
 #p5 .industry-directory-head strong{font-size:13px}
@@ -679,7 +695,7 @@
   <!-- ============= P1 ============= -->
   <section class="panel" id="p1" role="tabpanel" hidden>
     <div class="phead"><h1>지수·지표 대시보드</h1>
-      <p>국내외 지수 · 원자재 · 환율 · 채권 금리 &nbsp;|&nbsp; 색상: 상승 <b class="up">■</b> / 하락 <b class="down">■</b> (한국식) &nbsp;|&nbsp; 각 카드에 시작·기간고점·기간저점·현재값 표기</p>
+      <p>국내외 지수 · 원자재 · 환율 · 채권 금리 &nbsp;|&nbsp; 색상: 상승 <b class="up">■</b> / 하락 <b class="down">■</b> (한국식) &nbsp;|&nbsp; 카드 클릭 시 상세 그래프</p>
     </div>
 
     <div class="insight">
@@ -691,6 +707,15 @@
         <li><b>9/15~16 FOMC 점도표 전까지 인상·동결 저울질에 따른 지수 상단 압박, 고변동 국면</b></li>
       </ul>
     </div>
+
+    <section class="trend-viewer" id="p1Detail" hidden>
+      <div class="tv-head"><strong id="p1dTitle"></strong><span id="p1dSub"></span><button class="tv-close" id="p1dClose" type="button">닫기</button></div>
+      <div class="period-tabs" id="p1dPeriods"></div>
+      <div class="tv-stats" id="p1dStats"></div>
+      <div class="p1d-chart-wrap"><svg id="p1dChart" viewBox="0 0 960 220" preserveAspectRatio="none" role="img" aria-label="지수 상세 추이"></svg><div class="p1d-tip" id="p1dTip" hidden></div></div>
+      <p class="p1d-insight" id="p1dInsight"></p>
+      <div class="tv-src" id="p1dSrc"></div>
+    </section>
 
     <div class="slabel">헤드라인</div>
     <div class="grid feat" id="g-feat"></div>
@@ -1025,7 +1050,7 @@
     var arrow=up?'▲':(dn?'▼':'▬');
     var chg=m.rate?((up?'+':(dn?'−':''))+m.chg+'bp')
                   :(arrow+' '+m.chg+' ('+(up?'+':'')+m.pct.toFixed(2)+'%)');
-    return '<div class="mcard'+(f?' feat':'')+'">'
+    return '<div class="mcard'+(f?' feat':'')+'" data-tk="'+m.tk+'" role="button" tabindex="0">'
       +'<div class="mc-head"><span class="mc-name">'+m.name+'</span>'
       +(m.mock?'<span class="tag-mock">예시</span>':'')
       +'<span class="mc-tk">'+m.tk+'</span></div>'
@@ -1070,6 +1095,78 @@
   ];
   render('g-feat',[IDX[0],IDX[3],COM[2],RATE[1]].map(function(o){return Object.assign({},o);}),true);
   render('g-idx',IDX); render('g-com',COM); render('g-fx',FX); render('g-rate',RATE);
+
+  /* ---- P1 카드 클릭 → 상세 그래프(기간 선택·호버 툴팁·날짜축·인사이트) ---- */
+  (function(){
+    var host=document.getElementById('p1Detail');
+    if(!host)return;
+    var ALL={};[IDX,COM,FX,RATE].forEach(function(a){a.forEach(function(m){ALL[m.tk]=m;});});
+    var asOf=(function(){var t=(document.querySelector('.hdate')||{}).textContent||'';var mm=t.match(/(\d{4})\.(\d{2})\.(\d{2})/);return mm?new Date(Date.UTC(+mm[1],+mm[2]-1,+mm[3])):new Date();})();
+    function bdaysBack(dt,k){var d=new Date(dt.getTime());var c=0;while(c<k){d.setUTCDate(d.getUTCDate()-1);if(d.getUTCDay()!==0&&d.getUTCDay()!==6)c++;}return d;}
+    function fmtD(d){return (d.getUTCMonth()+1)+'/'+d.getUTCDate();}
+    function nf(v){var a=Math.abs(v);return a>=1000?Math.round(v).toLocaleString('en-US'):(a>=100?v.toFixed(1):(a>=1?v.toFixed(2):v.toFixed(3)));}
+    var PERIODS=[['1개월',999],['2주',10],['1주',5]];
+    var cur=null,curP='1개월';
+    var W=960,H=220,l=52,r=14,t=14,b=30,pw=W-l-r,ph=H-t-b;
+
+    function draw(m,pname){
+      var full=m.spark.slice(),n0=full.length;
+      var take=PERIODS.filter(function(p){return p[0]===pname;})[0][1];
+      var s=take>=n0?full:full.slice(n0-take),n=s.length;
+      var dates=[];for(var i=0;i<n;i++)dates.push(bdaysBack(asOf,n-1-i));
+      var mn=Math.min.apply(null,s),mx=Math.max.apply(null,s),rg=(mx-mn)||1;
+      var X=function(i){return l+i*pw/(n-1||1);},Y=function(v){return t+(1-(v-mn)/rg)*ph;};
+      var g='';for(var k=0;k<=4;k++){var gy=t+ph*k/4,gv=mx-rg*k/4;
+        g+='<line class="gl" x1="'+l+'" y1="'+gy.toFixed(1)+'" x2="'+(W-r)+'" y2="'+gy.toFixed(1)+'"/>'
+          +'<text class="axis" x="'+(l-8)+'" y="'+(gy+3).toFixed(1)+'" text-anchor="end">'+nf(gv)+(m.rate?'%':'')+'</text>';}
+      var xl='',step=Math.max(1,Math.round(n/5));
+      for(var j=0;j<n-1;j+=step)xl+='<text class="axis" x="'+X(j).toFixed(1)+'" y="'+(H-9)+'" text-anchor="middle">'+fmtD(dates[j])+'</text>';
+      xl+='<text class="axis" x="'+X(n-1).toFixed(1)+'" y="'+(H-9)+'" text-anchor="end">'+fmtD(dates[n-1])+'</text>';
+      var pts=s.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);}).join(' ');
+      var area='M'+X(0).toFixed(1)+','+(t+ph).toFixed(1)+' '+s.map(function(v,i){return 'L'+X(i).toFixed(1)+','+Y(v).toFixed(1);}).join(' ')+' L'+X(n-1).toFixed(1)+','+(t+ph).toFixed(1)+' Z';
+      var svg=document.getElementById('p1dChart');
+      svg.innerHTML='<g>'+g+'</g><path class="ar" d="'+area+'"/><polyline class="ln" points="'+pts+'"/>'+xl
+        +'<line class="cursor" id="p1dCur" y1="'+t+'" y2="'+(t+ph)+'" style="display:none"/>'
+        +'<circle class="cdot" id="p1dCd" r="3.5" style="display:none"/>';
+      var first=s[0],last=s[n-1],dl=first?((last-first)/Math.abs(first)*100):0;
+      document.getElementById('p1dStats').innerHTML=
+        '<span><b>현재</b>'+nf(last)+(m.rate?'%':'')+'</span>'
+        +'<span class="'+(dl>=0?'pos':'neg')+'"><b>기간변화</b>'+(dl>=0?'+':'')+dl.toFixed(2)+'%</span>'
+        +'<span><b>고점</b>'+nf(mx)+'</span><span><b>저점</b>'+nf(mn)+'</span>'
+        +'<span><b>평균</b>'+nf(s.reduce(function(a,c){return a+c;},0)/n)+'</span>';
+      document.getElementById('p1dInsight').textContent='최근 '+pname+' '+m.name+'은 '+nf(mn)+'~'+nf(mx)+' 범위에서 움직였고 현재 '+nf(last)+(m.rate?'%':'')+' 수준, 기간 변동 '+(dl>=0?'+':'')+dl.toFixed(2)+'%.'+(m.note?' '+m.note+'.':'');
+      document.getElementById('p1dSrc').textContent='Source: Yahoo Finance · 일별 종가 · x축 날짜는 영업일 역산(공휴일 근사)';
+      var tip=document.getElementById('p1dTip'),curL=document.getElementById('p1dCur'),cd=document.getElementById('p1dCd');
+      svg.onmousemove=function(ev){
+        var bb=svg.getBoundingClientRect(),relX=(ev.clientX-bb.left)/bb.width*W;
+        var i=Math.max(0,Math.min(n-1,Math.round((relX-l)/(pw/(n-1||1)))));
+        var xx=X(i),yy=Y(s[i]);
+        curL.setAttribute('x1',xx);curL.setAttribute('x2',xx);curL.style.display='';
+        cd.setAttribute('cx',xx);cd.setAttribute('cy',yy);cd.style.display='';
+        tip.hidden=false;tip.textContent=fmtD(dates[i])+'  '+nf(s[i])+(m.rate?'%':'');
+        tip.style.left=(xx/W*100)+'%';tip.style.top=(yy/H*100)+'%';
+      };
+      svg.onmouseleave=function(){tip.hidden=true;curL.style.display='none';cd.style.display='none';};
+    }
+    function open(tk){
+      cur=ALL[tk];if(!cur)return;
+      document.getElementById('p1dTitle').textContent=cur.name;
+      document.getElementById('p1dSub').textContent=cur.tk;
+      var pt=document.getElementById('p1dPeriods');
+      pt.innerHTML=PERIODS.map(function(p){return '<button class="period-tab'+(p[0]===curP?' active':'')+'" type="button" data-p="'+p[0]+'">'+p[0]+'</button>';}).join('');
+      [].slice.call(pt.querySelectorAll('.period-tab')).forEach(function(btn){btn.onclick=function(){curP=btn.dataset.p;
+        [].slice.call(pt.querySelectorAll('.period-tab')).forEach(function(x){x.classList.toggle('active',x===btn);});draw(cur,curP);};});
+      host.hidden=false;draw(cur,curP);host.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    document.getElementById('p1dClose').onclick=function(){host.hidden=true;cur=null;};
+    document.getElementById('p1').addEventListener('click',function(ev){
+      var card=ev.target.closest('.mcard[data-tk]');if(card)open(card.dataset.tk);
+    });
+    document.getElementById('p1').addEventListener('keydown',function(ev){
+      if(ev.key!=='Enter'&&ev.key!==' ')return;
+      var card=ev.target.closest&&ev.target.closest('.mcard[data-tk]');if(card){ev.preventDefault();open(card.dataset.tk);}
+    });
+  })();
 
   /* ---------- P2 calendar: separate <script> block below ---------- */
 
