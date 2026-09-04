@@ -375,7 +375,7 @@
   .news-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:14px 0}
   .news-filters{display:flex;gap:4px;flex-wrap:wrap}
   .news-filter{border:1px solid var(--hair-2);background:var(--bg);color:var(--ink-3);border-radius:7px;padding:7px 11px;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer}
-  .news-filter.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .news-filter.active{background:var(--bg);border-color:var(--hair);color:var(--accent);box-shadow:0 2px 7px rgba(20,30,45,.08)}
   .news-updated{font-size:10.5px;color:var(--ink-3)}
   .news-list{display:grid;gap:9px}
   .news-card{display:block;background:var(--raise);border:1px solid var(--hair);border-radius:12px;padding:13px 15px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
@@ -968,7 +968,6 @@
   <!-- ============= P7 ============= -->
   <section class="panel" id="p7" role="tabpanel" hidden>
     <div class="phead"><h1>주요뉴스</h1><p>산업군·경제·세계 주요 뉴스 · 매시간 갱신 · 제목 클릭 시 원문 연결</p></div>
-    <div class="insight"><div class="insight-tag">미래전략실 뉴스 브리핑</div><ul class="ins"><li>중장기 전망과 동일한 8개 산업군 기준으로 금융·산업 관련 기사를 분류합니다.</li><li>새 기사는 누적 보관되며 한 페이지에 10개씩 표시됩니다.</li></ul></div>
     <div class="news-toolbar">
       <div class="news-filters" id="news-category-filter" role="tablist" aria-label="뉴스 산업군"><button class="news-filter active" type="button" data-news-cat="all">전체</button><button class="news-filter" type="button" data-news-cat="ai-compute">AI 반도체·컴퓨트</button><button class="news-filter" type="button" data-news-cat="memory-hbm">메모리·HBM·후공정</button><button class="news-filter" type="button" data-news-cat="ai-software">AI 소프트웨어·플랫폼</button><button class="news-filter" type="button" data-news-cat="defense">방산·항공우주</button><button class="news-filter" type="button" data-news-cat="power-nuclear">전력·원자력·에너지인프라</button><button class="news-filter" type="button" data-news-cat="shipbuilding">조선·해양</button><button class="news-filter" type="button" data-news-cat="battery">2차전지·소재</button><button class="news-filter" type="button" data-news-cat="grid-cable">전력망·전선·인프라</button></div>
       <span class="news-updated" id="news-updated"></span>
@@ -1545,7 +1544,11 @@
    {house:'메리츠증권',title:'프랑스로 알아보는 재정 불안의 미래',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/17/20260904_market_119925000.pdf',sum:'',big:false},
    {house:'유진투자증권',title:'Eugene Daily Snapshot - 수급 외나무다리에서 늦출 ..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/63/20260904_market_657905000.pdf',sum:'',big:false},
    {house:'SK증권',title:'SK증권 아침에 슥_2026.09.04',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/64/20260904_market_543269000.pdf',sum:'',big:false},
-   {house:'iM증권',title:'[Morning Brief] 금리 인상 우려 완화에 국채 금리 하..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/61/20260904_market_997092000.pdf',sum:'',big:false}
+   {house:'iM증권',title:'[Morning Brief] 금리 인상 우려 완화에 국채 금리 하..',date:'26.09.04',url:'https://stock.pstatic.net/stock-research/market/61/20260904_market_997092000.pdf',sum:'',big:false},
+   {house:'미래에셋증권',title:'미래에셋증권 최신 시황 리포트',date:'26.09.04',url:'https://finance.naver.com/research/market_info_list.naver',sum:'네이버페이 증권 리서치에서 최신 미래에셋증권 리포트를 확인하세요.',big:true},
+   {house:'한국투자증권',title:'한국투자증권 최신 시황 리포트',date:'26.09.04',url:'https://finance.naver.com/research/market_info_list.naver',sum:'네이버페이 증권 리서치에서 최신 한국투자증권 리포트를 확인하세요.',big:true},
+   {house:'삼성증권',title:'삼성증권 최신 시황 리포트',date:'26.09.04',url:'https://finance.naver.com/research/market_info_list.naver',sum:'네이버페이 증권 리서치에서 최신 삼성증권 리포트를 확인하세요.',big:true},
+   {house:'한화투자증권',title:'한화투자증권 최신 시황 리포트',date:'26.09.04',url:'https://finance.naver.com/research/market_info_list.naver',sum:'네이버페이 증권 리서치에서 최신 한화투자증권 리포트를 확인하세요.',big:true}
   ];
   /* HV:end */
   (function(){
