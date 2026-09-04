@@ -414,6 +414,12 @@
   #p7 .news-pagination{margin:20px 0 6px}
   #p7 .news-page{border:0;background:var(--raise);border-radius:999px;width:30px;min-width:30px;height:30px}
   #p7 .news-page.active{background:var(--ink);color:var(--surface)}
+  #p7 .news-pulse{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);margin:16px 0 18px}
+  #p7 .news-pulse-item{background:var(--surface);padding:13px 15px}
+  #p7 .news-pulse-k{font-size:9px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+  #p7 .news-pulse-v{display:block;margin-top:5px;font-size:17px;font-weight:800;letter-spacing:-.04em}
+  #p7 .news-pulse-v em{font-style:normal;font-size:10px;color:var(--accent);margin-left:4px}
+  @media(max-width:520px){#p7 .news-pulse{grid-template-columns:1fr 1fr}.news-pulse-item:last-child{display:none}}
 
   /* ---------- P6 league table ---------- */
   .lt-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
@@ -993,6 +999,7 @@
   <!-- ============= P7 ============= -->
   <section class="panel" id="p7" role="tabpanel" hidden>
     <div class="phead"><h1>주요뉴스</h1><p>산업군·경제·세계 주요 뉴스 · 매시간 갱신 · 제목 클릭 시 원문 연결</p></div>
+    <div class="news-pulse"><div class="news-pulse-item"><span class="news-pulse-k">Live feed</span><span class="news-pulse-v">실시간 <em>● LIVE</em></span></div><div class="news-pulse-item"><span class="news-pulse-k">Coverage</span><span class="news-pulse-v">9개 산업군</span></div><div class="news-pulse-item"><span class="news-pulse-k">Refresh</span><span class="news-pulse-v">매시간 갱신</span></div></div>
     <div class="news-toolbar">
       <div class="news-filters" id="news-category-filter" role="tablist" aria-label="뉴스 산업군"><button class="news-filter active" type="button" data-news-cat="all">전체</button><button class="news-filter" type="button" data-news-cat="ai-compute">AI 반도체·컴퓨트</button><button class="news-filter" type="button" data-news-cat="memory-hbm">메모리·HBM·후공정</button><button class="news-filter" type="button" data-news-cat="ai-software">AI 소프트웨어·플랫폼</button><button class="news-filter" type="button" data-news-cat="defense">방산·항공우주</button><button class="news-filter" type="button" data-news-cat="power-nuclear">전력·원자력·에너지인프라</button><button class="news-filter" type="button" data-news-cat="shipbuilding">조선·해양</button><button class="news-filter" type="button" data-news-cat="battery">2차전지·소재</button><button class="news-filter" type="button" data-news-cat="grid-cable">전력망·전선·인프라</button></div>
       <span class="news-updated" id="news-updated"></span>
