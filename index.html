@@ -1179,7 +1179,8 @@
   /* ---------- P4 flows (2026-09-03, 보도 종합) ---------- */
   function dbars(id,rows){
     var mxA=Math.max.apply(null,rows.map(function(r){return Math.abs(r.v);}))||1;
-    var body=rows.slice().sort(function(a,b){return b.v-a.v;}).map(function(r){
+    // 주체별 고정 표시 순서: 개인 → 외국인 → 기관 → 기타법인
+    var body=rows.map(function(r){
       var buy=r.v>=0,p=Math.abs(r.v)/mxA*48;
       return '<div class="dbar-row"><span class="dbar-k">'+r.k+'</span>'
        +'<div class="dbar-track"><span class="dbar-zero"></span>'
