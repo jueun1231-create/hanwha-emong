@@ -68,6 +68,56 @@ async function chart(sym, range) {
   return bars;
 }
 
+/* 네이버 금융 공개 표에서 전 거래일 시장 전체 투자자별 순매수(억원)를 읽는다.
+ * KRX 최종값을 인용하는 공개 표이며, 페이지가 일시적으로 실패하면 기존 값을 보존한다. */
+async function investorFlow(sosok, targetIso) {
+  const url = `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${targetIso.replaceAll('-', '')}&sosok=${sosok}&page=1`;
+  const r = await fetch(url, UA);
+  if (!r.ok) throw new Error(`investor ${sosok} HTTP ${r.status}`);
+  const body = await r.text();
+  const rows = [...body.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map((m) =>
+    [...m[1].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((x) =>
+      x[1].replace(/<[^>]+>/g, '').replace(/&nbsp;|&#160;/gi, ' ').trim()));
+  const candidates = rows.map((cells) => {
+    const d = cells[0]?.match(/(\d{2})\.(\d{2})\.(\d{2})/);
+    if (!d || cells.length < 8) return null;
+    const iso = `20${d[1]}-${d[2]}-${d[3]}`;
+    const nums = cells.slice(1).map((x) => Number(x.replace(/,/g, '').replace(/[+−]/g, (s) => s === '−' ? '-' : '')));
+    if (nums.some((x) => Number.isNaN(x))) return null;
+    // 네이버 표 순서: 개인, 외국인, 기관계, ... 기타법인
+    return { iso, personal: nums[0], foreign: nums[1], institution: nums[2], other: nums[9] ?? 0 };
+  }).filter(Boolean).filter((x) => x.iso <= targetIso).sort((a, b) => b.iso.localeCompare(a.iso));
+  if (!candidates.length) throw new Error(`investor ${sosok} no dated rows`);
+  return candidates[0];
+}
+
+function flowText(n) {
+  const v = Math.round(n);
+  return `${v >= 0 ? '+' : '−'}${Math.abs(v).toLocaleString('ko-KR')}억`;
+}
+function patchFlowBars(html, id, f) {
+  const re = new RegExp(`dbars\\('${id}',\\[[^\\n]*?\\]\\);`);
+  const rows = id === 'db-kospi'
+    ? [{ k: '외국인', v: Math.round(f.foreign) }, { k: '개인', v: Math.round(f.personal) }, { k: '기관', v: Math.round(f.institution) }, { k: '기타법인', v: Math.round(f.other) }]
+    : [{ k: '개인', v: Math.round(f.personal) }, { k: '외국인', v: Math.round(f.foreign) }, { k: '기관', v: Math.round(f.institution) }, { k: '기타법인', v: Math.round(f.other) }];
+  const literal = rows.map((x) => `{k:'${x.k}',v:${x.v}}`).join(',');
+  return html.replace(re, `dbars('${id}',[${literal}]);`);
+}
+function patchFlowInsight(html, date, k, q) {
+  const [y, m, d] = date.split('-').map(Number);
+  const k3 = k.foreign + k.institution + k.personal;
+  const insight = `<div class="insight"><div class="insight-tag">미래전략실 인사이트</div>`
+    + `<p>${m}월 ${d}일 KOSPI 수급 — 외국인 ${flowText(k.foreign)}·기관 ${flowText(k.institution)}·개인 ${flowText(k.personal)}, 합계 ${k3 >= 10000 || k3 <= -10000 ? `약 ${(k3 / 10000).toFixed(2)}조` : flowText(k3)}`
+    + `<br>기타법인 ${flowText(k.other)}로 지수 흐름을 일부 상쇄·증폭</p>`
+    + `<p>KOSDAQ은 외국인 ${flowText(q.foreign)}·기관 ${flowText(q.institution)}·개인 ${flowText(q.personal)}·기타법인 ${flowText(q.other)}로 집계됐다.<br>지수 등락과 주체별 수급 방향이 일치하는지 다음 거래일에 확인한다.</p>`
+    + `<p><span class="kc">체크포인트</span><br>기타법인·자사주 매입을 제외한 외국인·기관의 대형주 수급 전환 여부와 코스닥 개인 매수의 지속성</p></div>`;
+  const re = /(<section class="panel" id="p4"[\s\S]*?<div class="insight">)[\s\S]*?(<\/div>\s*<div class="slabel">)/;
+  return html.replace(re, `$1${insight.slice(insight.indexOf('>') + 1, insight.lastIndexOf('</div>'))}$2`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<h1>전일 수급 동향<\/h1><p>)\d{4}\.\d{2}\.\d{2}/, `$1${date.replaceAll('-', '.')}`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="slabel">)\d+월 \d+일 주체별/, `$1${m}월 ${d}일 주체별`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="disc"><b>데이터<\/b> )[^<]*/, `$1${m}/${d} KOSPI·KOSDAQ 주체별 금액은 네이버 금융 공개 표 기준.`);
+}
+
 /** tk:'X' 를 포함하는 한 줄짜리 mcard 객체 리터럴(중첩 {} 없음) 안의 필드만 치환 */
 function patchTk(html, tk, mut) {
   const re = new RegExp(`(\\{[^\\n{}]*tk:'${esc(tk)}'[^\\n{}]*\\})`);
@@ -124,6 +174,23 @@ async function run() {
   console.log('· 원자재'); await doQuote(COM, '1mo', 'com');
   console.log('· 환율'); await doQuote(FX, '1mo', 'fx');
   console.log('· 금리'); await doQuote(RATE, '1mo', 'rate');
+
+  console.log('· 전일 수급 (네이버 금융 공개표)');
+  try {
+    const nowKst = new Date(Date.now() + 9 * 3600 * 1000);
+    const target = new Date(nowKst);
+    target.setUTCDate(target.getUTCDate() - 1);
+    const targetIso = `${target.getUTCFullYear()}-${String(target.getUTCMonth() + 1).padStart(2, '0')}-${String(target.getUTCDate()).padStart(2, '0')}`;
+    const [kospiFlow, kosdaqFlow] = await Promise.all([investorFlow('01', targetIso), investorFlow('02', targetIso)]);
+    const flowDate = kospiFlow.iso;
+    html = patchFlowBars(html, 'db-kospi', kospiFlow);
+    html = patchFlowBars(html, 'db-kosdaq', kosdaqFlow);
+    html = patchFlowInsight(html, flowDate, kospiFlow, kosdaqFlow);
+    console.log(`  수급 반영: ${flowDate}`);
+  } catch (e) {
+    console.warn('  수급 갱신 실패 — 기존 값 유지', e.message);
+    fail++;
+  }
 
   console.log('· P5 월별 종가');
   for (const [sy, sym, cur] of STOCKS) {
