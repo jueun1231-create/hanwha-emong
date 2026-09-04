@@ -147,7 +147,7 @@ function patchFlowInsight(html, date, k, q) {
     + `<li>${m}월 ${d}일 KOSPI — 외국인 ${flowText(k.foreign)}·기관 ${flowText(k.institution)}·개인 ${flowText(k.personal)}, 합계 ${k3txt}, 기타법인 ${flowText(k.other)}</li>`
     + `<li>KOSDAQ — 외국인 ${flowText(q.foreign)}·기관 ${flowText(q.institution)}·개인 ${flowText(q.personal)}·기타법인 ${flowText(q.other)}</li>`
     + `<li>지수 등락과 주체별 수급 방향의 일치 여부를 다음 거래일에 확인 필요</li>`
-    + `<li><span class="kc">체크포인트</span> 기타법인·자사주 매입을 제외한 외국인·기관의 대형주 수급 전환 여부, 코스닥 개인 매수의 지속성</li>`
+    + `<li><span class="kc">체크포인트</span><br>기타법인·자사주 매입을 제외한 외국인·기관의 대형주 수급 전환 여부, 코스닥 개인 매수의 지속성</li>`
     + `</ul></div>`;
   const re = /(<section class="panel" id="p4"[\s\S]*?<div class="insight">)[\s\S]*?(<\/div>\s*<div class="slabel">)/;
   return html.replace(re, `$1${insight.slice(insight.indexOf('>') + 1, insight.lastIndexOf('</div>'))}$2`)
