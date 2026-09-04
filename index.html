@@ -2070,7 +2070,7 @@
 /* ---------- MarketView AI ----------
    Cloudflare Worker 배포 후 아래 빈 문자열에 Worker URL을 넣는다.
    OpenAI API 키는 절대 이 파일에 넣지 않는다. */
-window.MARKETVIEW_CHAT_API = '';
+window.MARKETVIEW_CHAT_API = 'https://hanwha-emong-chat.yoominjun123.workers.dev';
 (function(){
   var endpoint=window.MARKETVIEW_CHAT_API;
   var launcher=document.getElementById('chat-launcher'),panel=document.getElementById('chat-panel'),close=document.getElementById('chat-close');
