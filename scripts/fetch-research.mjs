@@ -60,12 +60,20 @@ async function run() {
   if (pick.length < 6) pick = items.slice(0, 16);           // 당일 물량 적으면 최근분
 
   // 5대 증권사 우선 → 상단. 증권사별 최신 1건, 최대 12개
-  const BIG5 = ['미래에셋증권', '한국투자증권', 'NH투자증권', '삼성증권', 'KB증권', '신한투자증권'];
+  const BIG5 = ['미래에셋증권', '한국투자증권', '삼성증권', 'KB증권', '신한투자증권'];
   const byHouse = new Map();
   for (const it of pick) if (!byHouse.has(it.house)) byHouse.set(it.house, it);
   const uniq = [];
   for (const h of BIG5) if (byHouse.has(h)) { const it = byHouse.get(h); it.big = true; uniq.push(it); byHouse.delete(h); }
   for (const it of byHouse.values()) { if (uniq.length >= 12) break; it.big = false; uniq.push(it); }
+
+  // 당일 공개 리포트가 없더라도 주요 하우스 카드는 유지한다.
+  // 다음 실행에서 실제 리포트가 발견되면 자동으로 실제 항목으로 교체된다.
+  const REQUIRED = ['미래에셋증권', '한국투자증권', '삼성증권', '한화투자증권'];
+  for (const house of REQUIRED) {
+    if (uniq.some((it) => it.house === house)) continue;
+    uniq.push({ house, title: `${house} 최신 시황 리포트`, date: today, href: '', pdf: 'https://finance.naver.com/research/market_info_list.naver', sum: '네이버페이 증권 리서치에서 최신 리포트를 확인하세요.', big: house !== '한화투자증권' });
+  }
 
   for (const it of uniq) it.sum = await preview(it.href);
 
