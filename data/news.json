@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/05/ai-data-centers-cost-economy.html|Many truckers don't feel like the rest of America about AI data centers as business booms",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Many truckers don't feel like the rest of America about AI data centers as business booms",
+    "summary": "Sprawling data center components from HVAC systems to tubing, wiring and semiconductors arrive primarily by truck, a boon for a business hit hard by trade wars.",
+    "link": "https://www.cnbc.com/2026/09/05/ai-data-centers-cost-economy.html",
+    "source": "Google News",
+    "pubDate": "2026-09-05T13:33:08.000Z",
+    "collectedAt": "2026-09-05T14:18:09.351Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/05/gm-ford-defense-energy.html|GM vs. Ford: U.S. defense, energy sectors add to automakers' century-old rivalry",
     "category": "defense",
     "categoryLabel": "방산·항공우주",
@@ -31,6 +42,17 @@
     "source": "연합뉴스TV",
     "pubDate": "2026-09-05T01:11:00.000Z",
     "collectedAt": "2026-09-05T01:17:37.278Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE01Q3lVNlVpb05mTDRYekszWFg3Yk13ZTNBUWlNMFkwVzhCNE1Eb3JBaHdmbmI3TzNCVTFZYW1VT1YxczFQS2E0UWxaV0gxODg?oc=5|美 헬스케어부터 中 반도체까지...눈길 끄는 해외주식 10선",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "美 헬스케어부터 中 반도체까지...눈길 끄는 해외주식 10선",
+    "summary": "공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE01Q3lVNlVpb05mTDRYekszWFg3Yk13ZTNBUWlNMFkwVzhCNE1Eb3JBaHdmbmI3TzNCVTFZYW1VT1YxczFQS2E0UWxaV0gxODg?oc=5",
+    "source": "v.daum.net",
+    "pubDate": "2026-09-05T00:03:03.000Z",
+    "collectedAt": "2026-09-05T14:18:08.282Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GQ0VxWkVZU2ZJS1NVdDkzMTdwX0huWWJwMjJCcmZmZXg0U29ON0RST0JWQkRZbkFIWVpJSGtvcUUwTWtFRG1tNm5zSjRpQXIxLVo2c29oY3BzZ9IBWEFVX3lxTFBqZEgxQ3ZoYm1FSkhSam13NmJaRFZURlhITzZCMlpQRkZFanMxMS0zOVNscXlJVXZCR0tDdk9qMzNoT1phUTdydFNMSEZ3eWw1NFZmTE1oU3k?oc=5|[주간증시전망] 코스피, 반도체 반등 이어갈까…美 물가·동시만기 변수",
@@ -1496,6 +1518,17 @@
     "collectedAt": "2026-09-04T01:23:03.212Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9oeHhSMjdfNENDN3BUcmFqckVxX1NaaGQxQnhRMTc2emp6YlFHcEl0RDZPXy1tNVhBMU1VeGcxZHVvME5ycU9WTk1BOXlOOWpqS3lDNHFaSmNiWmIxckpzVWlya1BILTgzYkFKcTNLVXU?oc=5|높은 국채 금리에 아시아 AI·반도체 주식 급락",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "높은 국채 금리에 아시아 AI·반도체 주식 급락",
+    "summary": "공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9oeHhSMjdfNENDN3BUcmFqckVxX1NaaGQxQnhRMTc2emp6YlFHcEl0RDZPXy1tNVhBMU1VeGcxZHVvME5ycU9WTk1BOXlOOWpqS3lDNHFaSmNiWmIxckpzVWlya1BILTgzYkFKcTNLVXU?oc=5",
+    "source": "Investing.com 한국어",
+    "pubDate": "2026-08-19T07:00:00.000Z",
+    "collectedAt": "2026-09-05T14:18:08.284Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiakFVX3lxTE80NVFwSGJmUzhGTUxJQ3N5dDFfN2RTcEotb01tSUMyOUdadHFFTkZqb25ka245dHJUMy1WYTlDblRuMDVBbHZ1VkR5ZVJWenBtVFEyOTJYZmpwVThzdDNmcnlXcktCUG1vV2c?oc=5|국채금리 오르는데, AI 주식은 왜 떨어지나",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1852,11 +1885,11 @@
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
     "title": "월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적'",
-    "summary": "월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적' &nbsp;&nbsp; KB Think",
+    "summary": "공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.",
     "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBXSXlrV0NpcDhrUUIwM1hmNW1USHhJejJSOVNCY1k5VGN4M19uU19DR2RCUlJ0U0VKbGRUN1dlZ2hfY3BEUzRWMmlSS2lKNFJmTWVwbGNSVnVWSUFYREM2bEZMLXNiNF9PTFVfbzNLZURPdw?oc=5",
     "source": "KB Think",
     "pubDate": "2026-07-27T07:00:00.000Z",
-    "collectedAt": "2026-09-04T01:07:19.418Z"
+    "collectedAt": "2026-09-05T14:18:08.286Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE84MjhOTzRoLXdDb2J1SUNDekdZdGlSWUxxekhfeF8zcHMyRE50UVBBX0dDMHlCMGdrMUZPUHYxRHV5bGxfcEh5amVPLXcwNl9oZUlUVWpyUG8td25iVUQ4VHJoZnN5NmpIWDgyeVZpOEw?oc=5|월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적'",
