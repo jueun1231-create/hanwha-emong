@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/05/gm-ford-defense-energy.html|GM vs. Ford: U.S. defense, energy sectors add to automakers' century-old rivalry",
+    "category": "defense",
+    "categoryLabel": "방산·항공우주",
+    "title": "GM vs. Ford: U.S. defense, energy sectors add to automakers' century-old rivalry",
+    "summary": "General Motors and Ford are looking for new potential growth areas, including by seeking military contracts and getting into energy storage businesses.",
+    "link": "https://www.cnbc.com/2026/09/05/gm-ford-defense-energy.html",
+    "source": "Google News",
+    "pubDate": "2026-09-05T12:00:01.000Z",
+    "collectedAt": "2026-09-05T12:23:12.070Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/05/ai-cybersecurity-ciso-executive.html|Meet the CISO: A new front line star in the AI cybersecurity war",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Meet the CISO: A new front line star in the AI cybersecurity war",
+    "summary": "The OpenAI-Hugging Face agent hack sent shockwaves through the business world and helped put the chief information security officer into the spotlight.",
+    "link": "https://www.cnbc.com/2026/09/05/ai-cybersecurity-ciso-executive.html",
+    "source": "Google News",
+    "pubDate": "2026-09-05T12:00:01.000Z",
+    "collectedAt": "2026-09-05T12:23:12.070Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5PWkZncXZDcTAyWmZkcksxUEk5MFY4WEZZenpHaUVfeUlMQmRQbXdmc1lpR294RUtTdkxjV3ptcDZ1YjJyd0F5UWxNZUZUeUNIRzUtWXgzNzB4cndFRmpzVDlMaVQ2VXM?oc=5|중동 리스크에 유가·금리 ’들썩’…국내 경제 발목잡나",
     "category": "power-nuclear",
     "categoryLabel": "전력·원자력·에너지인프라",
