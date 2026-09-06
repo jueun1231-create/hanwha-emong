@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/06/artists-ai-secrets-project-collects-hundreds-of-anonymous-confessions.html|'Everyone has an AI secret': This artist has spent a year collecting and sharing hundreds of anonymous AI confessions",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "'Everyone has an AI secret': This artist has spent a year collecting and sharing hundreds of anonymous AI confessions",
+    "summary": "Through her project \"What We Tell AI,\" Olivia Tai has collected over 350 handwritten secrets about how people use AI to navigate dating, work and life.",
+    "link": "https://www.cnbc.com/2026/09/06/artists-ai-secrets-project-collects-hundreds-of-anonymous-confessions.html",
+    "source": "Google News",
+    "pubDate": "2026-09-06T14:00:01.000Z",
+    "collectedAt": "2026-09-06T15:19:20.455Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html|‘Model fatigue’ sets in as AI labs race to roll out new versions at frenetic pace",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
