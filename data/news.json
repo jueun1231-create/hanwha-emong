@@ -217,7 +217,11 @@
     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBCTmZUeHMyVkZtZ3BSZFpEMV9WcnpKVFZ0RG5KYjNUaElrSkVUcFRpRXpMRzR5WjFFXzFjMWlvVUl5R2VBNjRXVk93aw?oc=5",
     "source": "v.daum.net",
     "pubDate": "2026-09-06T22:10:03.000Z",
+<<<<<<< Updated upstream
     "collectedAt": "2026-09-07T22:15:41.982Z"
+=======
+    "collectedAt": "2026-09-07T22:23:37.701Z"
+>>>>>>> Stashed changes
   },
   {
     "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9QQlk4RlMxLTZablVWamhpLUtEMEI5akVWcXRyZFp6VzF5aExUTmZXOWRQcHVPckU4RDZmb0dVb2NTOUMzMUNCb0NmRkFCYkhBVWhEYXlZNklTVk82RVZveG5KcGhwVi11RmFF0gFuQVVfeXFMTlJBLWkyTDU3U2drR1NLWVc5LVZMT2RyekF2amJXeGg0TlhnZ3N1SmFRVklnNVo5M3NCek9vTWd1T3BzUVlaMlV3SXgyRm9NM0E0NGVjRHJGZlAtcDJWTUtZbDFpMVNuazlsdVJmZ2c?oc=5|[2026 국감 미리보기④] “반도체가 끌어올린 3.3%”…한국 경제, ‘반도체 착시’ 국감서 검증",
@@ -1549,6 +1553,17 @@
     "source": "v.daum.net",
     "pubDate": "2026-06-16T07:00:00.000Z",
     "collectedAt": "2026-09-07T06:28:43.007Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBXQVZnNXFKTXUybUZLOEpmOG1ENDE1OXhNeHpick9KeUUwalBKQ29falBici1SbXZTeGQtTGdSUWxDM2xBTHQxdVFtMXZvcDVkV3pzcDE5VWJTY255SDRqMU9ERQ?oc=5|젠슨 황은 \"반도체 주식 사라\"고 했는데 증권가선 '피크아웃' 가능성 거론",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "젠슨 황은 \"반도체 주식 사라\"고 했는데 증권가선 '피크아웃' 가능성 거론",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBXQVZnNXFKTXUybUZLOEpmOG1ENDE1OXhNeHpick9KeUUwalBKQ29falBici1SbXZTeGQtTGdSUWxDM2xBTHQxdVFtMXZvcDVkV3pzcDE5VWJTY255SDRqMU9ERQ?oc=5",
+    "source": "더구루",
+    "pubDate": "2026-06-13T07:00:00.000Z",
+    "collectedAt": "2026-09-07T22:23:37.705Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE84RVBMcGJSOFRlWjdmRnJMSmNvemdaR3ByVDNra2c4cUYzWEZxcFc3cTBha216ZTdJaVZqbEV0SHllRUtXTF9ycUJQNWowMHJaYkNBUmM3ZkcxQ3pkVzVlcFpHMEtpT0E?oc=5|세계경제포럼, 인공지능·양자·우주산업까지…미래 시장 이끌 혁신기업 100곳 선정",
