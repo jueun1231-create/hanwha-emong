@@ -1,7 +1,7 @@
 # 한화에몽 MarketView — 자동 갱신 대시보드
 
 단일 HTML 대시보드(`index.html`)를 **GitHub Pages**로 호스팅하고,
-**GitHub Actions**가 매일 08:05 KST에 시장 데이터를 실측값으로 갱신 → 커밋 →
+**GitHub Actions**가 매시간 :05 KST에 시장 데이터와 탭별 인사이트를 갱신 → 커밋 →
 Pages가 자동 재배포한다. 링크를 공유하면 받는 사람도 **항상 최신본**을 본다.
 
 ## 자동 갱신 범위 (`scripts/update-market-data.mjs`)
@@ -34,7 +34,7 @@ Yahoo Finance chart API(무키·무료, Actions 러너는 서버측이라 CORS �
 3. **Settings → Actions → General → Workflow permissions** → **Read and write permissions** 체크 (Actions가 커밋하려면 필요)
 4. **Actions** 탭 → `daily-market-update` → **Run workflow** 로 첫 실행 테스트
 
-이후 매일 08:05 KST 자동 실행. 수동 갱신은 언제든 Actions 탭에서 **Run workflow**.
+이후 매시간 :05 KST 자동 실행. 오전 07:00 KST 실행과 수동 실행은 확장 점검도 수행. 수동 갱신은 언제든 Actions 탭에서 **Run workflow**.
 
 ## 로컬 테스트
 
@@ -44,6 +44,5 @@ node scripts/update-market-data.mjs   # index.html 을 그 자리에서 갱신
 
 ## 참고
 
-- 인사이트·캘린더·전일수급·리그테이블 등 분석/서술 콘텐츠는 자동 갱신 대상이 아니며,
-  주기적으로 수동 업데이트하거나 별도 Claude 스텝(`hanwha-emong-daily-prompt.md`)을 추가해 처리한다.
-- cron 은 UTC 기준. 08:05 KST = `5 23 * * *`.
+- 홈 및 각 탭의 인사이트는 매시간 수집한 숫자·수급·뉴스를 근거로 갱신한다. 캘린더·IPO·리그테이블의 구조·정적 데이터는 매시간 변경하지 않는다.
+- cron 은 UTC 기준. 매시간 :05 실행은 `5 * * * *`, 오전 07:00 KST 확장 점검은 `0 22 * * *`.
