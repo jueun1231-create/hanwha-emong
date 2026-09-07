@@ -1082,7 +1082,7 @@
 <button class="chat-launcher" id="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel"><i>AI</i> MarketView AI</button>
 <aside class="chat-panel" id="chat-panel" aria-label="MarketView AI 챗봇" hidden>
   <div class="chat-head"><div><strong>MarketView AI</strong><span>GPT-5.4 mini · 선택한 화면 내용 기반 답변</span></div><button class="chat-close" id="chat-close" type="button" aria-label="챗봇 닫기">×</button></div>
-  <div class="chat-log" id="chat-log" aria-live="polite"><p class="chat-notice"><b>질문 방법</b><br>페이지에서 문장·수치를 복사한 뒤 붙여 넣거나, 텍스트를 선택해 “이 내용 질문하기”를 누르세요. 제공된 내용 밖의 최신 수치나 사실은 추정하지 않습니다.</p></div>
+  <div class="chat-log" id="chat-log" aria-live="polite"><p class="chat-notice"><b>질문 방법</b><br>현재 화면의 지수·수급·주요뉴스 요약은 자동으로 함께 분석합니다. 페이지 문장·수치를 복사해 붙여 넣거나, 텍스트를 선택해 “이 내용 질문하기”를 누르면 해당 내용도 추가됩니다.</p></div>
   <p class="chat-context" id="chat-context" hidden></p>
   <form class="chat-form" id="chat-form"><textarea class="chat-input" id="chat-input" maxlength="2000" rows="2" placeholder="궁금한 점을 입력하세요" aria-label="챗봇 질문"></textarea><button class="chat-send" id="chat-send" type="submit">전송</button></form>
 </aside>
@@ -2079,6 +2079,22 @@ window.MARKETVIEW_CHAT_API = window.MARKETVIEW_CHAT_API || '';
   function closeChat(){panel.hidden=true;launcher.setAttribute('aria-expanded','false');selectButton.hidden=true;}
   function addMessage(type,text){var el=document.createElement('div');el.className='chat-msg '+type;el.textContent=text;log.appendChild(el);log.scrollTop=log.scrollHeight;return el;}
   function setContext(text){copiedContext=String(text||'').trim().slice(0,8000);contextEl.hidden=!copiedContext;contextEl.textContent=copiedContext?'선택한 내용: '+copiedContext.replace(/\s+/g,' ').slice(0,100):'';}
+  function textOf(node,selector){var el=node&&node.querySelector(selector);return el?el.textContent.replace(/\s+/g,' ').trim():'';}
+  function dashboardSnapshot(){
+    var asOf=textOf(document,'.hdate')||'페이지 표시 기준일 확인 불가';
+    var metrics=[].slice.call(document.querySelectorAll('#p1 .mcard')).map(function(card){
+      var name=textOf(card,'.mc-name'),value=textOf(card,'.mc-val'),change=textOf(card,'.mc-chg'),note=textOf(card,'.mc-note');
+      return name?(name+' '+value+' '+change+(note?' · '+note:'')):'';
+    }).filter(Boolean).slice(0,24);
+    var flow=textOf(document.querySelector('#p4'),'.insight');
+    var headlines=[].slice.call(document.querySelectorAll('#news-list .news-card')).slice(0,4).map(function(card){
+      return [textOf(card,'.news-cat'),textOf(card,'.news-title'),textOf(card,'.news-summary')].filter(Boolean).join(' · ');
+    }).filter(Boolean);
+    var snapshot='[현재 대시보드 스냅샷]\n기준일: '+asOf+'\n[지수·원자재·환율·금리]\n'+metrics.join('\n');
+    if(flow)snapshot+='\n[전일 수급]\n'+flow.slice(0,900);
+    if(headlines.length)snapshot+='\n[주요뉴스]\n'+headlines.join('\n');
+    return snapshot.slice(0,5200);
+  }
   launcher.addEventListener('click',function(){if(panel.hidden)openChat();else closeChat();});
   close.addEventListener('click',closeChat);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closeChat();});
@@ -2103,7 +2119,9 @@ window.MARKETVIEW_CHAT_API = window.MARKETVIEW_CHAT_API || '';
     addMessage('user',question);input.value='';send.disabled=true;send.textContent='응답 중';
     var pending=addMessage('assistant','분석 중입니다…');
     try{
-      var response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:question,context:copiedContext})});
+      var snapshot=dashboardSnapshot();
+      var extra=copiedContext?'\n\n[사용자가 선택·복사한 추가 내용]\n'+copiedContext.slice(0,2600):'';
+      var response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:question,context:snapshot+extra})});
       var data=await response.json().catch(function(){return {};});
       if(!response.ok)throw new Error(data.error||'챗봇 응답을 가져오지 못했습니다.');
       pending.textContent=data.answer||'응답을 생성하지 못했습니다.';
