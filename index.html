@@ -406,9 +406,9 @@
   #p7 .news-filter.active{background:var(--ink);color:var(--surface);box-shadow:none}
   #p7 .news-list{gap:0;border-top:1px solid var(--hair)}
   #p7 .news-card{position:relative;background:transparent;border:0;border-bottom:1px solid var(--hair);border-radius:0;padding:17px 12px 17px 18px;transition:background .15s,padding-left .15s}
-  #p7 .news-card::before{content:"";position:absolute;left:0;top:18px;width:3px;height:0;border-radius:3px;background:var(--accent);transition:height .15s}
+  #p7 .news-card::before{display:none}
   #p7 .news-card:hover{background:var(--raise);transform:none;padding-left:22px}
-  #p7 .news-card:hover::before{height:calc(100% - 36px)}
+  #p7 .news-card:hover::before{display:none}
   #p7 .news-card-head{margin-bottom:7px;gap:8px}
   #p7 .news-cat{font-size:9px;letter-spacing:.06em;text-transform:uppercase}
   #p7 .news-source,#p7 .news-time{font-size:10px}
@@ -452,9 +452,8 @@
   #p7 .news-card:first-child .news-title{font-size:20px;color:#17191c;letter-spacing:-.045em}
   #p7 .news-card:first-child .news-cat{color:#e86a25}
   #p7 .news-card:first-child .news-source,#p7 .news-card:first-child .news-time,#p7 .news-card:first-child .news-summary{color:#7d858f}
-  #p7 .news-card:hover{padding-left:12px;background:#fafafa}
+  #p7 .news-card:hover{padding-left:8px;background:#fafafa}
   #p7 .news-card:hover::before{display:none}
-  #p7 .news-card:hover::before{display:block;height:calc(100% - 36px);background:#e86a25}
   #p7 .news-card-head{margin-bottom:6px}
   #p7 .news-cat{font-size:10px;color:#e86a25}
   #p7 .news-title{font-size:15px;line-height:1.45;font-weight:750;color:#25282d}
@@ -873,9 +872,9 @@
       <div class="insight-tag">미래전략실 인사이트</div>
       <ul class="ins">
         <li><b>이미 확인된 결과(9/1~3):</b> JOLTS 7월 구인건수 727.1만 건으로 컨센서스(733~736만) 하회, 8월 ADP 민간고용은 +3.8만 명으로 예상(+4.7만) 밑돌아 1월 이후 최저, 한국 8월 CPI는 전년비 +3.1%로 7월(+2.8%) 대비 재가속, 9/3 웰러 연준이사가 "동결 지지" 입장을 밝히며 CME 인상 확률이 63%→50%로 후퇴 — 노동시장 냉각·물가 재반등·금리 인상 경계가 동시 진행</li>
-        <li><b>9월 1주 잔여(9/4):</b> 미국 8월 고용보고서 발표 예정, 다우존스 컨센서스는 비농업고용 +5.3만 명·실업률 4.1%(7월은 −2.3만 명). 예상보다 약하면 동결 무게 확대, 예상 상회 시 유가발 물가 압력과 맞물려 금리 인상 경계 재부각</li>
+        <li><b>9월 1주 결과(9/4):</b> 미국 8월 비농업고용 <b>+16.2만 명·실업률 4.1%</b>로 컨센서스(+5.3만)를 큰 폭 상회하고 6·7월치도 합산 +5.5만 상향 수정, 시간당임금 +0.3%m/+3.1%y. 노동시장 냉각 우려가 후퇴하며 유가발 물가 압력과 맞물려 <b>9월 인상 경계가 재부각</b>(CME 인상 확률 50%→60%대 회복)</li>
         <li><b>9월 2주(9/9~11):</b> 삼성전자·KB증권 코리아 컨퍼런스(9/9)에 이어 Oracle·Adobe 실적이 9/10 같은 날 발표, 8월 PPI(9/10)·CPI(9/11)가 뒤따름. 근원 물가가 높고 실적 가이던스가 약하면 밸류에이션 부담 확대, 물가 둔화와 실적 상회 동시 발생 시 기술주·반도체 상승 여력 확대</li>
-        <li><b>9월 3주(9/15~16):</b> FOMC 성명·점도표·기자회견이 월중 방향 결정. 9/3 기준 시장은 인상 50.4%·동결 49.6%로 팽팽히 저울질 중이라 25bp 결정 여부보다 2026년 점도표 경로와 기자회견 톤이 지수·환율 변동성을 좌우할 관건</li>
+        <li><b>9월 3주(9/15~16):</b> FOMC 성명·점도표·기자회견이 월중 방향 결정. 9/4 고용 서프라이즈 이후 시장은 25bp 인상 쪽에 다시 무게(인상 60%대·동결 40%대)를 두고 있어, 인상 여부보다 2026년 점도표 경로와 워시 의장 기자회견 톤이 지수·환율 변동성을 좌우할 관건</li>
       </ul>
     </div>
     <div class="cal-layout">
@@ -1009,7 +1008,6 @@
         <li>미-이란 확전발 유가·미 장기금리 급등(10Y 4.76%)으로 국내 기업 자금조달이 ECM(지분)에서 DCM(차입)으로 더 쏠리는 압박</li>
         <li>AI·전력 인프라 투자 사이클과 방산·조선 수주 확대가 대형 회사채·여전채 발행 수요를 견인</li>
         <li>Anthropic 10월 나스닥 상장 목표(~$1조)는 국내 ECM 회복의 선행 신호, OpenAI는 2027년으로 순연</li>
-        <li>딜 구성(ECM=유상증자·IPO / DCM=회사채·여전채·ABS / M&amp;A=재무자문)을 글로벌 매크로와 함께 해석</li>
       </ul>
     </div>
 
@@ -1071,10 +1069,10 @@
 
   <!-- ============= P8 ============= -->
   <section class="panel" id="p8" role="tabpanel" hidden>
-    <div class="phead"><h1>하우스별 뷰</h1><p>증권사 리서치센터의 당일 시황 리포트 · 5대 증권사 우선 · 매시간 갱신 · 제목 클릭 시 원문</p></div>
+    <div class="phead"><h1>하우스별 뷰</h1><p>증권사 리서치센터의 당일 시황 리포트 · 매시간 갱신 · 카드 클릭 시 PDF 원문 바로 열기</p></div>
     <div class="slabel">오늘의 증권사 시황 리포트 <span class="lite" id="hv-asof">26.09.07 · 네이버페이 증권 리서치</span></div>
     <div id="houseview" class="hv-grid"></div>
-    <div class="disc"><b>데이터</b> 네이버페이 증권 리서치 시황정보 공개 목록. 증권사별 최신 1건, 최대 10개. 텔레그램 리서치 채널은 비공개라 수집 대상이 아니며, 공개 리포트 목록으로 대체했습니다.</div>
+    <div class="disc"><b>데이터</b> 네이버페이 증권 리서치 시황정보 공개 목록. 증권사별 최신 1건, 최대 10개. PDF 원문이 공개된 증권사만 노출하며, 로그인이 필요한 하우스는 제외합니다. 텔레그램 리서치 채널은 비공개라 수집 대상이 아닙니다.</div>
   </section>
 
 </main>
@@ -1373,7 +1371,7 @@
     {name:"브로드컴",symbol:'AVGO',cur:'USD',closes:[369.63,402.96,346.1,331.3,319.55,309.51,417.43,446.77,377.75,389.28,370.34,357.9,357.89],targets:{m1:380,m3:425,m12:490},now:"$358",lo:"$321",hi:"$393",op:"매수 우세",delta:"커스텀 ASIC·네트워킹",why:"하이퍼스케일러 자체칩(ASIC) 침투 확대와 VMware 통합 마진이 축. 고객 집중도가 리스크."},
     {name:"AMD",symbol:'AMD',cur:'USD',closes:[256.12,217.53,214.16,236.73,200.21,203.43,354.49,516.1,580.91,476.15,470.72,477.57,477.57],targets:{m1:470,m3:510,m12:560},now:"$478",lo:"$149",hi:"$182",op:"중립",delta:"MI 가속기·서버 점유율",why:"MI400 로드맵과 데이터센터 GPU 채택 확대가 관건. 엔비디아 대비 소프트웨어 생태계 격차가 부담."},
     {name:"TSMC",symbol:'TSM',cur:'USD',closes:[300.43,291.51,303.89,330.56,374.58,337.95,396.06,418.45,477.57,404.25,415.32,428.91,428.91],targets:{m1:455,m3:510,m12:565},now:"$429",lo:"$375",hi:"$459",op:"매수 우세",delta:"파운드리 과점",why:"3nm·2nm 가동률과 CoWoS 증설이 동력. 지정학·대만달러 환율이 변수."},
-    {name:"마이크론",symbol:'MU',cur:'USD',closes:[223.77,236.48,285.41,414.88,412.37,337.84,517.16,971,1154.29,823.03,958.73,1016.59,1016.59],targets:{m1:118,m3:132,m12:152},now:"symbol:'MU',cur:'USD',closes:[223.77,236.48,285.41,414.88,412.37,337.84,517.16,971,1154.29,823.03,958.73,1016.59,1016.59],targets:{m1:118,m3:132,m12:152},now:017",lo:"$99",hi:"$121",op:"매수",delta:"HBM·D램 사이클",why:"HBM3E 12단 램프와 D램 현물가 반등이 실적을 견인. 메모리 다운사이클 재진입이 위험."},
+    {name:"마이크론",symbol:'MU',cur:'USD',closes:[223.77,236.48,285.41,414.88,412.37,337.84,517.16,971,1154.29,823.03,958.73,1016.59,1016.59],targets:{m1:1090,m3:1240,m12:1430},now:"$1,017",lo:"$958",hi:"$1,020",op:"매수",delta:"HBM·D램 사이클",why:"HBM3E 12단 램프와 D램 현물가 반등이 실적을 견인. 메모리 다운사이클 재진입이 위험."},
    ]},
    {id:'memory-hbm',label:"메모리·HBM·후공정",stocks:[
     {name:"SK하이닉스",symbol:'000660.KS',cur:'KRW',closes:[559000,530000,651000,909000,1061000,807000,1286000,2333000,2650000,1718000,1674000,1647000,1783000],targets:{m1:3000000,m3:4000000,m12:5000000},now:"1,783,000",lo:"1,436,400",hi:"1,755,600",op:"매수 우세",delta:"HBM 과점",why:"HBM4 출하와 현물가 반등이 동력이나 목표가는 증권사별 이견. 삼성 HBM 점유율 회복이 하방 위험."},
@@ -1384,9 +1382,9 @@
    ]},
    {id:'ai-software',label:"AI 소프트웨어·플랫폼",stocks:[
     {name:"마이크로소프트",symbol:'MSFT',cur:'USD',closes:[517.81,492.01,483.62,430.29,392.74,370.17,407.78,450.24,373.02,464.72,507.29,499.7,499.7],targets:{m1:535,m3:590,m12:675},now:"$500",lo:"$450",hi:"$550",op:"매수 우세",delta:"Copilot·Azure AI",why:"Azure AI 매출 기여 확대와 Copilot 좌석 침투가 동력. CAPEX 부담과 투자 회수 속도가 관건."},
-    {name:"오라클",symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,158.78,158.78],targets:{m1:160,m3:178,m12:205},now:"symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,158.78,158.78],targets:{m1:160,m3:178,m12:205},now:59",lo:"$139",hi:"$169",op:"매수",delta:"OCI·RPO 급증",why:"클라우드 인프라(OCI) 계약잔고 급증이 리레이팅을 촉발. 감가상각 부담과 계약 집중도가 리스크."},
-    {name:"팔란티어",symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,174.33,174.33],targets:{m1:186,m3:205,m12:230},now:"symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,174.33,174.33],targets:{m1:186,m3:205,m12:230},now:74",lo:"$164",hi:"$201",op:"중립",delta:"밸류에이션 부담",why:"미국 상업부문(AIP) 가속이 동력이나 매출 대비 멀티플이 소프트웨어 최상단이라 상단이 제한적."},
-    {name:"서비스나우",symbol:'NOW',cur:'USD',closes:[183.86,162.48,153.19,117.01,108.01,104.55,88.31,124.37,99.28,111.23,147.99,141.26,141.26],targets:{m1:990,m3:1085,m12:1250},now:"symbol:'NOW',cur:'USD',closes:[183.86,162.48,153.19,117.01,108.01,104.55,88.31,124.37,99.28,111.23,147.99,141.26,141.26],targets:{m1:990,m3:1085,m12:1250},now:41",lo:"$855",hi:"$1045",op:"매수",delta:"워크플로 AI",why:"Now Assist 부가 모듈 판매와 잔여계약의무(cRPO) 성장률이 관건. 대형 IT 예산 둔화가 위험."},
+    {name:"오라클",symbol:'ORCL',cur:'USD',closes:[262.61,201.95,194.91,164.58,145.4,147.11,161.39,225.78,146.55,129.87,149.12,158.78,158.78],targets:{m1:160,m3:178,m12:205},now:"$159",lo:"$139",hi:"$169",op:"매수",delta:"OCI·RPO 급증",why:"클라우드 인프라(OCI) 계약잔고 급증이 리레이팅을 촉발. 감가상각 부담과 계약 집중도가 리스크."},
+    {name:"팔란티어",symbol:'PLTR',cur:'USD',closes:[200.47,168.45,177.75,146.59,137.19,146.28,139.11,156.54,116.67,123.06,186.38,174.33,174.33],targets:{m1:186,m3:205,m12:230},now:"$174",lo:"$164",hi:"$201",op:"중립",delta:"밸류에이션 부담",why:"미국 상업부문(AIP) 가속이 동력이나 매출 대비 멀티플이 소프트웨어 최상단이라 상단이 제한적."},
+    {name:"서비스나우",symbol:'NOW',cur:'USD',closes:[183.86,162.48,153.19,117.01,108.01,104.55,88.31,124.37,99.28,111.23,147.99,141.26,141.26],targets:{m1:152,m3:166,m12:188},now:"$141",lo:"$139",hi:"$148",op:"매수",delta:"워크플로 AI",why:"Now Assist 부가 모듈 판매와 잔여계약의무(cRPO) 성장률이 관건. 대형 IT 예산 둔화가 위험."},
     {name:"어도비",symbol:'ADBE',cur:'USD',closes:[340.31,320.13,349.99,293.25,262.41,243.08,246.1,259.21,205.02,250.41,292.79,266.51,266.51],targets:{m1:375,m3:415,m12:465},now:"$267",lo:"$324",hi:"$396",op:"중립",delta:"생성형 크리에이티브",why:"Firefly 상용화와 구독 ARPU 방어가 축이나, AI 네이티브 경쟁 진입으로 성장 프리미엄이 축소."},
    ]},
    {id:'defense',label:"방산·항공우주",stocks:[
@@ -1399,7 +1397,7 @@
    {id:'power-nuclear',label:"전력·원자력·에너지인프라",stocks:[
     {name:"두산에너빌리티",symbol:'034020.KS',cur:'KRW',closes:[88700,76400,75300,90600,106300,91800,127100,105600,86800,67100,82500,79200,87900],targets:{m1:110000,m3:130000,m12:150000},now:"87,900",lo:"71,280",hi:"87,120",op:"매수",delta:"전력·원전 병목",why:"AI 데이터센터 전력 병목으로 대형원전·SMR·가스터빈 발주 기대. 정책·인허가 변수가 크다."},
     {name:"GE Vernova",symbol:'GEV',cur:'USD',closes:[585.14,599.77,653.57,726.37,873.6,872.9,1083.46,968.32,1174.86,990.29,898.53,941.95,941.95],targets:{m1:460,m3:515,m12:590},now:"$942",lo:"$387",hi:"$473",op:"매수 우세",delta:"가스터빈·그리드",why:"가스터빈 예약잔고와 그리드 설비 수요가 구조적 동력. 풍력 부문 적자 축소가 관건."},
-    {name:"Vistra",symbol:'VST',cur:'USD',closes:[188.3,178.86,161.33,158.35,173.89,150.33,157.84,160.23,158.63,148.19,137.37,149.3,149.3],targets:{m1:212,m3:238,m12:275},now:"symbol:'VST',cur:'USD',closes:[188.3,178.86,161.33,158.35,173.89,150.33,157.84,160.23,158.63,148.19,137.37,149.3,149.3],targets:{m1:212,m3:238,m12:275},now:49",lo:"$136",hi:"$148",op:"매수",delta:"전력 IPP·원전",why:"데이터센터 전력구매계약(PPA)과 원전 발전량이 실적을 견인. 전력 도매가 변동이 위험."},
+    {name:"Vistra",symbol:'VST',cur:'USD',closes:[188.3,178.86,161.33,158.35,173.89,150.33,157.84,160.23,158.63,148.19,137.37,149.3,149.3],targets:{m1:172,m3:190,m12:220},now:"$149",lo:"$136",hi:"$160",op:"매수",delta:"전력 IPP·원전",why:"데이터센터 전력구매계약(PPA)과 원전 발전량이 실적을 견인. 전력 도매가 변동이 위험."},
     {name:"Constellation Energy",symbol:'CEG',cur:'USD',closes:[377,364.36,353.27,280.68,329.88,279.25,313,287.75,248.37,262.75,274.77,298.96,298.96],targets:{m1:358,m3:400,m12:460},now:"$299",lo:"$306",hi:"$374",op:"매수 우세",delta:"무탄소 원전",why:"원전 PPA 프리미엄과 정부 무탄소 인센티브가 동력. 규제·가동률 이슈가 변수."},
     {name:"LS ELECTRIC",symbol:'010120.KS',cur:'KRW',closes:[87000,92000,92000,113200,157400,143600,278000,241500,238000,184800,207500,195300,207000],targets:{m1:260000,m3:290000,m12:330000},now:"207,000",lo:"207,000",hi:"253,000",op:"매수",delta:"전력기기·배전",why:"북미 데이터센터·재생에너지용 배전반과 초고압 기기 수출이 동력. 수주에서 매출 전환 속도가 관건."},
    ]},
@@ -1415,7 +1413,7 @@
     {name:"삼성SDI",symbol:'006400.KS',cur:'KRW',closes:[322000,299500,269500,390000,466000,408000,695000,688000,487000,397000,577000,548000,541000],targets:{m1:750000,m3:850000,m12:920000},now:"541,000",lo:"252,000",hi:"308,000",op:"매수",delta:"각형·46파이",why:"프리미엄 각형과 46파이 원통형 양산 전환이 축이나 전방 수요 회복 지연이 부담."},
     {name:"에코프로비엠",symbol:'247540.KQ',cur:'KRW',closes:[160000,149900,146600,232000,221500,192200,206000,217000,142500,103500,119072,106000,106700],targets:{m1:190000,m3:215000,m12:250000},now:"106,700",lo:"162,000",hi:"198,000",op:"중립",delta:"하이니켈 양극재",why:"고객사 재고조정 마무리와 가동률 반등이 관건. 리튬가 방향성이 실적 스윙 요인."},
     {name:"POSCO퓨처엠",symbol:'003670.KS',cur:'KRW',closes:[216500,206500,187000,223500,247000,203500,252000,245500,175600,137700,200500,183600,182600],targets:{m1:240000,m3:275000,m12:320000},now:"182,600",lo:"207,000",hi:"253,000",op:"매수",delta:"양극재+음극재 수직계열화",why:"리튬·전구체 내재화와 북미 양극재 증설이 장기 동력. 초기 가동 비용이 단기 마진 부담."},
-    {name:"Albemarle",symbol:'ALB',cur:'USD',closes:[98.23,129.99,141.44,170.63,178.67,179.53,196.7,176.42,135.03,117.64,134.97,126.28,126.28],targets:{m1:95,m3:108,m12:125},now:"symbol:'ALB',cur:'USD',closes:[98.23,129.99,141.44,170.63,178.67,179.53,196.7,176.42,135.03,117.64,134.97,126.28,126.28],targets:{m1:95,m3:108,m12:125},now:26",lo:"$119",hi:"$143",op:"중립",delta:"리튬 가격 사이클",why:"리튬 스팟가 바닥 확인 여부가 핵심. 감산·자본지출 축소로 사이클 저점 대응 중."},
+    {name:"Albemarle",symbol:'ALB',cur:'USD',closes:[98.23,129.99,141.44,170.63,178.67,179.53,196.7,176.42,135.03,117.64,134.97,126.28,126.28],targets:{m1:118,m3:130,m12:145},now:"$126",lo:"$119",hi:"$143",op:"중립",delta:"리튬 가격 사이클",why:"리튬 스팟가 바닥 확인 여부가 핵심. 감산·자본지출 축소로 사이클 저점 대응 중."},
    ]},
    {id:'grid-cable',label:"전력망·전선·인프라",stocks:[
     {name:"LS",symbol:'006260.KS',cur:'KRW',closes:[209000,178900,199900,229000,284500,256000,453000,446000,365500,267000,311500,299500,316500],targets:{m1:300000,m3:350000,m12:400000},now:"316,500",lo:"162,000",hi:"198,000",op:"매수 우세",delta:"전력·해저케이블 지주",why:"LS전선 해저케이블 수주잔고와 LS에코에너지 희토류가 재평가 요인. 지주 할인 축소가 관건."},
@@ -1639,11 +1637,6 @@
   /* HV:start */
   var HOUSEVIEW=[
    {house:'KB증권',title:'9/7 KB 리서치 모닝코멘트',date:'26.09.07',url:'https://stock.pstatic.net/stock-research/market/58/20260907_market_94029000.pdf',sum:'',big:true},
-   {house:'신한투자증권',title:'마켓레이더 - GPT-6 공개와 수렴 구간 상방 돌파 (9월..',date:'26.09.07',url:'https://finance.naver.com/research/market_info_read.naver?nid=37421',sum:'',big:true},
-   {house:'미래에셋증권',title:'미래에셋증권 리서치센터 최신 리포트',date:'26.09.07',url:'https://securities.miraeasset.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
-   {house:'한국투자증권',title:'한국투자증권 리서치센터 최신 리포트',date:'26.09.07',url:'https://www.truefriend.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
-   {house:'삼성증권',title:'삼성증권 리서치센터 최신 리포트',date:'26.09.07',url:'https://www.samsungpop.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
-   {house:'한화투자증권',title:'한화투자증권 리서치센터 최신 리포트',date:'26.09.07',url:'https://www.hanwhawm.com/',sum:'공식 리서치 페이지에서 최신 자료를 확인할 수 있습니다.',big:true},
    {house:'대신증권',title:'이번 주는 특이사항이 없었습니다.',date:'26.09.07',url:'https://stock.pstatic.net/stock-research/market/15/20260907_market_80058000.pdf',sum:'',big:false},
    {house:'유안타증권',title:'유안타 AI 미국 주식시장 주간 시황 (26.09.07)',date:'26.09.07',url:'https://stock.pstatic.net/stock-research/market/18/20260907_market_864908000.pdf',sum:'',big:false},
    {house:'SK증권',title:'SK증권 아침에 슥_2026.09.07',date:'26.09.07',url:'https://stock.pstatic.net/stock-research/market/64/20260907_market_152301000.pdf',sum:'',big:false},
@@ -1655,7 +1648,7 @@
   (function(){
     var el=document.getElementById('houseview');if(!el||typeof HOUSEVIEW==='undefined')return;
     var seen={};
-    var unique=HOUSEVIEW.filter(function(h){var plain=String(h.house).replace(/<[^>]+>/g,'');if(plain.indexOf('한국투자증권')>=0||plain.indexOf('미래에셋증권')>=0)return false;var key=plain.replace(/증권$|투자증권$/,'').replace(/\s+/g,'').toLowerCase();if(seen[key])return false;seen[key]=true;return true;});
+    var unique=HOUSEVIEW.filter(function(h){if(!/\.pdf(?:$|[?#])/i.test(String(h.url||'')))return false;var plain=String(h.house).replace(/<[^>]+>/g,'');var key=plain.replace(/증권$|투자증권$/,'').replace(/\s+/g,'').toLowerCase();if(seen[key])return false;seen[key]=true;return true;});
     el.innerHTML=unique.map(function(h){
       return '<a class="hv-card'+(h.big?' hv-big':'')+'" href="'+h.url+'" target="_blank" rel="noopener">'
         +'<div class="hv-top"><span class="hv-house">'+h.house+(h.big?' <span class="hv-badge">주요</span>':'')+'</span><span class="hv-date">'+h.date+'</span></div>'
@@ -1743,15 +1736,15 @@
    {m:8,d:27,w:'목',c:'KR',f:'🇰🇷',n:'한국은행 금융통화위원회',k:'macro',l:'금리',e:'3.00% 유지 예상',a:'3.00% 유지',p:'3.00%',src:S.bok,sn:'한국은행'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'JOLTS 구인·이직보고서 (7월)',k:'macro',l:'고용',e:'7.33~7.36백만건',a:'7.271백만건 · 예상 하회',p:'7.182백만건(6월 수정)',src:S.bls,sn:'BLS'},
    {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Palo Alto Networks (PANW) 실적',k:'earnings',l:'실적',e:'EPS 0.9763',a:'EPS 1.02 · 매출 $34.1억(예상 상회, 주가 −5%)',p:'—',src:S.earn,sn:'Investing.com'},
-   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Dell (DELL) · Medtronic (MDT) 실적',k:'earnings',l:'실적',e:'EPS 4.87 / 1.39',a:'Dell EPS 7.04 · 매출 $470억(AI서버 수주잔고 $950억) · Medtronic —',p:'—',src:S.earn,sn:'Investing.com'},
-   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Credo Technology (CRDO) · NIO 실적',k:'earnings',l:'실적',e:'EPS 1.16 / -0.4101',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Dell (DELL) · Medtronic (MDT) 실적',k:'earnings',l:'실적',e:'EPS 4.91 / 1.39',a:'Dell EPS 7.04 · 매출 $470억(AI서버 수주잔고 $950억) · Medtronic EPS 1.45 · 동반 상회',p:'—',src:S.earn,sn:'Investing.com'},
+   {m:9,d:1,w:'화',c:'US',f:'🇺🇸',n:'Credo Technology (CRDO) · NIO 실적',k:'earnings',l:'실적',e:'EPS 1.16 / -0.41',a:'CRDO 1.20 · 매출 $479M · 상회 / NIO 적자 축소 · 매출 RMB32.1B(+69%)',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:1,w:'화',c:'KR',f:'🇰🇷',n:'원준 실적 일정',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:S.earn,sn:'Investing.com'},
    {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Broadcom (AVGO) 실적',k:'earnings',l:'실적',e:'EPS 3.24 · 매출 $29.44B',a:'EPS 3.32 · 매출 $29.6B(예상 상회, 시간외 −6%)',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
-   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Snowflake (SNOW) · HPE 실적',k:'earnings',l:'실적',e:'—',a:'—',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
+   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'Snowflake (SNOW) · HPE 실적',k:'earnings',l:'실적',e:'EPS 0.45 / 0.92',a:'SNOW 0.62 · HPE 1.11 · 동반 상회',p:'—',src:'https://www.nextearningsdate.com/calendar/',sn:'Next Earnings'},
    {m:9,d:2,w:'수',c:'KR',f:'🇰🇷',n:'8월 소비자물가(CPI)',k:'macro',l:'경제지표',e:'—',a:'전년비 +3.1% · 생활물가 +3.2%',p:'전년비 +2.8%(7월)',src:S.kostat,sn:'국가데이터처'},
-   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'ADP 민간고용 (8월)',k:'macro',l:'고용',e:'+47,000',a:'+38,000 · 1월 이후 최저',p:'—',src:S.nyfed,sn:'NY Fed'},
-   {m:9,d:3,w:'목',c:'US',f:'🇺🇸',n:'생산성·단위노동비용 (2Q 수정)',k:'macro',l:'경제지표',e:'—',a:'생산성 +1.4% · 단위노동비용 +1.3%',p:'—',src:S.bls,sn:'BLS'},
-   {m:9,d:4,w:'금',c:'US',f:'🇺🇸',n:'8월 고용보고서',k:'macro',l:'고용',e:'발표 전',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},
+   {m:9,d:2,w:'수',c:'US',f:'🇺🇸',n:'ADP 민간고용 (8월)',k:'macro',l:'고용',e:'+47,000',a:'+38,000 · 1월 이후 최저',p:'+44,000(7월)',src:S.nyfed,sn:'NY Fed'},
+   {m:9,d:3,w:'목',c:'US',f:'🇺🇸',n:'생산성·단위노동비용 (2Q 수정)',k:'macro',l:'경제지표',e:'생산성 +1.4%',a:'생산성 +1.4% (유지) · 단위노동비용 +1.2% (하향 수정)',p:'생산성 +1.4%',src:S.bls,sn:'BLS'},
+   {m:9,d:4,w:'금',c:'US',f:'🇺🇸',n:'8월 고용보고서',k:'macro',l:'고용',e:'+5.3만 · 실업률 4.2%',a:'+16.2만 · 실업률 4.1% · 시간당임금 +0.3%m/+3.1%y · 큰 폭 상회',p:'-2.3만',src:S.bls,sn:'BLS'},
    {m:9,d:9,w:'수',c:'KR',f:'🇰🇷',n:'삼성전자 · KB증권 Korea Conference',k:'earnings',l:'IR 행사',e:'—',a:'—',p:'—',src:'https://org-sec-b2c.samsung.com/sec/ir/ir-events-presentations/events/',sn:'Samsung IR'},
    {m:9,d:10,w:'목',c:'US',f:'🇺🇸',n:'Oracle (ORCL) 실적',k:'earnings',l:'실적',e:'EPS 1.74 · 매출 $19.12B',a:'—',p:'—',src:'https://www.theta.md/earnings',sn:'Theta'},
    {m:9,d:10,w:'목',c:'US',f:'🇺🇸',n:'8월 생산자물가(PPI)',k:'macro',l:'물가',e:'발표 전',a:'발표 전',p:'—',src:S.bls,sn:'BLS'},

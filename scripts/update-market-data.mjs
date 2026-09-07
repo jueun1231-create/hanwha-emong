@@ -359,10 +359,11 @@ async function run() {
       const last = arr[arr.length - 1];
       const nowStr = cur === 'USD' ? '$' + Math.round(last) : Math.round(last).toLocaleString('en-US');
       let next = patchCloses(html, sy, arr.join(','));
-      // 같은 줄의 now:"..." 도 최신 종가로
+      // 같은 줄의 now:"..." 도 최신 종가로.
+      // nowStr 에 '$' 가 들어가므로 치환 문자열이 아닌 콜백으로 넣어 $1 등 특수패턴 해석을 막는다.
       if (next != null) {
         const reNow = new RegExp(`(symbol:'${esc(sym)}'[^\\n]*?now:)"[^"]*"`);
-        if (reNow.test(next)) next = next.replace(reNow, `$1"${nowStr}"`);
+        if (reNow.test(next)) next = next.replace(reNow, (_m, p1) => `${p1}"${nowStr}"`);
       }
       if (next == null) { console.warn('  항목 못 찾음', sy); fail++; }
       else { html = next; ok++; }
