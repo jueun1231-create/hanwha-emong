@@ -141,7 +141,8 @@ async function fetchNewsUrl(category, categoryLabel, url) {
     const pubDate = new Date(decodeXml(xmlField(item, 'pubDate')).trim());
     if (!title || !link || Number.isNaN(pubDate.getTime()) || !newsRelevant(category, title)) return null;
     const summaryText = rawSummary.replace(title, '').replace(source, '').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
-    const summary = (summaryText.length >= 24 ? summaryText : '공개 RSS에서 수집한 관련 보도입니다. 제목을 클릭하면 원문과 상세 내용을 확인할 수 있습니다.').slice(0, 280);
+    // 실제 본문 요약이 있으면 쓰고, 없으면 빈 값(카드에 요약 줄 자체를 노출하지 않음).
+    const summary = summaryText.length >= 24 ? summaryText.slice(0, 280) : '';
     const assigned = classifyNews(title);
     if (!assigned) return null;
     return { id: `${link}|${title}`, category: assigned.category, categoryLabel: assigned.categoryLabel, title, summary, link, source, pubDate: pubDate.toISOString(), collectedAt: new Date().toISOString() };
@@ -182,7 +183,14 @@ async function updateNews(html) {
     const prev = byId.get(n.id);
     if (!prev || (n.summary && n.summary !== prev.summary)) byId.set(n.id, n);
   });
-  const merged = [...byId.values()].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  // 동일 기사(매체만 다른 중복) 제거 — 정규화한 제목 기준, 가장 이른 보도를 유지
+  const normTitle = (s) => String(s).replace(/^\[[^\]]*\]\s*/, '').replace(/[\s""'".,!?~\-—…()[\]]/g, '').toLowerCase();
+  const byTitle = new Map();
+  [...byId.values()].sort((a, b) => new Date(a.pubDate) - new Date(b.pubDate)).forEach((n) => {
+    const k = normTitle(n.title);
+    if (!byTitle.has(k)) byTitle.set(k, n);
+  });
+  const merged = [...byTitle.values()].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
   await writeFile(NEWS_FILE, JSON.stringify(merged, null, 2) + '\n');
   const literal = JSON.stringify(merged).replace(/</g, '\\u003c');
   // 기사 본문에 포함될 수 있는 "];" 문자열 때문에 단순 비탐욕 정규식은
@@ -268,11 +276,15 @@ function patchFlowInsight(html, date, k, q) {
     + `<li>지수 등락과 주체별 수급 방향의 일치 여부를 다음 거래일에 확인 필요</li>`
     + `<li><span class="kc">체크포인트</span><br>기타법인·자사주 매입을 제외한 외국인·기관의 대형주 수급 전환 여부, 코스닥 개인 매수의 지속성</li>`
     + `</ul></div>`;
+  // 갱신 실행일(KST)과 데이터 기준일(직전 거래일)을 함께 표기 — 매일 갱신 사실을 명시
+  const kst = new Date(Date.now() + 9 * 3600 * 1000);
+  const runDot = `${kst.getUTCFullYear()}.${String(kst.getUTCMonth() + 1).padStart(2, '0')}.${String(kst.getUTCDate()).padStart(2, '0')}`;
+  const dataDot = date.replaceAll('-', '.');
   const re = /(<section class="panel" id="p4"[\s\S]*?<div class="insight">)[\s\S]*?(<\/div>\s*<div class="slabel">)/;
   return html.replace(re, `$1${insight.slice(insight.indexOf('>') + 1, insight.lastIndexOf('</div>'))}$2`)
-    .replace(/(<section class="panel" id="p4"[\s\S]*?<h1>전일 수급 동향<\/h1><p>)\d{4}\.\d{2}\.\d{2}/, `$1${date.replaceAll('-', '.')}`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<h1>전일 수급 동향<\/h1><p>)[^<]*/, `$1${runDot} 갱신 · 직전 거래일(${dataDot}) 종가 기준 KOSPI·KOSDAQ 주체별 순매수/순매도 (네이버 금융 공개표)`)
     .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="slabel">)\d+월 \d+일 주체별/, `$1${m}월 ${d}일 주체별`)
-    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="disc"><b>데이터<\/b> )[^<]*/, `$1${m}/${d} KOSPI·KOSDAQ 주체별 금액은 네이버 금융 공개 표 기준.`);
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="disc"><b>데이터<\/b> )[^<]*/, `$1${runDot} 갱신. 직전 거래일(${m}/${d}) KOSPI·KOSDAQ 주체별 금액은 네이버 금융 공개 표 기준. 매일 장 마감 후 최신 거래일 확정치로 자동 교체.`);
 }
 
 /** tk:'X' 를 포함하는 한 줄짜리 mcard 객체 리터럴(중첩 {} 없음) 안의 필드만 치환 */
@@ -286,6 +298,23 @@ function patchCloses(html, sym, arrStr) {
   const re = new RegExp(`(symbol:'${esc(sym)}'[^\\n]*?closes:\\[)[^\\]]*(\\])`);
   if (!re.test(html)) return null;
   return html.replace(re, `$1${arrStr}$2`);
+}
+/** STOCKS 항목: 같은 줄의 lo:"..",hi:".." 를 최근 3개월 종가 범위(±3%, 현재가 포함 보정)로 재계산.
+ *  목표주가(targets)는 애널리스트 값이라 자동 갱신 대상이 아님. */
+function patchRange(html, sym, closesArr, cur) {
+  const last3 = closesArr.slice(-3);
+  const nowN = closesArr[closesArr.length - 1];
+  let lo = Math.min(...last3) * 0.97, hi = Math.max(...last3) * 1.03;
+  if (nowN < lo) lo = nowN * 0.97;
+  if (nowN > hi) hi = nowN * 1.03;
+  const step = cur === 'USD' ? 1 : (nowN >= 100000 ? 1000 : 100);
+  const fmt = (v) => {
+    v = Math.round(v / step) * step;
+    return cur === 'USD' ? '$' + Math.round(v).toLocaleString('en-US') : Math.round(v).toLocaleString('en-US');
+  };
+  const re = new RegExp(`(symbol:'${esc(sym)}'[^\\n]*?,lo:")[^"]*(",hi:")[^"]*(")`);
+  if (!re.test(html)) return html;
+  return html.replace(re, (_m, p1, p2, p3) => `${p1}${fmt(lo)}${p2}${fmt(hi)}${p3}`);
 }
 
 async function run() {
@@ -364,6 +393,7 @@ async function run() {
       if (next != null) {
         const reNow = new RegExp(`(symbol:'${esc(sym)}'[^\\n]*?now:)"[^"]*"`);
         if (reNow.test(next)) next = next.replace(reNow, (_m, p1) => `${p1}"${nowStr}"`);
+        next = patchRange(next, sym, arr, cur);   // lo/hi 도 최근 종가 범위로 재계산
       }
       if (next == null) { console.warn('  항목 못 찾음', sy); fail++; }
       else { html = next; ok++; }
@@ -388,7 +418,13 @@ async function run() {
     .replace(/(\d{4}\.\d{2}\.\d{2}) 기준<\/span>/, `${asofDot} 기준</span>`)
     .replace(/기준 \d{4}\.\d{2}\.\d{2} ·/, `기준 ${asofDot} ·`)
     .replace(/기준 \d{4}\.\d{2}\.\d{2}\. <span class="tag-mock">/, `기준 ${asofDot}. <span class="tag-mock">`)
-    .replace(/Yahoo Finance, \d{4}-\d{2}-\d{2} 기준/, `Yahoo Finance, ${asofDash} 기준`);
+    .replace(/Yahoo Finance, \d{4}-\d{2}-\d{2} 기준/, `Yahoo Finance, ${asofDash} 기준`)
+    // 홈 스냅샷 기준일자: "기준 국내 YYYY.MM.DD · 해외 YYYY.MM.DD(현지시간)"
+    .replace(/기준 국내 \d{4}\.\d{2}\.\d{2} · 해외 \d{4}\.\d{2}\.\d{2}\(현지시간\)/,
+      `기준 국내 ${asofDot} · 해외 ${asofDot}(현지시간)`)
+    // 홈 데이터 각주: "한국거래소 YYYY-MM-DD 종가" / "YYYY-MM-DD(현지시간) Yahoo Finance 종가"
+    .replace(/한국거래소 \d{4}-\d{2}-\d{2} 종가/, `한국거래소 ${asofDash} 종가`)
+    .replace(/\d{4}-\d{2}-\d{2}\(현지시간\) Yahoo Finance 종가/, `${asofDash}(현지시간) Yahoo Finance 종가`);
 
   // 구조 sanity: <script> 짝(주석 언급 2건 제외) 확인
   const so = (html.match(/<script/g) || []).length - 2, sc = (html.match(/<\/script>/g) || []).length;
