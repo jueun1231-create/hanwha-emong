@@ -68,6 +68,29 @@ function prevBusinessDayKST() {
 }
 const PREV_BDAY = prevBusinessDayKST();
 
+function dateRange(dates) {
+  const unique = [...new Set(dates)].sort();
+  if (!unique.length) return '';
+  return unique.length === 1 ? unique[0] : `${unique[0]}~${unique[unique.length - 1]}`;
+}
+
+function formatDotDateRange(value) {
+  return value ? value.split('~').map((iso) => iso.replaceAll('-', '.')).join('~') : '확인 중';
+}
+
+function patchMarketSourceDates(html, dates, collectedAt) {
+  const domestic = dateRange(dates.domestic);
+  const overseasIndex = dateRange(dates.overseasIndex);
+  const commodity = dateRange(dates.commodity);
+  const fx = dateRange(dates.fx);
+  const treasury = dateRange(dates.treasury);
+  const home = `수집 ${collectedAt} KST · 국내 지수 ${formatDotDateRange(domestic)} · 해외 지수 ${formatDotDateRange(overseasIndex)}(현지시간) · 원자재 ${formatDotDateRange(commodity)} · 환율 ${formatDotDateRange(fx)} · 미 국채 ${formatDotDateRange(treasury)} 최근 일별 데이터`;
+  const detail = `<b>데이터</b> Yahoo Finance 수집 ${collectedAt} KST. 국내 지수 일별 데이터 ${domestic || '확인 중'}, 해외 지수 ${overseasIndex || '확인 중'}(현지시간), 원자재 ${commodity || '확인 중'}, 환율 ${fx || '확인 중'}, 미 국채 ${treasury || '확인 중'}. 마감 시장은 종가, 거래 중인 시장은 최근가로 표시되며 수집 미지원 항목은 표기하지 않음.`;
+  return html
+    .replace(/(<div id="market-asof-home"[^>]*>)[\s\S]*?(<\/div>)/, `$1${home}$2`)
+    .replace(/(<div class="disc" id="market-asof-p1">)[\s\S]*?(<\/div>)/, `$1${detail}$2`);
+}
+
 // 타임스탬프와 종가를 짝지어 null 제거 + 날짜 오름차순. [{d:'YYYY-MM-DD', v:number}, ...]
 async function chart(sym, range) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=${range}&interval=${range === '1y' ? '1mo' : '1d'}`;
@@ -320,6 +343,7 @@ function patchRange(html, sym, closesArr, cur) {
 async function run() {
   let html = await readFile(FILE, 'utf8');
   let ok = 0, fail = 0, skip = 0;
+  const marketDates = { domestic: [], overseasIndex: [], commodity: [], fx: [], treasury: [] };
 
   const doQuote = async (list, range, kind) => {
     for (const [tk, sym, vd, sd] of list) {
@@ -351,7 +375,14 @@ async function run() {
           .replace(/pct:-?[\d.]+/, `pct:${pct}`)
           .replace(/spark:\[[^\]]*\]/, `spark:[${spk}]`));
         if (next == null) { console.warn('  항목 못 찾음', tk); fail++; }
-        else { html = next; ok++; }
+        else {
+          html = next;
+          if (kind === 'idx') (tk === 'KOSPI' || tk === 'KOSDAQ' ? marketDates.domestic : marketDates.overseasIndex).push(lastBar.d);
+          else if (kind === 'com') marketDates.commodity.push(lastBar.d);
+          else if (kind === 'fx') marketDates.fx.push(lastBar.d);
+          else if (kind === 'rate') marketDates.treasury.push(lastBar.d);
+          ok++;
+        }
       } catch (e) { console.warn('  fail', sym, e.message); fail++; }
     }
   };
@@ -360,6 +391,9 @@ async function run() {
   console.log('· 원자재'); await doQuote(COM, '1mo', 'com');
   console.log('· 환율'); await doQuote(FX, '1mo', 'fx');
   console.log('· 금리'); await doQuote(RATE, '1mo', 'rate');
+  const collected = new Date(Date.now() + 9 * 3600 * 1000);
+  const collectedAt = `${collected.getUTCFullYear()}.${String(collected.getUTCMonth() + 1).padStart(2, '0')}.${String(collected.getUTCDate()).padStart(2, '0')} ${String(collected.getUTCHours()).padStart(2, '0')}:${String(collected.getUTCMinutes()).padStart(2, '0')}`;
+  html = patchMarketSourceDates(html, marketDates, collectedAt);
 
   console.log('· 전일 수급 (네이버 금융 공개표)');
   try {
