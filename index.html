@@ -2113,6 +2113,11 @@ window.MARKETVIEW_CHAT_API = window.MARKETVIEW_CHAT_API || '';
     var text=window.getSelection()?window.getSelection().toString():'';setContext(text);openChat();selectButton.hidden=true;
     if(!input.value.trim())input.placeholder='선택한 내용에 대해 무엇이 궁금한가요?';
   });
+  input.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'||e.shiftKey||e.isComposing)return;
+    e.preventDefault();
+    if(!send.disabled)form.requestSubmit();
+  });
   form.addEventListener('submit',async function(e){
     e.preventDefault();var question=input.value.trim();if(!question)return;
     if(!endpoint){addMessage('error','챗봇 서버가 아직 연결되지 않았습니다. 관리자에게 Worker URL과 OpenAI API 키 설정을 요청해 주세요.');return;}
