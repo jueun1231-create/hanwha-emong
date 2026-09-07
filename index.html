@@ -379,10 +379,9 @@
   #p7 .phead{padding-bottom:16px;border-bottom:1px solid var(--hair)}
   #p7 .phead h1{font-size:26px;letter-spacing:-.04em}
   #p7 .phead p{margin-top:6px;color:var(--ink-3)}
-  .news-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:16px 0 6px}
-  .news-filters{display:flex;gap:6px;flex-wrap:nowrap;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
-  .news-filters::-webkit-scrollbar{display:none}
-  .news-filter{flex:0 0 auto;white-space:nowrap;border:0;background:var(--raise);color:var(--ink-2);border-radius:999px;padding:7px 13px;font:inherit;font-size:11.5px;font-weight:600;cursor:pointer;transition:background .14s,color .14s}
+  .news-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:9px;margin:16px 0 6px}
+  .news-filters{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+  .news-filter{flex:0 1 auto;min-width:0;white-space:nowrap;border:0;background:var(--raise);color:var(--ink-2);border-radius:999px;padding:7px 13px;font:inherit;font-size:11.5px;font-weight:600;cursor:pointer;transition:background .14s,color .14s}
   .news-filter:hover{background:var(--raise-2);color:var(--ink)}
   .news-filter.active{background:var(--ink);color:var(--surface)}
   .news-updated{align-self:flex-end;font-size:10.5px;color:var(--ink-3)}
@@ -428,34 +427,41 @@
   .rp-doctitle{font-size:16px;font-weight:800;letter-spacing:-.02em}
   .rp-meta{font-size:9px;color:#8a8a90;margin-top:3px}
   .rp-badge{display:inline-block;margin-top:5px;font-size:8.5px;font-weight:800;letter-spacing:.04em;color:#ED7100;border:1px solid #ED7100;border-radius:4px;padding:2px 6px}
-  .rp-lead{margin:11px 0 3px;font-size:11.5px;line-height:1.6;color:#26262b;font-weight:600}
-  .rp-sec{margin-top:13px;break-inside:avoid}
-  .rp-sec-h{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa0;margin-bottom:6px;padding-bottom:3px;border-bottom:1px solid #ecece9}
-  .rp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-  .rp-kpi{border:1px solid #ececea;border-radius:7px;padding:7px 9px}
-  .rp-kpi-k{font-size:8.5px;color:#8a8a90;font-weight:700}
-  .rp-kpi-v{font-size:13px;font-weight:750;margin-top:2px;letter-spacing:-.02em}
-  .rp-kpi-c{font-size:9px;font-weight:700;margin-top:1px}
   .rp-up{color:#C4302B} .rp-down{color:#2457C5} .rp-flat{color:#8b8e95}
-  .rp-kpi svg{display:block;width:100%;height:20px;margin-top:4px}
-  .rp-kpi .rp-ln{fill:none;stroke:#b9b9bd;stroke-width:1.4}
-  .rp-p{margin:0;font-size:10.5px;line-height:1.62;color:#33333a}
+  .rp-exec{margin:12px 0 4px;font-size:11px;line-height:1.7;color:#26262b}
+  .rp-exec b{font-weight:800;color:#111;margin-right:3px}
+  .rp-sec{margin-top:14px;break-inside:avoid}
+  .rp-sec-h{display:flex;align-items:center;gap:7px;margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:-.01em;color:#1a1a1e;padding-bottom:4px;border-bottom:1px solid #e6e6e3}
+  .rp-sec-h span{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:4px;background:#1a1a1e;color:#fff;font-size:8.5px;font-weight:800}
+  .rp-p{margin:0;font-size:10.5px;line-height:1.72;color:#2f2f36;text-align:justify}
+  .rp-fig{margin:8px 0 0}
+  .rp-fig figcaption{margin-top:5px;font-size:8px;color:#9a9aa0;letter-spacing:.01em}
+  .rp-bars{display:grid;gap:5px;margin-top:2px}
+  .rp-bar-row{display:grid;grid-template-columns:82px 62px 1fr 74px;gap:7px;align-items:center;font-size:9px}
+  .rp-bar-k{font-weight:700;color:#33333a}
+  .rp-bar-v{text-align:right;color:#5b5b63;font-variant-numeric:tabular-nums}
+  .rp-bar-track{position:relative;height:11px;background:#f2f2ef;border-radius:3px}
+  .rp-bar-zero{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#d9d9d5}
+  .rp-bar-fill{position:absolute;top:2px;bottom:2px;border-radius:2px}
+  .rp-bar-fill.rp-up{background:#C4302B} .rp-bar-fill.rp-down{background:#2457C5} .rp-bar-fill.rp-flat{background:#c4c4c8}
+  .rp-bar-p{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
   .rp-tbl{width:100%;border-collapse:collapse;font-size:9.5px;margin-top:2px}
-  .rp-tbl th{text-align:left;font-size:8px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#9a9aa0;border-bottom:1px solid #dcdcd9;padding:4px 6px}
+  .rp-tbl th{text-align:left;font-size:8px;font-weight:800;letter-spacing:.03em;color:#9a9aa0;border-bottom:1px solid #dcdcd9;padding:4px 6px}
   .rp-tbl td{padding:4px 6px;border-bottom:1px solid #f0f0ee}
   .rp-tbl td.r,.rp-tbl th.r{text-align:right;font-variant-numeric:tabular-nums}
   .rp-tbl .rp-strong{font-weight:700;color:#1a1a1e}
   .rp-cal{display:grid;gap:5px}
-  .rp-cal-row{display:grid;grid-template-columns:52px 1fr auto;gap:8px;font-size:9.5px;align-items:baseline}
+  .rp-cal-row{display:grid;grid-template-columns:56px 1fr auto;gap:8px;font-size:9.5px;align-items:baseline}
   .rp-cal-d{color:#8a8a90;font-weight:700}
-  .rp-cal-x{color:#8a8a90}
-  .rp-watch{margin:6px 0 0;padding-left:15px}
-  .rp-watch li{font-size:10px;line-height:1.55;color:#33333a;margin:2px 0}
-  .rp-news li{list-style:none;padding:5px 0;border-bottom:1px solid #f0f0ee;font-size:10px;line-height:1.5}
+  .rp-cal-x{color:#8a8a90;text-align:right}
+  .rp-watch{margin:2px 0 0;padding-left:16px}
+  .rp-watch li{font-size:10px;line-height:1.65;color:#2f2f36;margin:3px 0}
+  .rp-news{margin:0;padding:0}
+  .rp-news li{list-style:none;padding:5px 0;border-bottom:1px solid #f0f0ee;font-size:9.5px;line-height:1.5;color:#2f2f36}
   .rp-news li:last-child{border-bottom:0}
-  .rp-news .rp-nm{color:#8a8a90;font-size:8.5px;margin-left:6px}
-  .rp-news .rp-ns{display:block;color:#5b5b63;margin-top:1px}
-  .rp-foot{margin-top:16px;border-top:1px solid #ecece9;padding-top:7px;font-size:8px;color:#9a9aa0;line-height:1.5}
+  .rp-news .rp-nm{color:#9a9aa0;font-size:8px;margin-left:6px}
+  .rp-news .rp-ns{display:block;color:#6b6b72;margin-top:1px}
+  .rp-foot{margin-top:18px;border-top:1px solid #ecece9;padding-top:7px;font-size:8px;color:#9a9aa0;line-height:1.55}
   @media(max-width:520px){.rp-bar{gap:8px}.rp-frame{padding:12px}}
   @media print{
     #hdr,.chat-launcher,.chat-panel,.rp-bar,.rp-hint,#p9 .phead,#p9 .disc{display:none!important}
@@ -2093,15 +2099,17 @@
 /* REPORT:start — 매일 자동 갱신되는 리포트 서술. 숫자·표·차트는 대시보드 당일 수집 데이터에서 자동 구성된다. */
 var REPORT={
   asof:'2026.09.07',
-  headline:'8월 미국 고용 서프라이즈(+16.2만)로 9월 인상 경계가 되살아난 가운데, AI·반도체 기대가 국내외 지수를 떠받치는 고변동 장세.',
-  market:'코스피는 반도체 강세에 6,995로 +4.6% 급등, 니케이도 +2.1%. 반면 미국은 고용 호조發 금리 부담으로 S&P 500 −0.4%, 나스닥 −0.3% 소폭 조정. 원/달러는 외국인 순매수와 달러 약세로 1,345원까지 하락(원화 강세). 위험·안전자산 동반 강세가 이어지는 통화가치 하락 국면이다.',
-  flow:'직전 거래일(9/4) 코스피 외국인 +4,796억·기관 +16,694억·개인 −37,229억(합계 약 −1.57조). 코스닥은 외국인·기관 동반 매수, 개인 매도.',
-  stocks:'중장기 전망 8개 산업군의 목표주가는 대체로 현재가 대비 상단 여력을 유지. 메모리(마이크론·SK하이닉스)는 HBM 슈퍼사이클 기대가 목표가를 끌어올렸고, 전력·전선(HD현대일렉트릭·GE Vernova·Quanta)은 데이터센터 전력 병목 수혜로 컨센서스가 재차 상향됐다. 리그테이블은 장기금리 고착으로 DCM(채권) 주관 상위 쏠림이 지속.',
-  macro:'미 10년물 4.78%·30년물 5.25%로 장기금리가 고착됐고 WTI 91달러·브렌트 96달러로 유가도 높다. 관세·유가는 성장 둔화 요인이나 물가 재반등 우려가 겹쳐 연준은 9/15~16 FOMC에서 인상 여부를 저울질. 달러인덱스는 연초 108→99로 구조적 약세, 금은 온스당 4,477달러로 통화가치 헤지 수요가 지속된다.',
+  headline:'8월 미국 고용이 예상을 큰 폭 상회하며 9월 금리 인상 경계가 되살아난 가운데, AI·반도체 투자 기대가 국내외 지수를 떠받치는 고변동 국면이 이어지고 있다.',
+  market:'코스피는 삼성전자·SK하이닉스 등 반도체 대형주 강세에 힘입어 6,995.39로 전일 대비 4.6% 급등했고, 일본 니케이225도 2.1% 올랐다. 반면 미국 증시는 고용 호조에 따른 금리 부담으로 S&P500이 0.4%, 나스닥이 0.3% 하락하며 아시아 증시와 방향이 엇갈렸다. 원/달러 환율은 외국인 순매수와 달러 약세가 겹치며 1,345원까지 내려 원화 강세가 두드러졌다. 금·은 등 안전자산도 함께 오르는, 위험·안전자산이 동반 강세를 보이는 전형적인 통화가치 하락 국면이 지속되고 있다.',
+  flow:'직전 거래일(9월 4일) 코스피에서는 개인이 3조7,229억 원을 순매도한 반면 기관이 1조6,694억 원, 외국인이 4,796억 원, 기타법인이 1조5,739억 원을 순매수하며 개인 물량을 흡수했다. 코스닥에서도 외국인과 기관이 동반 매수, 개인이 매도 우위를 보여 국내 증시 수급이 외국인·기관 주도로 재편되는 흐름이다.',
+  stocks:'중장기 전망 8개 산업군의 대표 종목 목표주가는 대체로 현재가 대비 상승 여력을 유지하고 있다. 메모리(마이크론·SK하이닉스)는 HBM 슈퍼사이클 기대가 목표주가를 큰 폭으로 끌어올렸고, 전력기기·전선(HD현대일렉트릭·GE Vernova·Quanta Services)은 데이터센터 전력 병목 수혜로 애널리스트 컨센서스가 최근 재차 상향됐다. 반면 조선·방산 일부 종목은 이미 목표가에 근접해 추가 상승 여력이 제한적이라는 평가가 나온다. 리그테이블에서는 장기금리 고착으로 기업 자금조달이 지분(ECM)에서 차입(DCM)으로 이동하면서, 채권 주관 상위인 NH투자증권·KB증권으로의 쏠림이 이어지고 있다.',
+  macro:'미국 10년물 국채금리는 4.78%, 30년물은 5.25%로 장기 구간의 금리 상단이 굳어지는 모습이다. 8월 JOLTS와 ADP 고용이 예상을 밑돌며 한때 후퇴했던 인상 기대는, 9월 4일 발표된 8월 비농업고용이 16만2천 명 증가(예상 5만3천 명)로 서프라이즈를 기록하면서 다시 인상 쪽으로 무게가 실렸다. 국제유가는 WTI 91달러·브렌트 96달러로 높은 수준을 유지해 물가 재반등 우려를 자극하고 있으며, 달러인덱스는 연초 108에서 99로 구조적 약세를 이어가고 금 가격은 온스당 4,477달러로 통화가치 헤지 수요를 반영하고 있다. 9월 11일 8월 소비자물가와 15~16일 FOMC 점도표가 연내 금리 경로를 확정할 분수령이다.',
+  newsSummary:'국내 언론과 리서치는 반도체 수출 호조에 따른 경기 개선을 인정하면서도 소비 회복 지연과 이른바 ‘반도체 착시’에 대한 경계론을 함께 제기하고 있다. 해외에서는 델·브로드컴 등 AI 인프라 기업의 호실적과 데이터센터發 전력·부동산 파급 효과, 중동 지정학 리스크에 따른 유가·금리 상방 압력이 주요 이슈로 다뤄졌다.',
+  flowKospi:[{k:'개인',v:-37229},{k:'외국인',v:4796},{k:'기관',v:16694},{k:'기타법인',v:15739}],
   watch:[
-    '9/11 미국 8월 CPI — 근원 물가가 높게 나오면 9월 인상 확률이 추가로 상승',
-    '9/15~16 FOMC 점도표·기자회견 — 인상 여부보다 2026년 금리 경로와 워시 의장 톤',
-    'HBM·전력 인프라 밸류체인 — 엔비디아·브로드컴 가이던스와 국내 소부장 수급 연동'
+    '9월 11일 미국 8월 소비자물가(CPI) — 근원 물가가 높게 나오면 9월 인상 확률이 추가로 상승할 수 있다.',
+    '9월 15~16일 FOMC 성명·점도표·기자회견 — 인상 여부보다 2026년 금리 경로와 워시 의장의 기자회견 톤이 관건이다.',
+    'HBM·전력 인프라 밸류체인 — 엔비디아·브로드컴의 가이던스와 국내 소부장 수급이 지수 방향을 좌우할 전망이다.'
   ]
 };
 /* REPORT:end */
@@ -2123,85 +2131,117 @@ var REPORT={
     var pts=a.map(function(v,i){return (i/(a.length-1)*w).toFixed(1)+','+(h-(v-mn)/rg*(h-2)-1).toFixed(1);}).join(' ');
     return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none"><polyline class="rp-ln" points="'+pts+'"/></svg>';
   }
-  function kpi(m){
-    return '<div class="rp-kpi"><div class="rp-kpi-k">'+esc(m.name)+'</div>'
-      +'<div class="rp-kpi-v">'+esc(m.val)+(m.rate?'%':'')+(m.unit?' <span style="font-size:8px;color:#8a8a90">'+esc(m.unit)+'</span>':'')+'</div>'
-      +'<div class="rp-kpi-c '+cls(m.pct)+'">'+(m.rate?((m.pct>0?'+':(m.pct<0?'−':''))+m.chg+'bp'):(arrow(m.pct)+' '+pctTxt(m.pct)))+'</div>'
-      +spark(m.spark)+'</div>';
-  }
-  function kpis(list){return '<div class="rp-kpis">'+list.map(kpi).join('')+'</div>';}
-  function sec(h,body){return '<section class="rp-sec"><div class="rp-sec-h">'+esc(h)+'</div>'+body+'</section>';}
+  var secN=0;
+  function sec(h,body){secN++;return '<section class="rp-sec"><h2 class="rp-sec-h"><span>'+secN+'</span>'+esc(h)+'</h2>'+body+'</section>';}
   function para(t){return '<p class="rp-p">'+esc(t)+'</p>';}
-  function watch(){
-    var w=(R.watch||[]);if(!w.length)return '';
-    return sec('오늘의 관전 포인트','<ul class="rp-watch">'+w.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
-  }
+  function fig(cap,inner){return '<figure class="rp-fig">'+inner+(cap?'<figcaption>'+esc(cap)+'</figcaption>':'')+'</figure>';}
   function head(label){
     return '<div class="rp-head"><div class="rp-brand">한화 미래전략실<span>HANWHA · MARKETVIEW</span></div>'
       +'<div class="rp-hgroup"><div class="rp-doctitle">데일리 마켓 리포트</div>'
-      +'<div class="rp-meta">기준일 '+esc(R.asof||'')+' · 무료 공개 데이터 기반</div>'
+      +'<div class="rp-meta">기준일 '+esc(R.asof||'')+' · 공개 시장 데이터 기반 · 자동 생성</div>'
       +'<span class="rp-badge">'+esc(label)+'</span></div></div>';
   }
   function foot(){
     return '<div class="rp-foot">본 리포트는 한화 미래전략실 내부 참고용으로, 공개된 무료 시장 데이터와 자동 생성 서술을 바탕으로 구성됩니다. '
-      +'특정 종목의 매매를 권유하지 않으며, 투자 판단과 그 결과의 책임은 이용자 본인에게 있습니다. 목표주가·컨센서스는 공개 보도 인용치이며 시점에 따라 달라질 수 있습니다.</div>';
+      +'특정 종목의 매매를 권유하지 않으며, 투자 판단과 그 결과의 책임은 이용자 본인에게 있습니다. 목표주가·컨센서스는 공개 보도 인용치로 시점에 따라 달라질 수 있습니다.</div>';
   }
-  function idxByTk(tk){var a=(D.IDX||[]);for(var i=0;i<a.length;i++)if(a[i].tk===tk)return a[i];return null;}
   function pick(arr,tks){var o=[];tks.forEach(function(t){var x=(arr||[]).filter(function(m){return m.tk===t;})[0];if(x)o.push(x);});return o;}
-  function newsTop(n){
+  function fmtT(v,cur){if(v==null)return '—';return cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):Math.round(v).toLocaleString('en-US');}
+  /* 지수 등락률 수평 막대 */
+  function idxBars(list){
+    var mx=Math.max.apply(null,list.map(function(m){return Math.abs(m.pct)||0;}))||1;
+    var rows=list.map(function(m){
+      var w=Math.abs(m.pct)/mx*50,neg=m.pct<0;
+      return '<div class="rp-bar-row"><span class="rp-bar-k">'+esc(m.name)+'</span>'
+        +'<span class="rp-bar-v">'+esc(m.val)+'</span>'
+        +'<span class="rp-bar-track"><span class="rp-bar-zero"></span>'
+        +'<span class="rp-bar-fill '+cls(m.pct)+'" style="width:'+w.toFixed(1)+'%;'+(neg?'right':'left')+':50%"></span></span>'
+        +'<span class="rp-bar-p '+cls(m.pct)+'">'+arrow(m.pct)+' '+pctTxt(m.pct)+'</span></div>';
+    }).join('');
+    return '<div class="rp-bars">'+rows+'</div>';
+  }
+  /* 수급 다이버징 막대(억원) */
+  function flowBars(list){
+    if(!list||!list.length)return '';
+    var mx=Math.max.apply(null,list.map(function(x){return Math.abs(x.v);}))||1;
+    return '<div class="rp-bars">'+list.map(function(x){
+      var w=Math.abs(x.v)/mx*50,neg=x.v<0;
+      return '<div class="rp-bar-row"><span class="rp-bar-k">'+esc(x.k)+'</span>'
+        +'<span class="rp-bar-v">'+(x.v>0?'+':'−')+Math.abs(x.v).toLocaleString('en-US')+'</span>'
+        +'<span class="rp-bar-track"><span class="rp-bar-zero"></span>'
+        +'<span class="rp-bar-fill '+(x.v>0?'rp-up':'rp-down')+'" style="width:'+w.toFixed(1)+'%;'+(neg?'right':'left')+':50%"></span></span>'
+        +'<span class="rp-bar-p '+(x.v>0?'rp-up':'rp-down')+'">'+(x.v>0?'순매수':'순매도')+'</span></div>';
+    }).join('')+'</div>';
+  }
+  function metricTable(list){
+    var rows=list.map(function(m){
+      return '<tr><td class="rp-strong">'+esc(m.name)+'</td><td class="r">'+esc(m.val)+(m.rate?'%':'')+(m.unit?' '+esc(m.unit):'')+'</td>'
+        +'<td class="r '+cls(m.pct)+'">'+(m.rate?((m.pct>0?'+':(m.pct<0?'−':''))+m.chg+'bp'):pctTxt(m.pct))+'</td></tr>';
+    }).join('');
+    return '<table class="rp-tbl"><thead><tr><th>지표</th><th class="r">최근값</th><th class="r">전일 대비</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function stockTable(){
+    var rows='';(D.SECTORS||[]).forEach(function(sc){
+      var s=(sc.stocks||[])[0];if(!s)return;var t=s.targets||{};
+      rows+='<tr><td class="rp-strong">'+esc(sc.label)+'</td><td>'+esc(s.name)+'</td>'
+        +'<td class="r">'+esc(s.now||'')+'</td><td class="r">'+esc(fmtT(t.m1,s.cur))+'</td><td class="r">'+esc(fmtT(t.m12,s.cur))+'</td>'
+        +'<td>'+esc(s.op||'')+'</td></tr>';
+    });
+    return '<table class="rp-tbl"><thead><tr><th>산업군</th><th>대표 종목</th><th class="r">현재가</th><th class="r">1M 목표</th><th class="r">12M 목표</th><th>의견</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function ltTable(){
+    var out='';['DCM','ECM'].forEach(function(mk){
+      var yr=Math.max.apply(null,(D.LT||[]).filter(function(r){return r.market===mk;}).map(function(r){return r.year;}).concat([0]));
+      var a=(D.LT||[]).filter(function(r){return r.market===mk&&r.year===yr;}).sort(function(p,q){return p.rank-q.rank;}).slice(0,3);
+      if(a.length)out+='<tr><td class="rp-strong">'+mk+' '+yr+'</td><td>'+a.map(function(r){return esc(r.house)+(r.share!=null?' '+r.share.toFixed(1)+'%':'');}).join(' · ')+'</td></tr>';
+    });
+    return out?'<table class="rp-tbl"><thead><tr><th>부문</th><th>상위 주관사</th></tr></thead><tbody>'+out+'</tbody></table>':'';
+  }
+  function newsList(n){
     var a=(D.NEWS||[]).slice().sort(function(x,y){return new Date(y.pubDate)-new Date(x.pubDate);}).slice(0,n);
-    if(!a.length)return para('수집된 뉴스가 없습니다.');
+    if(!a.length)return '';
     return '<ul class="rp-news">'+a.map(function(x){
       var s=(x.summary||'').replace(/^핵심 요약\s*/,'');
       return '<li>'+esc(x.title)+'<span class="rp-nm">'+esc(x.source||'')+'</span>'+(s?'<span class="rp-ns">'+esc(s)+'</span>':'')+'</li>';
     }).join('')+'</ul>';
   }
-  function stockTable(){
-    var secs=(D.SECTORS||[]),rows='';
-    secs.forEach(function(sc){
-      var s=(sc.stocks||[])[0];if(!s)return;
-      var t=s.targets||{};
-      rows+='<tr><td class="rp-strong">'+esc(sc.label)+'</td><td>'+esc(s.name)+'</td>'
-        +'<td class="r">'+esc(s.now||'')+'</td><td class="r">'+esc(fmtT(t.m1,s.cur))+'</td><td class="r">'+esc(fmtT(t.m12,s.cur))+'</td>'
-        +'<td>'+esc(s.op||'')+'</td></tr>';
-    });
-    return '<table class="rp-tbl"><thead><tr><th>산업군</th><th>대표 종목</th><th class="r">현재가</th><th class="r">1개월 목표</th><th class="r">12개월 목표</th><th>의견</th></tr></thead><tbody>'+rows+'</tbody></table>';
-  }
-  function fmtT(v,cur){if(v==null)return '—';return cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):Math.round(v).toLocaleString('en-US');}
-  function ltTop(market){
-    var y=Math.max.apply(null,(D.LT||[]).filter(function(r){return r.market===market;}).map(function(r){return r.year;})||[0]);
-    var a=(D.LT||[]).filter(function(r){return r.market===market&&r.year===y;}).sort(function(p,q){return p.rank-q.rank;}).slice(0,3);
+  function calList(){
+    var a=CAL.filter(function(e){return e.m>9||(e.m===9&&e.d>7);}).sort(function(x,y){return (x.m-y.m)||(x.d-y.d);}).slice(0,7);
     if(!a.length)return '';
-    return '<div style="margin-top:4px"><b style="font-size:9px;color:#8a8a90">'+market+' '+y+' 상위</b> '
-      +a.map(function(r){return esc(r.house)+' '+(r.share!=null?r.share.toFixed(1)+'%':'');}).join(' · ')+'</div>';
-  }
-  function upcomingCal(){
-    var T={m:9,d:7};
-    var a=CAL.filter(function(e){return e.m>T.m||(e.m===T.m&&e.d>T.d);})
-      .sort(function(x,y){return (x.m-y.m)||(x.d-y.d);}).slice(0,7);
-    if(!a.length)return para('예정 일정이 없습니다.');
     return '<div class="rp-cal">'+a.map(function(e){
-      return '<div class="rp-cal-row"><span class="rp-cal-d">'+e.m+'/'+e.d+'('+e.w+')</span>'
-        +'<span>'+esc(e.f)+' '+esc(e.n)+'</span><span class="rp-cal-x">'+esc(e.e&&e.e!=='—'?e.e:e.l)+'</span></div>';
+      return '<div class="rp-cal-row"><span class="rp-cal-d">'+e.m+'/'+e.d+'('+e.w+')</span><span>'+esc(e.f)+' '+esc(e.n)+'</span>'
+        +'<span class="rp-cal-x">'+esc(e.e&&e.e!=='—'?e.e:e.l)+'</span></div>';
     }).join('')+'</div>';
   }
+  function watchSec(){
+    var w=(R.watch||[]);if(!w.length)return '';
+    return sec('관전 포인트','<ol class="rp-watch">'+w.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol>');
+  }
   function build(){
-    var h=head(theme==='market'?'시황 중심':(theme==='stocks'?'종목 중심':'매크로 지표 중심'));
-    h+='<p class="rp-lead">'+esc(R.headline||'')+'</p>';
+    secN=0;
+    var label=theme==='market'?'시황 중심':(theme==='stocks'?'종목 중심':'매크로 지표 중심');
+    var h=head(label);
+    h+='<p class="rp-exec"><b>총평.</b> '+esc(R.headline||'')+'</p>';
     if(theme==='market'){
-      h+=sec('지수 스냅샷',kpis(pick(D.IDX,['KOSPI','KOSDAQ','GSPC','IXIC','DJI','N225'])));
-      h+=sec('오늘의 시황',para(R.market||'')+para(R.flow||''));
-      h+=sec('주요 뉴스',newsTop(5));
+      h+=sec('시장 요약',para(R.market||'')
+        +fig('주요 지수 전일 대비 등락률 (KST 최근 거래일 종가)',idxBars(pick(D.IDX,['KOSPI','KOSDAQ','GSPC','IXIC','DJI','N225']))));
+      h+=sec('수급 동향',para(R.flow||'')
+        +fig('직전 거래일 코스피 투자자별 순매수/순매도 (억 원)',flowBars(R.flowKospi||[])));
+      h+=sec('뉴스 브리핑',para(R.newsSummary||'')+fig('최근 헤드라인',newsList(5)));
     }else if(theme==='stocks'){
-      h+=sec('산업군별 대표 종목 · 목표주가',stockTable());
-      h+=sec('종목 코멘트',para(R.stocks||'')+ltTop('DCM')+ltTop('ECM'));
+      h+=sec('종목 총평',para(R.stocks||''));
+      h+=sec('산업군별 대표 종목',fig('중장기 전망 8개 산업군 대표 종목 · 현재가와 목표주가(공개 컨센서스)',stockTable()));
+      h+=sec('자금조달·리그테이블',para('장기금리 고착으로 국내 기업 자금조달이 지분(ECM)에서 차입(DCM)으로 이동하며, 채권 주관 상위 하우스로의 쏠림이 이어지고 있다.')
+        +fig('2026년 누적 주관 순위 상위 3사(점유율)',ltTable()));
     }else{
-      h+=sec('금리 · 환율',kpis((D.RATE||[]).concat(pick(D.FX,['USD/KRW','DXY','USD/JPY']))));
-      h+=sec('원자재',kpis(pick(D.COM,['GC=F','CL=F','HG=F'])));
-      h+=sec('매크로 코멘트',para(R.macro||''));
-      h+=sec('다가오는 증시 캘린더',upcomingCal());
+      h+=sec('금리·통화 여건',para(R.macro||'')
+        +fig('미 국채금리·주요 환율',metricTable((D.RATE||[]).concat(pick(D.FX,['USD/KRW','DXY','USD/JPY'])))));
+      h+=sec('원자재·안전자산',para('국제유가가 배럴당 90달러대에서 고착되며 물가 재반등 우려를 키우는 가운데, 금·은·구리는 달러 약세와 안전자산·AI 전력 수요로 동반 강세를 보이고 있다.')
+        +fig('원자재 최근값',metricTable(pick(D.COM,['GC=F','SI=F','HG=F','CL=F','BZ=F']))));
+      h+=sec('다가오는 일정',para('연내 금리 경로를 확정할 8월 CPI(9/11)와 FOMC(9/15~16)를 앞두고 있다.')
+        +fig('향후 2주 주요 지표·이벤트',calList()));
     }
-    h+=watch();
+    h+=watchSec();
     h+=foot();
     sheet.innerHTML=h;
   }
