@@ -223,7 +223,7 @@ async function updateNews(html) {
   return { html: next, added: Math.max(0, merged.length - old.length), total: merged.length };
 }
 
-/* 네이버 금융 공개 표에서 전 거래일 시장 전체 투자자별 순매수(억원)를 읽는다.
+/* 네이버 금융 공개 표에서 조회 시점 기준 가장 최근 거래일의 시장 전체 투자자별 순매수(억원)를 읽는다.
  * KRX 최종값을 인용하는 공개 표이며, 페이지가 일시적으로 실패하면 기존 값을 보존한다. */
 async function investorFlow(sosok, targetIso) {
   const url = `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${targetIso.replaceAll('-', '')}&sosok=${sosok}&page=1`;
@@ -286,7 +286,8 @@ function patchFlowTrend(html, latest, previous) {
       +'<div class="fnote">KOSPI 외국인 순매수·순매도, 각 거래일 수치(단위 억원). 네이버 금융 공개표 기준.</div></div>';
   })();`;
   const re = /(dbars\('db-kosdaq',[\s\S]*?\n\s+)(\(function\(\)\{[\s\S]*?\n\s+\}\)\(\);)/;
-  return html.replace(re, `$1${block}`);
+  return html.replace(re, `$1${block}`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="slabel">최근 흐름 <span class="lite">)[^<]*(<\/span>)/, `$1· KOSPI 외국인 순매수/순매도, ${fmt(previous.iso)} → ${fmt(latest.iso)}$2`);
 }
 function patchFlowInsight(html, date, k, q) {
   const [y, m, d] = date.split('-').map(Number);
@@ -303,11 +304,12 @@ function patchFlowInsight(html, date, k, q) {
   const kst = new Date(Date.now() + 9 * 3600 * 1000);
   const runDot = `${kst.getUTCFullYear()}.${String(kst.getUTCMonth() + 1).padStart(2, '0')}.${String(kst.getUTCDate()).padStart(2, '0')}`;
   const dataDot = date.replaceAll('-', '.');
+  const timing = runDot === dataDot ? `당일(${dataDot}) 장 마감 후 최신 집계` : `최근 거래일(${dataDot}) 집계`;
   const re = /(<section class="panel" id="p4"[\s\S]*?<div class="insight">)[\s\S]*?(<\/div>\s*<div class="slabel">)/;
   return html.replace(re, `$1${insight.slice(insight.indexOf('>') + 1, insight.lastIndexOf('</div>'))}$2`)
-    .replace(/(<section class="panel" id="p4"[\s\S]*?<h1>전일 수급 동향<\/h1><p>)[^<]*/, `$1${runDot} 갱신 · 직전 거래일(${dataDot}) 종가 기준 KOSPI·KOSDAQ 주체별 순매수/순매도 (네이버 금융 공개표)`)
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<h1>)[^<]*(<\/h1><p>)[^<]*/, `$1최근 거래일 수급 동향$2${runDot} 갱신 · ${timing} KOSPI·KOSDAQ 주체별 순매수/순매도 (네이버 금융 공개표)`)
     .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="slabel">)\d+월 \d+일 주체별/, `$1${m}월 ${d}일 주체별`)
-    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="disc"><b>데이터<\/b> )[^<]*/, `$1${runDot} 갱신. 직전 거래일(${m}/${d}) KOSPI·KOSDAQ 주체별 금액은 네이버 금융 공개 표 기준. 매일 장 마감 후 최신 거래일 확정치로 자동 교체.`);
+    .replace(/(<section class="panel" id="p4"[\s\S]*?<div class="disc"><b>데이터<\/b> )[^<]*/, `$1${runDot} 갱신. ${timing} KOSPI·KOSDAQ 주체별 금액은 네이버 금융 공개 표 기준. 매시간 최신 거래일 집계로 자동 교체.`);
 }
 
 /** tk:'X' 를 포함하는 한 줄짜리 mcard 객체 리터럴(중첩 {} 없음) 안의 필드만 치환 */
@@ -398,9 +400,7 @@ async function run() {
   console.log('· 전일 수급 (네이버 금융 공개표)');
   try {
     const nowKst = new Date(Date.now() + 9 * 3600 * 1000);
-    const target = new Date(nowKst);
-    target.setUTCDate(target.getUTCDate() - 1);
-    const targetIso = `${target.getUTCFullYear()}-${String(target.getUTCMonth() + 1).padStart(2, '0')}-${String(target.getUTCDate()).padStart(2, '0')}`;
+    const targetIso = `${nowKst.getUTCFullYear()}-${String(nowKst.getUTCMonth() + 1).padStart(2, '0')}-${String(nowKst.getUTCDate()).padStart(2, '0')}`;
     const [kospiFlow, kosdaqFlow] = await Promise.all([investorFlow('01', targetIso), investorFlow('02', targetIso)]);
     const flowDate = kospiFlow.iso;
     html = patchFlowBars(html, 'db-kospi', kospiFlow);
