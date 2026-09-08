@@ -1,5 +1,19 @@
 [
   {
+<<<<<<< Updated upstream
+=======
+    "id": "https://www.cnbc.com/2026/09/08/ai-infrastructure-stocks-rally-on-deal-from-qualcomm-and-corning.html|AI infrastructure stocks rally on deal announcements from Qualcomm, Corning",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI infrastructure stocks rally on deal announcements from Qualcomm, Corning",
+    "summary": "Shares of Qualcom, Corning, Intel, Advanced Micro Devices and others tied to the AI infrastructure trade popped on Tuesday.",
+    "link": "https://www.cnbc.com/2026/09/08/ai-infrastructure-stocks-rally-on-deal-from-qualcomm-and-corning.html",
+    "source": "Google News",
+    "pubDate": "2026-09-08T22:02:53.000Z",
+    "collectedAt": "2026-09-08T22:26:16.593Z"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQclpOU0VjUUE5VFVaSExtU3F6ZFhBdkhvekcxRUZBeDhzYjFXZFJveFlXbVFOSGhqZGd0ZWl3bV83cHVfZWhEOTVUZy1ocXRpUFN1SkhrbjN3UTUzNDIyQXQ3Rk1GRFhGbXE0Uzd0R3JFLWhnSkNCa1JvbFpJU0lhSQ?oc=5|[TODAY엔비디아]\"AI 반도체 중 가장 저평가된 주식\"…2% 하락 마감",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -8,7 +22,11 @@
     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQclpOU0VjUUE5VFVaSExtU3F6ZFhBdkhvekcxRUZBeDhzYjFXZFJveFlXbVFOSGhqZGd0ZWl3bV83cHVfZWhEOTVUZy1ocXRpUFN1SkhrbjN3UTUzNDIyQXQ3Rk1GRFhGbXE0Uzd0R3JFLWhnSkNCa1JvbFpJU0lhSQ?oc=5",
     "source": "edaily.co.kr",
     "pubDate": "2026-09-08T21:23:18.000Z",
+<<<<<<< Updated upstream
     "collectedAt": "2026-09-08T22:15:37.196Z"
+=======
+    "collectedAt": "2026-09-08T22:26:15.658Z"
+>>>>>>> Stashed changes
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5nSjZ4Sk8yN0JIdUxoelIxbzliX3ZFSDk2SWE0QUNqU3I0TFU5YUh2VW9RREtjTXdPSnV2MU95NGVGTXZobjRYcWs2RVpnRy0wMnpN?oc=5|반도체 호황이 경제규모 26.4% 끌어올려…건설업은 뒷걸음질",
@@ -96,7 +114,11 @@
     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE41TkM1QzNfYlJJN1M4cmtmYzVpc29xYW9HYzk4WENMZ1doMVRKeC1YQ0JzZS1VeFAycDdGel9CeG9oWUZxSndlMWJQdTBVZ1E?oc=5",
     "source": "v.daum.net",
     "pubDate": "2026-09-08T10:49:51.000Z",
+<<<<<<< Updated upstream
     "collectedAt": "2026-09-08T22:15:37.556Z"
+=======
+    "collectedAt": "2026-09-08T22:26:16.062Z"
+>>>>>>> Stashed changes
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE12Y1hEVUtLU2FQN2VELUxkZVdqdWJOVS1PZnBHR0R0RzhJb1FQX3pYUnA5VEtSOWx4Mm9WN1pQZUE0Rmw0akpjS0o0bHJEaTA?oc=5|반도체값 뛰자 국민소득 4만달러?…한국 경제 규모 '껑충'",
@@ -1491,9 +1513,15 @@
     "title": "JP모건·UBS \"반도체 주식 매도 마무리\" vs 씨티 \"중립\" 하향",
     "summary": "",
     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ESkluMHZGZWllY1JJR3R0UXdWVk96VmI0REdVaE12ZjZ3VEozdDlsSFVNNXVFbExaZmxiSGxFOWI5bkswckNzNzNRRnkyZ0x4MlpHMzFnNWpNQQ?oc=5",
+<<<<<<< Updated upstream
     "source": "한국경제",
     "pubDate": "2026-07-21T07:00:00.000Z",
     "collectedAt": "2026-09-08T22:15:37.199Z"
+=======
+    "source": "hankyung.com",
+    "pubDate": "2026-07-21T07:00:00.000Z",
+    "collectedAt": "2026-09-08T22:26:15.663Z"
+>>>>>>> Stashed changes
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8zd2ozYXpEU2ZpS1Mzb2tGQW5GdjBLV2xfQWJzVlVxb0xicmtKX3d6MzViOTNlQkFKLVg3dkVmWTU0MnJsQkN6a2t0VlJHRzliUk9tUHo2SkNZU0tr?oc=5|블룸버그 \"韓 반도체 주식, 글로벌 증시의 방향타 역할\"",
@@ -1571,6 +1599,17 @@
     "source": "글로벌이코노믹",
     "pubDate": "2026-07-02T07:00:00.000Z",
     "collectedAt": "2026-09-07T23:19:03.850Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9EVi1JTE1obG5wc1BsSU9TeDdVQmpnSkdPWE9MWWxVZkYzeTZieThpMFpsMXVpQUVraGlBekNnZ2V5X0tGR09VR0JxOTd1dzVvUEZVTGNZc0xxU3VPRXlJcE1iRkZrZE9tTEkzX2NRT0g?oc=5|[뉴욕마켓워치] '컴퓨팅 용량이 남네?' 반도체 투매…주식·채권↓달러↑",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "[뉴욕마켓워치] '컴퓨팅 용량이 남네?' 반도체 투매…주식·채권↓달러↑",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9EVi1JTE1obG5wc1BsSU9TeDdVQmpnSkdPWE9MWWxVZkYzeTZieThpMFpsMXVpQUVraGlBekNnZ2V5X0tGR09VR0JxOTd1dzVvUEZVTGNZc0xxU3VPRXlJcE1iRkZrZE9tTEkzX2NRT0g?oc=5",
+    "source": "연합인포맥스",
+    "pubDate": "2026-07-02T07:00:00.000Z",
+    "collectedAt": "2026-09-08T22:26:15.663Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15MDhfZ04xck95a29ON1I3UTNFNDdUOEc4YmVOclVWZFMtS0dSNWp0OTlNMjF4Q090OEJMbk5HakEzbndlZUdFNzJsM19HTzVJQUE?oc=5|반도체 800조 베팅에 韓美 주식시장 양극화 시작…지금 저렴한 AI 관련주는 [이슈플러스]",
