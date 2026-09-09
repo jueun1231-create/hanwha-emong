@@ -44,6 +44,28 @@
     "collectedAt": "2026-09-09T08:22:34.303Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1WSGd6bUd4aENrME5CcHk3Ny0wcEQ0NWxhUGpQN05GeWgteVJ3ckNSRHRlZXdkZy1XcGVSYzFsZnhMaGFBcnYwa3pVQUpuclNDclJkZ0p0SXliQnV5emswZWozdlByVlA0dEYtU1pnbzY?oc=5|+196% 수익률 기록 중: AI가 선정한 반도체 주식, S&P 500 압도",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "+196% 수익률 기록 중: AI가 선정한 반도체 주식, S&P 500 압도",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1WSGd6bUd4aENrME5CcHk3Ny0wcEQ0NWxhUGpQN05GeWgteVJ3ckNSRHRlZXdkZy1XcGVSYzFsZnhMaGFBcnYwa3pVQUpuclNDclJkZ0p0SXliQnV5emswZWozdlByVlA0dEYtU1pnbzY?oc=5",
+    "source": "Investing.com 한국어",
+    "pubDate": "2026-09-09T07:47:00.000Z",
+    "collectedAt": "2026-09-09T14:20:44.224Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrbUcyN3VjUGVXTUhSMHlRVmlhM3lXWVJwdGdaeUxSSEI0ekxJcm1ranM0MktDMjRCU3RfZ25VRklWakNhdVZRMU9XTVp6cTgyMVg0cy1jQVNYR2dySlRXTEJYcElwbWZJT3NZSEhn?oc=5|곽동신, 한미반도체 주식 7억원 추가 매입",
+    "category": "memory-hbm",
+    "categoryLabel": "메모리·HBM·후공정",
+    "title": "곽동신, 한미반도체 주식 7억원 추가 매입",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrbUcyN3VjUGVXTUhSMHlRVmlhM3lXWVJwdGdaeUxSSEI0ekxJcm1ranM0MktDMjRCU3RfZ25VRklWakNhdVZRMU9XTVp6cTgyMVg0cy1jQVNYR2dySlRXTEJYcElwbWZJT3NZSEhn?oc=5",
+    "source": "세이프머니",
+    "pubDate": "2026-09-09T07:36:03.000Z",
+    "collectedAt": "2026-09-09T14:20:44.224Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/09/anthropic-researcher-quits-ai-safety.html|Anthropic researcher says AI has more than 10% chance of 'killing all humans' after colleague quits",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
