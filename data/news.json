@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XTGpvVGhNRVhRMlpRVTNndWV4VFFHRnprMzFhSkNnWkp0MWdRTlZhRlBhRVlwc3dvc3g2dE5pQVYwLTktelFqa3AydHFiSjJQSFFhaDZQR1pGTDRra3FmZHM2eXhTS2JBNmc?oc=5|[주식마감] '광통신주' AI 데이터센터 확대 기대감에 우리로·머큐리 상한가... 페니트리움바이오, 삼미금속 등 급등",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "[주식마감] '광통신주' AI 데이터센터 확대 기대감에 우리로·머큐리 상한가... 페니트리움바이오, 삼미금속 등 급등",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XTGpvVGhNRVhRMlpRVTNndWV4VFFHRnprMzFhSkNnWkp0MWdRTlZhRlBhRVlwc3dvc3g2dE5pQVYwLTktelFqa3AydHFiSjJQSFFhaDZQR1pGTDRra3FmZHM2eXhTS2JBNmc?oc=5",
+    "source": "금강일보",
+    "pubDate": "2026-09-09T10:40:00.000Z",
+    "collectedAt": "2026-09-09T11:20:36.163Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/09/defense-tech-covenant-anthem-missile.html|Andreessen- and Thiel-backed defense startup opens U.S. missile factory as it exits stealth",
+    "category": "defense",
+    "categoryLabel": "방산·항공우주",
+    "title": "Andreessen- and Thiel-backed defense startup opens U.S. missile factory as it exits stealth",
+    "summary": "Founded in 2024, Covenant is speeding up lower-cost missile manufacturing for the U.S. military.",
+    "link": "https://www.cnbc.com/2026/09/09/defense-tech-covenant-anthem-missile.html",
+    "source": "Google News",
+    "pubDate": "2026-09-09T10:00:01.000Z",
+    "collectedAt": "2026-09-09T11:20:37.458Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/09/openai-navier-stokes-math-problem-solved.html|OpenAI claims to have solved the 90-year-old Navier-Stokes math problem in 88 hours",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -64,6 +86,17 @@
     "source": "newspim.com",
     "pubDate": "2026-09-09T05:14:00.000Z",
     "collectedAt": "2026-09-09T05:19:49.667Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE92LVBTNVladDJKZkFJVUN3ZGRtV3dCeFVqWUkwZDRzUFlkLXNHMV9BV2hIcVBnSU9ubUJiZHpuYXUzMFh1ejNsaU5hTFdnbFNZYTFRZE94aXp5N19kMmZDN2NnM0RBZTY2NV840gFvQVVfeXFMTVF3MUR0TUQ2NTFTaXRPaGhlc1g4dk9QQ1VwbXhtZmYyMUdmZFh6ZW1zVXpTUzJyWWVwZzNxRUJYUlBjdWZvZWVNYjlVYkZ3czFKeHkzQUpiZDJZUGJRY0dZZG90eFV6V1Fka05hMW9V?oc=5|HPE·오라클 AI 동맹… 주식 보상만큼 따져야 할 사고 대응 권한",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "HPE·오라클 AI 동맹… 주식 보상만큼 따져야 할 사고 대응 권한",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE92LVBTNVladDJKZkFJVUN3ZGRtV3dCeFVqWUkwZDRzUFlkLXNHMV9BV2hIcVBnSU9ubUJiZHpuYXUzMFh1ejNsaU5hTFdnbFNZYTFRZE94aXp5N19kMmZDN2NnM0RBZTY2NV840gFvQVVfeXFMTVF3MUR0TUQ2NTFTaXRPaGhlc1g4dk9QQ1VwbXhtZmYyMUdmZFh6ZW1zVXpTUzJyWWVwZzNxRUJYUlBjdWZvZWVNYjlVYkZ3czFKeHkzQUpiZDJZUGJRY0dZZG90eFV6V1Fka05hMW9V?oc=5",
+    "source": "newsroad.co.kr",
+    "pubDate": "2026-09-09T04:36:46.000Z",
+    "collectedAt": "2026-09-09T11:20:36.162Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81Z0pkNU5XbzY0anFjZ3o1WTNqRXNVaGtWSGJTY3Zaczc2My1Yc05ianJ3M3RubEw1UWt4b3FsVTc5cy0yRXlkUHYxSDlhZVBEMjZiRmNobmNsX0QzRElRdGtxT0NRakYtUklZdw?oc=5|반도체 훈풍에 삼성家 주식가치 100조 돌파",
