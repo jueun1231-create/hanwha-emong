@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html|Google to invest record $15 billion in AI infrastructure in the 'Texas of Europe'",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Google to invest record $15 billion in AI infrastructure in the 'Texas of Europe'",
+    "summary": "Google on Wednesday said it would invest $15.1 billion into AI infrastructure in Finland, marking the tech giant's largest single investment in Europe.",
+    "link": "https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html",
+    "source": "Google News",
+    "pubDate": "2026-09-09T08:19:24.000Z",
+    "collectedAt": "2026-09-09T08:22:34.303Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/09/anthropic-researcher-quits-ai-safety.html|Anthropic researcher says AI has more than 10% chance of 'killing all humans' after colleague quits",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
