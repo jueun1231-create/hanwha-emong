@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/10/openai-chatgpt-for-financial-services-targets-work-of-junior-bankers.html|OpenAI targets work of Wall Street junior bankers with new ChatGPT for Financial Services",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI targets work of Wall Street junior bankers with new ChatGPT for Financial Services",
+    "summary": "OpenAI launched ChatGPT for Financial Services, targeting the labor-intensive research, modeling, and pitchbook tasks traditionally handled by junior bankers.",
+    "link": "https://www.cnbc.com/2026/09/10/openai-chatgpt-for-financial-services-targets-work-of-junior-bankers.html",
+    "source": "Google News",
+    "pubDate": "2026-09-10T17:12:29.000Z",
+    "collectedAt": "2026-09-10T17:19:42.474Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/10/goldman-sachs-communacopia-technology-conference-ai-tech.html|Humans need to 'surf the wave' of AI rather than get swallowed by it, Chesky says at Communacopia",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
