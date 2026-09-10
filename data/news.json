@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83cVRkU3FhSkdFS0llM3A3VWw5WFl2VVJhZjRyZWowa3BjZkFWUVQxMW04TUZCbk9wazVvNTYwU0g4Y0c2SlU3clpvV0NhZzlZUHdBNFZCcXdTUQ?oc=5|유가 급등·채권 수익률 급등에 美증시 하락",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "유가 급등·채권 수익률 급등에 美증시 하락",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83cVRkU3FhSkdFS0llM3A3VWw5WFl2VVJhZjRyZWowa3BjZkFWUVQxMW04TUZCbk9wazVvNTYwU0g4Y0c2SlU3clpvV0NhZzlZUHdBNFZCcXdTUQ?oc=5",
+    "source": "한국경제",
+    "pubDate": "2026-09-10T14:04:59.000Z",
+    "collectedAt": "2026-09-10T14:20:36.913Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1xUnJyRzlfamVPOEVUT1pUVWZRazlQU01Rc2hKYkctUEpCcTBsTnpjQXhTNmQ3NmxQQ2U1M01CVFNaS0pVcmdYSHJvU0dINWU4SzFVeQ?oc=5|100달러 다시 뚫은 국제유가…한국경제 ‘고유가 경보’",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "100달러 다시 뚫은 국제유가…한국경제 ‘고유가 경보’",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1xUnJyRzlfamVPOEVUT1pUVWZRazlQU01Rc2hKYkctUEpCcTBsTnpjQXhTNmQ3NmxQQ2U1M01CVFNaS0pVcmdYSHJvU0dINWU4SzFVeQ?oc=5",
+    "source": "이투데이",
+    "pubDate": "2026-09-10T13:55:00.000Z",
+    "collectedAt": "2026-09-10T14:20:36.912Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html|Amazon gives OpenAI's ad business a boost, letting its advertisers into ChatGPT",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -64,6 +86,17 @@
     "source": "Google News",
     "pubDate": "2026-09-10T10:15:35.000Z",
     "collectedAt": "2026-09-10T10:21:28.501Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TMTF1dGhiSmk4ejR6THh0OExvakVtSjBydjJZajR0UldjTnROMmt0LWdEcnNMV00wT1lUVzNBVFhuMnNCRE0zMlc2S2Y1M2R0Snh2dF9vVGZwSFdOY0lPaFR2ZXNrZDhyalE?oc=5|[사설] 유가 100달러·국채 금리 급등, 복합 충격 대비해야",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "[사설] 유가 100달러·국채 금리 급등, 복합 충격 대비해야",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TMTF1dGhiSmk4ejR6THh0OExvakVtSjBydjJZajR0UldjTnROMmt0LWdEcnNMV00wT1lUVzNBVFhuMnNCRE0zMlc2S2Y1M2R0Snh2dF9vVGZwSFdOY0lPaFR2ZXNrZDhyalE?oc=5",
+    "source": "한겨레",
+    "pubDate": "2026-09-10T09:50:00.000Z",
+    "collectedAt": "2026-09-10T14:20:36.912Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Wc0ZNRlFUWTBNZUstWU9uaGVUaTBCNnFmYk5EODc3aGNIbjBHQXhfU0piRXBkMk5icDYwQ3hDVHlyd29DWWpzaVk4emthVzNDcU13RThMckFocUk?oc=5|AI 투자에 돈 필요한 中 테크…주식 발행 6년 만에 최대 [오늘의 블룸버그 차트]｜Global Money Club",
@@ -660,17 +693,6 @@
     "collectedAt": "2026-09-09T23:18:35.231Z"
   },
   {
-    "id": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVmtGNmF4UTBtVFZab0tETmp1UXpWZ2thRUw2WWdITENRbWJ5X3dXSkNyUFF4RUktZnJKc0l5QUNqZmRmN0xxRE5tODhYNEtmdFpNS0JlY3MyWjZnOFVFQmo2b0VEdVBZNG5nZnhmMXdqV21IZDUtTFMxNk1ad3JpaVZxUU05OVJsLW9uZU1fUkM5ZUdIOGNDT3VSSznSAZwBQVVfeXFMTVZrRjZheFEwbVRWWm9LRE5qdVF6VmdrYUVMNllnSExDUW1ieV93V0pDclBReEVJLWZySnNJeUFDamZkZjdMcURObTg4WDRLZnRaTUtCZWNzMlo2ZzhVRUJqNm9FRHVQWTRuZ2Z4ZjF3aldtSGQ1LUxTMTZNWndyaWlWcVFNOTlSbC1vbmVNX1JDOWVHSDhjQ091Uks5?oc=5|최대 49% 순이익률을 보이는 AI 주식 3선",
-    "category": "ai-compute",
-    "categoryLabel": "AI 반도체·컴퓨트",
-    "title": "최대 49% 순이익률을 보이는 AI 주식 3선",
-    "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVmtGNmF4UTBtVFZab0tETmp1UXpWZ2thRUw2WWdITENRbWJ5X3dXSkNyUFF4RUktZnJKc0l5QUNqZmRmN0xxRE5tODhYNEtmdFpNS0JlY3MyWjZnOFVFQmo2b0VEdVBZNG5nZnhmMXdqV21IZDUtTFMxNk1ad3JpaVZxUU05OVJsLW9uZU1fUkM5ZUdIOGNDT3VSSznSAZwBQVVfeXFMTVZrRjZheFEwbVRWWm9LRE5qdVF6VmdrYUVMNllnSExDUW1ieV93V0pDclBReEVJLWZySnNJeUFDamZkZjdMcURObTg4WDRLZnRaTUtCZWNzMlo2ZzhVRUJqNm9FRHVQWTRuZ2Z4ZjF3aldtSGQ1LUxTMTZNWndyaWlWcVFNOTlSbC1vbmVNX1JDOWVHSDhjQ091Uks5?oc=5",
-    "source": "simplywall.st",
-    "pubDate": "2026-09-07T09:07:34.000Z",
-    "collectedAt": "2026-09-09T23:18:34.777Z"
-  },
-  {
     "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE16TE9XY2dpRnlZVXY1YVFTak90Um5YS184bmoxRVZsbmZQMW1jOU5FQm5IRzk2VnQzYWFWX0ZhWjJ1MmlNNjE4TzBJQlMwMzFmcDluQjV3dk9wZw?oc=5|AI 주식관리 시대 열었다... 하나증권 신규 MTS '하나증권V' 출시",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -757,6 +779,17 @@
     "source": "simplywall.st",
     "pubDate": "2026-09-05T10:55:35.000Z",
     "collectedAt": "2026-09-09T23:18:34.778Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaDJLWmFEa29CaDVGVTZYdk9HUHRJbWptbGQ2TVZPSmtaclNaYUQ2d2tiUWFBNTRfc0ZaQWh3LUdqRFBHVElTR2MzX0p3UkR1U2ppYzBkanFLa1hfS1lUdUJzME90eW5lcjRZUWxhRG91R1dpc0JiMWlMLUItWTk2SHBRTlFaeVVYb2xNQ29JMF9RSjBqeG1Z0gGcAUFVX3lxTE1Wa0Y2YXhRMG1UVlpvS0ROanVRelZna2FFTDZZZ0hMQ1FtYnlfd1dKQ3JQUXhFSS1mckpzSXlBQ2pmZGY3THFETm04OFg0S2Z0Wk1LQmVjczJaNmc4VUVCajZvRUR1UFk0bmdmeGYxd2pXbUhkNS1MUzE2TVp3cmlpVnFRTTk5Umwtb25lTV9SQzllR0g4Y0NPdVJLOQ?oc=5|최대 49% 순이익률을 보이는 AI 주식 3선",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "최대 49% 순이익률을 보이는 AI 주식 3선",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaDJLWmFEa29CaDVGVTZYdk9HUHRJbWptbGQ2TVZPSmtaclNaYUQ2d2tiUWFBNTRfc0ZaQWh3LUdqRFBHVElTR2MzX0p3UkR1U2ppYzBkanFLa1hfS1lUdUJzME90eW5lcjRZUWxhRG91R1dpc0JiMWlMLUItWTk2SHBRTlFaeVVYb2xNQ29JMF9RSjBqeG1Z0gGcAUFVX3lxTE1Wa0Y2YXhRMG1UVlpvS0ROanVRelZna2FFTDZZZ0hMQ1FtYnlfd1dKQ3JQUXhFSS1mckpzSXlBQ2pmZGY3THFETm04OFg0S2Z0Wk1LQmVjczJaNmc4VUVCajZvRUR1UFk0bmdmeGYxd2pXbUhkNS1MUzE2TVp3cmlpVnFRTTk5Umwtb25lTV9SQzllR0g4Y0NPdVJLOQ?oc=5",
+    "source": "simplywall.st",
+    "pubDate": "2026-09-05T07:00:00.000Z",
+    "collectedAt": "2026-09-10T14:20:36.520Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Wc1RlYXpsb0hoV19aVDU2VElwYW1KeEdOV2dOS0h1bVQzOV90SVIzbV9uZTQ1U05VOEMyYXlST3pCVFhDWElBcDlndWRhQTNobEhYbC1GWEtmalhvMU4tdTRKNGNGd2RuOGxyQnBCUEE?oc=5|씨티, 2027년을 위한 최고의 생성형 AI 주식 추천",
