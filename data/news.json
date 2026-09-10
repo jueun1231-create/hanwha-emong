@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/10/openai-anthropic-ai-safety-slowdown-extinction.html|OpenAI, Anthropic researchers ramp up calls for AI slowdown as warnings of catastrophic risk intensify",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI, Anthropic researchers ramp up calls for AI slowdown as warnings of catastrophic risk intensify",
+    "summary": "There is growing concern globally about the capability of AI, following numerous cyberattacks and security incidents in recent months by rogue models",
+    "link": "https://www.cnbc.com/2026/09/10/openai-anthropic-ai-safety-slowdown-extinction.html",
+    "source": "Google News",
+    "pubDate": "2026-09-10T10:15:35.000Z",
+    "collectedAt": "2026-09-10T10:21:28.501Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Wc0ZNRlFUWTBNZUstWU9uaGVUaTBCNnFmYk5EODc3aGNIbjBHQXhfU0piRXBkMk5icDYwQ3hDVHlyd29DWWpzaVk4emthVzNDcU13RThMckFocUk?oc=5|AI 투자에 돈 필요한 中 테크…주식 발행 6년 만에 최대 [오늘의 블룸버그 차트]｜Global Money Club",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI 투자에 돈 필요한 中 테크…주식 발행 6년 만에 최대 [오늘의 블룸버그 차트]｜Global Money Club",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1Wc0ZNRlFUWTBNZUstWU9uaGVUaTBCNnFmYk5EODc3aGNIbjBHQXhfU0piRXBkMk5icDYwQ3hDVHlyd29DWWpzaVk4emthVzNDcU13RThMckFocUk?oc=5",
+    "source": "중앙일보",
+    "pubDate": "2026-09-10T09:45:08.000Z",
+    "collectedAt": "2026-09-10T10:21:27.530Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1JYWxMS1hZNzV3al91YURHWlh1SWJtTG5NLUIzMXBhYXFCMHd5Y1FVTDdMU0RJekd6NlN5SnhPXzE2SXZGWXdqM0w1Ul92bTF6SEVIa0JnS3RUam5Pa3BCbXZwbkVZQ3RBWFFEaUNUTEI1VG_SAXdBVV95cUxOSHI4VnR3TVBaNTJtNDBPbmk2U2VwbjFkNmVsU2RFblVORmt5TWh0bWkxYzFXVFltZjBNdnM4RFg4THA5ZnJzeU1TUjAwSGp4cDljOTd2ZzIzbktURW1QSWJ1QkVfUUdlWUMteFhyV1ZpZWp5czUwWQ?oc=5|한화운용 PLUS 글로벌HBM반도체…상장 후 950% 수익",
     "category": "memory-hbm",
     "categoryLabel": "메모리·HBM·후공정",
