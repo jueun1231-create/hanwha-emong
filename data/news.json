@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qakcwdjAtOUIxc00zQkpPakZCNGhQVXhONEVqdGdwcDk4UHZoUHplcDRuYlAyQVhBVWx2bU8zeXZkbFc4OW5JMjJpRWhlLWc?oc=5|美증시 나흘째 하락…유가 고공행진·국채금리 급등-[글로벌 마감 시황]",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "美증시 나흘째 하락…유가 고공행진·국채금리 급등-[글로벌 마감 시황]",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qakcwdjAtOUIxc00zQkpPakZCNGhQVXhONEVqdGdwcDk4UHZoUHplcDRuYlAyQVhBVWx2bU8zeXZkbFc4OW5JMjJpRWhlLWc?oc=5",
+    "source": "v.daum.net",
+    "pubDate": "2026-09-10T22:11:50.000Z",
+    "collectedAt": "2026-09-10T22:24:23.556Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/10/openai-chatgpt-for-financial-services-targets-work-of-junior-bankers.html|OpenAI targets work of Wall Street junior bankers with new ChatGPT for Financial Services",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -844,7 +855,11 @@
     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSUR2Z2w0WWtWbllyRU5NUlVITDNLY0gtV1V6STg0eXFnU3RWck9kVHlkMnI3eF9yX0Z4aXlIeC10dU5OOEZBMTZVdGFLRkFoZ0c3T09VZGxna2lUNVZyWDNFVDIwTDl6M3lmWEo4U0U4dFFFN0p6NjJwMUFJRklYVnJiOER3QWlUenBZSkYyaWrSAZYBQVVfeXFMTVRrdDRMblFZOHppTTkzNV9RZ2VvalRpeGJpeWgzNU9qelo0OGU0dHlydmNVS3hkNHhpdllHZlo0NHc3N1RzaEJPUTd2TUlXOHZfMU8wSi1mckdhQ202TFZjRDF4M2stSDNET3J4Y3dKalItYld2MEluM0hKZzRKQUFDdTMwOUFwUXNVeEp2UWlVNnZtRXZ3?oc=5",
     "source": "simplywall.st",
     "pubDate": "2026-09-06T07:00:00.000Z",
+<<<<<<< Updated upstream
     "collectedAt": "2026-09-10T22:14:36.522Z"
+=======
+    "collectedAt": "2026-09-10T22:24:23.130Z"
+>>>>>>> Stashed changes
   },
   {
     "id": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNaHRqNThSV2hLSThsU1psNWlKSjFZMm42QTRfbXprSVlJTzNtU1BCTV8yOFZnQVpEbTlDUXU5MVJXSEJ6T3lZWl8wZzd1N2NWZXhRTmxvcEstY1VzMG92OWJWaGVNUlBGVzlzenJIV2d0a0Q4U2ZzWVltZ2JyTWJET082MVhGWlk?oc=5|\"빚내서 산 AI 주식 털어낸다\"… 中 증시, 美 금리 급등·유가 충격에 신용융자 '급감'",
@@ -1549,6 +1564,17 @@
     "source": "news.einfomax.co.kr",
     "pubDate": "2026-07-17T07:00:00.000Z",
     "collectedAt": "2026-09-10T01:19:36.246Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9fQzZYUll5TEhfaWpURy1BRTQ4aEFWVmg1WW1ITkxWYjBXSmZRU2lRcVZzMGNHNzRxcUNRa3I1VGo2NGVhNEh2dm5Na2VKTmxjSDh2NS1RYlZPMGFSTzdjYzVsNVZIRVBmU2Fwc1lFbnc?oc=5|SK Hynix 급락이 글로벌 반도체 주식 시장 강타",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "SK Hynix 급락이 글로벌 반도체 주식 시장 강타",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9fQzZYUll5TEhfaWpURy1BRTQ4aEFWVmg1WW1ITkxWYjBXSmZRU2lRcVZzMGNHNzRxcUNRa3I1VGo2NGVhNEh2dm5Na2VKTmxjSDh2NS1RYlZPMGFSTzdjYzVsNVZIRVBmU2Fwc1lFbnc?oc=5",
+    "source": "Investing.com 한국어",
+    "pubDate": "2026-07-13T07:00:00.000Z",
+    "collectedAt": "2026-09-10T22:24:23.132Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0zdU1KSW9qaHBRWkRlUjBSeE9Oa1llMHBrX19yQTI2RWk0ODhPSTNUdVBORDlmUTNmZU4wc29ONGU1NGthSkJwRV8yeHJNYlBTblNnZTIyTEhhOWVRZlZhMHJvNlNPM3JWTWJ5RDlfUmFiWERGbzZlNA?oc=5|온통 파란 주식창 \"안 보려고 해요\"‥'반도체 비중 축소' 권고 나왔다",
