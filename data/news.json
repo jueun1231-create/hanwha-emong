@@ -1,5 +1,38 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/chinese-humanoid-robot-startup-distillation-claim-openai.html|A Chinese humanoid startup flips 'distillation' claim on OpenAI as it releases a new robotics model",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "A Chinese humanoid startup flips 'distillation' claim on OpenAI as it releases a new robotics model",
+    "summary": "Ant-backed startup JoyIn's CEO published an article in Chinese that raised questions about similarities between his company's new model and OpenAI publications.",
+    "link": "https://www.cnbc.com/2026/09/11/chinese-humanoid-robot-startup-distillation-claim-openai.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T06:02:40.000Z",
+    "collectedAt": "2026-09-11T06:25:54.650Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ha1BUSVZ5Q0phSXE1Si03UUtRdkRUUlV4VVQtMk5pSzNKX05hR0FZU3BKLWFlSHZ3M3dMRWtadWs4d01JUjhsTFRFbDVBTTZaajZ0dnc4VFVjOGl5d1BKU2pHSTRTbU5uTmd3WFNNcFczaWtqQ2Q4SGE3NV85czQ?oc=5|월스트리트 모닝 브리핑: 주식·채권·금 3중 폭락, AI 거래 하락! 유가 100달러 돌파+PPI 과열, 금리 인상 기대감 72%로 급등",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "월스트리트 모닝 브리핑: 주식·채권·금 3중 폭락, AI 거래 하락! 유가 100달러 돌파+PPI 과열, 금리 인상 기대감 72%로 급등",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ha1BUSVZ5Q0phSXE1Si03UUtRdkRUUlV4VVQtMk5pSzNKX05hR0FZU3BKLWFlSHZ3M3dMRWtadWs4d01JUjhsTFRFbDVBTTZaajZ0dnc4VFVjOGl5d1BKU2pHSTRTbU5uTmd3WFNNcFczaWtqQ2Q4SGE3NV85czQ?oc=5",
+    "source": "PANews",
+    "pubDate": "2026-09-11T05:28:00.000Z",
+    "collectedAt": "2026-09-11T06:25:53.634Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qQkd1bThGLTNyQmlaR1A0NGVYWWJpVFNjU202ajE3WXhYbGx3UkN0eGFlQWNEZG9qZklrb0ZpdWJjWjg2cDF6TnFmV3V3QVk?oc=5|세계증시, 긴축모드 돌입...AI 모멘텀, 고금리 벽 넘는다 [마켓딥다이브]",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "세계증시, 긴축모드 돌입...AI 모멘텀, 고금리 벽 넘는다 [마켓딥다이브]",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qQkd1bThGLTNyQmlaR1A0NGVYWWJpVFNjU202ajE3WXhYbGx3UkN0eGFlQWNEZG9qZklrb0ZpdWJjWjg2cDF6TnFmV3V3QVk?oc=5",
+    "source": "v.daum.net",
+    "pubDate": "2026-09-11T05:28:00.000Z",
+    "collectedAt": "2026-09-11T06:25:54.086Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Lbk5wYTZ3ajZoOXlEcjZwTzNrNFUwQ212dkY1clM1cHU0U01EWkY5eVctV2xWcVNSSnpSYmlIcUJidWVkVTVhSExidnBGdTFOaGlJ?oc=5|[아시아포럼] \"인도 경제 빠르게 성장…韓 기업, 조선업·AI 주목해야\"",
     "category": "shipbuilding",
     "categoryLabel": "조선·해양",
