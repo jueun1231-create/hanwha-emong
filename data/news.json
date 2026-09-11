@@ -1,5 +1,49 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/chinese-nvidia-rival-enflame-stock-market-debut-ai.html|Chinese Nvidia rival Enflame soars 206% on stock market debut as AI demand stays hot",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Chinese Nvidia rival Enflame soars 206% on stock market debut as AI demand stays hot",
+    "summary": "Chinese AI chipmaker Enflame, an Nvidia rival and one of China's \"four little dragons,\" made its Shanghai market debut.",
+    "link": "https://www.cnbc.com/2026/09/11/chinese-nvidia-rival-enflame-stock-market-debut-ai.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T01:53:08.000Z",
+    "collectedAt": "2026-09-11T02:21:02.743Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/11/y-combinator-garry-tan-says-do-nothing-about-distillation.html|Y Combinator’s Garry Tan says 'do nothing' about distillation as AI giants accuse China of copying their tech",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Y Combinator’s Garry Tan says 'do nothing' about distillation as AI giants accuse China of copying their tech",
+    "summary": "At Y Combinator’s annual Demo Day, CEO Garry Tan explained why he's less concerned about frontier AI model distillation and the existential risk of AI.",
+    "link": "https://www.cnbc.com/2026/09/11/y-combinator-garry-tan-says-do-nothing-about-distillation.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T01:37:07.000Z",
+    "collectedAt": "2026-09-11T02:21:02.743Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBrWDlzcnN0dlc2SEhIZTBWQzJEVmtmLS1KTG9GdHNOVXVZdW50NnJxWnU0WUZIMFMxQ1JrdkhiUnZ5dXMyT01mMk5HRlZTa1hsM3ZrQ1Y2VFVpdmVucU1lVXhSYVFUdThQV0VuMjlMTQ?oc=5|반도체가 수출의 절반∙∙∙ 한국 경제, AI 호황의 빛과 그림자",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "반도체가 수출의 절반∙∙∙ 한국 경제, AI 호황의 빛과 그림자",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBrWDlzcnN0dlc2SEhIZTBWQzJEVmtmLS1KTG9GdHNOVXVZdW50NnJxWnU0WUZIMFMxQ1JrdkhiUnZ5dXMyT01mMk5HRlZTa1hsM3ZrQ1Y2VFVpdmVucU1lVXhSYVFUdThQV0VuMjlMTQ?oc=5",
+    "source": "리드경제",
+    "pubDate": "2026-09-11T01:29:41.000Z",
+    "collectedAt": "2026-09-11T02:21:01.857Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rZkdEN1cxNDJBXzA5MVc3c0QydVliM1ZsZHhucXQ0ZlNydUZabDB0SzE0anU5X05QYm0zejYwUGhndi1vOElOWm85VE9CUlhlU2gxUmc4bDVLbGxQcDk0djJJUnhYOEdHbHhJcW5RTk42Zw?oc=5|현대차證 \"AI 투자에 중립금리↑…최종금리 전망 3.5%로 상향\"",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "현대차證 \"AI 투자에 중립금리↑…최종금리 전망 3.5%로 상향\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rZkdEN1cxNDJBXzA5MVc3c0QydVliM1ZsZHhucXQ0ZlNydUZabDB0SzE0anU5X05QYm0zejYwUGhndi1vOElOWm85VE9CUlhlU2gxUmc4bDVLbGxQcDk0djJJUnhYOEdHbHhJcW5RTk42Zw?oc=5",
+    "source": "KB Think",
+    "pubDate": "2026-09-11T01:16:27.000Z",
+    "collectedAt": "2026-09-11T02:21:01.857Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html|Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
