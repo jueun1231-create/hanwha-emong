@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html|Oracle jumps 7% after reporting 30% revenue growth fueled by AI cloud demand",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Oracle jumps 7% after reporting 30% revenue growth fueled by AI cloud demand",
+    "summary": "Oracle's cloud infrastructure revenue jumped 121% since last year, reflecting demand for its AI cloud services.",
+    "link": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T13:04:19.000Z",
+    "collectedAt": "2026-09-11T13:21:17.983Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/cheap-china-smartphones-rare-memory-ai-costs.html|Sub-$100 smartphones becoming a rarity as AI memory prices soar",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -86,6 +97,17 @@
     "source": "네이트",
     "pubDate": "2026-09-11T08:40:00.000Z",
     "collectedAt": "2026-09-11T10:21:28.252Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1lT2Z0T2VhVWV4OXBlOGlkTmJXYkNMcW1oUUF4enQwdkFxZkxLemt1T21BekFsdkE3cGwxU3hicFFFa3Q0NUdvTXlpek5LY01jQkRqLXV3REVnN2RPNk1ORjNrN3g5RzNBTnVxMHBR?oc=5|[데일리 경제 분석] (9월 11일) 수출은 역대 최대인데 코스피 7000선 붕괴…유가·금리가 갈라놓은 한국경제",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "[데일리 경제 분석] (9월 11일) 수출은 역대 최대인데 코스피 7000선 붕괴…유가·금리가 갈라놓은 한국경제",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1lT2Z0T2VhVWV4OXBlOGlkTmJXYkNMcW1oUUF4enQwdkFxZkxLemt1T21BekFsdkE3cGwxU3hicFFFa3Q0NUdvTXlpek5LY01jQkRqLXV3REVnN2RPNk1ORjNrN3g5RzNBTnVxMHBR?oc=5",
+    "source": "미디어피아",
+    "pubDate": "2026-09-11T07:49:37.000Z",
+    "collectedAt": "2026-09-11T13:21:16.062Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE42dkdoYkVvSTBJOTN5M2ZaODU4TEoyZWhlaDMwem91Y3JldzhvQ1I0dHFjWl9hUXA2T1lkeV81cWxwSEFPTzU3NmVWaFdfZF8xU3Uw?oc=5|[매크로 인사이트] \"유가 100달러 돌파에 9월 FOMC 인상 가능성 고개…美 장기금리 마지노선 주시\"",
