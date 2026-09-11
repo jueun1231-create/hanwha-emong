@@ -1,5 +1,38 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html|Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says",
+    "summary": "Anthropic said it detected unauthorized efforts by China-based AI labs including Alibaba and Moonshot AI to use its Claude models to help improve their own AI systems.",
+    "link": "https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T00:59:45.000Z",
+    "collectedAt": "2026-09-11T01:19:09.650Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBIRWFReFdLZkdienIxeVI5X0ZCNVNKb01sQlBPaUhOX1JUV1p2V1RWZXRmY1JsR0pIbFBjMURLV1FEMnJya25LdEllWGszb1RoTUhsYXFOSzhBZEhzSTM2WWFDamkzVThGOVZZNlZpMWk0ZHc2?oc=5|SK증권 \"고유가·고금리에도 반도체 상대 강세…코스피 상단 7500\"",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "SK증권 \"고유가·고금리에도 반도체 상대 강세…코스피 상단 7500\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBIRWFReFdLZkdienIxeVI5X0ZCNVNKb01sQlBPaUhOX1JUV1p2V1RWZXRmY1JsR0pIbFBjMURLV1FEMnJya25LdEllWGszb1RoTUhsYXFOSzhBZEhzSTM2WWFDamkzVThGOVZZNlZpMWk0ZHc2?oc=5",
+    "source": "파이낸셜포스트",
+    "pubDate": "2026-09-11T00:58:32.000Z",
+    "collectedAt": "2026-09-11T01:19:08.332Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE84SEhuTjU1OEdNRFBSdXhsYm9jVElMeXB0aU5PMTZQUlBTbGZGQXlUbGRFNy11akpEbWtvVFlzcEs1SE1NNENtVzlGLXQ1WnBNcFFEWm8ySm4yX2duTTRPbw?oc=5|한은-한국통계학회, AI 시대 경제통계 해법 논의…'공동포럼' 개최",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "한은-한국통계학회, AI 시대 경제통계 해법 논의…'공동포럼' 개최",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE84SEhuTjU1OEdNRFBSdXhsYm9jVElMeXB0aU5PMTZQUlBTbGZGQXlUbGRFNy11akpEbWtvVFlzcEs1SE1NNENtVzlGLXQ1WnBNcFFEWm8ySm4yX2duTTRPbw?oc=5",
+    "source": "news.nate.com",
+    "pubDate": "2026-09-11T00:32:00.000Z",
+    "collectedAt": "2026-09-11T01:19:08.786Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1LdkhmVTZqcVk2WV9adXNHUTRoZ2xVNnVPcVMwYUxiMmMtN3U2enZnMnFzUWZMVEpTeW5rcV8yUDJyTXJrWjlWU0c4VVFEZWFJMWVXQkVUQ1Jad0t6QTBEREhBU0Y4NkFFZDEw0gFvQVVfeXFMT3RTOGtVYUZTRTlUUmNFUjk2M0U3cUlNWVBBSC0wZUVuQ0EySFcxanZ5V0RVWjZHaDFoZWhHZERWU0RWTl9oZGFNRE1LX3Jlb0xzcTllcXRweE9CbjZEVWgxZXVMUjc5amtSY3Bnd1RF?oc=5|SK하이닉스 노사, 수정 잠정합의안 마련…성과급 주식 선택권 확대",
     "category": "memory-hbm",
     "categoryLabel": "메모리·HBM·후공정",
