@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5lOVdWMFR6YkZpT3lCLXoyUjlUT0JFV1IyYWR0czMzeXI3bnV3eTItWkhpQVdhM2tTc1lLTC05dEhlaFY3X0ZWS09wcURSSXU5SC1pWEhOb20yTGVrTXBlNkpjYnItczJnWEJhQ1JOdmN2Zk15aFl2V3VJOA?oc=5|비큐AI 10%이상주주 임경환 대표이사, 소유 주식 수량 5만5000주 증가…소유 지분율 0.87%p 상승",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "비큐AI 10%이상주주 임경환 대표이사, 소유 주식 수량 5만5000주 증가…소유 지분율 0.87%p 상승",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5lOVdWMFR6YkZpT3lCLXoyUjlUT0JFV1IyYWR0czMzeXI3bnV3eTItWkhpQVdhM2tTc1lLTC05dEhlaFY3X0ZWS09wcURSSXU5SC1pWEhOb20yTGVrTXBlNkpjYnItczJnWEJhQ1JOdmN2Zk15aFl2V3VJOA?oc=5",
+    "source": "디지털투데이",
+    "pubDate": "2026-09-11T07:02:02.000Z",
+    "collectedAt": "2026-09-11T07:21:19.822Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMickFVX3lxTE9EeFZJQ0VFVGJYSVNfQ2UzNmUxQ1E0V1FycW1fRTlMSFBpSkpadFRCbEFreXBlWDRSaXFyaDV5czNPVm5FRHNDMnhfZEtBT3FxdkdhbUl3amxGVWt0ZUhQYU9TOF81Ym1yR3VBaTZzTHBpQQ?oc=5|임경환 대표이사, 비큐AI 주식 5만5000주 ↑…지분율 32.93%",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "임경환 대표이사, 비큐AI 주식 5만5000주 ↑…지분율 32.93%",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9EeFZJQ0VFVGJYSVNfQ2UzNmUxQ1E0V1FycW1fRTlMSFBpSkpadFRCbEFreXBlWDRSaXFyaDV5czNPVm5FRHNDMnhfZEtBT3FxdkdhbUl3amxGVWt0ZUhQYU9TOF81Ym1yR3VBaTZzTHBpQQ?oc=5",
+    "source": "데이터투자",
+    "pubDate": "2026-09-11T06:32:52.000Z",
+    "collectedAt": "2026-09-11T07:21:19.820Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/chinese-humanoid-robot-startup-distillation-claim-openai.html|A Chinese humanoid startup flips 'distillation' claim on OpenAI as it releases a new robotics model",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
