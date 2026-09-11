@@ -1,5 +1,49 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/cheap-china-smartphones-rare-memory-ai-costs.html|Sub-$100 smartphones becoming a rarity as AI memory prices soar",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Sub-$100 smartphones becoming a rarity as AI memory prices soar",
+    "summary": "The days of the sub-$100 smartphone may be numbered, including in China.",
+    "link": "https://www.cnbc.com/2026/09/11/cheap-china-smartphones-rare-memory-ai-costs.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T11:59:39.000Z",
+    "collectedAt": "2026-09-11T12:26:13.824Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONGpHaUtVYXpUNW83dTR1aEo5RE54REJnbWd2U1FEWjl5LU1hSDFEb3RrVFpwNVdUN2xOWmpVX3VGbUxyNHJqVkVUby0za0p0a1d0eUdhN25hcEFJSUM5bkszNXgwRU8wdjJSY214QXphSkFXS2VSOEVtSmVLWlI2QnJxQnpuVjFZUkRacHd2eFNQVzFNVFHSAWZBVV95cUxOcmpFY1NMTkwwRC1Ra0lmWkoyemJBQVRfelpqVHlaMzAxQ0FCbzRlUDlKVXhobVRGU0hNamdDdVh6eDZPaUpKYnYwa0Z6OTBkQm9WOFdFU1NPVjRmcEdGLWdLcXl6SlE?oc=5|유가 폭탄에 한국 경제도 '휘청'…물가 연쇄 상승 우려",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "유가 폭탄에 한국 경제도 '휘청'…물가 연쇄 상승 우려",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONGpHaUtVYXpUNW83dTR1aEo5RE54REJnbWd2U1FEWjl5LU1hSDFEb3RrVFpwNVdUN2xOWmpVX3VGbUxyNHJqVkVUby0za0p0a1d0eUdhN25hcEFJSUM5bkszNXgwRU8wdjJSY214QXphSkFXS2VSOEVtSmVLWlI2QnJxQnpuVjFZUkRacHd2eFNQVzFNVFHSAWZBVV95cUxOcmpFY1NMTkwwRC1Ra0lmWkoyemJBQVRfelpqVHlaMzAxQ0FCbzRlUDlKVXhobVRGU0hNamdDdVh6eDZPaUpKYnYwa0Z6OTBkQm9WOFdFU1NPVjRmcEdGLWdLcXl6SlE?oc=5",
+    "source": "news.sbs.co.kr",
+    "pubDate": "2026-09-11T11:24:20.000Z",
+    "collectedAt": "2026-09-11T12:26:13.083Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html|Oracle jumps 6% after reporting 30% revenue growth fueled by AI cloud demand",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Oracle jumps 6% after reporting 30% revenue growth fueled by AI cloud demand",
+    "summary": "Oracle's cloud infrastructure revenue jumped 121% since last year, reflecting demand for its AI cloud services.",
+    "link": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T11:22:05.000Z",
+    "collectedAt": "2026-09-11T12:26:13.824Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5uQTFWM3ZrX2VxTjB1UjNXTk9TRWhoYVF0b1hnWF9vTTVnOHlHc1liNlcyeS01b2laUXlMM2JVbkhrbVA4M2wzVmhoRVZfSUtDRmJ0OGd5SHZFemlVeDZHbmdhUlB4QUk?oc=5|연합뉴스TV 경제포럼…AI 시대, 한국 성장 전략 찾는다",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "연합뉴스TV 경제포럼…AI 시대, 한국 성장 전략 찾는다",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5uQTFWM3ZrX2VxTjB1UjNXTk9TRWhoYVF0b1hnWF9vTTVnOHlHc1liNlcyeS01b2laUXlMM2JVbkhrbVA4M2wzVmhoRVZfSUtDRmJ0OGd5SHZFemlVeDZHbmdhUlB4QUk?oc=5",
+    "source": "연합뉴스TV",
+    "pubDate": "2026-09-11T11:19:00.000Z",
+    "collectedAt": "2026-09-11T12:26:13.082Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/trump-ai-extinction-risks.html|Trump dismisses AI extinction risks as more than a dozen OpenAI, Anthropic insiders call for a slowdown",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
