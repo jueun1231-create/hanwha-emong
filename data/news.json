@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/ai-regulation-anthropic-researcher-extinction-warning.html|AI regulation calls grow in D.C. after researcher's extinction warning",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI regulation calls grow in D.C. after researcher's extinction warning",
+    "summary": "Members of Congress are calling for AI regulation after a researcher warned that OpenAI and Anthropic are acting irresponsibly.",
+    "link": "https://www.cnbc.com/2026/09/11/ai-regulation-anthropic-researcher-extinction-warning.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T13:44:59.000Z",
+    "collectedAt": "2026-09-11T14:21:36.161Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html|Oracle's stock rises on earnings and revenue beat fueled by AI cloud demand",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Oracle's stock rises on earnings and revenue beat fueled by AI cloud demand",
+    "summary": "Oracle's cloud infrastructure revenue jumped 121% from a year earlier, reflecting demand for AI cloud services.",
+    "link": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T13:34:34.000Z",
+    "collectedAt": "2026-09-11T14:21:36.161Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html|Oracle jumps 7% after reporting 30% revenue growth fueled by AI cloud demand",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -383,6 +405,17 @@
     "source": "Google News",
     "pubDate": "2026-09-10T19:02:58.000Z",
     "collectedAt": "2026-09-10T23:17:23.463Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBuY3VjVk14MktXUTFfUFNncU1yQlRkVUJmSW5BMXdQdm94OHFVWlVQXzVOc3FVZjVOcVl2VEJZWWNPTzdFVElVZTRIenhvaGxR?oc=5|MSX 미국 주식 데일리 관찰｜Adobe FY2026 Q3 실적: 매출과 EPS 모두 예상 상회, AI 사용자 10억 돌파",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "MSX 미국 주식 데일리 관찰｜Adobe FY2026 Q3 실적: 매출과 EPS 모두 예상 상회, AI 사용자 10억 돌파",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBuY3VjVk14MktXUTFfUFNncU1yQlRkVUJmSW5BMXdQdm94OHFVWlVQXzVOc3FVZjVOcVl2VEJZWWNPTzdFVElVZTRIenhvaGxR?oc=5",
+    "source": "odaily.news",
+    "pubDate": "2026-09-10T15:27:00.000Z",
+    "collectedAt": "2026-09-11T14:21:34.763Z"
   },
   {
     "id": "https://www.cnbc.com/2026/09/10/amazon-chatgptads-open-ai.html|Amazon gives OpenAI's ad business a boost, letting its advertisers into ChatGPT",
