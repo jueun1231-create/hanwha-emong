@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html|Oracle posts 30% revenue growth fueled by AI cloud demand as debts hits $125 billion",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Oracle posts 30% revenue growth fueled by AI cloud demand as debts hits $125 billion",
+    "summary": "Oracle's cloud infrastructure revenue jumped 121% from a year earlier, reflecting demand for AI cloud services.",
+    "link": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html",
+    "source": "Google News",
+    "pubDate": "2026-09-11T16:21:23.000Z",
+    "collectedAt": "2026-09-11T16:21:42.325Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/11/ai-regulation-anthropic-researcher-extinction-warning.html|AI regulation calls grow in D.C. after researcher's extinction warning",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
