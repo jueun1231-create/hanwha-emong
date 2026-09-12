@@ -1197,5 +1197,27 @@
     "source": "인공지능신문",
     "pubDate": "2026-05-22T07:00:00.000Z",
     "collectedAt": "2026-09-11T23:17:50.018Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTjFOYzRENW5YYUNfdTZRNC00N0hNX1VnSDNEMWNkWER1SkRMNk5acEhsNzRCUElzSl9zbG1YQzBBUlRJbVRlbWJzdGNRWmloMmhOWWZiWmd5ZnBmNmQ4NUhrVHk1T1U4X2tIakFPdXJ2QU9ZOURxZGRSU2ZzY1dZNEh6eU1fdw?oc=5|AI 반도체·HBM이 살린 글로벌 무역… 트럼프 관세 전쟁에도 2025년 사상 최고치",
+    "category": "memory-hbm",
+    "categoryLabel": "메모리·HBM·후공정",
+    "title": "AI 반도체·HBM이 살린 글로벌 무역… 트럼프 관세 전쟁에도 2025년 사상 최고치",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTjFOYzRENW5YYUNfdTZRNC00N0hNX1VnSDNEMWNkWER1SkRMNk5acEhsNzRCUElzSl9zbG1YQzBBUlRJbVRlbWJzdGNRWmloMmhOWWZiWmd5ZnBmNmQ4NUhrVHk1T1U4X2tIakFPdXJ2QU9ZOURxZGRSU2ZzY1dZNEh6eU1fdw?oc=5",
+    "source": "글로벌이코노믹",
+    "pubDate": "2026-04-02T07:00:00.000Z",
+    "collectedAt": "2026-09-12T05:18:34.412Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE14c1FBVDhSWmhJdkc0d0JCbnlyeTlrOHg5Q2VBdTZCNnNJdXJaMjRwWEphbHdlTFlSX3hKUnVTdDZ3V0xwVGg5RlMyTlk1RmZ3MzFQc3FpNXcxd19rcjlIdQ?oc=5|이란의 도발, 블랙홀 빠진 세계경제…뛰는 '유가' 나는 '달러'",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "이란의 도발, 블랙홀 빠진 세계경제…뛰는 '유가' 나는 '달러'",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE14c1FBVDhSWmhJdkc0d0JCbnlyeTlrOHg5Q2VBdTZCNnNJdXJaMjRwWEphbHdlTFlSX3hKUnVTdDZ3V0xwVGg5RlMyTlk1RmZ3MzFQc3FpNXcxd19rcjlIdQ?oc=5",
+    "source": "아시아경제",
+    "pubDate": "2026-03-13T07:00:00.000Z",
+    "collectedAt": "2026-09-12T05:18:34.414Z"
   }
 ]
