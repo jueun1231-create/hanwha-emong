@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/12/ai-manager-coaching-employee-feedback-performanc-review.html|Managers are using AI for one of work's toughest tasks: Difficult employee conversations",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Managers are using AI for one of work's toughest tasks: Difficult employee conversations",
+    "summary": "AI tools let managers rehearse difficult conversations about performance, pay and layoffs, but experts say privacy safeguards and human judgment are essential.",
+    "link": "https://www.cnbc.com/2026/09/12/ai-manager-coaching-employee-feedback-performanc-review.html",
+    "source": "Google News",
+    "pubDate": "2026-09-12T14:32:08.000Z",
+    "collectedAt": "2026-09-12T15:18:40.451Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/12/ai-manager-coaching-employee-feedback-performanc-review.html|Your work manager may be talking with AI about your pay, performance, promotion",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1274,6 +1285,17 @@
     "source": "매일일보",
     "pubDate": "2026-07-19T07:00:00.000Z",
     "collectedAt": "2026-09-11T23:17:50.018Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8zd2ozYXpEU2ZpS1Mzb2tGQW5GdjBLV2xfQWJzVlVxb0xicmtKX3d6MzViOTNlQkFKLVg3dkVmWTU0MnJsQkN6a2t0VlJHRzliUk9tUHo2SkNZU0tr?oc=5|블룸버그 \"韓 반도체 주식, 글로벌 증시의 방향타 역할\"",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "블룸버그 \"韓 반도체 주식, 글로벌 증시의 방향타 역할\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8zd2ozYXpEU2ZpS1Mzb2tGQW5GdjBLV2xfQWJzVlVxb0xicmtKX3d6MzViOTNlQkFKLVg3dkVmWTU0MnJsQkN6a2t0VlJHRzliUk9tUHo2SkNZU0tr?oc=5",
+    "source": "뉴스핌",
+    "pubDate": "2026-07-19T07:00:00.000Z",
+    "collectedAt": "2026-09-12T15:18:37.805Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1NN08zVVhPOWJkMjFNclJBdlBBWVNrLS1MdlExRTgzaHhFQjZvcGxWUUlRYVFDVC1wR0ViRDR2R3BpWGxUelY3S3FZSVZMWW1MWXV1OHliSFZMYnhiRzljVWVYYmRueXc3RmxnRnhqM0U?oc=5|[뉴욕마켓워치] 반도체, 상호관세 충격 이후 최악의 한주…주식·달러↓채권 혼조",
