@@ -1,14 +1,25 @@
 [
   {
-    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1SQno3NFdNVHBCajRxSTJLNlZYTE9mWjkwOHJ3aEdsTWd0Y0ZMMV9uSk5SbWo2aGFrVXhfTmppcG1RMFJtMGUyUF90U3RQTWc?oc=5|글로벌 원유 공급 4% 감소 위기… 세계 경제 격랑속으로[사우디發 유가 불안]",
+    "id": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZGV2Z1Y4WVI2WWxXV3pINXdTeHI2a3lNNExfX25FQUpVc0lCR2FnTkJFYXgzRGctT29GNjJJRFdReUZMWkt3THZoblhmbEhrUE9ieGs2aVdmblF4Mlh6amIwVEtRWkVaNHpRV1laMXlScGV6QkZHWnFsQnF0aFJ0eTdRNE8zRi12RVc4Tlg2b25CUXE3VlE?oc=5|아시아 증시는 AI 관련 주식의 매도 압력으로 인해 하락했습니다.",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "아시아 증시는 AI 관련 주식의 매도 압력으로 인해 하락했습니다.",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZGV2Z1Y4WVI2WWxXV3pINXdTeHI2a3lNNExfX25FQUpVc0lCR2FnTkJFYXgzRGctT29GNjJJRFdReUZMWkt3THZoblhmbEhrUE9ieGs2aVdmblF4Mlh6amIwVEtRWkVaNHpRV1laMXlScGV6QkZHWnFsQnF0aFJ0eTdRNE8zRi12RVc4Tlg2b25CUXE3VlE?oc=5",
+    "source": "Vietnam.vn",
+    "pubDate": "2026-09-14T11:14:43.000Z",
+    "collectedAt": "2026-09-14T11:21:28.397Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE95V0o1UkRSMFJtd0laZmZpdERYUUJFcTAxa081N1phdVgxR2lqc0MzcUtyRkVtSnlrNWtrWWZRVnBVb2wwWHdvcThGTkZacndQTWpjYTVpZGU5QQ?oc=5|글로벌 원유 공급 4% 감소 위기… 세계 경제 격랑속으로[사우디發 유가 불안]",
     "category": "power-nuclear",
     "categoryLabel": "전력·원자력·에너지인프라",
     "title": "글로벌 원유 공급 4% 감소 위기… 세계 경제 격랑속으로[사우디發 유가 불안]",
     "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1SQno3NFdNVHBCajRxSTJLNlZYTE9mWjkwOHJ3aEdsTWd0Y0ZMMV9uSk5SbWo2aGFrVXhfTmppcG1RMFJtMGUyUF90U3RQTWc?oc=5",
-    "source": "v.daum.net",
-    "pubDate": "2026-09-14T09:51:12.000Z",
-    "collectedAt": "2026-09-14T10:21:24.868Z"
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE95V0o1UkRSMFJtd0laZmZpdERYUUJFcTAxa081N1phdVgxR2lqc0MzcUtyRkVtSnlrNWtrWWZRVnBVb2wwWHdvcThGTkZacndQTWpjYTVpZGU5QQ?oc=5",
+    "source": "파이낸셜뉴스",
+    "pubDate": "2026-09-14T09:48:42.000Z",
+    "collectedAt": "2026-09-14T11:21:29.186Z"
   },
   {
     "id": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html|OpenAI boss Sam Altman spells out how and why the AI industry wants to slow down: 'We could lose control'",
