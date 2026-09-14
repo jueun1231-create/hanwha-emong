@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/14/trump-ai-data-centers-anthropic-dario-amodei.html|Trump goes scorched earth on AI warnings, raging about data center opposition and regulation",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Trump goes scorched earth on AI warnings, raging about data center opposition and regulation",
+    "summary": "The Trump administration has encouraged AI's rapid growth and the development of data centers as it seeks an insurmountable tech edge over China.",
+    "link": "https://www.cnbc.com/2026/09/14/trump-ai-data-centers-anthropic-dario-amodei.html",
+    "source": "Google News",
+    "pubDate": "2026-09-14T21:15:56.000Z",
+    "collectedAt": "2026-09-14T21:19:45.818Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html|AI stocks sink while cybersecurity shares rally on slowdown fears",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI stocks sink while cybersecurity shares rally on slowdown fears",
+    "summary": "Anthropic CEO Dario Amodei said the industry \"must slow the pace at which we improve the capabilities of AI models,\" amid growing concerns over risks from AI.",
+    "link": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html",
+    "source": "Google News",
+    "pubDate": "2026-09-14T21:03:32.000Z",
+    "collectedAt": "2026-09-14T21:19:45.818Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html|AI slowdown winners and losers: Tech companies most exposed get hit while cyber names soar",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
