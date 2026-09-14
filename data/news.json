@@ -1,5 +1,60 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html|OpenAI boss Sam Altman spells out how and why the AI industry wants to slow down: 'We could lose control'",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI boss Sam Altman spells out how and why the AI industry wants to slow down: 'We could lose control'",
+    "summary": "OpenAI's chief has made comments detailing how AI safety frameworks and a slowdown could work, as the industry unites behind concerns.",
+    "link": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html",
+    "source": "Google News",
+    "pubDate": "2026-09-14T08:59:18.000Z",
+    "collectedAt": "2026-09-14T09:23:02.856Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1US1puZkdIXzhyUGtDNGowZUNPQ3R4ejUtX2dEU3JjVDFfcEJmbURmYVlNM0tPR3NONy1ua1NLVHZxOFNybUhMOS15ZERCYlVuckxUbmMyb1R4ZUtwd0RnaVdIY3dUSkRlZTA0QU53?oc=5|[칼럼] 반도체에 ‘올인’한 한국경제, 과연 지속가능한가?",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "[칼럼] 반도체에 ‘올인’한 한국경제, 과연 지속가능한가?",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1US1puZkdIXzhyUGtDNGowZUNPQ3R4ejUtX2dEU3JjVDFfcEJmbURmYVlNM0tPR3NONy1ua1NLVHZxOFNybUhMOS15ZERCYlVuckxUbmMyb1R4ZUtwd0RnaVdIY3dUSkRlZTA0QU53?oc=5",
+    "source": "아시아투데이",
+    "pubDate": "2026-09-14T08:58:31.000Z",
+    "collectedAt": "2026-09-14T09:23:02.454Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/14/iran-war-saudi-arabia-east-west-pipeline-oil.html|Satellite images show extent of damage to Saudi Arabia’s oil pipeline that bypasses Strait of Hormuz",
+    "category": "defense",
+    "categoryLabel": "방산·항공우주",
+    "title": "Satellite images show extent of damage to Saudi Arabia’s oil pipeline that bypasses Strait of Hormuz",
+    "summary": "Saudi Arabia temporarily shut the roughly 750-mile pipeline as attacks threaten a key alternative to the Strait of Hormuz.",
+    "link": "https://www.cnbc.com/2026/09/14/iran-war-saudi-arabia-east-west-pipeline-oil.html",
+    "source": "Google News",
+    "pubDate": "2026-09-14T08:51:57.000Z",
+    "collectedAt": "2026-09-14T09:23:02.857Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53enkwVzFtOVh0RnJLN2ROOEFHanlmdzVvbzRmSWhvR3NOSG5kUEI0RzBtblZoZkYwYWhmZ01HWEtCM1JObTl3YzFkRDBhNVFaY010cldJaVdwZw?oc=5|美 국채금리 '5% 악몽'에 3조 던진 외국인…亞 반도체 와르르",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "美 국채금리 '5% 악몽'에 3조 던진 외국인…亞 반도체 와르르",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53enkwVzFtOVh0RnJLN2ROOEFHanlmdzVvbzRmSWhvR3NOSG5kUEI0RzBtblZoZkYwYWhmZ01HWEtCM1JObTl3YzFkRDBhNVFaY010cldJaVdwZw?oc=5",
+    "source": "한국경제",
+    "pubDate": "2026-09-14T08:50:41.000Z",
+    "collectedAt": "2026-09-14T09:23:02.455Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBweFVNcXk1SlllcWxMeG5PdWZaRGl1VHotWmlUWi1ycDMtSWl1bWs4dmpzWk9Hd2dYWVBxSl9EVUVWSWgwWk43WFNXTnVDanpVc1E?oc=5|[미국 주식 돋보기] 반도체 검사장비에 로봇까지 … 테라다인 '질주'",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "[미국 주식 돋보기] 반도체 검사장비에 로봇까지 … 테라다인 '질주'",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBweFVNcXk1SlllcWxMeG5PdWZaRGl1VHotWmlUWi1ycDMtSWl1bWs4dmpzWk9Hd2dYWVBxSl9EVUVWSWgwWk43WFNXTnVDanpVc1E?oc=5",
+    "source": "매일경제 마켓",
+    "pubDate": "2026-09-14T08:49:34.000Z",
+    "collectedAt": "2026-09-14T09:23:02.080Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBKTUJzZDRfZGNYMzFndTg1WG41ZG4xelVvMmlOOTVkdmJRd0gxaktJWVdCNFQzTS1EX3dVVTI4WkJsUkY1TW9PRm5YZ0VUck5KYzRBVHk4UzB3ejNOVUdHTWVPTnBsT3RwSjZNVG9n?oc=5|AI '속도조절론' 코스피 반도체주 투자심리 급랭",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
