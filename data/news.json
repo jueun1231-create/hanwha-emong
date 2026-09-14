@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9PNTJLY2c5V0NOaG1rTkZnWmRFY1lramo3NGlHZjFmMWgyVVVLclZBeTVXN0gwSWRNTUthVEFMTW0zakhXRHlJUk15WUwzVXdMeDhSMDdmNXZndw?oc=5|고유가·고금리에 AI ‘브레이크’까지…외국인 3조 던졌다",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "고유가·고금리에 AI ‘브레이크’까지…외국인 3조 던졌다",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9PNTJLY2c5V0NOaG1rTkZnWmRFY1lramo3NGlHZjFmMWgyVVVLclZBeTVXN0gwSWRNTUthVEFMTW0zakhXRHlJUk15WUwzVXdMeDhSMDdmNXZndw?oc=5",
+    "source": "한국경제",
+    "pubDate": "2026-09-14T05:56:58.000Z",
+    "collectedAt": "2026-09-14T06:28:27.539Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5NLXlKMHpyX3dKTkN0dUMzU0xweGlGQXp4aHBveTZsRURaN09xMTNjdmNHeFdja0RlS2dZSmozVzhMN3lnVXhFQVhXRmxROFE?oc=5|반도체는 초호황…고용효과 적어 온기가 안퍼진다",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1034,15 +1045,15 @@
     "collectedAt": "2026-09-11T23:17:49.616Z"
   },
   {
-    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE16TE9XY2dpRnlZVXY1YVFTak90Um5YS184bmoxRVZsbmZQMW1jOU5FQm5IRzk2VnQzYWFWX0ZhWjJ1MmlNNjE4TzBJQlMwMzFmcDluQjV3dk9wZw?oc=5|AI 주식관리 시대 열었다... 하나증권 신규 MTS '하나증권V' 출시",
+    "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oQndIT2gtZ1h4UWlEMTUtLTFwTk1Ka0F3Y2lib21FNmIzdUpYelp4V2RHenlNdHB0dzk0NFRkaEtPbGdEYml2WGYyYWhqZENKQ1gyeXZKU3pkUEFoMVZra3kxQVQxamhE?oc=5|AI 주식관리 시대 열었다... 하나증권 신규 MTS '하나증권V' 출시",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
     "title": "AI 주식관리 시대 열었다... 하나증권 신규 MTS '하나증권V' 출시",
     "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE16TE9XY2dpRnlZVXY1YVFTak90Um5YS184bmoxRVZsbmZQMW1jOU5FQm5IRzk2VnQzYWFWX0ZhWjJ1MmlNNjE4TzBJQlMwMzFmcDluQjV3dk9wZw?oc=5",
-    "source": "한국경제",
-    "pubDate": "2026-09-07T06:46:10.000Z",
-    "collectedAt": "2026-09-11T23:17:49.172Z"
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oQndIT2gtZ1h4UWlEMTUtLTFwTk1Ka0F3Y2lib21FNmIzdUpYelp4V2RHenlNdHB0dzk0NFRkaEtPbGdEYml2WGYyYWhqZENKQ1gyeXZKU3pkUEFoMVZra3kxQVQxamhE?oc=5",
+    "source": "TradingView",
+    "pubDate": "2026-09-07T06:46:00.000Z",
+    "collectedAt": "2026-09-14T06:28:27.021Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5tMHhjMnFleGFPb3VLcG1ZM0xmZVliaEZfSzhiQVpiOTQ3TGVuTnNiVnJ4LXhPeUVyRGZ6blhIMktDdV8zaHdzMV9JaHVQSC1DUXA5VmNB?oc=5|“이란戰 6개월 더 갈수도”…유가發 인플레, 세계경제 ‘고금리 공포’ [글로벌 금리인상 러시]",
@@ -1692,6 +1703,17 @@
     "source": "MBC 뉴스",
     "pubDate": "2026-07-28T07:00:00.000Z",
     "collectedAt": "2026-09-14T04:22:12.034Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBZNVZibmJMVS1fZ1F2VV9YM1hNUGZDUDB2MGpFVVQtLVJnSmJ0a1BhalNtZU42VjVLd0Eyb0dybUxaWVdhcEtOX3FiZmpPMzhmdnBzZHN6WDFiOXdhSnFqTHN6NWlrcEpmRFJfOXIwZWk?oc=5|美반도체주 ETF, 차트서 '헤드앤드숄더' 징후",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "美반도체주 ETF, 차트서 '헤드앤드숄더' 징후",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBZNVZibmJMVS1fZ1F2VV9YM1hNUGZDUDB2MGpFVVQtLVJnSmJ0a1BhalNtZU42VjVLd0Eyb0dybUxaWVdhcEtOX3FiZmpPMzhmdnBzZHN6WDFiOXdhSnFqTHN6NWlrcEpmRFJfOXIwZWk?oc=5",
+    "source": "연합인포맥스",
+    "pubDate": "2026-07-28T07:00:00.000Z",
+    "collectedAt": "2026-09-14T06:28:27.023Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE84MjhOTzRoLXdDb2J1SUNDekdZdGlSWUxxekhfeF8zcHMyRE50UVBBX0dDMHlCMGdrMUZPUHYxRHV5bGxfcEh5amVPLXcwNl9oZUlUVWpyUG8td25iVUQ4VHJoZnN5NmpIWDgyeVZpOEw?oc=5|월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적'",
