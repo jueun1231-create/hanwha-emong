@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html|AI slowdown winners and losers: Tech companies most exposed get hit while cyber names soar",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI slowdown winners and losers: Tech companies most exposed get hit while cyber names soar",
+    "summary": "Anthropic CEO Dario Amodei said the industry \"must slow the pace at which we improve the capabilities of AI models,\" amid growing concerns over risks from AI.",
+    "link": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html",
+    "source": "Google News",
+    "pubDate": "2026-09-14T20:10:45.000Z",
+    "collectedAt": "2026-09-14T20:20:53.240Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html|AI infrastructure stocks slump, cyber shares soar on calls for AI slowdown",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -141,6 +152,17 @@
     "source": "Google News",
     "pubDate": "2026-09-14T13:09:31.000Z",
     "collectedAt": "2026-09-14T13:23:37.897Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OTzVUVjhqZ1Y1SlRJUjZmNExzbUlpdGlDVS1UemJ4Zm11WEo0MGZUYXBrZlpNR3hhbU1wMEFPOU5qT2s3UXlUek1sajJhcFRJbjFHUXlTSW9vQk16VlpfddIBeEFVX3lxTE1JUDlBVFZGZ1M2VnZHUjE1YVZfNjdKZzJ3TkJ5bV9QMDQ1aXlDWUJHdVB6Zjdzc1pGYVE1eDBqNkVxUmtzWW0tVnNZQUt4M2diYmFaMGdhX1F1RVBEa2QxMmY4S09kWkkzalNOVEc2SzlwLVV0WGFGdA?oc=5|\"구글 팔고 '이 주식' 샀다\"…돈나무 언니가 375억원 베팅한 AI 수혜주",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "\"구글 팔고 '이 주식' 샀다\"…돈나무 언니가 375억원 베팅한 AI 수혜주",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OTzVUVjhqZ1Y1SlRJUjZmNExzbUlpdGlDVS1UemJ4Zm11WEo0MGZUYXBrZlpNR3hhbU1wMEFPOU5qT2s3UXlUek1sajJhcFRJbjFHUXlTSW9vQk16VlpfddIBeEFVX3lxTE1JUDlBVFZGZ1M2VnZHUjE1YVZfNjdKZzJ3TkJ5bV9QMDQ1aXlDWUJHdVB6Zjdzc1pGYVE1eDBqNkVxUmtzWW0tVnNZQUt4M2diYmFaMGdhX1F1RVBEa2QxMmY4S09kWkkzalNOVEc2SzlwLVV0WGFGdA?oc=5",
+    "source": "뉴시스",
+    "pubDate": "2026-09-14T13:03:00.000Z",
+    "collectedAt": "2026-09-14T20:20:48.788Z"
   },
   {
     "id": "https://www.cnbc.com/2026/09/14/ai-stocks-tumble-on-safety-warnings-how-to-proceed-including-2-names-on-our-shopping-list.html|AI stocks tumble on safety warnings. How to proceed — including 2 names on our shopping list",
