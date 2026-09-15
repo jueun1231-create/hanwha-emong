@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/15/trump-opposition-to-ai-rules-undercuts-industrys-calls-for-a-slowdown.html|Trump’s opposition to AI rules undercuts industry's calls for a slowdown",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Trump’s opposition to AI rules undercuts industry's calls for a slowdown",
+    "summary": "Anthropic and OpenAI have called for mandatory safety checks to be put in place as fears intensify that AI can soon be too powerful to control.",
+    "link": "https://www.cnbc.com/2026/09/15/trump-opposition-to-ai-rules-undercuts-industrys-calls-for-a-slowdown.html",
+    "source": "Google News",
+    "pubDate": "2026-09-15T11:00:01.000Z",
+    "collectedAt": "2026-09-15T11:20:03.986Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/15/investors-ai-slowdown-data-center-buildout.html|Wall Street weighs prospect of an AI slowdown on data center buildout",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -44,6 +55,17 @@
     "collectedAt": "2026-09-15T08:23:48.683Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9zNWVnY1dTZ0lNRmllTFJPQ1RJT3FVR2M3Wl95SERhaXVHM1lRTkNCcEZUVzkyb3lhMEVNLWJSZFUyZ01OTTBicUN4Z0ZWRGZXVWh3Qw?oc=5|구글 팔고 ‘이 주식’ 샀다...돈나무가 선택한 AI 수혜주는?",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "구글 팔고 ‘이 주식’ 샀다...돈나무가 선택한 AI 수혜주는?",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9zNWVnY1dTZ0lNRmllTFJPQ1RJT3FVR2M3Wl95SERhaXVHM1lRTkNCcEZUVzkyb3lhMEVNLWJSZFUyZ01OTTBicUN4Z0ZWRGZXVWh3Qw?oc=5",
+    "source": "매일경제",
+    "pubDate": "2026-09-15T05:26:47.000Z",
+    "collectedAt": "2026-09-15T11:20:02.934Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5iUlU1TmtuNF9TU29sX3FQanJOQ0ZyZGZFOVNPZk9wZ3hLRjJoa3djZEhMdkxUbjZCLXpHT3B4SWxlSmZsTU1ETm9tTHBLYWw4VU9oTWNpNk1CU3VhdUlaY1VRSHRieUs4R29R0gFvQVVfeXFMTVNTYkxIMTY1UnItVjE5NzBXcXB6ajZvaVRPX2Q4bXJZOFVfS2c3QXAtZkNWSWlVd2RxMEJwYWk0emp0TkxPZi1KOUpsby1sYlZ2d0lOakt1X3I0bC1ORHFCTC1CSGU2LWZiVzJia3FR?oc=5|배터리·자동차 이어 HBM까지…中 추격, 한국경제 ‘밥줄’ 흔든다",
     "category": "battery",
     "categoryLabel": "2차전지·소재",
@@ -63,7 +85,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-15T09:23:30.583Z"
+    "collectedAt": "2026-09-15T10:21:22.133Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5|\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱' - 머니투데이",
@@ -74,7 +96,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-15T10:21:22.133Z"
+    "collectedAt": "2026-09-15T11:20:02.933Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB3VktQN3p1M3VzdjFHM0RZVFFrZ1pmODg0blpmUlZuRU5ydWw1ZTE2U1hXTTNEOVEyTHdMU2taeUM2eHVyRm5uMUR0b3hlWWdNVWxZOFVZWDdRRGdDLWxGZVRta1F5XzdoVjhCZ1ZCQmJJano1RExn?oc=5|美 국채금리 5% 분석…“전쟁이 유가·물가·금리 움직인다” [김준영의 투자 제1법칙]",
