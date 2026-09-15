@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/15/ai-regulation-trump-nvidia-openai-anthropic.html|Two camps have emerged in the debate over AI safety and regulation",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Two camps have emerged in the debate over AI safety and regulation",
+    "summary": "Two opposing camps are emerging in the AI regulation debate, with Trump and Huang on one side and Amodei. Altman and Musk on the other.",
+    "link": "https://www.cnbc.com/2026/09/15/ai-regulation-trump-nvidia-openai-anthropic.html",
+    "source": "Google News",
+    "pubDate": "2026-09-15T20:12:00.000Z",
+    "collectedAt": "2026-09-15T20:20:11.607Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/15/nvidia-and-anthropic-ceos-diverge-on-ai-safety-at-dreamforce.html|Nvidia and Anthropic CEOs diverge on AI safety at Dreamforce: Huang says fast vs. pacing is 'false choice'",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Nvidia and Anthropic CEOs diverge on AI safety at Dreamforce: Huang says fast vs. pacing is 'false choice'",
+    "summary": "Comments from the two tech leaders landed days after Anthropic's Dario Amodei published an essay urging the AI industry to slow the pace of model development.",
+    "link": "https://www.cnbc.com/2026/09/15/nvidia-and-anthropic-ceos-diverge-on-ai-safety-at-dreamforce.html",
+    "source": "Google News",
+    "pubDate": "2026-09-15T20:00:16.000Z",
+    "collectedAt": "2026-09-15T20:20:11.607Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html|OpenAI, Google, Anthropic discussing collaboration on AI safety issues",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -195,7 +217,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-15T18:21:36.403Z"
+    "collectedAt": "2026-09-15T19:18:52.268Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5|\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱' - 머니투데이",
@@ -206,7 +228,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-15T19:18:52.268Z"
+    "collectedAt": "2026-09-15T20:20:10.172Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB3VktQN3p1M3VzdjFHM0RZVFFrZ1pmODg0blpmUlZuRU5ydWw1ZTE2U1hXTTNEOVEyTHdMU2taeUM2eHVyRm5uMUR0b3hlWWdNVWxZOFVZWDdRRGdDLWxGZVRta1F5XzdoVjhCZ1ZCQmJJano1RExn?oc=5|美 국채금리 5% 분석…“전쟁이 유가·물가·금리 움직인다” [김준영의 투자 제1법칙]",
@@ -1461,6 +1483,17 @@
     "source": "aitimes.com",
     "pubDate": "2026-08-03T07:00:00.000Z",
     "collectedAt": "2026-09-14T23:18:25.254Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9rNU5jc1Jxd3g1TUhUZ0FURnZjMEZqUVh5YXFDUVg0TzMxTUlwWldGQnluRFRXQWhMVXotMm1qR3VacThuQjBLMzRHb28xYjAzRGJaZmdxRVEtV2ZTWW5ONlBKSHBfckhtU0VkTWN2dU0?oc=5|\"애플, 메모리 주식 매도세 바닥 가능성 신호줬다\"",
+    "category": "memory-hbm",
+    "categoryLabel": "메모리·HBM·후공정",
+    "title": "\"애플, 메모리 주식 매도세 바닥 가능성 신호줬다\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9rNU5jc1Jxd3g1TUhUZ0FURnZjMEZqUVh5YXFDUVg0TzMxTUlwWldGQnluRFRXQWhMVXotMm1qR3VacThuQjBLMzRHb28xYjAzRGJaZmdxRVEtV2ZTWW5ONlBKSHBfckhtU0VkTWN2dU0?oc=5",
+    "source": "연합인포맥스",
+    "pubDate": "2026-08-03T07:00:00.000Z",
+    "collectedAt": "2026-09-15T20:20:10.177Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBhZkVNUTJhRFdLTVpFak1PRThkdk14R1paYnh6Skkwc2tEaVdleWpfTEZ6ZXh0UnRmZ25kUjY0bi1ySmgtUDdsMmlKZ1JjNEIxTW9wMWRB?oc=5|“‘이 뉴스’ 2개 뜨면 팔아라” 여의도 제갈량이 푼 ‘반도체 끝물’",
