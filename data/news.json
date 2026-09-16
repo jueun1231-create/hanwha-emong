@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/15/congress-ai-data-center-utility-costs.html|House to vote on bill to rein in AI data center utility costs",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "House to vote on bill to rein in AI data center utility costs",
+    "summary": "The bipartisan legislation would create a regulatory framework states could adopt to prevent data center-related energy costs from being passed on to consumers.",
+    "link": "https://www.cnbc.com/2026/09/15/congress-ai-data-center-utility-costs.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T00:14:21.000Z",
+    "collectedAt": "2026-09-16T00:26:32.924Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"한국, AI·반도체 핵심\" 블랙록 신흥국 투자의견 '비중확대'로 상향 - 머니투데이",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "\"한국, AI·반도체 핵심\" 블랙록 신흥국 투자의견 '비중확대'로 상향 - 머니투데이",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
+    "source": "mt.co.kr",
+    "pubDate": "2026-09-16T00:12:00.000Z",
+    "collectedAt": "2026-09-16T00:26:30.804Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBYR1R4VWl1cDlkWTFySHVfSTlZdC1oZlhTbEZGa01QQWZiS29kNGR2SEV0VTE3cWNLU1lUWFVsczZZRmM0QW5vTWttR3pHT0kzLUtNOEtiYTdnZw?oc=5|AI 데이터센터에 수요 폭발…올해 주가만 50% 넘게 올랐다 [핫픽!미국주식]",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -20,6 +42,17 @@
     "source": "Google News",
     "pubDate": "2026-09-15T22:17:47.000Z",
     "collectedAt": "2026-09-15T23:18:34.943Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM0VUbVk4Z21ITWJTdkV6X2JRUTh0UWpGQmtBSlBOVldTUWs5eWwtTWFWMlNVNUVUOS1NTjFjOGI0YS1iYUJLUjFzRjJaQm44WDBSYUZCRUZkTEIyUWthbUZ0aDlXYzItV2w3R1JkWEQyQlAyNFpTQkdVdGZXU2FvWnYxLW4?oc=5|반도체 관련 주식이 매도되면서 미국 주식 시장이 급락했다.",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "반도체 관련 주식이 매도되면서 미국 주식 시장이 급락했다.",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM0VUbVk4Z21ITWJTdkV6X2JRUTh0UWpGQmtBSlBOVldTUWs5eWwtTWFWMlNVNUVUOS1NTjFjOGI0YS1iYUJLUjFzRjJaQm44WDBSYUZCRUZkTEIyUWthbUZ0aDlXYzItV2w3R1JkWEQyQlAyNFpTQkdVdGZXU2FvWnYxLW4?oc=5",
+    "source": "Vietnam.vn",
+    "pubDate": "2026-09-15T21:39:27.000Z",
+    "collectedAt": "2026-09-16T00:26:30.805Z"
   },
   {
     "id": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html|OpenAI, Google, Anthropic discussing collaboration on AI safety issues",
@@ -121,15 +154,15 @@
     "collectedAt": "2026-09-15T23:18:33.760Z"
   },
   {
-    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9LTDhuWThoUEVKWjRyVEtTZUdCT3ZjXzJELWJzazZBZ010SV9mOVlnSWRrZlR4bS1HeWF1TzB1bmZlZnZSb3FkM25YN3lseHM?oc=5|[미국 주식 돋보기] 'AI 속도 조절론' 덕분에 … 美사이버보안주 급등",
+    "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBLUllPSVpTV3JuZmJvTWQ3R2JXWHFuajcwd3I5bVhSNE0xbUZBZVRpZGdIM2t2NE5kcUg2d2t3RFhINmx5ZHgwMS10cDB4OFhXUkE?oc=5|[미국 주식 돋보기] 'AI 속도 조절론' 덕분에 … 美사이버보안주 급등",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
     "title": "[미국 주식 돋보기] 'AI 속도 조절론' 덕분에 … 美사이버보안주 급등",
     "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9LTDhuWThoUEVKWjRyVEtTZUdCT3ZjXzJELWJzazZBZ010SV9mOVlnSWRrZlR4bS1HeWF1TzB1bmZlZnZSb3FkM25YN3lseHM?oc=5",
-    "source": "v.daum.net",
-    "pubDate": "2026-09-15T08:54:03.000Z",
-    "collectedAt": "2026-09-15T23:18:33.759Z"
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBLUllPSVpTV3JuZmJvTWQ3R2JXWHFuajcwd3I5bVhSNE0xbUZBZVRpZGdIM2t2NE5kcUg2d2t3RFhINmx5ZHgwMS10cDB4OFhXUkE?oc=5",
+    "source": "매일경제",
+    "pubDate": "2026-09-15T08:51:56.000Z",
+    "collectedAt": "2026-09-16T00:26:30.805Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9zNWVnY1dTZ0lNRmllTFJPQ1RJT3FVR2M3Wl95SERhaXVHM1lRTkNCcEZUVzkyb3lhMEVNLWJSZFUyZ01OTTBicUN4Z0ZWRGZXVWh3Qw?oc=5|구글 팔고 ‘이 주식’ 샀다...돈나무가 선택한 AI 수혜주는?",
@@ -143,15 +176,26 @@
     "collectedAt": "2026-09-15T23:18:33.760Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5|\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱'",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱'",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
+    "source": "머니투데이",
+    "pubDate": "2026-09-15T01:19:22.000Z",
+    "collectedAt": "2026-09-15T23:18:33.760Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5|\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱' - 머니투데이",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
     "title": "\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱' - 머니투데이",
     "summary": "",
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
-    "source": "머니투데이",
+    "source": "mt.co.kr",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-15T23:18:33.760Z"
+    "collectedAt": "2026-09-16T00:26:30.805Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5CZG1NajFXaHFHbV9iZ2cyUVFTQ3QzbGFzWFZVSV9HY0xTTWhORmw3ZUhZUHljejFXM1U3c1NEMUZWTkxvd1ZvbDRPTHhmeU51emV2NFhaYVNmN1c4UmtlcHFuSzduQVJ6?oc=5|AI 기술 속도 조절 논의에 반도체 주식 급락, 투자자들 충격",
@@ -407,17 +451,6 @@
     "collectedAt": "2026-09-15T23:18:33.761Z"
   },
   {
-    "id": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZE8zcXFxZzQ4Y05hRkpTVlhyNHg3NVNOR2l3Uk9mWHJzM0dnaEZvUG1zRjdWTHE4RDByNXVKUS1TcTd2Ym5zS29rajYteG9hMDVRbTdQSi1QS3ZvbE82Z2RPbGF0Rm1SMUc5elNicmRjVXFOYU9vVkx1dEYwVXUxZ2w5dC1Sb1hiV09kR3NWRnprQmxia2hz0gGXAUFVX3lxTE5kTzNxcXFnNDhjTmFGSlNWWHI0eDc1U05HaXdST2ZYcnMzR2doRm9QbXNGN1ZMcThEMHI1dUpRLVNxN3ZibnNLb2tqNi14b2EwNVFtN1BKLVBLdm9sTzZnZE9sYXRGbVIxRzl6U2JyZGNVcU5hT29WTHV0RjBVdTFnbDl0LVJvWGJXT2RHc1ZGemtCbGJraHM?oc=5|최대 65% 저평가된 캐나다 AI 주식 3선",
-    "category": "ai-compute",
-    "categoryLabel": "AI 반도체·컴퓨트",
-    "title": "최대 65% 저평가된 캐나다 AI 주식 3선",
-    "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZE8zcXFxZzQ4Y05hRkpTVlhyNHg3NVNOR2l3Uk9mWHJzM0dnaEZvUG1zRjdWTHE4RDByNXVKUS1TcTd2Ym5zS29rajYteG9hMDVRbTdQSi1QS3ZvbE82Z2RPbGF0Rm1SMUc5elNicmRjVXFOYU9vVkx1dEYwVXUxZ2w5dC1Sb1hiV09kR3NWRnprQmxia2hz0gGXAUFVX3lxTE5kTzNxcXFnNDhjTmFGSlNWWHI0eDc1U05HaXdST2ZYcnMzR2doRm9QbXNGN1ZMcThEMHI1dUpRLVNxN3ZibnNLb2tqNi14b2EwNVFtN1BKLVBLdm9sTzZnZE9sYXRGbVIxRzl6U2JyZGNVcU5hT29WTHV0RjBVdTFnbDl0LVJvWGJXT2RHc1ZGemtCbGJraHM?oc=5",
-    "source": "simplywall.st",
-    "pubDate": "2026-09-12T23:33:28.000Z",
-    "collectedAt": "2026-09-15T23:18:33.762Z"
-  },
-  {
     "id": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5QZW54TnFaVU1UVkYzUWZ5WHpaSjQ1ZGRBR0hidU5fQThZVksyU1VqMDNZcVZiYlBfaF9aVVVEektqSFFpN1JxY2ZEUFdTOVhI?oc=5|7 월에 참패한 'AI 주식 신'이 다시 돌아왔다",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -440,15 +473,15 @@
     "collectedAt": "2026-09-15T23:18:33.760Z"
   },
   {
-    "id": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBVV2JYUDJpelY3OE95WFprcUd4YXBhNWFfNy1HMmhEQkNlS21aTFdMcmtQVVRVaXdfTG5leUxzRklmOGtEVmc?oc=5|유가 폭탄에 한국 경제도 '휘청'…물가 연쇄 상승 우려",
+    "id": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5LT2V3MFd2TFduNmc5ZXdiRXRMVVRVV0pQVzJwWE53SU5xTWlxT2xkbVpjQkRBV0UycVY4VWFzQU0tb3VFemg1aDA0Rk5jUmY2LUw0Zl94RVJ0MzE1UlJLbTlaWTR4LWtWaXfSAWZBVV95cUxOcmpFY1NMTkwwRC1Ra0lmWkoyemJBQVRfelpqVHlaMzAxQ0FCbzRlUDlKVXhobVRGU0hNamdDdVh6eDZPaUpKYnYwa0Z6OTBkQm9WOFdFU1NPVjRmcEdGLWdLcXl6SlE?oc=5|유가 폭탄에 한국 경제도 '휘청'…물가 연쇄 상승 우려",
     "category": "power-nuclear",
     "categoryLabel": "전력·원자력·에너지인프라",
     "title": "유가 폭탄에 한국 경제도 '휘청'…물가 연쇄 상승 우려",
     "summary": "",
-    "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBVV2JYUDJpelY3OE95WFprcUd4YXBhNWFfNy1HMmhEQkNlS21aTFdMcmtQVVRVaXdfTG5leUxzRklmOGtEVmc?oc=5",
-    "source": "v.daum.net",
-    "pubDate": "2026-09-11T11:27:08.000Z",
-    "collectedAt": "2026-09-15T23:18:34.249Z"
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5LT2V3MFd2TFduNmc5ZXdiRXRMVVRVV0pQVzJwWE53SU5xTWlxT2xkbVpjQkRBV0UycVY4VWFzQU0tb3VFemg1aDA0Rk5jUmY2LUw0Zl94RVJ0MzE1UlJLbTlaWTR4LWtWaXfSAWZBVV95cUxOcmpFY1NMTkwwRC1Ra0lmWkoyemJBQVRfelpqVHlaMzAxQ0FCbzRlUDlKVXhobVRGU0hNamdDdVh6eDZPaUpKYnYwa0Z6OTBkQm9WOFdFU1NPVjRmcEdGLWdLcXl6SlE?oc=5",
+    "source": "news.sbs.co.kr",
+    "pubDate": "2026-09-11T11:24:20.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMickFVX3lxTE9EeFZJQ0VFVGJYSVNfQ2UzNmUxQ1E0V1FycW1fRTlMSFBpSkpadFRCbEFreXBlWDRSaXFyaDV5czNPVm5FRHNDMnhfZEtBT3FxdkdhbUl3amxGVWt0ZUhQYU9TOF81Ym1yR3VBaTZzTHBpQQ?oc=5|임경환 대표이사, 비큐AI 주식 5만5000주 ↑…지분율 32.93%",
@@ -572,6 +605,17 @@
     "collectedAt": "2026-09-15T23:18:34.249Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE12Y1hEVUtLU2FQN2VELUxkZVdqdWJOVS1PZnBHR0R0RzhJb1FQX3pYUnA5VEtSOWx4Mm9WN1pQZUE0Rmw0akpjS0o0bHJEaTA?oc=5|반도체값 뛰자 국민소득 4만달러?…한국 경제 규모 '껑충'",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "반도체값 뛰자 국민소득 4만달러?…한국 경제 규모 '껑충'",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE12Y1hEVUtLU2FQN2VELUxkZVdqdWJOVS1PZnBHR0R0RzhJb1FQX3pYUnA5VEtSOWx4Mm9WN1pQZUE0Rmw0akpjS0o0bHJEaTA?oc=5",
+    "source": "v.daum.net",
+    "pubDate": "2026-09-08T10:47:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBpXzBUUVg4ZElkNE9vSzFsMjhEbjEwY1VDWDE5UjJaMHYwc1BsZF8td21ZTm5NcDUzcDVoLWZCWGlNLW1aUGcwMzJuZTRia1phekHSAVNBVV95cUxQcV9yOHhjYVFRSDNUaUpLUVFsVFR6c2FhNGxYZHVjLTk2QzFuakQwM21ORWFUdFpHTC13SGdCUjVxSkZZNVF2cG91QUVaQk9wVkx3cw?oc=5|트럼프 “주식으로 美에 수천억달러 벌어줘”…10시간 AI 게시물 ‘폭주’",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -603,6 +647,17 @@
     "source": "straightnews.co.kr",
     "pubDate": "2026-09-08T07:00:00.000Z",
     "collectedAt": "2026-09-15T23:18:34.685Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVTVTOTdZTUd6aWhMeVRqZXNZbkxfbHNkXzBSQWRGYkMycmE5NXBOTklxREYyamhnMVdjRnpPdEVzTnpaZ2J3bUVkLURHbnhtdFpzVEhYYnRjeHhGSVJSVUxFTEhhNHFXX1RnV1gtM1hVU0ZIdHdfZ2NNOHJLOTU0M05RRjNBWkppREliUmF3TEUtQdIBlwFBVV95cUxOZE8zcXFxZzQ4Y05hRkpTVlhyNHg3NVNOR2l3Uk9mWHJzM0dnaEZvUG1zRjdWTHE4RDByNXVKUS1TcTd2Ym5zS29rajYteG9hMDVRbTdQSi1QS3ZvbE82Z2RPbGF0Rm1SMUc5elNicmRjVXFOYU9vVkx1dEYwVXUxZ2w5dC1Sb1hiV09kR3NWRnprQmxia2hz?oc=5|최대 65% 저평가된 캐나다 AI 주식 3선",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "최대 65% 저평가된 캐나다 AI 주식 3선",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVTVTOTdZTUd6aWhMeVRqZXNZbkxfbHNkXzBSQWRGYkMycmE5NXBOTklxREYyamhnMVdjRnpPdEVzTnpaZ2J3bUVkLURHbnhtdFpzVEhYYnRjeHhGSVJSVUxFTEhhNHFXX1RnV1gtM1hVU0ZIdHdfZ2NNOHJLOTU0M05RRjNBWkppREliUmF3TEUtQdIBlwFBVV95cUxOZE8zcXFxZzQ4Y05hRkpTVlhyNHg3NVNOR2l3Uk9mWHJzM0dnaEZvUG1zRjdWTHE4RDByNXVKUS1TcTd2Ym5zS29rajYteG9hMDVRbTdQSi1QS3ZvbE82Z2RPbGF0Rm1SMUc5elNicmRjVXFOYU9vVkx1dEYwVXUxZ2w5dC1Sb1hiV09kR3NWRnprQmxia2hz?oc=5",
+    "source": "simplywall.st",
+    "pubDate": "2026-09-08T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:30.806Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1oQndIT2gtZ1h4UWlEMTUtLTFwTk1Ka0F3Y2lib21FNmIzdUpYelp4V2RHenlNdHB0dzk0NFRkaEtPbGdEYml2WGYyYWhqZENKQ1gyeXZKU3pkUEFoMVZra3kxQVQxamhE?oc=5|AI 주식관리 시대 열었다... 하나증권 신규 MTS '하나증권V' 출시",
@@ -682,6 +737,17 @@
     "collectedAt": "2026-09-15T23:18:33.764Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5PWkZncXZDcTAyWmZkcksxUEk5MFY4WEZZenpHaUVfeUlMQmRQbXdmc1lpR294RUtTdkxjV3ptcDZ1YjJyd0F5UWxNZUZUeUNIRzUtWXgzNzB4cndFRmpzVDlMaVQ2VXM?oc=5|중동 리스크에 유가·금리 ’들썩’…국내 경제 발목잡나",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "중동 리스크에 유가·금리 ’들썩’…국내 경제 발목잡나",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5PWkZncXZDcTAyWmZkcksxUEk5MFY4WEZZenpHaUVfeUlMQmRQbXdmc1lpR294RUtTdkxjV3ptcDZ1YjJyd0F5UWxNZUZUeUNIRzUtWXgzNzB4cndFRmpzVDlMaVQ2VXM?oc=5",
+    "source": "yonhapnewstv.co.kr",
+    "pubDate": "2026-09-05T01:11:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Wc1RlYXpsb0hoV19aVDU2VElwYW1KeEdOV2dOS0h1bVQzOV90SVIzbV9uZTQ1U05VOEMyYXlST3pCVFhDWElBcDlndWRhQTNobEhYbC1GWEtmalhvMU4tdTRKNGNGd2RuOGxyQnBCUEE?oc=5|씨티, 2027년을 위한 최고의 생성형 AI 주식 추천",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -702,6 +768,17 @@
     "source": "g-enews.com",
     "pubDate": "2026-09-04T07:00:00.000Z",
     "collectedAt": "2026-09-15T23:18:34.684Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5sRTF4SHNkc3RjTmNBaGI1amR6NWF3NVVibWJNdDV5Yk54akNlaVc5eVdYVXNvUXNrU1Z1MWdjM2l0b2QzWUc4eWZsVnhEYXNnRGRsa0p5clVsQQ?oc=5|초저금리의 종말…美부채 변수 된 AI 생산성",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "초저금리의 종말…美부채 변수 된 AI 생산성",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5sRTF4SHNkc3RjTmNBaGI1amR6NWF3NVVibWJNdDV5Yk54akNlaVc5eVdYVXNvUXNrU1Z1MWdjM2l0b2QzWUc4eWZsVnhEYXNnRGRsa0p5clVsQQ?oc=5",
+    "source": "한국경제",
+    "pubDate": "2026-09-04T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1vQS1HbHVlX2E1TWFYUzg5dTY5QVRTcUx4d0lEMDZJam1fRUMzNmNqcW1pRHlCclN0OHhGOVJDaU14RWF5Z0lQemNxZlZkR2tpNzE1OEpoT29OUjFxdDQ2T0FDWldBc1Z4bzlKc2dlMGZDdUpM?oc=5|JMP 시큐리티스, C3.ai 주식 등급 하향 조정...매출 가이던스 우려",
@@ -814,6 +891,17 @@
     "collectedAt": "2026-09-15T23:18:33.764Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1tR2JoZ2lqT2ZtSTBjVmFwam5PMHBXQ25wZkF0NHN1MTc5ZTMwQmpxUjlFVWpDQ1hXdjNQS1pWY0hlSWx6SFNMdjkxN0xtTlp1c3dpWHFiTkc2VDNZdUZCUdIBeEFVX3lxTE5lQXFkaXlnbWJqdlFMZEdJejhfWGxLTjltSkphTl9NajdUYmVwT1U2UkpJdzdSZ095VHRPTm93REQySFg4SHEzUGxfQVd1N3N3bklTZzJEQWpWZDNrUzltaklNZnFEMHdKc2FxaG5vMXY3QnZjdm1iWQ?oc=5|임현식 \"25년간 잊고 있던 조선업 주식, 만원에 샀는데…\"",
+    "category": "shipbuilding",
+    "categoryLabel": "조선·해양",
+    "title": "임현식 \"25년간 잊고 있던 조선업 주식, 만원에 샀는데…\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1tR2JoZ2lqT2ZtSTBjVmFwam5PMHBXQ25wZkF0NHN1MTc5ZTMwQmpxUjlFVWpDQ1hXdjNQS1pWY0hlSWx6SFNMdjkxN0xtTlp1c3dpWHFiTkc2VDNZdUZCUdIBeEFVX3lxTE5lQXFkaXlnbWJqdlFMZEdJejhfWGxLTjltSkphTl9NajdUYmVwT1U2UkpJdzdSZ095VHRPTm93REQySFg4SHEzUGxfQVd1N3N3bklTZzJEQWpWZDNrUzltaklNZnFEMHdKc2FxaG5vMXY3QnZjdm1iWQ?oc=5",
+    "source": "뉴시스",
+    "pubDate": "2026-08-30T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:30.807Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9ZMzBUS3ltVS14OHMzQzMyQ2Y2YUZLSHBQUDZpZU81LXY0S1NSb0lKbURxUXB3T3N4bzZVUENSZ1NSQ3NiUXc?oc=5|정부가 밀어주는 주식 따로 있다?…반도체·AI·방산에 붙는 '국가 프리미엄' [주末머니]",
     "category": "defense",
     "categoryLabel": "방산·항공우주",
@@ -834,6 +922,17 @@
     "source": "simplywall.st",
     "pubDate": "2026-08-29T07:00:00.000Z",
     "collectedAt": "2026-09-15T23:18:33.765Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5kQ3F2NWF3NHhBZHZkT0FBZ2xMTnNSWTZjM3NaUE1EUWxHY29Vd0pvTy1USEVHUDhrY19wYnliNzBxMHZSWnR1RTlWOHN2a2NlYkHSAVNBVV95cUxOaF9vN3JuT3I3QUd0ek5BZUR1amo2RFJSSDQwZ2h3TENDVnFWTXI0RjFGc1h3aXQ3LW1XRDBXa2pPTTliaE4xUnRSQXVvaXcyOHlGTQ?oc=5|“한국 경제, 이대로 괜찮나”…반도체 호황 속 나온 ‘섬뜩한 경고’",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "“한국 경제, 이대로 괜찮나”…반도체 호황 속 나온 ‘섬뜩한 경고’",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5kQ3F2NWF3NHhBZHZkT0FBZ2xMTnNSWTZjM3NaUE1EUWxHY29Vd0pvTy1USEVHUDhrY19wYnliNzBxMHZSWnR1RTlWOHN2a2NlYkHSAVNBVV95cUxOaF9vN3JuT3I3QUd0ek5BZUR1amo2RFJSSDQwZ2h3TENDVnFWTXI0RjFGc1h3aXQ3LW1XRDBXa2pPTTliaE4xUnRSQXVvaXcyOHlGTQ?oc=5",
+    "source": "서울경제",
+    "pubDate": "2026-08-29T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9mTVlYY2RMc2tqNTVFYmxEV1RfdG9JbEQ0ZHJoMld1OXQ1VDd3MFpKekhsdGI0el9vd1NhV3BFQ3dpbWQySXRidEl1UjlCcGV0SGNyYXg0Z2w1by01?oc=5|유안타증권, 올 11월까지 'K-반도체 주식뽑기' 이벤트",
@@ -1012,6 +1111,17 @@
     "collectedAt": "2026-09-15T23:18:33.766Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqSEhHdEN2UHY0ZEJhc203TjFudWVJSmpHV3oxTHc3RjluV3Z3SjFBNzZBc1lNaktTdnFqZWpOM2dnS0oyNjJpY3doWEtfanlxbnp1WWVLa2J3UQ?oc=5|[경제산책] 반도체가 가져온 한국경제의 행운과 도전",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "[경제산책] 반도체가 가져온 한국경제의 행운과 도전",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqSEhHdEN2UHY0ZEJhc203TjFudWVJSmpHV3oxTHc3RjluV3Z3SjFBNzZBc1lNaktTdnFqZWpOM2dnS0oyNjJpY3doWEtfanlxbnp1WWVLa2J3UQ?oc=5",
+    "source": "농민신문",
+    "pubDate": "2026-08-21T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sZnV1S3ZYNFB6UkJVdzFibUY5VzBCbTNvN2c2T0lLSkk2MHJQa1NwczJ2eE1oNVpQYkdYQ2VqaEphZzRHU0dTVGRwV09IZ1dPUFRFRUJzLTJOVlc4cEpuQkQxemFxNlZPTlJYdE9mZXc?oc=5|[뉴욕마켓워치] 반도체 '5% 급락' 제물로 장기금리 제동…주식↓채권·달러↑",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1034,6 +1144,28 @@
     "collectedAt": "2026-09-15T23:18:33.766Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9hNFNlei1sUHZROEZCZTRMZnM0LURjTG5YM0RBV0kyMnM3RHJTOHV3TmxSUG1EREZQQWQ1b2VQbHlsMGVxY1BtbEpabFRlaXk2emwtcVVFNzVlT1E?oc=5|“반도체 호황 2027년 중반까지”…무디스가 내다본 한국 경제 [잇슈 머니]",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "“반도체 호황 2027년 중반까지”…무디스가 내다본 한국 경제 [잇슈 머니]",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9hNFNlei1sUHZROEZCZTRMZnM0LURjTG5YM0RBV0kyMnM3RHJTOHV3TmxSUG1EREZQQWQ1b2VQbHlsMGVxY1BtbEpabFRlaXk2emwtcVVFNzVlT1E?oc=5",
+    "source": "KBS 뉴스",
+    "pubDate": "2026-08-19T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:31.357Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5xMGQ2aUFpakh2eGJtRXhKQkZzNFhyd0VXN1dZUmNubTMtbGtEb3VwS2c4YU43WG9jX3ZSTkgzWFpTUGxqLUllbHNfbE1WUXVQcmRZN2VhcmJiZWhFVGQ2TEJ5SDJ5MHNfSUdXSFpR0gFzQVVfeXFMUDdmSzZkNkF4RUk4SzlHOF9UeXR3Q1ZiZ19JaXR5dW1WX1ZMTzFESzhUMElQS0xnVk9VZ1p1MV9rNVpKSGFSNnZmZVEyNmtkeVJic1NBN0FvR2R2ZWU3SGFfWDVIa2ZnazhEaVZ5aXNvN19tYw?oc=5|\"반도체 주식이 '부의 척도' 됐다\"… 뒤처질까 '빚투' 나서는 대만 개미",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "\"반도체 주식이 '부의 척도' 됐다\"… 뒤처질까 '빚투' 나서는 대만 개미",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5xMGQ2aUFpakh2eGJtRXhKQkZzNFhyd0VXN1dZUmNubTMtbGtEb3VwS2c4YU43WG9jX3ZSTkgzWFpTUGxqLUllbHNfbE1WUXVQcmRZN2VhcmJiZWhFVGQ2TEJ5SDJ5MHNfSUdXSFpR0gFzQVVfeXFMUDdmSzZkNkF4RUk4SzlHOF9UeXR3Q1ZiZ19JaXR5dW1WX1ZMTzFESzhUMElQS0xnVk9VZ1p1MV9rNVpKSGFSNnZmZVEyNmtkeVJic1NBN0FvR2R2ZWU3SGFfWDVIa2ZnazhEaVZ5aXNvN19tYw?oc=5",
+    "source": "hankookilbo.com",
+    "pubDate": "2026-08-12T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:30.807Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1qbE41cXJWRjItSVFVd0hJam8ySGhRMk1ZSWRCeU1nc3MyQ3ctOGVzaHpCdTM4LUZnVDA2TVdEN2ZkMXV3WWpYeUJrUld3c29FS3pyMFkwT2ZsTTd2?oc=5|시타델의 'AI 반도체 주식 구하기'...통으로 줍줍했다",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1043,6 +1175,17 @@
     "source": "뉴스핌",
     "pubDate": "2026-07-31T07:00:00.000Z",
     "collectedAt": "2026-09-15T23:18:33.765Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE84MjhOTzRoLXdDb2J1SUNDekdZdGlSWUxxekhfeF8zcHMyRE50UVBBX0dDMHlCMGdrMUZPUHYxRHV5bGxfcEh5amVPLXcwNl9oZUlUVWpyUG8td25iVUQ4VHJoZnN5NmpIWDgyeVZpOEw?oc=5|월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적'",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "월가, AI 투자 여전히 활발해 반도체 주식에 '긍정적'",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE84MjhOTzRoLXdDb2J1SUNDekdZdGlSWUxxekhfeF8zcHMyRE50UVBBX0dDMHlCMGdrMUZPUHYxRHV5bGxfcEh5amVPLXcwNl9oZUlUVWpyUG8td25iVUQ4VHJoZnN5NmpIWDgyeVZpOEw?oc=5",
+    "source": "연합인포맥스",
+    "pubDate": "2026-07-27T07:00:00.000Z",
+    "collectedAt": "2026-09-16T00:26:30.807Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5LeDlQd0dhRFU4YldDdXMwVkhtWGEwbmNqRncwS3JTMXJhdEpQVWtSZVQ3bWhOZFVjekwtUV9VTEU5MWZkejhLTzlaMmtmTXZRRTVpbjBGVnNOOXlYeEtWQWZZeVXSAWhBVV95cUxPV0dFWWV6SWhGS3hrQlBhYjR2TDA1bXhIYmlNbGNJM0pqdFVVZUQ1YnMwODR2WnhPM3BJcVRXSEhLaV92VWdSZzF6cWhHci1DeTZZLUpVQU4xaDU5am1Hdjg1M2p0NmJsOA?oc=5|[기획] 세계경제 흔드는 ‘호르무즈’… 유가 넘어 글로벌 공급망 재충격",
