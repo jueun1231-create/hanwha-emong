@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.bbc.co.uk/news/articles/cqx2zpj4y525o?at_medium=RSS&at_campaign=rss|OpenAI boss says world 'right to be afraid' but should trust AI firms",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI boss says world 'right to be afraid' but should trust AI firms",
+    "summary": "Sam Altman and other tech CEOs say there are incentives to limit advancements in AI, as fears grow over the threats it poses to humanity.",
+    "link": "https://www.bbc.co.uk/news/articles/cqx2zpj4y525o?at_medium=RSS&at_campaign=rss",
+    "source": "Google News",
+    "pubDate": "2026-09-16T06:57:32.000Z",
+    "collectedAt": "2026-09-16T07:21:31.133Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbjV4VGdBeUNjeHA4WFlHYm12dnFVdVdFbU9HQnFDanl3Q3YyZEVCZFBHLXpiOVZzNFF3allwVHgwSFJNbEZ5dk1xRUwtN0pBMndwNWRnRUZhSG9zc0lCZXlGN3FMc1E4V3VCNHBJQlEwY09PMVVxMlpCNnE4TEJ2WEVJQ28ydw?oc=5|반도체 낙수효과 안보이는 한국경제… ‘임금 정체’ ‘청년고용 악화’ ‘국내투자 미흡’",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "반도체 낙수효과 안보이는 한국경제… ‘임금 정체’ ‘청년고용 악화’ ‘국내투자 미흡’",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbjV4VGdBeUNjeHA4WFlHYm12dnFVdVdFbU9HQnFDanl3Q3YyZEVCZFBHLXpiOVZzNFF3allwVHgwSFJNbEZ5dk1xRUwtN0pBMndwNWRnRUZhSG9zc0lCZXlGN3FMc1E4V3VCNHBJQlEwY09PMVVxMlpCNnE4TEJ2WEVJQ28ydw?oc=5",
+    "source": "Chosunbiz",
+    "pubDate": "2026-09-16T06:23:00.000Z",
+    "collectedAt": "2026-09-16T07:21:30.526Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ac0hqeWpaNU5LYWJWMVZ3dURESGdneDlyUlJvTjVfNnpLNzNKaFFMaWktb0JGeFFIZ0JuR0czbzVUYWlKdkJnd1lqRmg0U0RlZV8tbVdvNW5MYllnTEFqWjJPYVBQdk1KcXow?oc=5|[한국경제] 백서인 교수, 중국 반도체 굴기 관련 코멘트",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -88,6 +110,17 @@
     "collectedAt": "2026-09-16T03:20:58.872Z"
   },
   {
+    "id": "https://www.cnbc.com/2026/09/15/meta-mark-zuckerberg-with-nvidia-huang-ai-safety-slowdown.html|Meta CEO Mark Zuckerberg sides with Nvidia's Huang on AI safety and slowdown debate",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Meta CEO Mark Zuckerberg sides with Nvidia's Huang on AI safety and slowdown debate",
+    "summary": "Meta CEO Mark Zuckerberg's view of artificial intelligence safety is akin to the perspective of Nvidia's Jensen Huang rather than Anthropic chief Dario Amodei.",
+    "link": "https://www.cnbc.com/2026/09/15/meta-mark-zuckerberg-with-nvidia-huang-ai-safety-slowdown.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T01:56:47.000Z",
+    "collectedAt": "2026-09-16T07:21:31.232Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1Kemlvd0dPY1U2aTNXb1hCRVJWUEZKT0ExNE45Wlo3S21seXJiVFUxdk1YbUlDc0NjYm05bU91NzlhM1R4TDZXSkFEQVFiUGloaEdEZk1tYWQ0VWprdFhjeVo4WGt0TjFMQlpiZ2dSanhRWEpjQXlWTm80UXNBeWM?oc=5|Intel Leads Chip Stock Decline After Tech Leaders Demand AI Slowdown",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -165,6 +198,17 @@
     "collectedAt": "2026-09-16T00:26:32.924Z"
   },
   {
+    "id": "https://www.cnbc.com/2026/09/15/open-ai-sarah-friar-safety.html|OpenAI CFO Sarah Friar tells CNBC she isn't worried about slowing AI development",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI CFO Sarah Friar tells CNBC she isn't worried about slowing AI development",
+    "summary": "Friar joined CNBC's Jim Cramer on \"Mad Money\" as the debate over technology's safety risks rages on.",
+    "link": "https://www.cnbc.com/2026/09/15/open-ai-sarah-friar-safety.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T00:12:29.000Z",
+    "collectedAt": "2026-09-16T07:21:31.232Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"한국, AI·반도체 핵심\" 블랙록 신흥국 투자의견 '비중확대'로 상향 - 머니투데이",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -184,7 +228,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T05:19:45.722Z"
+    "collectedAt": "2026-09-16T06:26:50.167Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"AI·반도체 핵심...한국 주식 살 때\" 세계최대 운용사 투자의견 상향 - 머니투데이",
@@ -195,7 +239,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T06:26:50.167Z"
+    "collectedAt": "2026-09-16T07:21:30.177Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxObWlfRGtfSjhjdEtBS3p1aE5KaFhEU0hJTHc0R0JSZnVuZ0FldkxMMnd4YmdTVl9Kc094RGI4TXQzaTZUZkVRTkpLYVFlN1AtSmsxcGN2RXRLVlFVNGQzTGcwNVV0S1haZGl0c24yTDg0U3gteWZ1WnlLUklUNUV2UlF6eGRXZw?oc=5|AI 속도조절론'에 양자암호·보안주 급등!AI가 분석해주는 아톤 (158430) 상승확률은?",
