@@ -1,5 +1,16 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/16/anthropic-policy-chief-says-ai-companies-cant-operate-on-honor-code.html|Anthropic policy chief says AI companies can't be expected to operate on 'honor code'",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Anthropic policy chief says AI companies can't be expected to operate on 'honor code'",
+    "summary": "Sarah Heck, Anthropic's head of public policy, offered her perspectives on AI safety as the debate about how to regulate model development intensifies.",
+    "link": "https://www.cnbc.com/2026/09/16/anthropic-policy-chief-says-ai-companies-cant-operate-on-honor-code.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T18:35:21.000Z",
+    "collectedAt": "2026-09-16T19:19:24.978Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/16/blumenthal-ai-regulation-safety-oversight.html|Sen. Blumenthal urges AI oversight: 'We're on the verge of losing control'",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -1274,6 +1285,17 @@
     "source": "서울경제",
     "pubDate": "2026-09-03T07:00:00.000Z",
     "collectedAt": "2026-09-15T23:18:34.684Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9nTHRUVGxMdEQzQ1R0RnlGR2JvRnhWclEtSWstRW9oUUQwN3dMUlNKQVl3RmR4NHprZXc0cnRZUE11c1dUd214YXg4Nk42ZS0ycFE?oc=5|美 반도체 반등하자 ‘삼성전자’ 집중매수 [주식 초고수는 지금]",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "美 반도체 반등하자 ‘삼성전자’ 집중매수 [주식 초고수는 지금]",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9nTHRUVGxMdEQzQ1R0RnlGR2JvRnhWclEtSWstRW9oUUQwN3dMUlNKQVl3RmR4NHprZXc0cnRZUE11c1dUd214YXg4Nk42ZS0ycFE?oc=5",
+    "source": "서울경제",
+    "pubDate": "2026-09-03T07:00:00.000Z",
+    "collectedAt": "2026-09-16T19:19:23.789Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1qeTV0b0FSck5Ocm9WTVRtLVhGVDg4ZlIyc1NHbndFTVc3WTJwbVB4V3NhLVAxc3JhSEZaQkI1VUd6Z2JDTDFtQklZMGRFTXhEVW9tN3dxUkpCZzdMLUFDTUJmRTJLV1hPWDdrdHdCcw?oc=5|“반토막 난 반도체 주식 어쩌나” 통곡…알고 보니 ‘AI 대호황’? [재테크+]",
