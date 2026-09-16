@@ -1,5 +1,38 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/16/open-ai-investors-new-funding-round.html|OpenAI investors have approached the company about a new funding round",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "OpenAI investors have approached the company about a new funding round",
+    "summary": "OpenAI is gearing up for what is widely expected to be a blockbuster IPO next year, after it confidentially filed its prospectus in June.",
+    "link": "https://www.cnbc.com/2026/09/16/open-ai-investors-new-funding-round.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T13:16:31.000Z",
+    "collectedAt": "2026-09-16T13:22:20.758Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQnB4RjItZXFtUmdkNklJUzk2T3V3LW5KY2FXeklrR0xJZ2w1QlRKMmd2cHRiUE44TjNzRndXdUh0c3R1WVB6ZXExczZSOWxNeHk4dlF3X3N5VjBubHpqT3lscUFBdXJjMnhIVjA0WDhPR0ZjcHRGOGFCbERqYy14dkhMSEE?oc=5|Mark Zuckerberg Rejects AI Slowdown Calls and Emphasizes Model Alignment",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Mark Zuckerberg Rejects AI Slowdown Calls and Emphasizes Model Alignment",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQnB4RjItZXFtUmdkNklJUzk2T3V3LW5KY2FXeklrR0xJZ2w1QlRKMmd2cHRiUE44TjNzRndXdUh0c3R1WVB6ZXExczZSOWxNeHk4dlF3X3N5VjBubHpqT3lscUFBdXJjMnhIVjA0WDhPR0ZjcHRGOGFCbERqYy14dkhMSEE?oc=5",
+    "source": "tikr.com",
+    "pubDate": "2026-09-16T12:45:00.000Z",
+    "collectedAt": "2026-09-16T13:22:19.674Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPOFdlcy1hUWZ5RUdjcUhEdEEtTWFIZWd5cGtKZXJCQ0dUeldBbUkxNUdSWU9sUk9xSVFjOFVfWHlRNFhpb2lQbVFrUHRGeWNtYVhVTnZwb3JNa1Z4Mmh0NWZaLThoYk02a0EzaXp4R0pGSGk5Y0h3YUgyUVBMZ1RvdkNn?oc=5|Nvidia CEO Jensen Huang Slams Proposed AI Antitrust Exemptions and Slowdown Plans",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Nvidia CEO Jensen Huang Slams Proposed AI Antitrust Exemptions and Slowdown Plans",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPOFdlcy1hUWZ5RUdjcUhEdEEtTWFIZWd5cGtKZXJCQ0dUeldBbUkxNUdSWU9sUk9xSVFjOFVfWHlRNFhpb2lQbVFrUHRGeWNtYVhVTnZwb3JNa1Z4Mmh0NWZaLThoYk02a0EzaXp4R0pGSGk5Y0h3YUgyUVBMZ1RvdkNn?oc=5",
+    "source": "tikr.com",
+    "pubDate": "2026-09-16T12:45:00.000Z",
+    "collectedAt": "2026-09-16T13:22:19.675Z"
+  },
+  {
     "id": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUWdIZ0VTVEIzNnBXM1NDcHVrOVZKekR3S19YZmV2MDZ1NXJFSlN5aUdvc2o3ZzNCNVM1RU5EdXpLelZWV1FoQVZSdDk0cmN0S3VpVFJFUXNJOFB5UFhLWWJacXFuTzU5c3hFcFl1Z3F1aGtrcUl6S1cwZDlac1h5bmxB?oc=5|Broadcom Stock Reaffirms Long-Term Revenue Goals Despite AI Slowdown Fears",
     "category": "ai-compute",
     "categoryLabel": "AI 반도체·컴퓨트",
@@ -272,7 +305,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T11:21:01.414Z"
+    "collectedAt": "2026-09-16T12:26:25.686Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"AI·반도체 핵심...한국 주식 살 때\" 세계최대 운용사 투자의견 상향 - 머니투데이",
@@ -283,7 +316,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T12:26:25.686Z"
+    "collectedAt": "2026-09-16T13:22:19.674Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxObWlfRGtfSjhjdEtBS3p1aE5KaFhEU0hJTHc0R0JSZnVuZ0FldkxMMnd4YmdTVl9Kc094RGI4TXQzaTZUZkVRTkpLYVFlN1AtSmsxcGN2RXRLVlFVNGQzTGcwNVV0S1haZGl0c24yTDg0U3gteWZ1WnlLUklUNUV2UlF6eGRXZw?oc=5|AI 속도조절론'에 양자암호·보안주 급등!AI가 분석해주는 아톤 (158430) 상승확률은?",
