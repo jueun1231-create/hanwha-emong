@@ -1,5 +1,27 @@
 [
   {
+    "id": "https://www.cnbc.com/2026/09/16/emil-michael-ai-regulation-trump.html|Pentagon CTO says U.S. government shouldn't take stakes in tech giants, questions adding AI rules",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "Pentagon CTO says U.S. government shouldn't take stakes in tech giants, questions adding AI rules",
+    "summary": "President Donald Trump has angrily pushed back on the calls from industry and lawmakers for an AI slowdown or greater regulation.",
+    "link": "https://www.cnbc.com/2026/09/16/emil-michael-ai-regulation-trump.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T16:26:58.000Z",
+    "collectedAt": "2026-09-16T17:18:19.999Z"
+  },
+  {
+    "id": "https://www.cnbc.com/2026/09/16/anthropic-open-ai-model-safety-risks.html|Anthropic, OpenAI proposed new 'neutral' AI watchdogs. Why you should worry about the idea",
+    "category": "ai-software",
+    "categoryLabel": "AI 소프트웨어·플랫폼",
+    "title": "Anthropic, OpenAI proposed new 'neutral' AI watchdogs. Why you should worry about the idea",
+    "summary": "Anthropic and OpenAI are proposing embedded AI evaluators to help manage risk of models causing catastrophic harm to society, but the idea has some issues.",
+    "link": "https://www.cnbc.com/2026/09/16/anthropic-open-ai-model-safety-risks.html",
+    "source": "Google News",
+    "pubDate": "2026-09-16T16:25:52.000Z",
+    "collectedAt": "2026-09-16T17:18:19.999Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/16/anthropic-open-ai-model-safety-risks.html|Why you should worry about Anthropic, OpenAI's proposed AI risk evaluators",
     "category": "ai-software",
     "categoryLabel": "AI 소프트웨어·플랫폼",
@@ -349,7 +371,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T15:20:41.837Z"
+    "collectedAt": "2026-09-16T16:21:14.429Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"AI·반도체 핵심...한국 주식 살 때\" 세계최대 운용사 투자의견 상향 - 머니투데이",
@@ -360,7 +382,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-16T16:21:14.429Z"
+    "collectedAt": "2026-09-16T17:18:18.873Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxObWlfRGtfSjhjdEtBS3p1aE5KaFhEU0hJTHc0R0JSZnVuZ0FldkxMMnd4YmdTVl9Kc094RGI4TXQzaTZUZkVRTkpLYVFlN1AtSmsxcGN2RXRLVlFVNGQzTGcwNVV0S1haZGl0c24yTDg0U3gteWZ1WnlLUklUNUV2UlF6eGRXZw?oc=5|AI 속도조절론'에 양자암호·보안주 급등!AI가 분석해주는 아톤 (158430) 상승확률은?",
@@ -1054,6 +1076,17 @@
     "source": "simplywall.st",
     "pubDate": "2026-09-08T07:00:00.000Z",
     "collectedAt": "2026-09-16T00:26:30.806Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9XcmlGVXJrQkxBaDU0Um14YWVGNy1VNlpTakxfV3BwdzlQVjNXaTI3LW1WTE1HbE9IMTl0YzZNT0NKd24zc3FNN0ZKNmlQVEpzUERpdGl6UUNfb2lySmFsVHNQVUFjeVYyTVo1NmZXVW8?oc=5|반도체 주식 18% 여름 급락 후, 씨티가 전망 제시",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "반도체 주식 18% 여름 급락 후, 씨티가 전망 제시",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9XcmlGVXJrQkxBaDU0Um14YWVGNy1VNlpTakxfV3BwdzlQVjNXaTI3LW1WTE1HbE9IMTl0YzZNT0NKd24zc3FNN0ZKNmlQVEpzUERpdGl6UUNfb2lySmFsVHNQVUFjeVYyTVo1NmZXVW8?oc=5",
+    "source": "Investing.com 한국어",
+    "pubDate": "2026-09-08T07:00:00.000Z",
+    "collectedAt": "2026-09-16T17:18:18.876Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBMNmVoOXlmOUt3eXNUZElKVS0zWjBGOE9GY1FVbEFmaGd3OUQtM09vZU5hX1FQMWNZS1cyRzJVYnJkRVVBaFFHajVhZ0dxQ0poazBGLW9qNUlxcms1MkFWOXByY1nSAWhBVV95cUxNZG1kMVRIbUJjUjVtQ3hqYlMtVDNpcUhpVUxJV1IyMFFQZGtpN0lTU1VDaUwzY0RoMnFHNVF4dmNoSnJXbHdwVlB6RGZjMHdkTEVlb1JmVUUzcVZ3R1ptbmtWVkEyQ0YwNw?oc=5|반도체가 끌고 소비가 받쳤다…한국경제 ‘3.3% 성장’ 가시권",
