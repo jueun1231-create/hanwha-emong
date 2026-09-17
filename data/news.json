@@ -33,6 +33,17 @@
     "collectedAt": "2026-09-17T02:20:48.222Z"
   },
   {
+    "id": "https://news.google.com/rss/articles/CBMic0FVX3lxTE90dnFmeWNtb2htcGJlTzJnVU9DdjB3VmRETVZSR0JKQjExWEpQQ2p0SkRyTkIzbzM0VXFhaW51M0VVeUNPZmp6MHI0WnFzZDE3elA3dkNlc1lSUHdTdG9KeVhmcWp3WkM4WnFqWl9CNzFpRGs?oc=5|유진투자 \"미국 금리 인상에도 한국 증시 충격 제한적, 반도체·에너지·조선 주식 주목\"",
+    "category": "power-nuclear",
+    "categoryLabel": "전력·원자력·에너지인프라",
+    "title": "유진투자 \"미국 금리 인상에도 한국 증시 충격 제한적, 반도체·에너지·조선 주식 주목\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE90dnFmeWNtb2htcGJlTzJnVU9DdjB3VmRETVZSR0JKQjExWEpQQ2p0SkRyTkIzbzM0VXFhaW51M0VVeUNPZmp6MHI0WnFzZDE3elA3dkNlc1lSUHdTdG9KeVhmcWp3WkM4WnFqWl9CNzFpRGs?oc=5",
+    "source": "비즈니스포스트",
+    "pubDate": "2026-09-17T00:09:55.000Z",
+    "collectedAt": "2026-09-17T05:20:19.622Z"
+  },
+  {
     "id": "https://www.cnbc.com/2026/09/15/congress-ai-data-center-utility-costs.html|House advances bill to rein in AI data center utility costs",
     "category": "power-nuclear",
     "categoryLabel": "전력·원자력·에너지인프라",
@@ -119,6 +130,17 @@
     "source": "Google News",
     "pubDate": "2026-09-16T17:50:00.000Z",
     "collectedAt": "2026-09-16T23:18:55.083Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOWhaYzBIbWFRUC1nUU5nRUFvRnBMODVZOHRFRC1KQVNKUnBGLTVTWDdzUkM5N0Jnc2JCWkRZbDNvZnFiWUhVSDk1aFdadVN4V3BCRjNCOUJ3bmxaQkFFUldUcVhDdnZkX0x4eTFoWXhFY1lELUhYbjgySnE0bm1EZXVaQ2NkR1daLXJiZUlRUHVHblFBME8taEp2QUt6T3ZkdjlCQ9IBpAFBVV95cUxPOWhaYzBIbWFRUC1nUU5nRUFvRnBMODVZOHRFRC1KQVNKUnBGLTVTWDdzUkM5N0Jnc2JCWkRZbDNvZnFiWUhVSDk1aFdadVN4V3BCRjNCOUJ3bmxaQkFFUldUcVhDdnZkX0x4eTFoWXhFY1lELUhYbjgySnE0bm1EZXVaQ2NkR1daLXJiZUlRUHVHblFBME8taEp2QUt6T3ZkdjlCQw?oc=5|AI 파트너십이 WTW 주식 투자 전망을 바꾼 것일까?",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "AI 파트너십이 WTW 주식 투자 전망을 바꾼 것일까?",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOWhaYzBIbWFRUC1nUU5nRUFvRnBMODVZOHRFRC1KQVNKUnBGLTVTWDdzUkM5N0Jnc2JCWkRZbDNvZnFiWUhVSDk1aFdadVN4V3BCRjNCOUJ3bmxaQkFFUldUcVhDdnZkX0x4eTFoWXhFY1lELUhYbjgySnE0bm1EZXVaQ2NkR1daLXJiZUlRUHVHblFBME8taEp2QUt6T3ZkdjlCQ9IBpAFBVV95cUxPOWhaYzBIbWFRUC1nUU5nRUFvRnBMODVZOHRFRC1KQVNKUnBGLTVTWDdzUkM5N0Jnc2JCWkRZbDNvZnFiWUhVSDk1aFdadVN4V3BCRjNCOUJ3bmxaQkFFUldUcVhDdnZkX0x4eTFoWXhFY1lELUhYbjgySnE0bm1EZXVaQ2NkR1daLXJiZUlRUHVHblFBME8taEp2QUt6T3ZkdjlCQw?oc=5",
+    "source": "simplywall.st",
+    "pubDate": "2026-09-16T17:44:31.000Z",
+    "collectedAt": "2026-09-17T05:20:19.623Z"
   },
   {
     "id": "https://www.cnbc.com/2026/09/16/open-ai-investors-new-funding-round.html|OpenAI investors have approached the company about a new funding round",
@@ -393,7 +415,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-17T03:21:11.126Z"
+    "collectedAt": "2026-09-17T04:21:15.123Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5|\"AI·반도체 핵심...한국 주식 살 때\" 세계최대 운용사 투자의견 상향 - 머니투데이",
@@ -404,7 +426,7 @@
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rUGhvZ1VublJpaFZ4Ynhfekc2THRPU2RsRml4NGFlbVpwSVI3RE9rMi1KQlBkSW9rbkdBSk5Rd0RLRGV6SGdpV2JJUVRaLThqSW1hQmxuNmVPbnhJLWdrVEQtSEpaT0FI0gFuQVVfeXFMUEUzMkxxSnZ1dUo0cFl0ZVpBaTlUYmJSYkd6eUhOMThNM3pab3lHYnlUd0M4RExqV3BrTXUtSDlyU2JBOTVmWVdCUjVDZzlyN0o5a0FMWWtYdk5iQWl1R1JUb1VMVVItMnpFb291NEE?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-16T00:12:00.000Z",
-    "collectedAt": "2026-09-17T04:21:15.123Z"
+    "collectedAt": "2026-09-17T05:20:19.623Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMihgFBVV95cUxObWlfRGtfSjhjdEtBS3p1aE5KaFhEU0hJTHc0R0JSZnVuZ0FldkxMMnd4YmdTVl9Kc094RGI4TXQzaTZUZkVRTkpLYVFlN1AtSmsxcGN2RXRLVlFVNGQzTGcwNVV0S1haZGl0c24yTDg0U3gteWZ1WnlLUklUNUV2UlF6eGRXZw?oc=5|AI 속도조절론'에 양자암호·보안주 급등!AI가 분석해주는 아톤 (158430) 상승확률은?",
@@ -514,7 +536,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-17T03:21:11.127Z"
+    "collectedAt": "2026-09-17T04:21:15.124Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5|\"AI 다음은 이것\" 젠슨 황 한마디에 뛴 주식...실적 봤더니 '갸우뚱' - 머니투데이",
@@ -525,7 +547,7 @@
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBldkhueGxmZTIzbllmbWtjNTJ6RWtRVnJBSjBTRnB1RTlHY3VjcnkwaHNNLVdkdUpsYWhyTHJPc1p2VmhMNXo3ZUtQcC1QWnJuWmpGeVRDS201RTk1a1lUVk1CZDZGaEHSAWxBVV95cUxOeGJyQTVZMVdTY1JQZlhaSDE4TDB1c1ZreG55ZG1KcGdLN0F3d3ZfczMxekdiajhfVzh6SjdYRXdXY2toVXgxWmd3M1NENGtxSnI3T1o4Mno1UkJIR3Izc1FwMVNrakdsdGx3dmg?oc=5",
     "source": "머니투데이",
     "pubDate": "2026-09-15T01:19:22.000Z",
-    "collectedAt": "2026-09-17T04:21:15.124Z"
+    "collectedAt": "2026-09-17T05:20:19.623Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5CZG1NajFXaHFHbV9iZ2cyUVFTQ3QzbGFzWFZVSV9HY0xTTWhORmw3ZUhZUHljejFXM1U3c1NEMUZWTkxvd1ZvbDRPTHhmeU51emV2NFhaYVNmN1c4UmtlcHFuSzduQVJ6?oc=5|AI 기술 속도 조절 논의에 반도체 주식 급락, 투자자들 충격",
@@ -669,6 +691,17 @@
     "source": "v.daum.net",
     "pubDate": "2026-09-13T23:31:09.000Z",
     "collectedAt": "2026-09-16T23:18:53.716Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9iQVRxM1pYN19Wd3pRSFFBTzhEODI5WXp0TVpEUXZtRlBNRVp0bnluRnZNWTFTSG12N2o3MkU0X1ltcXZwb0E?oc=5|“AI 패권 전쟁 수혜주 따로 있다, 반도체 다음은 이 주식 폭등할 것\"",
+    "category": "ai-compute",
+    "categoryLabel": "AI 반도체·컴퓨트",
+    "title": "“AI 패권 전쟁 수혜주 따로 있다, 반도체 다음은 이 주식 폭등할 것\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9iQVRxM1pYN19Wd3pRSFFBTzhEODI5WXp0TVpEUXZtRlBNRVp0bnluRnZNWTFTSG12N2o3MkU0X1ltcXZwb0E?oc=5",
+    "source": "v.daum.net",
+    "pubDate": "2026-09-13T22:10:02.000Z",
+    "collectedAt": "2026-09-17T05:20:19.623Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1pQVh4MXlrd2R4cFJWZHY2UXpHRERFQjIyQVVaMWdVSTRwYmVSX3BnQ1pDZVhhOW5ybDJnbmtQbTREa2M2?oc=5|피지컬 AI 주식 로봇 자율주행 휴머노이드",
@@ -1054,6 +1087,17 @@
     "source": "Investing.com 한국어",
     "pubDate": "2026-08-31T07:00:00.000Z",
     "collectedAt": "2026-09-16T23:18:53.718Z"
+  },
+  {
+    "id": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1tR2JoZ2lqT2ZtSTBjVmFwam5PMHBXQ25wZkF0NHN1MTc5ZTMwQmpxUjlFVWpDQ1hXdjNQS1pWY0hlSWx6SFNMdjkxN0xtTlp1c3dpWHFiTkc2VDNZdUZCUdIBeEFVX3lxTE5lQXFkaXlnbWJqdlFMZEdJejhfWGxLTjltSkphTl9NajdUYmVwT1U2UkpJdzdSZ095VHRPTm93REQySFg4SHEzUGxfQVd1N3N3bklTZzJEQWpWZDNrUzltaklNZnFEMHdKc2FxaG5vMXY3QnZjdm1iWQ?oc=5|임현식 \"25년간 잊고 있던 조선업 주식, 만원에 샀는데…\"",
+    "category": "shipbuilding",
+    "categoryLabel": "조선·해양",
+    "title": "임현식 \"25년간 잊고 있던 조선업 주식, 만원에 샀는데…\"",
+    "summary": "",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1tR2JoZ2lqT2ZtSTBjVmFwam5PMHBXQ25wZkF0NHN1MTc5ZTMwQmpxUjlFVWpDQ1hXdjNQS1pWY0hlSWx6SFNMdjkxN0xtTlp1c3dpWHFiTkc2VDNZdUZCUdIBeEFVX3lxTE5lQXFkaXlnbWJqdlFMZEdJejhfWGxLTjltSkphTl9NajdUYmVwT1U2UkpJdzdSZ095VHRPTm93REQySFg4SHEzUGxfQVd1N3N3bklTZzJEQWpWZDNrUzltaklNZnFEMHdKc2FxaG5vMXY3QnZjdm1iWQ?oc=5",
+    "source": "뉴시스",
+    "pubDate": "2026-08-30T07:00:00.000Z",
+    "collectedAt": "2026-09-17T05:20:19.626Z"
   },
   {
     "id": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9ZMzBUS3ltVS14OHMzQzMyQ2Y2YUZLSHBQUDZpZU81LXY0S1NSb0lKbURxUXB3T3N4bzZVUENSZ1NSQ3NiUXc?oc=5|정부가 밀어주는 주식 따로 있다?…반도체·AI·방산에 붙는 '국가 프리미엄' [주末머니]",
